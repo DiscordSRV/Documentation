@@ -1,0 +1,1 @@
+If you have any questions about how to use or modify DiscordSRV, then please feel free to visit our [Discord](https://discordsrv.com/discord) server and ask us questions in the `#support` channel.

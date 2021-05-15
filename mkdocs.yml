@@ -1,0 +1,64 @@
+# Project information
+site_name: DiscordSRV Wiki
+site_url: https://granny.github.io/DiscordsrvWiki
+site_author: granny
+site_description: >-
+  The official documentation for DiscordSRV.
+  The most powerful, configurable, open-source Discord bridge plugin out there.
+nav:
+  - Home: index.md
+  - Installation: Installation.md
+  - 'Configs':
+    - 'alerts.yml': 'configs/alerts.md'
+    - 'config.yml': 'configs/config.md'
+    - 'linking.yml': 'configs/linking.md'
+    - 'messages.yml': 'configs/messages.md'
+    - 'synchronization.yml': 'configs/synchronization.md'
+    - 'voice.yml': 'voice.md'
+  - Commands: Commands.md
+  - Permissions: Permissions.md
+  - 'Hooked plugin features':
+    - 'LuckPerm Contexts': 'LPContext.md'
+    - 'PlaceholderAPI Placeholders': 'PAPI-Placeholders.md'
+  - 'Troubleshooting':
+    - 'Frequently Asked Questions': 'FAQ.md'
+    - 'Report a bug': 'https://github.com/DiscordSRV/DiscordSRV/issues'
+    - 'Request a feature': 'https://github.com/DiscordSRV/DiscordSRV/issues'
+    - 'Ask for support': 'https://discordsrv.com/discord'
+  - 'Development':  
+    - 'Contributing guidelines': 'https://github.com/DiscordSRV/DiscordSRV/blob/master/CONTRIBUTING.md'
+    - 'Using the DiscordSRV-API': 'Home#Developers'
+    - 'Latest Release': 'https://get.discordsrv.com/'
+    - 'Latest Snapshot': 'https://snapshot.discordsrv.com/'
+  - 'Connections':
+    - 'DiscordSRV on Discord': 'https://discordsrv.com/discord'
+    - 'DiscordSRV on SpigotMC': 'https://www.spigotmc.org/resources/discordsrv.18494/'
+    - 'DiscordSRV on BukkitDev': 'https://dev.bukkit.org/projects/discordsrv'
+repo_url: https://github.com/granny/DiscordsrvWiki
+repo_name: DiscordsrvWiki
+edit_uri: edit/master/docs/
+extra_css:
+  - stylesheets/extra.css
+theme:
+  name: material
+  favicon: images/logo.png
+  logo: images/logo.png
+  palette:
+    - scheme: slate
+      primary: light blue
+      accent: blue
+markdown_extensions:
+  - attr_list
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - toc:
+      permalink: 🔗
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+extra:
+  social:
+    - icon: fontawesome/brands/discord
+      link: http://discordsrv.com/discord
+      name: DiscordSRV Discord Server
