@@ -1,6 +1,3 @@
-***
-**Note: 🏗 This page is under construction.**
-***  
 ### Table of Contents
 
 >* [Minecraft chat to Discord chat doesn't work](FAQ#Minecraft-chat-to-Discord-chat-doesnt-work)
@@ -44,11 +41,11 @@
 In most cases by clearing a value in the config. `option: ""`
 
 For example:
-```yml
+```yaml
 DiscordChatChannelServerStartupMessage: ":white_check_mark: **Server has started**"
 ```
 would be
-```yml
+```yaml
 DiscordChatChannelServerStartupMessage: ""
 ```
 
@@ -154,14 +151,16 @@ Towny's main channel's name is usually `general`, instead of DiscordSRV's defaul
 
 Only reload the plugin using the plugin's specified reload command. (`/discordsrv reload`)
 If that doesn't work, restart your server. Some changes need this for them to take effect.  
-**Note: Plugins made specifically for reloading/stopping/starting plugins (and the built-in server `/reload` command) can make those plugins stop working properly.**  
+
+???+ note "Note"
+    Plugins made specifically for reloading/stopping/starting plugins (and the built-in server `/reload` command) can make those plugins stop working properly.  
 
 <hr>
 
 <h3 id="when-i-joinquit-my-server-a-message-isnt-sent">When I join/quit my server, a message isn't sent in the chat channel for me. What gives?</h3>  
 
 You have one of DiscordSRV's permissions to join/quit silently. To disallow this, give yourself or a group one of the following permissions depending on what you want to deactivate.
-```yml
+```yaml
 groups:
   Owner:
     permissions:
@@ -203,7 +202,7 @@ Instructions for updating to ASM5:
 
 ### Only show errors in console-channel  
 If you want to use your console-channel to only inform you about problems, you can achieve that by using:
-```yml
+```yaml
 DiscordConsoleChannelLevels: ["error"]
 ```  
 ***  
@@ -221,7 +220,7 @@ Here are some examples to visualize how it works:
  [Mon, 20. Apr 2020 04:20:69 CDT INFO] Saving the game (this may take a moment!)
  [Mon, 20. Apr 2020 04:20:69 CDT INFO] Saved the game
 ```
-```yml
+```yaml
 DiscordConsoleChannelFilters: {"^Saving\\.\\.\\.$|^Saved the game$": ""}
 ```  
 
@@ -232,14 +231,14 @@ DiscordConsoleChannelFilters: {"^Saving\\.\\.\\.$|^Saved the game$": ""}
 ```
 
 #### Example 2: Hide lines which contain the string `The updater found an update:`  
-```yml
+```yaml
 DiscordConsoleChannelFilters: {"^.*The updater found an update:.*$": ""}
 ```  
 #### Example 3: Replace the ip address of those that join the game:  
 ```css
 [Mon, 20. Apr 2020 04:20:69 CDT INFO] Scarsz[/192.168.1.2:58076] logged in with entity id 564875 at ([world]0.0, 0.0, 0.0)
 ```
-```yml
+```yaml
 DiscordConsoleChannelFilters: {"\\[\\/[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+(?::[0-9]+)?\\]": ""}
 ```  
 ```css
@@ -249,7 +248,7 @@ DiscordConsoleChannelFilters: {"\\[\\/[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+(?::[0-9]
 <h3 id="op-players-discord-console">Can we op players from the discord console?</h3>  
 
 DiscordSRV by default blacklists the use of a handful of commands through the console channel. This is done through the [DiscordConsoleChannelBlacklistedCommands](https://config.discordsrv.com/config/DiscordConsoleChannelBlacklistedCommands) option. Remove the `"op"` option to allow the command to be used.
-```yml
+```yaml
 # DiscordConsoleChannelBlacklistedCommands: phrases wrapped in quotation marks that users should not be able to send as commands to the console
 ...
 DiscordConsoleChannelBlacklistedCommands: ["?", "op", "deop", "execute"]

@@ -1,7 +1,3 @@
-***
-**Note: 🏗 This page is under construction.**
-***  
-
 A permissions plugin (preferably [LuckPerms](https://luckperms.net)) is highly recommended to use these permissions effectively. If this is your first time setting up permissions and you're planning on using LuckPerms, [read this section of LuckPerms' wiki](https://luckperms.net/wiki/Usage).
 
 ## Parent Permissions

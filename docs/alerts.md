@@ -1,9 +1,4 @@
-***
-**Note: 🏗 This page is under construction.**
-***  
-
-  
-This is an *advanced* feature of DiscordSRV that allows you to send messages to Discord when a game event happens or when a command is run. You will need a working knowledge of how Bukkit events work and their properties. If you aren't sure about what you're doing here, maybe ask a developer or join our support server @ https://discordsrv.com/discord
+This is an *advanced* feature of DiscordSRV that allows you to send messages to Discord when a game event happens or when a command is run. You will need a working knowledge of how Bukkit events work and their properties. If you aren't sure about what you're doing here, maybe ask a developer or join our support server @ https://discordsrv.com/discord/  
 
 Refer to the Bukkit API javadoc to find events & properties to use:
 * https://hub.spigotmc.org/javadocs/bukkit  
@@ -12,7 +7,7 @@ Helpful resources for learning how to use SpEL:
 * https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/expressions.html
 * https://dzone.com/articles/learn-spring-expression-language-with-examples
 
-### Available Placeholders
+## Available Placeholders
 * `{tps}` - server TPS
 * `{time}` - formatted time
 * `{date}` - formatted date
@@ -28,7 +23,7 @@ Helpful resources for learning how to use SpEL:
 * `{botname}` - the bot's name
 * `%placeholder%` - any PlaceholderAPI placeholders, can only use player ones when alert is for a player event
 
-### SpEL expression examples
+## SpEL expression examples
 - Getting a player's IP: `${#player.address.address.hostAddress}`
 - Getting a player's game mode: `${#player.gameMode.name()}`
 - Getting a player's linked Discord account ID: `${#discordsrv.accountLinkManager.getDiscordId(player.uniqueId)}`
@@ -37,7 +32,7 @@ Helpful resources for learning how to use SpEL:
 - Checking if a player is in a specific world: `${#player.world.name == 'world_the_end'}`
 - Checking if it's day in the world that the player is in: `${#player.world.time > 0 && player.world.time < 13000}`
 
-### Available SpEL expression placeholders
+## Available SpEL expression placeholders
 * `#plugins.<plugin>` - the specified plugin instance, <ins>null if doesn't exist</ins>
 * `#event` - the event that's triggering the alert <ins>if this alert is an event alert</ins>
 * `#server` - the Bukkit API server instance, equivalent to Bukkit#getServer
@@ -50,13 +45,13 @@ Helpful resources for learning how to use SpEL:
 * `#channel` - the destination channel for this alert
 * `#jda` - DiscordSRV's JDA instance that it uses to communicate with Discord
 
-### Usage examples
+## Usage examples
 
-#### AdvancedBan
+### AdvancedBan
 
-##### PunishmentEvent
+#### PunishmentEvent
 Reference: https://github.com/DevLeoko/AdvancedBan/blob/master/src/main/java/me/leoko/advancedban/bukkit/event/PunishmentEvent.java
-```yml
+```yaml
   - Trigger: PunishmentEvent
     Channel: punishments
     Embed:
@@ -66,11 +61,11 @@ Reference: https://github.com/DevLeoko/AdvancedBan/blob/master/src/main/java/me/
         Name: "${punishment.getName()} was punished with reason: ${punishment.getReason()}"
 ```
 
-#### Matrix
+### Matrix
 
-##### PlayerViolationEvent
+#### PlayerViolationEvent
 Reference: https://github.com/jiangdashao/matrix-api-repo/blob/master/matrix-api/src/main/java/me/rerere/matrix/api/events/PlayerViolationEvent.java
-```yml
+```yaml
 - Trigger: PlayerViolationEvent
   Channel: matrix
   Conditions:
@@ -82,11 +77,11 @@ Reference: https://github.com/jiangdashao/matrix-api-repo/blob/master/matrix-api
       Name: "{username} failed ${hackType.name().toLowerCase()} check | ${component} | vl:${violations} ping:${player.handle.ping} tps:{tps}"
 ```
 
-#### MythicMobs
+### MythicMobs
 
-##### MythicMobSpawnEvent
+#### MythicMobSpawnEvent
 Reference: https://mythicmobs.net/javadocs/io/lumine/xikage/mythicmobs/api/bukkit/events/MythicMobSpawnEvent.html
-```yml
+```yaml
   # Example alert to send a message when a MythicMobs ender dragon spawns
   - Trigger: MythicMobSpawnEvent
     Channel: mobs
@@ -99,11 +94,11 @@ Reference: https://mythicmobs.net/javadocs/io/lumine/xikage/mythicmobs/api/bukki
         Name: "An ender dragon has spawned!"
 ```
 
-#### Spartan
+### Spartan
 
-##### PlayerViolationEvent
+#### PlayerViolationEvent
 Reference: https://pastebin.com/raw/a8cLdjGS
-```yml
+```yaml
 - Trigger: PlayerViolationEvent
   Channel: spartan
   Conditions:
@@ -115,11 +110,11 @@ Reference: https://pastebin.com/raw/a8cLdjGS
       Name: "{username} failed ${hackType.name().toLowerCase()} check | ${message} | vl:${violation} ping:${player.handle.ping} tps:{tps}"
 ```
 
-#### Essentials
+### Essentials
 
-##### AfkStatusChangeEvent
+#### AfkStatusChangeEvent
 Reference: https://github.com/EssentialsX/Essentials/blob/2.x/Essentials/src/net/ess3/api/events/AfkStatusChangeEvent.java
-```yml
+```yaml
   # Send an AFK alert when someone is AFK / is no longer AFK
   - Trigger: AfkStatusChangeEvent
     Channel: afk
@@ -130,11 +125,11 @@ Reference: https://github.com/EssentialsX/Essentials/blob/2.x/Essentials/src/net
         Name: '${#event.getAffected().getName() + " is " + (#event.value ? "now" : "no longer") + " AFK"}'
 ```
 
-#### Command Triggers
+### Command Triggers
 
-##### /gamemode
+#### /gamemode
 
-```yml
+```yaml
 - Trigger: /gamemode
   Channel: gamemode
   Conditions:
@@ -146,9 +141,9 @@ Reference: https://github.com/EssentialsX/Essentials/blob/2.x/Essentials/src/net
       Name: "{username} changed game mode to ${#args.get(0)}"
 ```
 
-##### /me
+#### /me
 
-```yml
+```yaml
   - Trigger: /me
     Channel: me
     Conditions:
@@ -160,11 +155,11 @@ Reference: https://github.com/EssentialsX/Essentials/blob/2.x/Essentials/src/net
         Name: "* {username} ${#allArgs}"
 ```
 
-#### Social Spy
+### Social Spy
 
-##### Private messages
+#### Private messages
 
-```yml
+```yaml
   - Trigger: [/msg, /w, /m, /pm, /emsg, /epm, /tell, /etell, /whisper, /ewhisper]
     Channel: SocialSpy
     Embed:
@@ -174,9 +169,9 @@ Reference: https://github.com/EssentialsX/Essentials/blob/2.x/Essentials/src/net
         Name: "[{username}> ${#allArgs}]"
 ```
 
-##### Commands
+#### Commands
 
-```yml
+```yaml
   - Trigger: PlayerCommandPreprocessEvent 
     Channel: SocialSpy
     Conditions:
@@ -202,9 +197,9 @@ Reference: https://github.com/EssentialsX/Essentials/blob/2.x/Essentials/src/net
         Name: '{username} issued command: /${#command}'
 ```
 
-##### Sign placement
+#### Sign placement
 
-```yml
+```yaml
   - Trigger: SignChangeEvent
     Channel: SocialSpy
     Conditions:

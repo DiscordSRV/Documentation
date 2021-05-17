@@ -13,7 +13,7 @@ $ source env/bin/activate
 
 Install the required packages
 ```sh
-pip install -r requirements.txt
+$ pip install -r requirements.txt
 ```
 
 #### Preview changes

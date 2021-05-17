@@ -9,11 +9,11 @@ nav:
   - Home: index.md
   - Installation: Installation.md
   - 'Configs':
-    - 'alerts.yml': 'configs/alerts.md'
-    - 'config.yml': 'configs/config.md'
-    - 'linking.yml': 'configs/linking.md'
-    - 'messages.yml': 'configs/messages.md'
-    - 'synchronization.yml': 'configs/synchronization.md'
+    - 'alerts.yml': 'alerts.md'
+    - 'config.yml': 'config.md'
+    - 'linking.yml': 'linking.md'
+    - 'messages.yml': 'messages.md'
+    - 'synchronization.yml': 'synchronization.md'
     - 'voice.yml': 'voice.md'
   - Commands: Commands.md
   - Permissions: Permissions.md
@@ -27,13 +27,13 @@ nav:
     - 'Ask for support': 'https://discordsrv.com/discord'
   - 'Development':  
     - 'Contributing guidelines': 'https://github.com/DiscordSRV/DiscordSRV/blob/master/CONTRIBUTING.md'
-    - 'Using the DiscordSRV-API': 'Home#Developers'
+    - 'Using the DiscordSRV-API': '#developers'
     - 'Latest Release': 'https://get.discordsrv.com/'
     - 'Latest Snapshot': 'https://snapshot.discordsrv.com/'
   - 'Connections':
-    - 'DiscordSRV on Discord': 'https://discordsrv.com/discord'
-    - 'DiscordSRV on SpigotMC': 'https://www.spigotmc.org/resources/discordsrv.18494/'
-    - 'DiscordSRV on BukkitDev': 'https://dev.bukkit.org/projects/discordsrv'
+    - 'Discord': 'https://discordsrv.com/discord'
+    - 'SpigotMC': 'https://www.spigotmc.org/resources/discordsrv.18494/'
+    - 'BukkitDev': 'https://dev.bukkit.org/projects/discordsrv'
 repo_url: https://github.com/granny/DiscordsrvWiki
 repo_name: DiscordsrvWiki
 edit_uri: edit/master/docs/
@@ -43,6 +43,8 @@ theme:
   name: material
   favicon: images/logo.png
   logo: images/logo.png
+  features:
+    - navigation.expand
   palette:
     - scheme: slate
       primary: light blue
@@ -52,6 +54,8 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.highlight
   - pymdownx.superfences
+  - pymdownx.magiclink
+  - markdown.extensions.md_in_html
   - toc:
       permalink: 🔗
   - pymdownx.emoji:

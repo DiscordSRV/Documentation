@@ -1,7 +1,3 @@
-***
-**Note: 🏗 This page is under construction.**
-***  
-
 ### Table of Contents
 
 [`ConfigVersion`](config#ConfigVersion) | [`BotToken`](config#BotToken)[¹] | [`Channels`](config#Channels) | [`DiscordConsoleChannelId`](config#DiscordConsoleChannelId)[¹]  | [`DiscordInviteLink`](config#DiscordInviteLink)  
@@ -97,17 +93,17 @@
 > 	* ServerWatchdogTimeout
 > 	* ServerWatchdogMessageCount
 
-Clicking on `🔗` will lead you to the exact line it's located at in the config
+Clicking on ` :fontawesome-solid-external-link-alt:` will lead you to the exact line it's located at in the config
 
 ---
 
-### `ConfigVersion`[🔗](https://config.discordsrv.com/config/ConfigVersion)
+### `ConfigVersion`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/ConfigVersion)
 This is for the plugin to handle config updates. This is not something you should modify manually.  
 
-### `BotToken`[🔗](https://config.discordsrv.com/config/BotToken)[¹]
+### `BotToken`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/BotToken)[¹]
 This is the token that your bot will use to connect to DiscordSRV. You can find it at the developer page for your bot. https://discord.com/developers/applications/me  
 
-### `Channels`[🔗](https://config.discordsrv.com/config/Channels)
+### `Channels`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/Channels)
 This is a list of Minecraft text channels and their discord equivalent. The first channel in the list is used as the main channel. All additional messages like start/stop/join/quit/death/etc go to it.  
 All of DiscordSRV's messages will go to the first channel unless there's a channel for that type of messages defined:
 | channel name | channel defined |
@@ -126,15 +122,15 @@ The format is `{"Minecraft-Channel-Name": "Discord-Channel-ID"}`. If you have no
 
 If you have a plugin installed that supports additional chats, you can define more than one pair of linked channels. What you can't do is have multiple "Channels" with the same ID or Channel name.  
 Example:
-```yml
+```yaml
 Channels: {"global": "219559668236681216", "admin": "221419146028646401"}
 ```
 Supported chat channel plugins:
 Herochat, Legendchat, LunaChat, TownyChat, UltimateChat, VentureChat, and others.  
-#### `DiscordConsoleChannelId`[🔗](https://config.discordsrv.com/config/DiscordConsoleChannelId)[¹]  
+#### `DiscordConsoleChannelId`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordConsoleChannelId)[¹]  
 This is the ID of the channel in which the Minecraft server console will be forwarded. It is highly recommended that you do not use the same Discord channel for chat and console!  
 
-#### `DiscordInviteLink`[🔗](https://config.discordsrv.com/config/DiscordInviteLink)  
+#### `DiscordInviteLink`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordInviteLink)  
 Invitation link shown to players when using /discord ([DiscordCommandFormat](https://config.discordsrv.com/config/DiscordCommandFormat)) and on the message shown to unlinked players when linking is enforced.  
 
 --- 
@@ -142,26 +138,26 @@ Invitation link shown to players when using /discord ([DiscordCommandFormat](htt
 ### Debug:
 These options allow you to debug several parts of DiscordSRV. It is recommended that you do not touch these unless specifically needed.  
 
-#### `DebugLevel`[🔗](https://config.discordsrv.com/config/DebugLevel)
+#### `DebugLevel`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DebugLevel)
 0. Disables debug messages.
 1. Enables debug messages.
 2. Enables debug messages w/ Stack Trace.
-#### `DebugJDA`[🔗](https://config.discordsrv.com/config/DebugJDA)
+#### `DebugJDA`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DebugJDA)
 Enables/Disables debug messages for JDA.
-#### `DebugJDARestActionStacks`[🔗](https://config.discordsrv.com/config/DebugJDARestActionStacks)
+#### `DebugJDARestActionStacks`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DebugJDARestActionStacks)
 Enables/Disables the creation of exceptions for **every** JDA execution.
 
 ---
 
-### `CancelConsoleCommandIfLoggingFailed`[🔗](https://config.discordsrv.com/config/CancelConsoleCommandIfLoggingFailed)
+### `CancelConsoleCommandIfLoggingFailed`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/CancelConsoleCommandIfLoggingFailed)
 This option disables running a console command through discord if logging is unsuccessful.  
 
 
-### `ForcedLanguage`[🔗](https://config.discordsrv.com/config/ForcedLanguage)[¹]
+### `ForcedLanguage`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/ForcedLanguage)[¹]
 This option forcefully changes the language to the specified type.  
 Currently Supported Languages: `[EN,FR,DE,JA,KO,NL,ES,RU,ET,ZH]`  
 
-#### `AvatarUrl`[🔗](https://config.discordsrv.com/config/AvatarUrl)
+#### `AvatarUrl`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/AvatarUrl)
 The link to pull the player's skin from. 
 Placeholders: `{texture}, {username}, {uuid}, {uuid-nodashes}, {size}`
 
@@ -169,17 +165,17 @@ Placeholders: `{texture}, {username}, {uuid}, {uuid-nodashes}, {size}`
 
 ### Experiment_Jdbc:
 This allows the ability to connect to SQL databases.
-#### `Experiment_JdbcAccountLinkBackend`[🔗](https://config.discordsrv.com/config/Experiment_JdbcAccountLinkBackend)
+#### `Experiment_JdbcAccountLinkBackend`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/Experiment_JdbcAccountLinkBackend)
 ```elm
 jdbc:mysql://HOST:PORT/DATABASE?autoReconnect=true&useSSL=false
 ```
 
 Replace the capitalized words with the designated information.
-#### `Experiment_JdbcTablePrefix`[🔗](https://config.discordsrv.com/config/Experiment_JdbcTablePrefix)
+#### `Experiment_JdbcTablePrefix`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/Experiment_JdbcTablePrefix)
 The table prefix for the database.
-#### `Experiment_JdbcUsername`[🔗](https://config.discordsrv.com/config/Experiment_JdbcUsername)
+#### `Experiment_JdbcUsername`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/Experiment_JdbcUsername)
 The username for the database.
-#### `Experiment_JdbcPassword`[🔗](https://config.discordsrv.com/config/Experiment_JdbcPassword)
+#### `Experiment_JdbcPassword`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/Experiment_JdbcPassword)
 You get the gist.
 
 ---
@@ -187,17 +183,17 @@ You get the gist.
 ### Experiment_Webhook:
 Replaces minecraft messages with a webhook of the minecraft player's username and skin.  
 
-#### `Experiment_WebhookChatMessageDelivery`[🔗](https://config.discordsrv.com/config/Experiment_WebhookChatMessageDelivery)
+#### `Experiment_WebhookChatMessageDelivery`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/Experiment_WebhookChatMessageDelivery)
 Enable/disable the experimental webhook feature
-#### `Experiment_WebhookChatMessageUsernameFormat`[🔗](https://config.discordsrv.com/config/Experiment_WebhookChatMessageUsernameFormat)
+#### `Experiment_WebhookChatMessageUsernameFormat`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/Experiment_WebhookChatMessageUsernameFormat)
 The username format when the message delivery is set to webhooks.
 Placeholders: `%displayname%, %username%`
-#### `Experiment_WebhookChatMessageFormat`[🔗](https://config.discordsrv.com/config/Experiment_WebhookChatMessageFormat)
+#### `Experiment_WebhookChatMessageFormat`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/Experiment_WebhookChatMessageFormat)
 The message format when the message delivery is set to webhooks.
 Placeholders: `%message%`
-#### `Experiment_WebhookChatMessageUsernameFromDiscord`[🔗](https://config.discordsrv.com/config/Experiment_WebhookChatMessageUsernameFromDiscord)
+#### `Experiment_WebhookChatMessageUsernameFromDiscord`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/Experiment_WebhookChatMessageUsernameFromDiscord)
 Use the discord username instead of the minecraft username if the user is linked
-#### `Experiment_WebhookChatMessageAvatarFromDiscord`[🔗](https://config.discordsrv.com/config/Experiment_WebhookChatMessageUsernameFromDiscord)
+#### `Experiment_WebhookChatMessageAvatarFromDiscord`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/Experiment_WebhookChatMessageUsernameFromDiscord)
 Use the discord avatar instead of the minecraft player skin if the user is linked
 
 ---
@@ -207,48 +203,48 @@ Converts formatting between Discord and Minecraft (bold, italics, strikethrough,
 >`Minecraft Formatting` → "Output" ← `Discord Formatting`  
 `&lHello&r &oWorld&r` → "**Hello** _World_" ← `**Hello** *World*`  
 
-### `Experiment_MCDiscordReserializer_ToDiscord`[🔗](https://config.discordsrv.com/config/Experiment_MCDiscordReserializer_ToDiscord)
+### `Experiment_MCDiscordReserializer_ToDiscord`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/Experiment_MCDiscordReserializer_ToDiscord)
 Converts minecraft messages formatted with format codes into Discord format
 
-### `Experiment_MCDiscordReserializer_ToMinecraft`[🔗](https://config.discordsrv.com/config/Experiment_MCDiscordReserializer_ToMinecraft)
+### `Experiment_MCDiscordReserializer_ToMinecraft`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/Experiment_MCDiscordReserializer_ToMinecraft)
 Converts discord messages formatted with format codes into the Minecraft format
 
-### `Experiment_MCDiscordReserializer_InBroadcast`[🔗](https://config.discordsrv.com/config/Experiment_MCDiscordReserializer_InBroadcast)
+### `Experiment_MCDiscordReserializer_InBroadcast`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/Experiment_MCDiscordReserializer_InBroadcast)
 Converts minecraft messages formatted with format codes into Discord format
 
 ---
 
-### `PrintGuildsAndChannels`[🔗](https://config.discordsrv.com/config/PrintGuildsAndChannels)
+### `PrintGuildsAndChannels`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/PrintGuildsAndChannels)
 Prints Guilds and Channels in the console on startup.  
 
-### `ForceTLSv12`[🔗](https://config.discordsrv.com/config/ForceTLSv12)
+### `ForceTLSv12`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/ForceTLSv12)
 Force SSL to TLSv1.2
 
-### `NoopHostnameVerifier`[🔗](https://config.discordsrv.com/config/NoopHostnameVerifier)
+### `NoopHostnameVerifier`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/NoopHostnameVerifier)
 Returns valid hostname without making an attempt to actually validate it (insecure)
 
-### `ParseEmojisToNames`[🔗](https://config.discordsrv.com/config/ParseEmojisToNames)
+### `ParseEmojisToNames`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/ParseEmojisToNames)
 Parses emojis from unicode to aliases (😒 -> `:unamused:`) if enabled. Disable if you'd like to strip emojis.
 
-### `MaximumAttemptsForSystemDNSBeforeUsingFallbackDNS`[🔗](https://config.discordsrv.com/config/MaximumAttemptsForSystemDNSBeforeUsingFallbackDNS)
+### `MaximumAttemptsForSystemDNSBeforeUsingFallbackDNS`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/MaximumAttemptsForSystemDNSBeforeUsingFallbackDNS)
 Maximum amount of attempts using system DNS servers before using fallback DNS servers.
 
-### `DisabledPluginHooks`[🔗](https://config.discordsrv.com/config/DisabledPluginHooks)
+### `DisabledPluginHooks`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DisabledPluginHooks)
 It is highly recommended you don't mess with this option, as it can break the hooks for plugins.  
 * [Available Hooks](Home#Plugins-we-hook-into)
 * `LuckPerms-Contexts` - more info at [LPContext](LPContext)
 
-### `VentureChatBungee`[🔗](https://config.discordsrv.com/config/VentureChatBungee)  
+### `VentureChatBungee`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/VentureChatBungee)  
 Enables VentureChat's optional BungeeCord functionality. This will allow the use of only one bot for messaging across multiple servers. (messages are received from every server via VentureChat and passed to a single instance of DiscordSRV)  
 
 Make sure to install DiscordSRV on the server with the most consistent players online.  
 Keep in mind this requires at least 1 player to be online (on the server with DiscordSRV installed) for this feature to operate properly.  
 
-### `EnablePresenceInformation`[🔗](https://config.discordsrv.com/config/EnablePresenceInformation)
+### `EnablePresenceInformation`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/EnablePresenceInformation)
 Enables presence information which is required for some of our PlaceholderAPI placeholders. 
 Keep in mind this requires `Presence Intent` to be enabled from the Discord developer portal.
 
-### `DiscordGameStatus`[🔗](https://config.discordsrv.com/config/DiscordGameStatus)
+### `DiscordGameStatus`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordGameStatus)
 This is the status "Playing ..." shown for the bot in Discord.
 Preface the status with "playing", "watching", or "listening to" to set the activity type
 Can be a single, static value, or cycle through multiple different options.
@@ -268,16 +264,16 @@ Example using [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi
 DiscordGameStatus: ["watching %playerlist_online,normal,yes,amount% players", "playing with %playerlist_online,perm,no,amount,discordsrv.hidden% players"]
 ```
 
-### `StatusUpdateRateInMinutes`[🔗](https://config.discordsrv.com/config/StatusUpdateRateInMinutes)  
+### `StatusUpdateRateInMinutes`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/StatusUpdateRateInMinutes)  
 This sets the frequency of the status update. It can't be set below 2 minutes.
 
-### `TimestampFormat`[🔗](https://config.discordsrv.com/config/TimestampFormat)  
+### `TimestampFormat`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/TimestampFormat)  
 This sets the format of the `%time%` and `%date%` placeholders used in message formats, notification messages, the topic updater, and the server watchdog.
 
-### `DateFormat`[🔗](https://config.discordsrv.com/config/DateFormat)  
+### `DateFormat`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DateFormat)  
 This sets the format of the `%date%` placeholder used in the [`DiscordConsoleChannelUsageLog`](https://config.discordsrv.com/config/DiscordConsoleChannelUsageLog) option.
 
-### `Timezone`[🔗](https://config.discordsrv.com/config/Timezone)  
+### `Timezone`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/Timezone)  
 This sets the timezone used for the `DateFormat` and `TimestampFormat` options.
 
 Setting the timezone as `default` will set it to the system's timezone.
@@ -867,46 +863,46 @@ Etc/Zulu
 ---
 
 ### DiscordChatChannel:  
-#### `DiscordChatChannelDiscordToMinecraft`[🔗](https://config.discordsrv.com/config/DiscordChatChannelDiscordToMinecraft)
+#### `DiscordChatChannelDiscordToMinecraft`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelDiscordToMinecraft)
 Whether or not to send messages from Discord to Minecraft. Either true or false.  
 
-#### `DiscordChatChannelMinecraftToDiscord`[🔗](https://config.discordsrv.com/config/DiscordChatChannelMinecraftToDiscord)
+#### `DiscordChatChannelMinecraftToDiscord`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelMinecraftToDiscord)
 Whether or not to send messages from Minecraft to Discord. Either true or false.  
 
-#### `DiscordChatChannelTruncateLength`[🔗](https://config.discordsrv.com/config/DiscordChatChannelTruncateLength)
+#### `DiscordChatChannelTruncateLength`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelTruncateLength)
 Maximum length of messages from Discord to Minecraft, longer messages are going to be cut off and the discord message will be reacted with "💬 ❗".  
 
-#### `DiscordChatChannelTranslateMentions`[🔗](https://config.discordsrv.com/config/DiscordChatChannelTranslateMentions)
+#### `DiscordChatChannelTranslateMentions`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelTranslateMentions)
 Whether or not to translate mentions like @Person for Minecraft to Discord messages
 
-#### `DiscordChatChannelAllowedMentions`[🔗](https://config.discordsrv.com/config/DiscordChatChannelAllowedMentions)
+#### `DiscordChatChannelAllowedMentions`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelAllowedMentions)
 Types of mentions allowed in Minecraft to Discord messages.
 Available values: `[user, channel, emote, role, here, everyone]`
 
-#### `DiscordChatChannelPrefixRequiredToProcessMessage`[🔗](https://config.discordsrv.com/config/DiscordChatChannelPrefixRequiredToProcessMessage)
+#### `DiscordChatChannelPrefixRequiredToProcessMessage`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelPrefixRequiredToProcessMessage)
 The character(s) required at the start of a message for it to be sent from Minecraft to Discord. Set to "" to not require a prefix.  
 
-#### `DiscordChatChannelRolesAllowedToUseColorCodesInChat`[🔗](https://config.discordsrv.com/config/DiscordChatChannelRolesAllowedToUseColorCodesInChat)
+#### `DiscordChatChannelRolesAllowedToUseColorCodesInChat`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelRolesAllowedToUseColorCodesInChat)
 States which roles are enabled to use colors when sending messages from Discord to Minecraft. Set to [] to disable.  
 
-#### `DiscordChatChannelBroadcastDiscordMessagesToConsole`[🔗](https://config.discordsrv.com/config/DiscordChatChannelBroadcastDiscordMessagesToConsole)
+#### `DiscordChatChannelBroadcastDiscordMessagesToConsole`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelBroadcastDiscordMessagesToConsole)
 Whether or not to print messages sent to Discord in Minecraft console. 
 *This will broadcast into the console channel if the console channel is enabled.*  
 
-#### `DiscordChatChannelRequireLinkedAccount`[🔗](https://config.discordsrv.com/config/DiscordChatChannelRequireLinkedAccount)
+#### `DiscordChatChannelRequireLinkedAccount`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelRequireLinkedAccount)
 Whether or not to require players have their Discord account linked to their Minecraft to have their Discord messages sent to Minecraft
-#### `DiscordChatChannelBlockBots`[🔗](https://config.discordsrv.com/config/DiscordChatChannelBlockBots)
+#### `DiscordChatChannelBlockBots`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelBlockBots)
 Whether or not bots should be blocked from Discord -> MC chat
-#### `DiscordChatChannelBlockedIds`[🔗](https://config.discordsrv.com/config/DiscordChatChannelBlockedIds)
+#### `DiscordChatChannelBlockedIds`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelBlockedIds)
 IDs of discord users (or bots) that should not have their messages processed & sent to MC
-#### `DiscordChatChannelColorTranslations`[🔗](https://config.discordsrv.com/config/DiscordChatChannelColorTranslations)
+#### `DiscordChatChannelColorTranslations`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelColorTranslations)
 States which codes are replaced with which colors. Author needs to have at least one of the roles configured in `DiscordChatChannelRolesAllowedToUseColorCodesInChat` for this to work. Don't touch anything unless you know what you are doing.  
 
-#### `DiscordChatChannelRolesSelectionAsWhitelist`[🔗](https://config.discordsrv.com/config/DiscordChatChannelRolesSelectionAsWhitelist)
+#### `DiscordChatChannelRolesSelectionAsWhitelist`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelRolesSelectionAsWhitelist)
 If the following list should be treated as a whitelist (true) or a blacklist (false)
-#### `DiscordChatChannelRolesSelection`[🔗](https://config.discordsrv.com/config/DiscordChatChannelRolesSelection)
+#### `DiscordChatChannelRolesSelection`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelRolesSelection)
 List of roles that get filtered from all of a user's roles  
-#### `DiscordChatChannelRoleAliases`[🔗](https://config.discordsrv.com/config/DiscordChatChannelRoleAliases)
+#### `DiscordChatChannelRoleAliases`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelRoleAliases)
 List of role aliases that allows you to replace the role name displayed in minecraft if the role in discord uses characters not supported by minecraft  
 
 ---
@@ -914,28 +910,28 @@ List of role aliases that allows you to replace the role name displayed in minec
 ### DiscordConsoleChannel:
 The console channel is the text channel that receives messages which are then run as server commands by the console. This includes having the server's console being forwarded line by line.  
 
-#### `DiscordConsoleChannelLogRefreshRateInSeconds`[🔗](https://config.discordsrv.com/config/DiscordConsoleChannelLogRefreshRateInSeconds)
+#### `DiscordConsoleChannelLogRefreshRateInSeconds`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordConsoleChannelLogRefreshRateInSeconds)
 Rate in seconds between new lines being sent. Unless you want really fast log, leave it at default. If you change it below 1.5 you can get ratelimited, so the bot is blocked from sending messages for a short time.  
 
-#### `DiscordConsoleChannelUsageLog`[🔗](https://config.discordsrv.com/config/DiscordConsoleChannelUsageLog)
+#### `DiscordConsoleChannelUsageLog`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordConsoleChannelUsageLog)
 The file that logs all commands being executed by users in the console channel, and only those commands. Commands executed either in Minecraft or using the server console directly are not logged.  
 
-#### `DiscordConsoleChannelBlacklistActsAsWhitelist`[🔗](https://config.discordsrv.com/config/DiscordConsoleChannelBlacklistActsAsWhitelist)
+#### `DiscordConsoleChannelBlacklistActsAsWhitelist`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordConsoleChannelBlacklistActsAsWhitelist)
 If the command blacklist should be interpreted as whitelist, so that only the commands on the list can be executed using the console channel. Either true (whitelist mode) or false (blacklist mode).  
 
-#### `DiscordConsoleChannelBlacklistedCommands`[🔗](https://config.discordsrv.com/config/DiscordConsoleChannelBlacklistedCommands)
+#### `DiscordConsoleChannelBlacklistedCommands`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordConsoleChannelBlacklistedCommands)
 The blacklisted (or whitelisted) commands for the console channel. Include commands with huge outputs (Discord messages can only be 2000 characters long), commands bypassing the security system, etc. Replace with [] to not blacklist any commands.  
 
-#### `DiscordConsoleChannelFilters`[🔗](https://config.discordsrv.com/config/DiscordConsoleChannelFilters)
+#### `DiscordConsoleChannelFilters`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordConsoleChannelFilters)
 The Regex filter to be applied to messages from the console sent to Discord. If you are unfamiliar with Regex, it is likely that you don't need this option.  
 
 Some examples can be found in the FAQ: [Block special console-output from appearing in console-channel](FAQ#block-special-console-output-from-appearing-in-console-channel)  
 
-#### `DiscordConsoleChannelLevels`[🔗](https://config.discordsrv.com/config/DiscordConsoleChannelLevels)
+#### `DiscordConsoleChannelLevels`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordConsoleChannelLevels)
 The different debug levels that are sent to the console.
 Options: `["debug", "info", "warn", "error"]`  
 
-#### `DiscordConsoleChannelAllowPluginUpload`[🔗](https://config.discordsrv.com/config/DiscordConsoleChannelAllowPluginUpload)
+#### `DiscordConsoleChannelAllowPluginUpload`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordConsoleChannelAllowPluginUpload)
 Enable for the ability to upload plugins through the console channel.
 
 ---
@@ -943,68 +939,68 @@ Enable for the ability to upload plugins through the console channel.
 ### DiscordChatChannelConsoleCommand:
 These options control the ability to say "!c kick Notch", or whatever the prefix is to run a command, as the console, from a registered chat channel.  
 
-#### `DiscordChatChannelConsoleCommandEnabled`[🔗](https://config.discordsrv.com/config/DiscordChatChannelConsoleCommandEnabled)
+#### `DiscordChatChannelConsoleCommandEnabled`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelConsoleCommandEnabled)
 If this feature is enabled at all. Set to false to disable.  
 
-#### `DiscordChatChannelConsoleCommandNotifyErrors`[🔗](https://config.discordsrv.com/config/DiscordChatChannelConsoleCommandNotifyErrors)
+#### `DiscordChatChannelConsoleCommandNotifyErrors`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelConsoleCommandNotifyErrors)
 Whether or not to send a user who tries to run a command without permission a message that they don't have permission.  
 
-#### `DiscordChatChannelConsoleCommandPrefix`[🔗](https://config.discordsrv.com/config/DiscordChatChannelConsoleCommandPrefix)
+#### `DiscordChatChannelConsoleCommandPrefix`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelConsoleCommandPrefix)
 Prefix to use for console commands in the chat channel.  
 
-#### `DiscordChatChannelConsoleCommandRolesAllowed`[🔗](https://config.discordsrv.com/config/DiscordChatChannelConsoleCommandRolesAllowed)
+#### `DiscordChatChannelConsoleCommandRolesAllowed`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelConsoleCommandRolesAllowed)
 List of roles for which this feature is enabled. If you don't want anyone to be able to use it, set DiscordChatChannelConsoleCommandEnabled to false.  
 
-#### `DiscordChatChannelConsoleCommandWhitelist`[🔗](https://config.discordsrv.com/config/DiscordChatChannelConsoleCommandWhitelist)
+#### `DiscordChatChannelConsoleCommandWhitelist`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelConsoleCommandWhitelist)
 List of commands that can be run using the prefix set in DiscordChatChannelConsoleCommandPrefix and the command, e.g. `!c tps`  
 
-#### `DiscordChatChannelConsoleCommandWhitelistBypassRoles`[🔗](https://config.discordsrv.com/config/DiscordChatChannelConsoleCommandWhitelistBypassRoles)
+#### `DiscordChatChannelConsoleCommandWhitelistBypassRoles`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelConsoleCommandWhitelistBypassRoles)
 List of roles which can bypass the whitelist, e.g. execute any command. Set to [] to disable.  
 
-#### `DiscordChatChannelConsoleCommandWhitelistActsAsBlacklist`[🔗](https://config.discordsrv.com/config/DiscordChatChannelConsoleCommandWhitelistActsAsBlacklist)
+#### `DiscordChatChannelConsoleCommandWhitelistActsAsBlacklist`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelConsoleCommandWhitelistActsAsBlacklist)
 Whether or not to use the whitelist in blacklist mode, e.g. all commands except for listed ones can be run.  
 
-#### `DiscordChatChannelConsoleCommandExpiration`[🔗](https://config.discordsrv.com/config/DiscordChatChannelConsoleCommandExpiration)
+#### `DiscordChatChannelConsoleCommandExpiration`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelConsoleCommandExpiration)
 Time in seconds until the response to a command is automatically removed. Set to 0 to disable.  
 
-#### `DiscordChatChannelConsoleCommandExpirationDeleteRequest`[🔗](https://config.discordsrv.com/config/DiscordChatChannelConsoleCommandExpirationDeleteRequest)
+#### `DiscordChatChannelConsoleCommandExpirationDeleteRequest`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelConsoleCommandExpirationDeleteRequest)
 Whether or not to also remove the original, user-sent command as well.  
 
 ---
 
 ### DiscordChatChannelListCommand:  
-#### `DiscordChatChannelListCommandEnabled`[🔗](https://config.discordsrv.com/config/DiscordChatChannelListCommandEnabled)
+#### `DiscordChatChannelListCommandEnabled`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelListCommandEnabled)
 Whether or not this command is enabled.
-#### `DiscordChatChannelListCommandMessage`[🔗](https://config.discordsrv.com/config/DiscordChatChannelListCommandMessage)
+#### `DiscordChatChannelListCommandMessage`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelListCommandMessage)
 The required message for the playerlist to be sent.  
 
-#### `DiscordChatChannelListCommandExpiration`[🔗](https://config.discordsrv.com/config/DiscordChatChannelListCommandExpiration)
+#### `DiscordChatChannelListCommandExpiration`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelListCommandExpiration)
 Time in seconds until the playerlist-message is going to be deleted again. Set to 0 to disable.
-#### `DiscordChatChannelListCommandExpirationDeleteRequest`[🔗](https://config.discordsrv.com/config/DiscordChatChannelListCommandExpirationDeleteRequest)
+#### `DiscordChatChannelListCommandExpirationDeleteRequest`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelListCommandExpirationDeleteRequest)
 hether or not the requesting message should be deleted as well.
 
 ---
 
 ### DiscordChatChannel:  
 
-#### `DiscordChatChannelGameFilters`[🔗](https://config.discordsrv.com/config/DiscordChatChannelGameFilters)
+#### `DiscordChatChannelGameFilters`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelGameFilters)
 Filter what gets sent from Minecraft -> Discord using Regex expressions  
 
-#### `DiscordChatChannelDiscordFilters`[🔗](https://config.discordsrv.com/config/DiscordChatChannelDiscordFilters)
+#### `DiscordChatChannelDiscordFilters`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordChatChannelDiscordFilters)
 Filter what gets sent from Discord -> Minecraft using Regex expression  
 
 ---
 
 ### ChannelTopicUpdater:  
-#### `ChannelTopicUpdaterChannelTopicsAtShutdownEnabled`[🔗](https://config.discordsrv.com/config/ChannelTopicUpdaterChannelTopicsAtShutdownEnabled)
+#### `ChannelTopicUpdaterChannelTopicsAtShutdownEnabled`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/ChannelTopicUpdaterChannelTopicsAtShutdownEnabled)
 whether or not the channel topics should be changed at server shutdown. set to false to disable  
 
-#### `ChannelTopicUpdaterRateInMinutes`[🔗](https://config.discordsrv.com/config/ChannelTopicUpdaterRateInMinutes)
+#### `ChannelTopicUpdaterRateInMinutes`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/ChannelTopicUpdaterRateInMinutes)
 amount of minutes between automatically updating the channel topics with fresh information. Minimum is 10 minutes because of a recent change in Discord's rate limit. Originally the [limit was 5 which was suggested by a Discord Developer](../issues/238).  
 
 ---
 
-### `DiscordCannedResponses`[🔗](https://config.discordsrv.com/config/DiscordCannedResponses)
+### `DiscordCannedResponses`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/DiscordCannedResponses)
 These are commands that will be sent as a reply in the channel it was ran in. 
 Syntax is `{"TRIGGER": "RESPONSE", "TRIGGER": "RESPONSE", ...}` If you do not want any canned responses, set this to just `{}`.
 PlaceholderAPI placeholders are supported for the values  
@@ -1012,25 +1008,25 @@ PlaceholderAPI placeholders are supported for the values
 ---
 
 ### MinecraftDiscordAccount:  
-#### `MinecraftDiscordAccountLinkedConsoleCommands`[🔗](https://config.discordsrv.com/config/MinecraftDiscordAccountLinkedConsoleCommands)
+#### `MinecraftDiscordAccountLinkedConsoleCommands`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/MinecraftDiscordAccountLinkedConsoleCommands)
 commands to run when an account is linked
-#### `MinecraftDiscordAccountUnlinkedConsoleCommands`[🔗](https://config.discordsrv.com/config/MinecraftDiscordAccountUnlinkedConsoleCommands)
+#### `MinecraftDiscordAccountUnlinkedConsoleCommands`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/MinecraftDiscordAccountUnlinkedConsoleCommands)
 commands to run when an account is unlinked  
 
-#### `MinecraftDiscordAccountLinkedRoleNameToAddUserTo`[🔗](https://config.discordsrv.com/config/MinecraftDiscordAccountLinkedRoleNameToAddUserTo)
+#### `MinecraftDiscordAccountLinkedRoleNameToAddUserTo`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/MinecraftDiscordAccountLinkedRoleNameToAddUserTo)
 the name of a discord role to add a discord user to when they link their account  
 
-#### `MinecraftDiscordAccountLinkedAllowRelinkBySendingANewCode`[🔗](https://config.discordsrv.com/config/MinecraftDiscordAccountLinkedAllowRelinkBySendingANewCode)
+#### `MinecraftDiscordAccountLinkedAllowRelinkBySendingANewCode`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/MinecraftDiscordAccountLinkedAllowRelinkBySendingANewCode)
 allows sending a new code to the bot to unlink and relink with the new code  
 
 ---
 
 ### ServerWatchdog:  
-#### `ServerWatchdogEnabled`[🔗](https://config.discordsrv.com/config/ServerWatchdogEnabled)
+#### `ServerWatchdogEnabled`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/ServerWatchdogEnabled)
 whether or not the watchdog is enabled at all  
-#### `ServerWatchdogTimeout`[🔗](https://config.discordsrv.com/config/ServerWatchdogTimeout)
+#### `ServerWatchdogTimeout`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/ServerWatchdogTimeout)
 time in seconds that need to elapse before the watchdog takes action (Spigot's crash detection uses 60 for this) the minimum for this value is 10  
-#### `ServerWatchdogMessageCount`[🔗](https://config.discordsrv.com/config/ServerWatchdogMessageCount)
+#### `ServerWatchdogMessageCount`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/config/ServerWatchdogMessageCount)
 the amount of times ServerWatchdogMessage is sent. useful if you really want to make sure you know something's up  
 
 ---

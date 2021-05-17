@@ -1,7 +1,3 @@
-***
-**Note: 🏗 This page is under construction.**
-***  
-
 ### Table of Contents
 
 > * [Basic Installation](Installation#Basic-Installation)
@@ -29,7 +25,7 @@ Install the plugin by putting the DiscordSRV.jar in the `plugins` folder and res
 > ![d](images/enable_server_members_intent.png)
 
 Paste it into the `config.yml`
-```yml
+```yaml
 # config.yml Line 8
 BotToken: "MjE5NTE5OTk0MDUxMDM1MTQ3.CqTCYw.SFAbKtfK3ydTy1jx2-fTHUJqsPo"
 ```  
@@ -51,12 +47,12 @@ Right click the Discord-channel you want to use for chat between Discord and Min
 
 Open the config.yml file again.  
 Search for the option `Channels` and replace `000000000000000000` with the copied channel ID.
-```yml
+```yaml
 # config.yml Line 14
 Channels: {"global": "219559668236681216"}
 ```
 _If you use a chat plugin with channel support like HeroChat, LegendChat, LunaChat, TownyChat or VentureChat, you can set up more channels here with their linked Discord channels. For example, if you want to add an "admin" channel it would look like this:_
-```yml
+```yaml
 # config.yml Line 14
 Channels: {"global": "219559668236681216", "admin": "221419146028646401"}
 ```
@@ -64,7 +60,7 @@ _Keep in mind that "admin" indicates an ingame channel, not a Discord channel na
 ***  
 **Optionally:**
 Copy the Channel ID of a second Discord-channel for use as console-channel and paste it into `config.yml`
-```yml
+```yaml
 # config.yml Line 17
 DiscordConsoleChannelId: "219559838890459137"
 ```  
@@ -98,7 +94,7 @@ __Channel Permissions__
 ![Add Bot-rule to bot](images/add_role.png)  
 
 **You're done with installing DiscordSRV!**  
-Now run through all the config's options in [`config.yml`](../blob/master/src/main/resources/config/en.yml). You'll be surprised with how many features this plugin has.
+Now run through all the config's options in [`config.yml`](https://config.discordsrv.com/config/_). You'll be surprised with how many features this plugin has.
 
 
 ## Group <-> Role Sync
@@ -110,7 +106,7 @@ Now run through all the config's options in [`config.yml`](../blob/master/src/ma
 1. Get the group name(s) for the minecraft group(s) you want to sync
 	- Keep in mind that it's case-sensitive  
 
-```yml
+```yaml
 # Example from generic permissions plugin
 groups:
   MinecraftGroup1:
@@ -131,7 +127,7 @@ discord guild roles: [R:DiscordRole1(680679725206994947), R:DiscordRole2(6806797
 ```  
 
 Now that you have both the Role ID(s) and the Minecraft Group Name(s), add them into `GroupRoleSynchronizationGroupsAndRolesToSync` located inside the `synchronization.yml` config file.
-```yml
+```yaml
 # synchronization.yml Line 27
  GroupRoleSynchronizationGroupsAndRolesToSync: {"MinecraftGroup1": "680679725206994947", "MinecraftGroup2": "680679790025506861"}
 ```
@@ -143,7 +139,7 @@ Now that you have both the Role ID(s) and the Minecraft Group Name(s), add them 
 ***
 
 Make sure `Voice enabled` is set to `true` in the `voice.yml` config
-```yml
+```yaml
 # voice.yml Line 8
 Voice enabled: true
 ```
@@ -157,7 +153,7 @@ Right click on the Category and select `Copy ID`
 
 Open the voice.yml file.  
 Search for the option `Voice category` and replace `000000000000000000` with the copied Category ID.
-```yml
+```yaml
 # voice.yml Line 13
 Voice category: 000000000000000000
 ```
@@ -170,7 +166,7 @@ Create a channel underneath that category; This will be your "Lobby" voice chann
 
 Open the voice.yml file again.  
 Search for the option `Lobby channel` and replace `000000000000000000` with the copied Channel ID.
-```yml
+```yaml
 # voice.yml Line 17
 Lobby channel: 000000000000000000
 ```
@@ -186,7 +182,7 @@ Lobby channel: 000000000000000000
 ***
 
 Make sure `Enabled` is set to `true` in the `linking.yml` config
-```yml
+```yaml
 # linking.yml Line 2
 Enabled: true
 ```

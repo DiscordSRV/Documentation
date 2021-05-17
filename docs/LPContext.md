@@ -1,7 +1,3 @@
-***
-**Note: 🏗 This page is under construction.**
-***  
-
 Allows permissions/groups/prefixes/etc to be assigned easily based on certain DiscordSRV states.
 
 More information about contexts can be found here: https://github.com/lucko/LuckPerms/wiki/Context

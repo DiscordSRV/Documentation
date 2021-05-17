@@ -1,26 +1,30 @@
 ![DiscordSRV](https://lol.scarsz.me/AiKvTS/Logo-filled-stroke.png)  
 
-***  
-**Note: 🏗 This wiki is under construction.**  
-**If any mistakes are found, if something isn't clear, or if you have suggestions for improvements, please ping `@granny` in the `#development` channel of our [Discord](https://discordsrv.com/discord) server.**  
-***
+<div markdown="1" id="center">
 
-# DiscordSRV
 **The most powerful, configurable, open-source Discord bridge plugin out there.**  
-[![Discord-icon](https://scarsz.me/di.png) DiscordSRV on Discord](https://discordsrv.com/discord) - come here for quick support  
-[![SpigotMC-icon](https://www.spigotmc.org/favicon.ico) DiscordSRV on SpigotMC](https://www.spigotmc.org/resources/discordsrv.18494/) - project page on spigotmc.org  
-[![BukkitDev-icon](https://bukkit.org/favicon.ico) DiscordSRV on BukkitDev](https://dev.bukkit.org/projects/discordsrv) - project page on dev.bukkit.org  
-[![Nexus-icon](https://nexus.scarsz.me/favicon.png) DiscordSRV's Latest Release](https://get.discordsrv.com/) - Direct Download for the latest release  
-[![Nexus-icon](https://nexus.scarsz.me/favicon.png) DiscordSRV's Latest Snapshot](https://snapshot.discordsrv.com/) - Direct Download for the latest snapshot  
-The latest version of DiscordSRV supports every Minecraft version since 1.7.9  
+
+[:material-discord: Discord](https://discordsrv.com/discord){ .md-button }
+[:fontawesome-solid-faucet: SpigotMC](https://www.spigotmc.org/resources/discordsrv.18494/){ .md-button }
+[:material-bucket-outline: BukkitDev](https://dev.bukkit.org/projects/discordsrv){ .md-button }
+
+[:material-cloud-upload: Latest Release](https://get.discordsrv.com/){ .md-button }
+[:material-cloud-tags: Latest Snapshot](https://snapshot.discordsrv.com/){ .md-button }
+
+**Supports All Minecraft Versions from 1.7.9 to 1.16.5**  
+
 _We only give support for the latest release/dev builds; please update before asking for help_
+
+</div>
+
 ## Features
-- Highly customizable
 - Bridge between Minecraft and Discord chats
 - Forward your Minecraft Console to a Discord text channel  
-- Voice Proximity through the Discord Voice Chat ([`voice.yml`](../blob/master/src/main/resources/voice/en.yml))  
-- Require linking accounts (or certain role/s) to play ([`linking.yml`](../blob/master/src/main/resources/linking/en.yml))  
+- Broadcast alerts based on certain events
+- Voice Proximity through the Discord Voice Chat ([`voice.yml`](voice))  
+- Require linking accounts (or certain role/s) to play ([`linking.yml`](linking))  
 - Support for popular chat plugins (listed below)  
+- Highly customizable
 
 ### Plugins we hook into:  
 * Chat

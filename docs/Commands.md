@@ -1,26 +1,6 @@
-***
-**Note: 🏗 This page is under construction.**
-***  
-<table>
-    <thead>
-        <tr>
-            <th>Command</th>
-            <th>Permission</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tr>
-        <td>
-            <div><code>/discord</code><br><code>/discordsrv</code></div>
-        </td>
-        <td>
-            <a href="../wiki/Permissions#discordsrvdiscord"><code>discordsrv.discord</code></a> (true)
-        </td>
-        <td>
-            Shows whatever is defined for <a href="https://config.discordsrv.com/messages/DiscordCommandFormat">DiscordCommandFormat</a> in the <a href="../blob/master/src/main/resources/messages/en.yml"><code>messages.yml</code></a> file
-        </td>
-    </tr>
-</table>
+| Command | Permission | Description |
+| ---- | ---- | ---- |
+| `/discord`<br>`/discordsrv` | [`discordsrv.discord`](../Permissions#discordsrvdiscord) (true) | Shows whatever is defined for [DiscordCommandFormat](https://config.discordsrv.com/messages/DiscordCommandFormat) in the [`messages.yml`](https://config.discordsrv.com/messages/_) file
 
 **The following tables are arguments to the above command.**
 
@@ -39,7 +19,7 @@
             <div><h4><code>help</code><hr><code>?</code></h4></div>
         </td>
         <td>
-            <a href="../wiki/Permissions#discordsrvhelp"><code>discordsrv.help</code></a> (true)
+            <a href="../Permissions#discordsrvhelp"><code>discordsrv.help</code></a> (true)
         </td>
         <td>
             Shows a list of all the options you have permissions for.
@@ -50,7 +30,7 @@
             <div><h4><code>linked</code></h4></div>
         </td>
         <td>
-            <a href="../wiki/Permissions#discordsrvlinked"><code>discordsrv.linked</code></a> (true)
+            <a href="../Permissions#discordsrvlinked"><code>discordsrv.linked</code></a> (true)
         </td>
         <td>
             Shows if your Minecraft account is linked with a discord account.
@@ -61,7 +41,7 @@
             <div><h4><code>link</code></h4></div>
         </td>
         <td>
-            <a href="../wiki/Permissions#discordsrvlink"><code>discordsrv.link</code></a> (true)
+            <a href="../Permissions#discordsrvlink"><code>discordsrv.link</code></a> (true)
         </td>
         <td>
             Sends you instructions to link your Minecraft account with your Discord account.
@@ -72,7 +52,7 @@
             <div><h4><code>unlink</code><hr><code>clearlinked</code></h4></div>
         </td>
         <td>
-            <a href="../wiki/Permissions#discordsrvunlink"><code>discordsrv.unlink</code></a> (op)
+            <a href="../Permissions#discordsrvunlink"><code>discordsrv.unlink</code></a> (op)
         </td>
         <td>
             Unlink your Discord account from your Minecraft account.
@@ -99,7 +79,7 @@
             <code>&lt;#ChannelID/#ChannelName> &lt;Message></code>
         </td>
         <td>
-            <a href="../wiki/Permissions#discordsrvbcast"><code>discordsrv.bcast</code></a> (op)
+            <a href="../Permissions#discordsrvbcast"><code>discordsrv.bcast</code></a> (op)
         </td>
         <td>
             Broadcasts a message to the &lt;#ChannelID/#ChannelName> Discord channel. (Main channel by default)
@@ -113,7 +93,7 @@
             <code>&lt;Name/UUID/DiscordID></code>
         </td>
         <td>
-            <a href="../wiki/Permissions#discordsrvlinkedothers"><code>discordsrv.linked.others</code></a> (op)
+            <a href="../Permissions#discordsrvlinkedothers"><code>discordsrv.linked.others</code></a> (op)
         </td>
         <td>
             Shows if the players Minecraft account is linked with a Discord account.
@@ -127,7 +107,7 @@
             <code>&lt;Name/UUID> &lt;DiscordID/DiscordTag></code>
         </td>
         <td>
-            <a href="../wiki/Permissions#discordsrvlinkothers"><code>discordsrv.link.others</code></a> (op)
+            <a href="../Permissions#discordsrvlinkothers"><code>discordsrv.link.others</code></a> (op)
         </td>
         <td>
             Link a player's Minecraft account to a Discord account.
@@ -141,7 +121,7 @@
             <code>&lt;Name/UUID/DiscordID></code>
         </td>
         <td>
-            <a href="../wiki/Permissions#discordsrvunlinkothers"><code>discordsrv.unlink.others</code></a> (op)
+            <a href="../Permissions#discordsrvunlinkothers"><code>discordsrv.unlink.others</code></a> (op)
         </td>
         <td>
             Unlink a player's Minecraft account from their Discord account.
@@ -155,7 +135,7 @@
             <!-- comment -->
         </td>
         <td>
-            <a href="../wiki/Permissions#discordsrvdebug"><code>discordsrv.debug</code></a> (op)
+            <a href="../Permissions#discordsrvdebug"><code>discordsrv.debug</code></a> (op)
         </td>
         <td>
             Sends information used for debugging to <a href="https://bin.scarsz.me">Scarsz' encrypted bin</a> and returns a debug link. If you need help with DiscordSRV, visit our <a href="https://discordsrv.com/discord">Discord server</a> and send us the link in the <code>#support</code> channel with a description of your problem.
@@ -169,7 +149,7 @@
             <!-- comment -->
         </td>
         <td>
-            <a href="../wiki/Permissions#discordsrvresync"><code>discordsrv.resync</code></a> (op)
+            <a href="../Permissions#discordsrvresync"><code>discordsrv.resync</code></a> (op)
         </td>
         <td>
             Resynchronizes all groups & roles. For test purposes only.
@@ -183,7 +163,7 @@
             <!-- comment -->
         </td>
         <td>
-            <a href="../wiki/Permissions#discordsrvreload"><code>discordsrv.reload</code></a> (op)
+            <a href="../Permissions#discordsrvreload"><code>discordsrv.reload</code></a> (op)
         </td>
         <td>
             Reloads the plugin. (Some changes require a server restart.)
@@ -197,7 +177,7 @@
             <!-- comment -->
         </td>
         <td>
-            <a href="../wiki/Permissions#discordsrvresync"><code>discordsrv.resync</code></a> (op)
+            <a href="../Permissions#discordsrvresync"><code>discordsrv.resync</code></a> (op)
         </td>
         <td>
             Triggers group synchronization (requires synchronization.yml)
@@ -221,7 +201,7 @@
             <div><h4><code>subscribe</code></h4></div>
         </td>
         <td>
-            <a href="../wiki/Permissions#discordsrvsubscribe"><code>discordsrv.subscribe</code></a> (true)
+            <a href="../Permissions#discordsrvsubscribe"><code>discordsrv.subscribe</code></a> (true)
         </td>
         <td>
             Enables receiving messages from Discord for yourself. <b>(removed since v15.3)</b>
@@ -234,7 +214,7 @@
             <div><h4><code>unsubscribe</code></h4></div>
         </td>
         <td>
-            <a href="../wiki/Permissions#discordsrvunsubscribe"><code>discordsrv.unsubscribe</code></a> (true)
+            <a href="../Permissions#discordsrvunsubscribe"><code>discordsrv.unsubscribe</code></a> (true)
         </td>
         <td>
             Disables receiving messages from Discord for yourself. <b>(removed since v15.3)</b>
@@ -245,7 +225,7 @@
             <div><h4><code>toggle</code></h4></div>
         </td>
         <td>
-            <a href="../wiki/Permissions#discordsrvtoggle"><code>discordsrv.toggle</code></a> (true)
+            <a href="../Permissions#discordsrvtoggle"><code>discordsrv.toggle</code></a> (true)
         </td>
         <td>
             Toggles receiving messages from Discord for yourself. <b>(removed since v15.3)</b>
