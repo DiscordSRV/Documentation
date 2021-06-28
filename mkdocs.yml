@@ -27,7 +27,7 @@ nav:
     - 'Ask for support': 'https://discordsrv.com/discord'
   - 'Development':  
     - 'Contributing guidelines': 'https://github.com/DiscordSRV/DiscordSRV/blob/master/CONTRIBUTING.md'
-    - 'Using the DiscordSRV-API': '#developers'
+    - 'Using the DiscordSRV-API': '/#developers'
     - 'Latest Release': 'https://get.discordsrv.com/'
     - 'Latest Snapshot': 'https://snapshot.discordsrv.com/'
   - 'Connections':
@@ -52,6 +52,7 @@ theme:
 markdown_extensions:
   - attr_list
   - pymdownx.details
+  - pymdownx.tabbed
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.magiclink

@@ -81,29 +81,31 @@ Visit the [Installation](Installation) page for clear and in-depth instructions 
 First off, thank you from the bottom of my heart for the pizza. If you would like to donate, go to https://scarsz.me/donate. $10 is the suggested amount but you can donate however much you would like- anything is a massive thank you from me. In the note put your Discord username and if you're in DiscordSRV's server you'll be set as a donator and you'll receive some neat perks in the future. If you donated without the note, send me a PM on Discord and I'll manually check it.  
 ## Developers
 If you want to interface DiscordSRV with your plugin, you can do so by adding the Maven dependency or adding the plugin jar (DiscordSRV version 1.18.0+) to your project. For an example of this, see [DiscordSRV-ApiTest](/DiscordSRV/DiscordSRV-ApiTest). Be sure to add "DiscordSRV" to your plugin's `plugin.yml` depends/softdepends list.  
-### Maven
-```
-<repository>
-    <id>Scarsz-Nexus</id>
-    <url>https://nexus.scarsz.me/content/groups/public/</url>
-</repository>  
-...  
-<dependency>
-    <groupId>com.discordsrv</groupId>
-    <artifactId>discordsrv</artifactId>
-    <version>1.22.0</version>
-    <scope>provided</scope>
-</dependency>
-```  
-### Gradle
-```
-repositories {
-    maven { url 'https://nexus.scarsz.me/content/groups/public/' }
-}  
-dependencies {
-    compileOnly 'com.discordsrv:discordsrv:1.22.0'
-}
-```  
+
+=== "Maven"
+    ```xml
+    <repository>
+        <id>Scarsz-Nexus</id>
+        <url>https://nexus.scarsz.me/content/groups/public/</url>
+    </repository>  
+    ...  
+    <dependency>
+        <groupId>com.discordsrv</groupId>
+        <artifactId>discordsrv</artifactId>
+        <version>1.22.0</version>
+        <scope>provided</scope>
+    </dependency>
+    ```  
+=== "Gradle"
+    ```js
+    repositories {
+        maven { url 'https://nexus.scarsz.me/content/groups/public/' }
+    }  
+    dependencies {
+        compileOnly 'com.discordsrv:discordsrv:1.22.0'
+    }
+    ```
+
 ## Data usage
 ### Data collection
 Anything and everything shown at https://bstats.org/plugin/bukkit/DiscordSRV will be visible to the public with your server included in the statistics. This is only for statistics; no private information of your server is sent. If you don't want your server included in this, specify the config option `MetricsDisabled` and set it to `true` in the config.yml file.  
