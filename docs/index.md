@@ -13,7 +13,7 @@
 
 **Supports All Minecraft Versions from 1.7.9 to 1.16.5**  
 
-_We only give support for the latest release/dev builds; please update before asking for help_
+_**We only give support for the latest release/dev builds; please update before asking for help**_
 
 </div>
 
