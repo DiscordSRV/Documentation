@@ -7,13 +7,14 @@ on:
       - '**.md'
       - 'docs/**'
       - 'mkdocs.yml'
+      - 'requirements.txt'
 
 jobs:
   build:
     name: Deploy docs
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout main
+      - name: Checkout master
         uses: actions/checkout@v1
 
       - name: Deploy docs
