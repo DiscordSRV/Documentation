@@ -3,11 +3,11 @@
 Require players to link their account to Discord before letting them play and optionally require a subscriber role.
 
 ## Screenshots
-!!! info "Kick Message :camera:"
-    ![](./images/javaw_12rAo3Y4RJ.png)
 
-!!! info "Failed to find subscriber role Message :camera:"
-    ![](./images/javaw_uJSdOF2OAa.png)
+=== "Kick Message :camera:"
+    ![Must link account to play](./images/javaw_12rAo3Y4RJ.png)
+=== "Failed to find subscriber role Message :camera:"
+    ![Must be subscribed to play](./images/javaw_uJSdOF2OAa.png)
 
 ---
 
