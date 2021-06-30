@@ -1,65 +1,49 @@
-### Table of Contents
+# [synchronization.yml](https://config.discordsrv.com/synchronization/_)
 
-> * [NicknameSynchronization](#NicknameSynchronization)
-> 	* NicknameSynchronizationEnabled
-> 	* NicknameSynchronizationCycleTime
-> 	* NicknameSynchronizationFormat
-> * [GroupRoleSynchronization](#GroupRoleSynchronization)
-> 	* GroupRoleSynchronizationGroupsAndRolesToSync
-> 	* GroupRoleSynchronizationMinecraftIsAuthoritative
-> 	* GroupRoleSynchronizationOneWay
-> 	* GroupRoleSynchronizationEnableDenyPermission
-> 	* GroupRoleSynchronizationPrimaryGroupOnly
-> 	* GroupRoleSynchronizationOnLink
-> 	* GroupRoleSynchronizationCycleTime
-> 	* GroupRoleSynchronizationCycleCompletely
-> * [BanSynchronization](#BanSynchronization)
-> 	* BanSynchronizationDiscordToMinecraft
-> 	* BanSynchronizationDiscordToMinecraftReason
-> 	* BanSynchronizationMinecraftToDiscord
-
-### NicknameSynchronization:
-#### `NicknameSynchronizationEnabled`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/synchronization/NicknameSynchronizationEnabled)
+### NicknameSynchronization...
+#### [`Enabled`](https://config.discordsrv.com/synchronization/NicknameSynchronizationEnabled) {id="NicknameSynchronizationEnabled"}
 whether or not to set the discord user's nickname to the nickname format automatically
 
-#### `NicknameSynchronizationCycleTime`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/synchronization/NicknameSynchronizationCycleTime)
+#### [`CycleTime`](https://config.discordsrv.com/synchronization/NicknameSynchronizationCycleTime) {id="NicknameSynchronizationCycleTime"}
 amount of minutes between repeatedly triggering synchronization for all online players
-#### `NicknameSynchronizationFormat`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/synchronization/NicknameSynchronizationFormat)
+#### [`Format`](https://config.discordsrv.com/synchronization/NicknameSynchronizationFormat) {id="NicknameSynchronizationFormat"}
 the nickname format (keep in mind this shouldn't go over 32 characters)
-| Available Placeholders | Usage
-| --- | --- |
-| %displayname%: player's display name | example: Jeb
-| %username%:    player's username | example: Jeb_
+
+| Available Placeholders | Explanation | Example |
+| :---: | :---: | :---: |
+| `%displayname%` | player's display name | Jeb |
+| `%username%` | player's username | Jeb_ |
+
 PlaceholderAPI placeholders are supported
 
-### GroupRoleSynchronization:
-#### `GroupRoleSynchronizationGroupsAndRolesToSync`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationGroupsAndRolesToSync)
+### GroupRoleSynchronization...
+#### [`GroupsAndRolesToSync`](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationGroupsAndRolesToSync) {id="GroupRoleSynchronizationGroupsAndRolesToSync"}
 these are roles/groups you'd like synchronized between Discord and Minecraft
 
-#### `GroupRoleSynchronizationMinecraftIsAuthoritative`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationMinecraftIsAuthoritative)
+#### [`MinecraftIsAuthoritative`](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationMinecraftIsAuthoritative) {id="GroupRoleSynchronizationMinecraftIsAuthoritative"}
 whether or not Minecraft group changes override Discord role changes
-#### `GroupRoleSynchronizationOneWay`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationOneWay)
-whether or not to synchronise only one way, the way it is synchronised depends on the value of GroupRoleSynchronizationMinecraftIsAuthoritative.
-#### `GroupRoleSynchronizationEnableDenyPermission`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationEnableDenyPermission)
+#### [`OneWay`](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationOneWay) {id="GroupRoleSynchronizationOneWay"}
+whether or not to synchronise only one way, the way it is synchronised depends on the value of MinecraftIsAuthoritative.
+#### [`EnableDenyPermission`](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationEnableDenyPermission) {id="GroupRoleSynchronizationEnableDenyPermission"}
 whether or not discordsrv.sync.deny.<role id> permissions are enabled
 
-#### `GroupRoleSynchronizationPrimaryGroupOnly`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationPrimaryGroupOnly)
+#### [`PrimaryGroupOnly`](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationPrimaryGroupOnly) {id="GroupRoleSynchronizationPrimaryGroupOnly"}
 if true, only the player's primary group is counted for synchronization, otherwise, group sync counts all groups the player is in, including parent groups
 
-#### `GroupRoleSynchronizationOnLink`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationOnLink)
+#### [`OnLink`](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationOnLink) {id="GroupRoleSynchronizationOnLink"}
 whether or not to resync when a player links
 
-#### `GroupRoleSynchronizationCycleTime`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationCycleTime)
+#### [`CycleTime`](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationCycleTime) {id="GroupRoleSynchronizationCycleTime"}
 amount of minutes between repeatedly triggering synchronization for all online players
 
-#### `GroupRoleSynchronizationCycleCompletely`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationCycleCompletely)
+#### [`CycleCompletely`](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationCycleCompletely) {id="GroupRoleSynchronizationCycleCompletely"}
 whether or not synchronizations running on a timer should synchronize every member in the bots Discord servers
 
-### BanSynchronization:
-#### `BanSynchronizationDiscordToMinecraft`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/synchronization/BanSynchronizationDiscordToMinecraft)
+### BanSynchronization...
+#### [`DiscordToMinecraft`](https://config.discordsrv.com/synchronization/BanSynchronizationDiscordToMinecraft) {id="BanSynchronizationDiscordToMinecraft"}
 the message at the beginning of the list, before all of the player names.
-#### `BanSynchronizationDiscordToMinecraftReason`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/synchronization/BanSynchronizationDiscordToMinecraftReason)
+#### [`DiscordToMinecraftReason`](https://config.discordsrv.com/synchronization/BanSynchronizationDiscordToMinecraftReason) {id="BanSynchronizationDiscordToMinecraftReason"}
 used instead for when no players are online
-#### `BanSynchronizationMinecraftToDiscord`[ :fontawesome-solid-external-link-alt:](https://config.discordsrv.com/synchronization/BanSynchronizationMinecraftToDiscord)
+#### [`MinecraftToDiscord`](https://config.discordsrv.com/synchronization/BanSynchronizationMinecraftToDiscord) {id="BanSynchronizationMinecraftToDiscord"}
 
 ---
