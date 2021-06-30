@@ -74,6 +74,3 @@ What gets displayed as the kick reason if the required role[s] were not found on
 What gets displayed as the kick reason if an error occurs.
 ### [`Kicked for unlinking`](https://config.discordsrv.com/linking/Kicked%20for%20unlinking)
 What gets displayed as the kick reason if the player unlinks in-game.  
-
-[^1]: Requires a server restart for changes to take effect.
-[^2]: Only available in the Development build.
