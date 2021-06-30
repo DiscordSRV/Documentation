@@ -1,3 +1,5 @@
+# [voice.yml](https://config.discordsrv.com/voice/_)
+
 This is the configuration file for the Voice module. You gain the ability to connect your Discord Voice channels directly to Minecraft, and updates communicative access in real time.
 
 !!! note "Video of it in action"
