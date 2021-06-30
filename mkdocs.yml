@@ -51,6 +51,8 @@ theme:
       accent: blue
 markdown_extensions:
   - attr_list
+  - footnotes
+  - admonition
   - pymdownx.details
   - pymdownx.tabbed
   - pymdownx.highlight
