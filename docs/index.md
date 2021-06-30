@@ -28,7 +28,7 @@ _**We only give support for the latest release/dev builds; please update before 
 
 ### Plugins we hook into:  
 * Chat
-    * [`FancyChat`](https://www.spigotmc.org/resources/fancychat.32328/), [`Herochat`](https://www.spigotmc.org/resources/herochat.34305/updates), [`LegendChat`](https://www.spigotmc.org/resources/legendchat.6268/), [`LunaChat`](https://github.com/ucchyocean/LunaChat), [`TownyChat`](https://www.spigotmc.org/resources/towny-advanced.72694/), [`UltimateChat`](https://www.spigotmc.org/resources/ultimatechat.23767/), [`VentureChat`](https://www.spigotmc.org/resources/venturechat.771/)
+    * [`Herochat`](https://www.spigotmc.org/resources/herochat.34305/updates), [`LegendChat`](https://www.spigotmc.org/resources/legendchat.6268/), [`LunaChat`](https://github.com/ucchyocean/LunaChat), [`TownyChat`](https://www.spigotmc.org/resources/towny-advanced.72694/), [`UltimateChat`](https://www.spigotmc.org/resources/ultimatechat.23767/), [`VentureChat`](https://www.spigotmc.org/resources/venturechat.771/)
 * Vanish
     * [`Essentials`](https://www.spigotmc.org/resources/essentialsx.9089/), [`PhantomAdmin`](https://www.spigotmc.org/resources/phantomadmin.37845/), [`SuperVanish`](https://www.spigotmc.org/resources/supervanish-be-invisible.1331/), [`VanishNoPacket`](https://dev.bukkit.org/projects/vanish)
 * World
@@ -49,6 +49,7 @@ _**We only give support for the latest release/dev builds; please update before 
 * [Staff++](https://www.spigotmc.org/resources/staff.83562/)
 * [LiteBansBridge](https://www.spigotmc.org/resources/litebansbridge.76326/)
 * [MCSF (My Christian Swear Filter)](https://www.spigotmc.org/resources/mcsf.54115/)
+* [MZP-VoteParty](https://www.spigotmc.org/resources/mzp-voteparty.89754/)
 * If you would like your plugin listed here, please bring it to `granny`'s attention in our [Discord](https://discordsrv.com/discord) server.
 ## Intended usage
 By using this plugin, you are able to give players the ability to chat in-game with players on your Discord server, as well as having people on the Discord server be able to chat with people in the minecraft server - This can be useful for players that still want to communicate with players in-game, but can't access the Minecraft server for whatever reason.  
