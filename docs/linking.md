@@ -1,4 +1,4 @@
-# [linking.yml](https://config.discordsrv.com/linking/_){class="ignore-external-icon"}
+# [linking.yml](https://config.discordsrv.com/linking/_)
 
 Require players to link their account to Discord before letting them play and optionally require a subscriber role.
 
@@ -65,7 +65,7 @@ The message that gets displayed when a user gets kicked for not having a/all rol
 
 ---
 
-## Messages
+## Messages:
 ### [`DiscordSRV still starting`](https://config.discordsrv.com/linking/DiscordSRV%20still%20starting)
 What gets displayed as the kick reason if someone attempts to join before DiscordSRV loads up.
 ### [`Failed to find subscriber role`](https://config.discordsrv.com/linking/Failed%20to%20find%20subscriber%20role)

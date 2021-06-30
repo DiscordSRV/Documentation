@@ -1,4 +1,4 @@
-# [alerts.yml](https://config.discordsrv.com/alerts/_){class="ignore-external-icon"}
+# [alerts.yml](https://config.discordsrv.com/alerts/_)
 
 This is an *advanced* feature of DiscordSRV that allows you to send messages to Discord when a game event happens or when a command is run.
 
