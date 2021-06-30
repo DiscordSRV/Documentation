@@ -118,7 +118,7 @@ groups:
 ```
 
 2. Get Role ID(s) for the role(s) you want to sync  
-	- If you have `Developer Mode` enabled (see [Basic Installation](Installation#Basic-Installation)), you can get the IDs from `Server Settings > Roles` by right clicking the role(s)  
+	- If you have `Developer Mode` enabled (see [Basic Installation](Installation#Basic-Installation)), you can get the IDs from `Server Settings > Roles` by right-clicking the role(s)  
 	- Role IDs are also in the `discordsrv-info.txt` file of debug reports, which can be accessed through the link generated from `/discordsrv debug`  
 
 ```C++
