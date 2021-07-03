@@ -50,6 +50,7 @@ theme:
       primary: light blue
       accent: blue
 markdown_extensions:
+  - mdx_grid_tables
   - attr_list
   - footnotes
   - admonition

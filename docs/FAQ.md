@@ -288,9 +288,11 @@ This can be done by using [PlaceholderAPI](https://www.spigotmc.org/resources/pl
 
 <h3 id="plugins-output-red">Why is the plugin red in the <code>/plugins</code> output?</h3>
 
-| if the plugin is green | if the plugin is red |
-| ----- | ----- |
-| the plugin is working | the plugin is not working |  
++------------------------+---------------------------+
+| if the plugin is green | if the plugin is red      |
++========================+===========================+
+| the plugin is working  | the plugin is not working |
++------------------------+---------------------------+ 
 
 First thing you should do is check your <u>server logs</u>. If you need further help understanding the errors you can send a copy of what you find or the whole logfile in one of the support channels in our [discord server](https://discordsrv.com/discord).  
 

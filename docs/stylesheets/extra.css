@@ -9,6 +9,10 @@
     align-items: center;
 }
 
+table code {
+    white-space: nowrap
+}
+
 a[href^="http" ]:not(.md-button, .md-footer-social__link, .md-source, .md-logo, [href*="config.discordsrv.com"], [href*="squidfunk.github.io"], [href*="DiscordsrvWiki/edit"]):after {
     background: transparent var(--external-link-icon) 0 0 no-repeat;
     content: "";

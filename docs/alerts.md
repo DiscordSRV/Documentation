@@ -17,22 +17,22 @@ Helpful resources for learning how to use SpEL:
 
 ## Available Placeholders
 
-| Placeholders | Explanation |
-| --- | --- |
-| `{tps}` | server TPS |
-| `{time}` | formatted time |
-| `{date}` | formatted date |
-| `{name}` | if alert is for a player event, the name of the player |
-| `{ping}` | if alert is for a player event, the ping of the player |
-| `{username}` | if alert is for a player event, the username of the player |
-| `{displayname}` | if alert is for a player event, the display name of the player |
-| `{usernamenoescapes}` | if alert is for a player event, the username of the player without escaping discord format (for use in inline code & code block markdown) |
+|       Placeholders       |                                                                  Explanation                                                                  |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| `{tps}`                  | server TPS                                                                                                                                    |
+| `{time}`                 | formatted time                                                                                                                                |
+| `{date}`                 | formatted date                                                                                                                                |
+| `{name}`                 | if alert is for a player event, the name of the player                                                                                        |
+| `{ping}`                 | if alert is for a player event, the ping of the player                                                                                        |
+| `{username}`             | if alert is for a player event, the username of the player                                                                                    |
+| `{displayname}`          | if alert is for a player event, the display name of the player                                                                                |
+| `{usernamenoescapes}`    | if alert is for a player event, the username of the player without escaping discord format (for use in inline code & code block markdown)     |
 | `{displaynamenoescapes}` | if alert is for a player event, the display name of the player without escaping discord format (for use in inline code & code block markdown) |
-| `{world}` | if alert is for a player event, the world the player is in |
-| `{embedavatarurl}` | if alert is for a player event, the avatar url for the player's head, otherwise, the bot's avatar url |
-| `{botavatarurl}` | the bot's avatar url |
-| `{botname}` | the bot's name |
-| `%placeholder%` | any PlaceholderAPI placeholders, can only use player ones when alert is for a player event |
+| `{world}`                | if alert is for a player event, the world the player is in                                                                                    |
+| `{embedavatarurl}`       | if alert is for a player event, the avatar url for the player's head, otherwise, the bot's avatar url                                         |
+| `{botavatarurl}`         | the bot's avatar url                                                                                                                          |
+| `{botname}`              | the bot's name                                                                                                                                |
+| `%placeholder%`          | any PlaceholderAPI placeholders, can only use player ones when alert is for a player event                                                    |
 
 === "SpEL Examples"
     Getting a player's IP
@@ -63,19 +63,19 @@ Helpful resources for learning how to use SpEL:
 
     - `${#player.world.time > 0 && player.world.time < 13000}`
 === "SpEL placeholders"
-    | _ | _ |
-    | --- | --- |
-    | `#plugins.<plugin>` | the specified plugin instance, _`null if doesn't exist`_ |
-    | `#event` | the event that's triggering the alert _`if this alert is an event alert`_ |
-    | `#server` | the Bukkit API server instance, equivalent to [Bukkit#getServer](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Bukkit.html#getServer()) |
-    | `#discordsrv` | the DiscordSRV plugin instance |
-    | `#player` | the player that the event is for, _`if this is a player event or command`_ |
-    | `#sender` | the command sender, _`if this is a command alert`_ |
-    | `#command` | the full command, with no leading slash, _`if this is a command alert`_ |
-    | `#args` | the command arguments, _`if this is a command alert`_ |
-    | `#allArgs` | the command arguments as one string, _`if this is a command alert`_ |
-    | `#channel` | the destination channel for this alert |
-    | `#jda` | DiscordSRV's JDA instance that it uses to communicate with Discord |
+    |          _          |                                                                       _                                                                       |
+    | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+    | `#plugins.<plugin>` | the specified plugin instance, _`null if doesn't exist`_                                                                                      |
+    | `#event`            | the event that's triggering the alert _`if this alert is an event alert`_                                                                     |
+    | `#server`           | the Bukkit API server instance, equivalent to [Bukkit#getServer](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Bukkit.html#getServer()) |
+    | `#discordsrv`       | the DiscordSRV plugin instance                                                                                                                |
+    | `#player`           | the player that the event is for, _`if this is a player event or command`_                                                                    |
+    | `#sender`           | the command sender, _`if this is a command alert`_                                                                                            |
+    | `#command`          | the full command, with no leading slash, _`if this is a command alert`_                                                                       |
+    | `#args`             | the command arguments, _`if this is a command alert`_                                                                                         |
+    | `#allArgs`          | the command arguments as one string, _`if this is a command alert`_                                                                           |
+    | `#channel`          | the destination channel for this alert                                                                                                        |
+    | `#jda`              | DiscordSRV's JDA instance that it uses to communicate with Discord                                                                            |
 
 
 ## Usage examples
