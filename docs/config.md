@@ -72,8 +72,24 @@ This option forcefully changes the language to the specified type.
 Currently Supported Languages: `[EN,FR,DE,JA,KO,NL,ES,RU,ET,ZH]`
 
 ### [`AvatarUrl`](https://config.discordsrv.com/config/AvatarUrl) {id="AvatarUrl"}
+
++-------------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
+|  Placeholders     |  Example                               |  Description                                                                                              |
++===================+========================================+===========================================================================================================+
+| `{texture}`       | `<unique texture id>`                  | the player's unique texture id that's used in a hacky workaround for discord's inconsistent image caching |
++-------------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| `{username}`      | `jeb_`                                 | raw player username                                                                                       |
++-------------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| `{uuid}`          | `d7c1db4d-e57b-488b-b8bc-4462fe49a3e8` | player's UUID                                                                                             |
++-------------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| `{uuid-nodashes}` | `d7c1db4de57b488bb8bc4462fe49a3e8`     | player's UUID without dashes                                                                              |
++-------------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| `{size}`          | `128`                                  | size of the avatar image                                                                                  |
++-------------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
+|  [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI) placeholders are also supported                                                                    |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 The link to pull the player's skin from.
-Placeholders: `{texture}, {username}, {uuid}, {uuid-nodashes}, {size}`
 
 ---
 
@@ -100,13 +116,30 @@ Replaces minecraft messages with a webhook of the minecraft player's username an
 #### [`...Delivery`](https://config.discordsrv.com/config/Experiment_WebhookChatMessageDelivery) {id="Experiment_WebhookChatMessageDelivery"}
 Enable/disable the experimental webhook feature
 #### [`...UsernameFormat`](https://config.discordsrv.com/config/Experiment_WebhookChatMessageUsernameFormat) {id="Experiment_WebhookChatMessageUsernameFormat"}
+
++-------------------+-------------------------------+-------------------------------------------------+
+|  Placeholders     |  Example                      |  Description                                    |
++===================+===============================+=================================================+
+| `%displayname%`   | `BigBossManJeb`               | display name from things like nicknames         |
++-------------------+-------------------------------+-------------------------------------------------+
+| `%username%`      | `jeb_`                        | raw player username                             |
++-------------------+-------------------------------+-------------------------------------------------+
+|  [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI) placeholders are also supported |
++-----------------------------------------------------------------------------------------------------+
+
 The username format when the message delivery is set to webhooks.
 
-Placeholders: `%displayname%, %username%`
 #### [`...Format`](https://config.discordsrv.com/config/Experiment_WebhookChatMessageFormat) {id="Experiment_WebhookChatMessageFormat"}
 The message format when the message delivery is set to webhooks.
 
-Placeholders: `%message%`
++-------------------+-------------------------------+-------------------------------------------------+
+|  Placeholders     |  Example                      |  Description                                    |
++===================+===============================+=================================================+
+| `%message%`       | `Hello!`                      | message content                                 |
++-------------------+-------------------------------+-------------------------------------------------+
+|  [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI) placeholders are also supported |
++-----------------------------------------------------------------------------------------------------+
+
 #### [`...UsernameFromDiscord`](https://config.discordsrv.com/config/Experiment_WebhookChatMessageUsernameFromDiscord) {id="Experiment_WebhookChatMessageUsernameFromDiscord"}
 Use the discord username instead of the minecraft username if the user is linked
 #### [`...AvatarFromDiscord`](https://config.discordsrv.com/config/Experiment_WebhookChatMessageUsernameFromDiscord) {id="Experiment_WebhookChatMessageUsernameFromDiscord"}
@@ -148,9 +181,13 @@ Maximum amount of attempts to try using system DNS servers before using fallback
 ### [`DisabledPluginHooks`](https://config.discordsrv.com/config/DisabledPluginHooks) {id="DisabledPluginHooks"}
 It is highly recommended you don't mess with this option, as it can break the hooks for plugins.
 
-**Available values**
-* [Names of our hooks](Home#Plugins-we-hook-into)
-* `LuckPerms-Contexts` - more info at [LPContext](LPContext)
++------------------------------------------------------------+
+|                      Available values                      |
++============================================================+
+| [Names of our hooks](Home#Plugins-we-hook-into)            |
++------------------------------------------------------------+
+| `LuckPerms-Contexts` - more info at [LPContext](LPContext) |
++------------------------------------------------------------+
 
 ### [`VentureChatBungee`](https://config.discordsrv.com/config/VentureChatBungee) {id="VentureChatBungee"}
 
