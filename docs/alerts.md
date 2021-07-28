@@ -108,7 +108,7 @@ Helpful resources for learning how to use SpEL:
 ### AdvancedBan
 
 === "PunishmentEvent"
-    [PunishmentEvent.java](https://github.com/DevLeoko/AdvancedBan/blob/master/src/main/java/me/leoko/advancedban/bukkit/event/PunishmentEvent.java)
+    [PunishmentEvent.java](https://github.com/DevLeoko/AdvancedBan/blob/master/bukkit/src/main/java/me/leoko/advancedban/bukkit/event/PunishmentEvent.java)
     ```yaml
       - Trigger: PunishmentEvent
         Channel: punishments
@@ -116,7 +116,7 @@ Helpful resources for learning how to use SpEL:
           Color: "#4287f5"
           Author:
             ImageUrl: "https://www.spigotmc.org/data/resource_icons/8/8695.jpg"
-            Name: "${punishment.getName()} was punished with reason: ${punishment.getReason()}"
+            Name: "${punishment.name} was punished with reason: ${punishment.reason}"
     ```
 
 ### Matrix
@@ -259,5 +259,12 @@ Helpful resources for learning how to use SpEL:
           Author:
             ImageUrl: "https://crafatar.com/avatars/${#event.getPlayer().getUniqueId()}?overlay"
             Name: '${#event.getPlayer().getName()}'
-          Description: "Coord: `[${#event.getBlock().getLocation().getBlockX() + \", \" + #event.getBlock().getLocation().getBlockY() + \", \" + #event.getBlock().getLocation().getBlockZ()}]`\n```\n${#event.getLine(0)}\n${#event.getLine(1)}\n${#event.getLine(2)}\n${#event.getLine(3)}```"
+          Description: |-
+            Coords: `[${block.getLocation().getBlockX() + ", " + block.getLocation().getBlockY() + ", " + block.getLocation().getBlockZ()}]`
+            ```
+            ${line[0]}
+            ${line[1]}
+            ${line[2]}
+            ${line[3]}
+            ```
     ```
