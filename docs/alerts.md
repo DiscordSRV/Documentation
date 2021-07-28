@@ -132,7 +132,7 @@ Helpful resources for learning how to use SpEL:
           Color: "#ff0000"
           Author:
             ImageUrl: "{embedavatarurl}"
-            Name: "{username} failed ${hackType.name().toLowerCase()} check | ${component} | vl:${violations} ping:${player.handle.ping} tps:{tps}"
+            Name: "{username} failed ${hackType.name().toLowerCase()} check | ${component} | vl:${violations} ping:${player.ping} tps:{tps}"
     ```
 
 ### MythicMobs
@@ -165,7 +165,7 @@ Helpful resources for learning how to use SpEL:
           Color: "#ff0000"
           Author:
             ImageUrl: "{embedavatarurl}"
-            Name: "{username} failed ${hackType.name().toLowerCase()} check | ${message} | vl:${violation} ping:${player.handle.ping} tps:{tps}"
+            Name: "{username} failed ${hackType.name().toLowerCase()} check | ${message} | vl:${violation} ping:${player.ping} tps:{tps}"
     ```
 
 ### Essentials
