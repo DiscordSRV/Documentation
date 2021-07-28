@@ -1,6 +1,6 @@
 These placeholders are only available with [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) installed. They can be accessed by other plugins that have [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) placeholder compatibility.
 
-**The placeholders are integrated in DiscordSRV, you do not need a expansion for them to work. The [archived expansion](https://github.com/DiscordSRV/DiscordSRV-PlaceholderAPI-Expansion) will no longer work.**
+**The placeholders are integrated into DiscordSRV; you do not need an expansion for them to work.**
 
 ### Placeholders
 
