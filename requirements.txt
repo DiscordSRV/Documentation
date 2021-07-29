@@ -2,6 +2,7 @@ click==8.0.1
 ghp-import==2.0.1
 importlib-metadata==4.6.0
 Jinja2==3.0.1
+lightgallery==0.5
 Markdown==3.3.4
 -e git+https://github.com/madmpro/Markdown-GridTables@58bf0f7dc85ac077200c9597a1a3c69b6bf63932#egg=Markdown_GridTables
 MarkupSafe==2.0.1
