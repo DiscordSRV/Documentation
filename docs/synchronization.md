@@ -9,13 +9,17 @@ amount of minutes between repeatedly triggering synchronization for all online p
 #### [`Format`](https://config.discordsrv.com/synchronization/NicknameSynchronizationFormat) {id="NicknameSynchronizationFormat"}
 the nickname format (keep in mind this shouldn't go over 32 characters)
 
-+------------------------+-----------------------+---------+
-| Available Placeholders | Explanation           | Example |
-+========================+=======================+=========+
-| `%displayname%`        | player's display name | Jeb     |
-+------------------------+-----------------------+---------+
-| `%username%`           | player's username     | Jeb_    |
-+------------------------+-----------------------+---------+
++---------------------------+--------------------------------+---------+
+| Available Placeholders    | Explanation                    | Example |
++===========================+================================+=========+
+| `%displayname%`           | player's display name          | Jeb     |
++---------------------------+--------------------------------+---------+
+| `%username%`              | player's username              | Jeb_    |
++---------------------------+--------------------------------+---------+
+| `%discord_name%`          | player's discord username      | Jeb     |
++---------------------------+--------------------------------+---------+
+| `%discord_discriminator%` | player's discord discriminator | 4988    |
++---------------------------+--------------------------------+---------+
 
 PlaceholderAPI placeholders are supported
 
