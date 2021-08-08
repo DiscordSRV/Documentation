@@ -119,6 +119,21 @@ Helpful resources for learning how to use SpEL:
             Name: "${punishment.name} was punished with reason: ${punishment.reason}"
     ```
 
+### Essentials
+
+=== "AfkStatusChangeEvent"
+    [AfkStatusChangeEvent.java](https://github.com/EssentialsX/Essentials/blob/master/Essentials/src/main/java/net/ess3/api/events/AfkStatusChangeEvent.java)
+    ```yaml
+      # Send an AFK alert when someone is AFK / is no longer AFK
+      - Trigger: AfkStatusChangeEvent
+        Channel: afk
+        Embed:
+          Color: "#869600"
+          Author:
+            ImageUrl: "https://crafatar.com/avatars/${#event.getAffected().getBase().getUniqueId()}?overlay"
+            Name: '${#event.getAffected().getName() + " is " + (#event.value ? "now" : "no longer") + " AFK"}'
+    ```
+
 ### Matrix
 
 === "PlayerViolationEvent"
@@ -152,6 +167,80 @@ Helpful resources for learning how to use SpEL:
             Name: "An ender dragon has spawned!"
     ```
 
+### PlayerAuctions
+
+=== "PlayerAuctionBuyEvent"
+    [PlayerAuctionBuyEvent.java](https://javadocs.olziedev.com/playerauctions/com/olziedev/playerauctions/api/events/PlayerAuctionBuyEvent.html)
+    ```yaml
+      # Example alert to send a message when a player buys something from the auction
+      - Trigger: PlayerAuctionBuyEvent
+        Async: false
+        Channel: auctions
+        Embed:
+          Color: "#48f542" #Green
+          Author:
+            ImageUrl: "https://crafatar.com/avatars/${buyer.getUniqueId()}/"
+            Name: "${buyer.getName()} bought ${playerAuction.getItem().getType()} for $${price}"
+          Title:
+            Text: "Auction Information:"
+            Url: ""
+          Fields:
+            - "Buyer;${buyer.getName()};true"
+            - "Seller;${playerAuction.getAuctionPlayer().getName()};true"
+            - "Item;${itemStack.getType()};true"
+            - "Amount;${playerAuction.getItem().getAmount()};true"
+            - "Price;$${price};true"
+          Footer:
+            Text: "Auction ID: ${playerAuction.getID()}"
+    ```
+=== "PlayerAuctionSellEvent"
+    [PlayerAuctionSellEvent.java](https://javadocs.olziedev.com/playerauctions/com/olziedev/playerauctions/api/events/PlayerAuctionSellEvent.html)
+    ```yaml
+      # Example alert to send a message when a player starts selling something from the auction
+      - Trigger: PlayerAuctionSellEvent
+        Channel: auctions
+        Embed:
+          Color: "#4287f5" #Blue
+          Author:
+            ImageUrl: "https://crafatar.com/avatars/${getSeller().getUniqueId()}/"
+            Name: "${seller.getName()} is selling ${playerAuction.getItem().getType()} for $${playerAuction.getPrice()}"
+          Title:
+            Text: "Auction Information:"
+            Url: ""
+          Fields:
+            - "Seller;${seller.getName()};true"
+            - "Item;${playerAuction.getItem().getType()};true"
+            - "Amount;${playerAuction.getItem().getAmount()};true"
+            - "Price;$${playerAuction.getPrice()};true"
+          Footer:
+            Text: "Auction ID: ${playerAuction.getID()}"
+    ```
+=== "PlayerAuctionExpireEvent"
+    [PlayerAuctionExpireEvent.java](https://javadocs.olziedev.com/playerauctions/com/olziedev/playerauctions/api/events/PlayerAuctionExpireEvent.html)
+    ```yaml
+      # Example alert to send a message when a player's item gets removed from the auction
+      - Trigger: PlayerAuctionExpireEvent
+        Channel: auctions
+        Conditions: 
+          - 'playerAuction.getExpireTime() == null'
+        Embed:
+          Color: "#bf2a2a" #Red
+          Author:
+            ImageUrl: "https://crafatar.com/avatars/${getPlayerAuction().getAuctionPlayer().getUUID()}/"
+            Name: "${playerAuction.getAuctionPlayer().getName()} removed ${getPlayerAuction().getItem().getType()} from the Auction House."
+          Title:
+            Text: "Auction Information:"
+            Url: ""
+          Fields:
+            - "Owner;${playerAuction.getAuctionPlayer().getName()};true"
+            - "Item;${playerAuction.getItem().getType()};true"
+            - "Amount;${playerAuction.getItem().getAmount()};true"
+            - "Price;$${playerAuction.getPrice()};true"
+          Footer:
+            Text: "Auction ID: ${playerAuction.getID()}"
+    ```
+
+
 ### Spartan
 
 === "PlayerViolationEvent"
@@ -166,21 +255,6 @@ Helpful resources for learning how to use SpEL:
           Author:
             ImageUrl: "{embedavatarurl}"
             Name: "{username} failed ${hackType.name().toLowerCase()} check | ${message} | vl:${violation} ping:${player.ping} tps:{tps}"
-    ```
-
-### Essentials
-
-=== "AfkStatusChangeEvent"
-    [AfkStatusChangeEvent.java](https://github.com/EssentialsX/Essentials/blob/master/Essentials/src/main/java/net/ess3/api/events/AfkStatusChangeEvent.java)
-    ```yaml
-      # Send an AFK alert when someone is AFK / is no longer AFK
-      - Trigger: AfkStatusChangeEvent
-        Channel: afk
-        Embed:
-          Color: "#869600"
-          Author:
-            ImageUrl: "https://crafatar.com/avatars/${#event.getAffected().getBase().getUniqueId()}?overlay"
-            Name: '${#event.getAffected().getName() + " is " + (#event.value ? "now" : "no longer") + " AFK"}'
     ```
 
 ### Command Triggers
