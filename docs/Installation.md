@@ -126,7 +126,7 @@ Now run through all the config options in [`config.yml`](https://config.discords
 
 ---
 
-### Some extra info (Not sure how to name this section lol)
+### Informations Avancées
 
 #### Giving the bot the administrator permission
 
