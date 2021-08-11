@@ -1,6 +1,6 @@
 # Project information
 site_name: DiscordSRV Wiki
-site_url: https://granny.github.io/DiscordsrvWiki
+site_url: https://docs.discordsrv.com/
 site_author: granny
 site_description: >-
   The official documentation for DiscordSRV.
@@ -34,8 +34,8 @@ nav:
     - 'Discord': 'https://discordsrv.com/discord'
     - 'SpigotMC': 'https://www.spigotmc.org/resources/discordsrv.18494/'
     - 'BukkitDev': 'https://dev.bukkit.org/projects/discordsrv'
-repo_url: https://github.com/granny/DiscordsrvWiki
-repo_name: DiscordsrvWiki
+repo_url: https://github.com/DiscordSRV/Documentation
+repo_name: Documentation
 edit_uri: edit/master/docs/
 #extra_javascript:
 #  - js/extra.js

@@ -1,4 +1,4 @@
-# DiscordSRV Docs
+# DiscordSRV Documentation
 
 This is the documentation for DiscordSRV that uses [Mkdocs](https://github.com/mkdocs/mkdocs) to generate a static site hosted on https://docs.discordsrv.com.
 
