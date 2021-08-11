@@ -60,20 +60,7 @@ Both chat and console are toggleable through the configuration file. Some option
 
 ## Bot Permissions
 
-__Server Permissions__  
-* `Manage Roles` - for [role synchronization](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationGroupsAndRolesToSync) and [adding roles to linked players](https://config.discordsrv.com/config/MinecraftDiscordAccountLinkedRoleNameToAddUserTo)  
-* `Manage Channels` - for [channel topic updater](https://config.discordsrv.com/messages/ChannelTopicUpdaterChatChannelTopicFormat)  
-* `Ban Members` - for [ban synchronization](https://config.discordsrv.com/synchronization/BanSynchronizationDiscordToMinecraft)  
-* `Manage Nicknames` - for [name synchronization](https://config.discordsrv.com/synchronization/NicknameSynchronizationEnabled)  
-* `Manage Webhooks` - for [experimental webhook usage](https://config.discordsrv.com/config/Experiment_WebhookChatMessageDelivery) (Server-wide permission is _recommended_, but can be applied on a per-channel basis)  
-
-__Channel Permissions__  
-* `Read Text Channels & See Voice Channels` and `Send Messages` - Required in all of DiscordSRV's channels (including [console](https://pkrok.me/config/DiscordConsoleChannelId) and [voice lobby](https://config.discordsrv.com/voice/Lobby%20channel)), the [voice module category](https://config.discordsrv.com/voice/Voice%20category) and any other channels you want for [canned responses](https://config.discordsrv.com/config/DiscordCannedResponses)  
-* `Manage Messages` - for message deletion features [playerlist](https://config.discordsrv.com/config/DiscordChatChannelListCommandEnabled), [chat channel commands](https://config.discordsrv.com/config/DiscordChatChannelConsoleCommandEnabled)  
-* `Embed Links` - optionally for embedding ingame-posted links and required when embed messages are used [death](https://config.discordsrv.com/messages/MinecraftPlayerDeathMessage), [join/Leave](https://config.discordsrv.com/messages/MinecraftPlayerJoinMessage)  
-* `Mention @everyone, @here and All Roles` - for mentioning @everyone if removed from [cut phrases in config.yml](https://config.discordsrv.com/config/DiscordChatChannelBlockedPhrases) and [mentions enabled](https://config.discordsrv.com/config/DiscordChatChannelTranslateMentions)  
-* `Add Reactions` and `Read Message History` - for when the bot reacts with "💬" and "❗" to notify a [truncated message](https://config.discordsrv.com/config/DiscordChatChannelTruncateLength) is being sent from Discord to Minecraft  
-* `Move Members` - required for the [voice lobby](https://config.discordsrv.com/voice/Lobby%20channel) and [voice category](https://config.discordsrv.com/voice/Voice%20category)
+--8<-- "permissions.txt"
 
 ## Installation  
 Visit the [Installation](Installation) page for clear and in-depth instructions on installing and setting up DiscordSRV.  

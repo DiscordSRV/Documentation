@@ -59,6 +59,9 @@ markdown_extensions:
   - footnotes
   - admonition
   - pymdownx.details
+  - pymdownx.snippets:
+      base_path:
+      - docs/_snippets
   - pymdownx.tabbed
   - pymdownx.highlight
   - pymdownx.superfences
