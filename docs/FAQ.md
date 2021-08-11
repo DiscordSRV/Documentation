@@ -284,3 +284,9 @@ On Minehut and server.pro:
 - If you have trouble downloading the log file, copy/paste the text to a paste service (like [mclo.gs](https://mclo.gs/)). Copy the link that it gives you. Join [our discord server](https://discordsrv.com/discord) and create a ticket through the #support channel, then send that link in your ticket.
 
 ---
+
+### Why do I get all the groups instead of just the one I want? {id="all-groups-instead-of-one"}
+
+Check to make sure you don't have the `*` permission in any of the groups that you're a part of. DiscordSRV has a `discordsrv.sync.<group> permission`, and having the star perm ends up giving you the perm for every group you have synchronized. This is just one of many reasons why you shouldn't ever have the `*` perm, or `OP` for that matter.
+
+---

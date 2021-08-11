@@ -25,6 +25,7 @@ These are super permissions that grant a bunch of standard permissions for your 
 |                       |             |                                                            | `discordsrv.groupsyncwithcommands` |
 |                       |             |                                                            | `discordsrv.updatenotification`    |
 |                       |             |                                                            | `discordsrv.resync`                |
+|                       |             |                                                            | `discordsrv.language`              |
 +-----------------------+-------------+------------------------------------------------------------+------------------------------------+
 
 ## Permissions
@@ -79,7 +80,8 @@ These are individual permissions that can be given or taken away to fine tune wh
 |                                    |         |                                                                                                                                               |
 |                                    |         | Permissions need to be enabled through the `GroupRoleSynchronizationEnableDenyPermission` option in [synchronization.yml](../synchronization) |
 +------------------------------------+---------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-
+| `discordsrv.language`              | OP      | whether or not the player can change the language of the plugin                                                                               |
++------------------------------------+---------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 ## Deprecated Permissions
 
 +-------------------------+---------+-------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+

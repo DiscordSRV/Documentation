@@ -1,6 +1,6 @@
 Allows permissions/groups/prefixes/etc to be assigned easily based on certain DiscordSRV states.
 
-More information about contexts can be found here: https://github.com/lucko/LuckPerms/wiki/Context
+More information about contexts can be found here: https://luckperms.net/wiki/Context
 
 Available contexts:
 

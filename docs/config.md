@@ -195,7 +195,7 @@ Enables VentureChat's optional BungeeCord functionality. This will allow the use
 
 Make sure to install DiscordSRV on the server with the most consistent players online.
 
-Keep in mind this requires at least 1 player to be online (on the server with DiscordSRV installed) for this feature to operate properly.
+Keep in mind this requires at least 1 player to be online (on the server with DiscordSRV installed) for this feature to operate properly. Also, PlaceholderAPI placeholders that are player related (or require Player) can't be used when using the VentureBungee option.
 
 ### [`EnablePresenceInformation`](https://config.discordsrv.com/config/EnablePresenceInformation) {id="EnablePresenceInformation"}
 Enables presence information which is required for some of our PlaceholderAPI placeholders.
