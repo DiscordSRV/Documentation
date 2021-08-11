@@ -290,3 +290,9 @@ On Minehut and server.pro:
 Check to make sure you don't have the `*` permission in any of the groups that you're a part of. DiscordSRV has a `discordsrv.sync.<group> permission`, and having the star perm ends up giving you the perm for every group you have synchronized. This is just one of many reasons why you shouldn't ever have the `*` perm, or `OP` for that matter.
 
 ---
+
+### The bot can't modify my roles, and I'm the Discord server owner? {id="discord-server-owner-modify-roles"}
+
+This is a Discord limitation. Although bots can remove / add one role, they cannot use the endpoint that allows adding & removing as many roles as you want, which is how group-synchronisation achieves this. If you are trying to test group-synchronisation, either use an alt, or test it on another player.
+
+---
