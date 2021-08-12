@@ -178,7 +178,7 @@ vault groups: [default, MinecraftGroup1, MinecraftGroup2]
 
 ### Get Role ID(s) for the role(s) you want to sync  
 
-If you have `Developer Mode` enabled (see [Basic Installation](Installation#Basic-Installation)), you can get the IDs from `Server Settings > Roles` by right-clicking the role(s)  
+If you have `Developer Mode` enabled (see [Basic Installation](#basic-installation)), you can get the IDs from `Server Settings > Roles` by right-clicking the role(s)  
 
 Role IDs are also in the `discordsrv-info.txt` file of debug reports, which can be accessed through the link generated from `/discordsrv debug`  
 
@@ -204,7 +204,7 @@ That's the basics of it! Read the comments for the other options in the `synchro
 ## Voice Setup
 
 ***
-**Please make sure to go through the [Basic Installation](Installation#Basic-Installation) before going through with this setup.**
+**Please make sure to go through the [Basic Installation](#basic-installation) before going through with this setup.**
 ***
 
 Make sure `Voice enabled` is set to `true` in the `voice.yml` config
@@ -243,7 +243,7 @@ Lobby channel: 000000000000000000
 ## Require Linking to Join Setup 
 
 ***
-**Please make sure to go through the [Basic Installation](Installation#Basic-Installation) before going through with this setup.**
+**Please make sure to go through the [Basic Installation](#basic-installation) before going through with this setup.**
 ***
 
 This allows you to require the player have their discord account linked to their minecraft account before they can play on the server. When a player attempts to join, they get automatically kicked with a message saying that they need to message your DiscordSRV bot a code for them to be able to join.
@@ -253,10 +253,10 @@ Once the player is linked, more restrictions can be added, such as:
 - The linked player must be in the discord server
 - The linked player must have certain role[s] (this can be used to whitelist Twitch subscribers through the subscriber role if the user's twitch is linked to their discord account)
 
-Make sure `Enabled` is set to `true` in the [`linking.yml`](linking) config to enable this feature, then restart your server.
+Make sure `Enabled` is set to `true` in the [`linking.yml`](../linking) config to enable this feature, then restart your server.
 ```yaml
 # linking.yml Line 2
 Enabled: true
 ```
 
-Each option inside [`linking.yml`](linking) is explained using comments, so read through them to get a better understanding of what you can do.
+Each option inside [`linking.yml`](../linking) is explained using comments, so read through them to get a better understanding of what you can do.
