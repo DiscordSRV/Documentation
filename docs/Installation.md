@@ -149,7 +149,7 @@ Make sure the new Bot role is above any roles you want to synchronize using our 
 ## Group <-> Role Sync
  
 ***
-**Please make sure to go through the [Basic Installation](Installation#Basic-Installation) before going through with this setup.**
+**Please make sure to go through the [Basic Installation](#basic-installation) before going through with this setup.**
 ***
  
 ### Get the name(s) of the minecraft group(s) you want to sync
