@@ -296,3 +296,35 @@ Check to make sure you don't have the `*` permission in any of the groups that y
 This is a Discord limitation. Although bots can remove / add one role, they cannot use the endpoint that allows adding & removing as many roles as you want, which is how group-synchronisation achieves this. If you are trying to test group-synchronisation, either use an alt, or test it on another player.
 
 ---
+
+### What chat formatting codes can I use? {id="chat-formatting-codes"}
+
+To format minecraft chat related options, you can either use:
+* Legacy (Minecraft) `&r` and adventure `&#abc123`
+
+OR
+
+* [MiniMessage](https://docs.adventure.kyori.net/minimessage.html#format)
+
+You **cannot** use both at the same time!
+
+---
+
+### Can I synchronise multiple discord roles to one Minecraft group? {id="multiple-discord-roles-one-mc-group"}
+
+To synchronise multiple discord roles to one Minecraft group you will need to create a "fake" group in the [GroupRoleSynchronizationGroupsAndRolesToSync](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationGroupsAndRolesToSync) option in synchronisation.yml and make use of the `discordsrv.sync.<group name>` permission. For example if you want to synchronise both the `Staff` and `Admin` discord role when someone has the `Admin` group in-game, you would do the following.
+```yml
+GroupRoleSynchronizationGroupsAndRolesToSync: {"Admin": "384977475567878145", "staff": "135634730535092224"}
+```
+
+Then, using your permission plugin, you grant the `Admin` group the permission `discordsrv.sync.staff`. When the user gets the `Admin` group in-game, they get the sync permission, which causes them to also get the `staff` discord role.
+
+---
+
+### How do I connect two discord channels to one Minecraft chat? {id="two-discord-channels-one-mc-chat"}
+
+Sadly this feature is not yet possible, but it will be a feature of DiscordSRV V2.
+
+
+
+---
