@@ -118,6 +118,33 @@ Helpful resources for learning how to use SpEL:
             ImageUrl: "https://www.spigotmc.org/data/resource_icons/8/8695.jpg"
             Name: "${punishment.name} was punished with reason: ${punishment.reason}"
     ```
+    
+### Content Management Interface (CMI)
+
+=== "CMIAfkEnterEvent"
+    [CMIAfkEnterEvent.java](https://github.com/Zrips/CMI-API/blob/master/src/com/Zrips/CMI/events/CMIAfkEnterEvent.java)
+    ```yaml
+      # Send an AFK alert when someone is AFK
+      - Trigger: CMIAfkEnterEvent
+        Channel: afk
+        Embed:
+          Color: "#869600"
+          Author:
+            ImageUrl: "https://crafatar.com/avatars/${player.getUniqueId()}?overlay"
+            Name: '${player.displayName + " is now AFK"}'
+    ```
+=== "CMIAfkLeaveEvent"
+    [CMIAfkLeaveEvent.java](https://github.com/Zrips/CMI-API/blob/master/src/com/Zrips/CMI/events/CMIAfkLeaveEvent.java)
+    ```yaml
+      # Send an AFK alert when someone is no longer AFK
+      - Trigger: CMIAfkLeaveEvent
+        Channel: afk
+        Embed:
+          Color: "#869600"
+          Author:
+            ImageUrl: "https://crafatar.com/avatars/${player.getUniqueId()}?overlay"
+            Name: '${player.displayName + " is no longer AFK"}'
+    ```
 
 ### Essentials
 
