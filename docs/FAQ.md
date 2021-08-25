@@ -325,6 +325,15 @@ GroupRoleSynchronizationGroupsAndRolesToSync: {"Admin": "384977475567878145", "s
 
 Sadly this feature is not yet possible. It will be a feature in V2 of DiscordSRV.
 
+---
 
+### What is the server room is on fire message?
+`%date% @Owner, the server room is on 🔥‼`
+
+This means that your server has been lagging for several seconds.
+
+The watchdog constantly monitors the last time your server performed a game tick. If the time since the last tick goes above the set interval in seconds, a message to Discord is triggered.
+
+To disable these messages configure the following in config.yml: [`ServerWatchDogEnabled`](https://config.discordsrv.com/config/ServerWatchdogEnabled)
 
 ---
