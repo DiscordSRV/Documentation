@@ -327,7 +327,7 @@ Sadly this feature is not yet possible. It will be a feature in V2 of DiscordSRV
 
 ---
 
-### What is the server room is on fire message?
+### What is the server room is on fire message? {id="server-room-on-fire"}
 `%date% @Owner, the server room is on 🔥‼`
 
 This means that your server has been lagging for several seconds.
