@@ -300,6 +300,7 @@ This is a Discord limitation. Although bots can remove / add one role, they cann
 ### What chat formatting codes can I use? {id="chat-formatting-codes"}
 
 To format minecraft chat related options you can use:
+
 * Legacy (Minecraft) `&r` and adventure `&#abc123`
 
 OR
@@ -316,8 +317,9 @@ To synchronize multiple discord roles with one Minecraft group you will need to 
 
 Example: if you want to synchronize both the `Staff` and `Admin` discord role when someone has the `Admin` group in-game, you would do the following.
 
-```yml
+```yaml
 GroupRoleSynchronizationGroupsAndRolesToSync: {"Admin": "384977475567878145", "staff": "135634730535092224"}
+```
 
 ---
 
