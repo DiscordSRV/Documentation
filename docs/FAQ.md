@@ -300,6 +300,7 @@ This is a Discord limitation. Although bots can remove / add one role, they cann
 ### What chat formatting codes can I use? {id="chat-formatting-codes"}
 
 To format minecraft chat related options you can use:
+
 * Legacy (Minecraft) `&r` and adventure `&#abc123`
 
 OR
