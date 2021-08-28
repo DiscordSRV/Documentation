@@ -339,3 +339,15 @@ The watchdog constantly monitors the last time your server performed a game tick
 To disable these messages configure the following in config.yml: [`ServerWatchDogEnabled`](https://config.discordsrv.com/config/ServerWatchdogEnabled)
 
 ---
+
+### What can't I message the bot? {id="why-cant-i-message-the-bot"}
+
+Make sure that you have direct messages enabled on the server that you share with the bot. This should allow you to send it a private message. If that doesn't work, [check this article](https://support.discord.com/hc/en-gb/articles/360060145013).
+
+---
+
+### How do I show the avatars of cracked players? {id="show-cracked-avatars"}
+
+If you run an offline mode server you can switch from using `{uuid-nodashes}` to `{username}` in the `AvatarURL` option. Since [crafatar.com](https://crafatar.com/) does not support usage of player names you have to switch to a less stable alternative like [cravatar.eu](https://cravatar.eu/) (less stable meaning it will return a Steve head if the service is heavily used).
+
+---
