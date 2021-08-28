@@ -348,6 +348,6 @@ Make sure that you have direct messages enabled on the server that you share wit
 
 ### How do I show the avatars of cracked players? {id="show-cracked-avatars"}
 
-If you run a offline mode server, you can switch your AvatarURL from {uuid-nodashes} to use {username} instead. Since [crafatar.com](https://crafatar.com/) does not support usage of player names you have to switch to a less stable alternative like [cravatar.eu](https://cravatar.eu/) (less stable in terms of will return a Steve head if service is heavily used).
+If you run an offline mode server you can switch from using `{uuid-nodashes}` to `{username}` in the `AvatarURL` option. Since [crafatar.com](https://crafatar.com/) does not support usage of player names you have to switch to a less stable alternative like [cravatar.eu](https://cravatar.eu/) (less stable meaning it will return a Steve head if the service is heavily used).
 
 ---
