@@ -54,13 +54,13 @@ BotToken: "MjE5NTE5OTk0MDUxMDM1MTQ3.CqTCYw.SFAbKtfK3ydTy1jx2-fTHUJqsPo"
 
 #### Invite the bot to your guild
 
-!!! note "Copy the `Client ID` from the application's `General Information` page."
-    ![!copy client id](images/copy_client_id.png)  
+!!! note "Copy the `Application ID` from the application's `General Information` page."
+    ![!copy client id](images/copy_application_id.png)  
 
-Go to the following URL and paste your `Client ID` to the page (`Ctrl + V`): https://scarsz.me/authorize
+Go to the following URL and paste your `Application ID` to the page (`Ctrl + V`): https://scarsz.me/authorize
 
 ??? hint "How does https://scarsz.me/authorize work?"
-    It loads a small client-side running script which checks for a valid client ID length and redirects back to discord.com for OAuth 2 authorization of your bot. Alternatively, you can manually append the client ID to the end of the following link and open it:  
+    It loads a small client-side running script which checks for a valid application ID length and redirects back to discord.com for OAuth 2 authorization of your bot. Alternatively, you can manually append the application ID to the end of the following link and open it:  
     `https://discordapp.com/oauth2/authorize?scope=bot+applications.commands&client_id=`
 
 !!! note "Select your guild, then click `Authorize`"
