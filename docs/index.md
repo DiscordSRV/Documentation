@@ -28,7 +28,7 @@ _**We only give support for the latest release/dev builds; please update before 
 
 ### Plugins we hook into:  
 * #### Chat
-    * [`Herochat`](https://www.spigotmc.org/resources/herochat.34305/updates), [`LegendChat`](https://www.spigotmc.org/resources/legendchat.6268/), [`LunaChat`](https://github.com/ucchyocean/LunaChat), [`TownyChat`](https://www.spigotmc.org/resources/towny-advanced.72694/), [`UltimateChat`](https://www.spigotmc.org/resources/ultimatechat.23767/), [`VentureChat`](https://www.spigotmc.org/resources/venturechat.771/)
+    * [`Herochat`](https://www.spigotmc.org/resources/herochat.34305/updates), [`LegendChat`](https://www.spigotmc.org/resources/legendchat.6268/), [`LunaChat`](https://github.com/ucchyocean/LunaChat), [`TownyChat`](https://www.spigotmc.org/resources/towny-advanced.72694/), [`VentureChat`](https://www.spigotmc.org/resources/venturechat.771/)
 * #### Vanish
     * [`Essentials`](https://www.spigotmc.org/resources/essentialsx.9089/), [`PhantomAdmin`](https://www.spigotmc.org/resources/phantomadmin.37845/), [`SuperVanish`](https://www.spigotmc.org/resources/supervanish-be-invisible.1331/), [`VanishNoPacket`](https://dev.bukkit.org/projects/vanish)
 * #### World
