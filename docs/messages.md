@@ -33,8 +33,7 @@ The format used when sending messages from Discord to Minecraft for the user wit
 #### `...ChatMessageFormat_<channel>`
 The format used when sending messages from Discord to Minecraft for `<channel>`.
 
-You can specify a different format per channel. Let's say you have a channel named: `mychannel`.
-If you want it to have other formatting than the one defined globally you can add following properties:
+You can specify a different format per channel. To add a format for a channel named `mychannel` you'd add the following options to your `messages.yml`:
 ```yaml
 DiscordToMinecraftChatMessageFormat_mychannel: "[&bDiscord From MyChannel &r| %toprolecolor%%toprole%&r] %name% » %message%"
 DiscordToMinecraftChatMessageFormatNoRole_mychannel: "[&bDiscord From MyChannel&r] %name% » %message%"
@@ -43,7 +42,7 @@ DiscordToMinecraftChatMessageFormatNoRole_mychannel: "[&bDiscord From MyChannel&
 #### `...ChatMessageFormatNoRole_<channel>`
 The format used when sending messages from Discord to Minecraft for the user with no roles for `<channel>`.
 
-This can be formatted using the same idea as the previous option, for example:
+This can be formatted using the same idea as the previous option:
 ```yaml
 DiscordToMinecraftChatMessageFormatNoRole_mychannel: "[&bDiscord From MyChannel&r] %name% » %message%"
 ```
