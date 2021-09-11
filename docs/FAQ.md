@@ -351,3 +351,18 @@ Make sure that you have direct messages enabled on the server that you share wit
 If you run an offline mode server you can switch from using `{uuid-nodashes}` to `{username}` in the `AvatarURL` option. Since [crafatar.com](https://crafatar.com/) does not support usage of player names you have to switch to a less stable alternative like [cravatar.eu](https://cravatar.eu/) (less stable meaning it will return a Steve head if the service is heavily used).
 
 ---
+
+### How do I set different formats for specific channels? {id="different-formats-for-specific-channels"}
+
+Please note this only works for formatting from Discord -> Minecraft.
+
+You can specify a different format per channel. Let's say you have a channel named: `mychannel`.
+
+If you want it to have other formatting than the one defined globally you can add following properties:
+
+```yaml
+DiscordToMinecraftChatMessageFormat_mychannel: "[&bDiscord From MyChannel &r| %toprolecolor%%toprole%&r] %name% » %message%"
+DiscordToMinecraftChatMessageFormatNoRole_mychannel: "[&bDiscord From MyChannel&r] %name% » %message%"
+```
+
+---
