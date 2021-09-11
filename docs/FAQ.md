@@ -315,13 +315,13 @@ You **cannot** use both at the same time!
 
 To synchronize multiple discord roles with one Minecraft group you will need to create a "fake" group in the [GroupRoleSynchronizationGroupsAndRolesToSync](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationGroupsAndRolesToSync) option in synchronization.yml and make use of the `discordsrv.sync.<group name>` permission.
 
-Example: if you want to synchronize both the `Staff` and `Admin` discord role when someone has the `Admin` group in-game, you would do the following.
+Example: if you want to synchronize both the `Discord Staff` and `Discord Admin` discord role when someone has the `MinecraftAdmin` group in-game, you would do the following.
 
 ```yaml
-GroupRoleSynchronizationGroupsAndRolesToSync: {"Admin": "384977475567878145", "Staff": "135634730535092224"}
+GroupRoleSynchronizationGroupsAndRolesToSync: {"MinecraftAdmin": "384977475567878145", "MinecraftStaff": "135634730535092224"}
 ```
 
-The `Staff` group in the example above does not actually exist it is just used to store the role id of our `Staff` role. You would then give the `Admin` group the permission `discordsrv.sync.Staff` so that the `Admin` group gets both the `Admin` and `Staff` Discord role.
+The `MinecraftStaff` group in the example above is temporary. It is just used to store the role ID of our `Discord Staff` role. You would then give the `MinecraftAdmin` group the permission `discordsrv.sync.MinecraftStaff` so that the `MinecraftAdmin` group gets both the `Discord Admin` and `Discord Staff` Discord role.
 
 ---
 
