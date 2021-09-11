@@ -58,7 +58,7 @@
 | ---           |                                       |                                              |                                                                                                                                                                                 |
 | `lang`        |                                       |                                              |                                                                                                                                                                                 |
 +---------------+---------------------------------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `debugger`    | `<start [category]/stop/upload>`      | [`discordsrv.debug`](../Permissions)         | Enables debug mode for either all or a certain [debug category](../config/#debug). Use the sub command `upload` to return a debug link.                                         |
+| `debugger`    | `<start [category]/stop/upload>`      | [`discordsrv.debug`](../Permissions)         | Enables debug mode temporarily for either all or a certain [debug category](../config/#debug). Use the sub command `upload` to return a debug link.                             |
 +---------------+---------------------------------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ## Deprecated Commands  
