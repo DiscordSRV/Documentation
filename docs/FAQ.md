@@ -352,17 +352,3 @@ If you run an offline mode server you can switch from using `{uuid-nodashes}` to
 
 ---
 
-### How do I set different formats for specific channels? {id="different-formats-for-specific-channels"}
-
-Please note this only works for formatting from Discord -> Minecraft.
-
-You can specify a different format per channel. Let's say you have a channel named: `mychannel`.
-
-If you want it to have other formatting than the one defined globally you can add following properties:
-
-```yaml
-DiscordToMinecraftChatMessageFormat_mychannel: "[&bDiscord From MyChannel &r| %toprolecolor%%toprole%&r] %name% » %message%"
-DiscordToMinecraftChatMessageFormatNoRole_mychannel: "[&bDiscord From MyChannel&r] %name% » %message%"
-```
-
----

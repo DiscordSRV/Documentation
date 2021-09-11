@@ -32,8 +32,22 @@ The format used when sending messages from Discord to Minecraft.
 The format used when sending messages from Discord to Minecraft for the user with no roles.
 #### `...ChatMessageFormat_<channel>`
 The format used when sending messages from Discord to Minecraft for `<channel>`.
+
+You can specify a different format per channel. Let's say you have a channel named: `mychannel`.
+If you want it to have other formatting than the one defined globally you can add following properties:
+```yaml
+DiscordToMinecraftChatMessageFormat_mychannel: "[&bDiscord From MyChannel &r| %toprolecolor%%toprole%&r] %name% » %message%"
+DiscordToMinecraftChatMessageFormatNoRole_mychannel: "[&bDiscord From MyChannel&r] %name% » %message%"
+```
+
 #### `...ChatMessageFormatNoRole_<channel>`
 The format used when sending messages from Discord to Minecraft for the user with no roles for `<channel>`.
+
+This can be formatted using the same idea as the previous option, for example:
+```yaml
+DiscordToMinecraftChatMessageFormatNoRole_mychannel: "[&bDiscord From MyChannel&r] %name% » %message%"
+```
+
 #### [`...AllRolesSeparator`](https://config.discordsrv.com/messages/DiscordToMinecraftAllRolesSeparator) {id="DiscordToMinecraftAllRolesSeparator"}
 The separator used in between roles in `%allroles%`
 
