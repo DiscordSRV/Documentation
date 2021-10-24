@@ -18,7 +18,7 @@ nav:
   - Commands: Commands.md
   - Permissions: Permissions.md
   - 'Hooked plugin features':
-    - 'LuckPerm Contexts': 'LPContext.md'
+    - 'LuckPerms Contexts': 'LPContext.md'
     - 'PlaceholderAPI Placeholders': 'PAPI-Placeholders.md'
   - 'Troubleshooting':
     - 'Frequently Asked Questions': 'FAQ.md'
