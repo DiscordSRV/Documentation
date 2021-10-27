@@ -39,7 +39,7 @@
 ---
 
 #### Enable the Privileged Gateway Intents options
-!!! note "Make sure to enable all the `INTENT` options shown in the video below to avoid running into issues with DiscordSRV later on."
+!!! note "Make sure to enable both the `SERVER MEMBERS INTENT` and `MESSAGE CONTENT INTENT` options shown in the video below to avoid running into issues with DiscordSRV later on."
     <div class="lightgallery">
         <a data-sub-html="enable privileged gateway intents" data-iframe="true" data-width="500" href="../images/enable_all_intents.webm">
             <video width="100%" height="auto" autoplay loop>
