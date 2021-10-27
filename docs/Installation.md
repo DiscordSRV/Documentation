@@ -43,7 +43,7 @@
     <div class="lightgallery">
         <a data-sub-html="enable privileged gateway intents" data-iframe="true" data-width="500" href="../images/enable_all_intents.webm">
             <video width="100%" height="auto" autoplay loop>
-                <source src="../images/enable_all_intents.webm" type="video/webm" />
+                <source src="../images/enable_all_intents.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
         </a>
