@@ -18,9 +18,9 @@
 +---------------+---------------------------------------+----------------------------------------------------------------------------------+
 | `linked`      | [`discordsrv.linked`](../Permissions) | Shows if your Minecraft account is linked with a discord account.                |
 +---------------+---------------------------------------+----------------------------------------------------------------------------------+
-| `link`        | [`discordsrv.linked`](../Permissions) | Sends you instructions to link your Minecraft account with your Discord account. |
+| `link`        | [`discordsrv.link`](../Permissions)   | Sends you instructions to link your Minecraft account with your Discord account. |
 +---------------+---------------------------------------+----------------------------------------------------------------------------------+
-| `unlink`      | [`discordsrv.linked`](../Permissions) | Unlink your Discord account from your Minecraft account.                         |
+| `unlink`      | [`discordsrv.unlink`](../Permissions) | Unlink your Discord account from your Minecraft account.                         |
 |               |                                       |                                                                                  |
 | ---           |                                       |                                                                                  |
 | `clearlinked` |                                       |                                                                                  |
