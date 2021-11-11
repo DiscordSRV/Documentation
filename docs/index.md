@@ -68,7 +68,7 @@ Visit the [Installation](Installation) page for clear and in-depth instructions 
 ## Donations
 First off, thank you from the bottom of my heart for the pizza. If you would like to donate, go to https://scarsz.me/donate. $10 is the suggested amount but you can donate however much you would like- anything is a massive thank you from me. In the note put your Discord username and if you're in DiscordSRV's server you'll be set as a donator and you'll receive some neat perks in the future. If you donated without the note, send me a PM on Discord and I'll manually check it.  
 ## Developers
-If you want to interface DiscordSRV with your plugin, you can do so by adding the Maven dependency or adding the plugin jar (DiscordSRV version 1.18.0+) to your project. For an example of this, see [DiscordSRV-ApiTest](https://github.com/DiscordSRV/DiscordSRV-ApiTest). Be sure to add "DiscordSRV" to your plugin's `plugin.yml` depends/softdepends list. The latest version of the api (`${lastestVersion}`) can be found [here](https://github.com/DiscordSRV/DiscordSRV/#readme), shown in the `release` shield (For example 1.24.0). 
+If you want to interface DiscordSRV with your plugin, you can do so by adding the Maven dependency or adding the plugin jar (DiscordSRV version 1.18.0+) to your project. For an example of this, see [DiscordSRV-ApiTest](https://github.com/DiscordSRV/DiscordSRV-ApiTest). Be sure to add "DiscordSRV" to your plugin's `plugin.yml` depends/softdepends list. The latest version of the api (`${latestVersion}`) can be found [here](https://github.com/DiscordSRV/DiscordSRV/#readme), shown in the `release` shield (For example 1.24.0). 
 
 === "Maven"
     ```xml
@@ -80,7 +80,7 @@ If you want to interface DiscordSRV with your plugin, you can do so by adding th
     <dependency>
         <groupId>com.discordsrv</groupId>
         <artifactId>discordsrv</artifactId>
-        <version>${lastestVersion}</version>
+        <version>${latestVersion}</version>
         <scope>provided</scope>
     </dependency>
     ```  
@@ -90,7 +90,7 @@ If you want to interface DiscordSRV with your plugin, you can do so by adding th
         maven { url 'https://nexus.scarsz.me/content/groups/public/' }
     }  
     dependencies {
-        compileOnly 'com.discordsrv:discordsrv:${lastestVersion}'
+        compileOnly 'com.discordsrv:discordsrv:${latestVersion}'
     }
     ```
 
