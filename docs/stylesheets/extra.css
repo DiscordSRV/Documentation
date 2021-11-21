@@ -13,7 +13,7 @@ table code {
     white-space: nowrap
 }
 
-a[href^="http" ]:not(.md-button, [data-sub-html], .md-footer-social__link, .md-source, .md-logo, [href*="config.discordsrv.com"], [href*="squidfunk.github.io"], [href*="Documentation/edit"]):after {
+a[href^="http" ]:not(.md-button, [data-sub-html], .md-footer-social__link, .md-source, .md-search-result__link, .md-logo, [href*="config.discordsrv.com"], [href*="squidfunk.github.io"], [href*="Documentation/edit"]):after {
     background: transparent var(--external-link-icon) 0 0 no-repeat;
     content: "";
     display: inline-block;
