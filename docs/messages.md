@@ -50,6 +50,10 @@ DiscordToMinecraftChatMessageFormatNoRole_mychannel: "[&bDiscord From MyChannel&
 #### [`...AllRolesSeparator`](https://config.discordsrv.com/messages/DiscordToMinecraftAllRolesSeparator) {id="DiscordToMinecraftAllRolesSeparator"}
 The separator used in between roles in `%allroles%`
 
+#### [`...ReplyFormat`](https://config.discordsrv.com/messages/DiscordToMinecraftReplyFormat) {id="DiscordToMinecraftReplyFormat"}
+The format for the message displayed to indicate that the message is a reply
+NOTE: The %reply% placeholder needs to be present in the format if you want the DiscordToMinecraftMessageReplyFormat to display in your message.
+
 ---
 
 ### MinecraftChatToDiscordMessage...
@@ -340,6 +344,12 @@ message to set the console channel's topic when the server shuts down
 This is the message sent to players when they run "`/discord`". It's recommended to leave command syntax as a part of this.  
 
 ---
+
+### [`NoPermissionMessage`](https://config.discordsrv.com/messages/NoPermissionMessage) {id="NoPermissionMessage"}
+ No permission message
+
+### [`UnknownCommandMessage`](https://config.discordsrv.com/messages/UnknownCommandMessage) {id="UnknownCommandMessage"}
+Unknown command message
 
 ### DiscordChatChannelServer...
 #### [`...StartupMessage`](https://config.discordsrv.com/messages/DiscordChatChannelServerStartupMessage) {id="DiscordChatChannelServerStartupMessage"}
