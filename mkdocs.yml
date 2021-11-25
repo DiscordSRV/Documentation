@@ -8,6 +8,7 @@ site_description: >-
 nav:
   - Home: index.md
   - Installation: Installation.md
+  - 'Frequently Asked Questions': 'FAQ.md'
   - 'Configs':
     - 'alerts.yml': 'alerts.md'
     - 'config.yml': 'config.md'
@@ -21,7 +22,6 @@ nav:
     - 'LuckPerms Contexts': 'LPContext.md'
     - 'PlaceholderAPI Placeholders': 'PAPI-Placeholders.md'
   - 'Troubleshooting':
-    - 'Frequently Asked Questions': 'FAQ.md'
     - 'Report a bug': 'https://github.com/DiscordSRV/DiscordSRV/issues'
     - 'Request a feature': 'https://github.com/DiscordSRV/DiscordSRV/issues'
     - 'Ask for support': 'https://discordsrv.com/discord'
