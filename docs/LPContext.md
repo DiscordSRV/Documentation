@@ -8,6 +8,7 @@ Available contexts:
 * `discordsrv:boosting` - whether the player is boosting the Discord guild (true/false)
 * `discordsrv:role` - the role the user has in Discord
 * `discordsrv:role_id` - the role id the user has in Discord
+* `discordsrv:server_id` - whether the user is a member of the server with the given id (which the bot is also a part of)
 
 ##### Examples
 
@@ -50,6 +51,16 @@ Available contexts:
     | Explanation                                                                                              |
     +----------------------------------------------------------------------------------------------------------+
     | will negate the `chat.use` permission for anyone with the role that has the `000000000000` ID in Discord |
+    +----------------------------------------------------------------------------------------------------------+
+=== "discordsrv:server_id"
+    +----------------------------------------------------------------------------------------------------------+
+    | Command                                                                                                  |
+    +----------------------------------------------------------------------------------------------------------+
+    | `/lp group default permission set essentials.back true discordsrv:server_id=000000000000`                |
+    +----------------------------------------------------------------------------------------------------------+
+    | Explanation                                                                                              |
+    +----------------------------------------------------------------------------------------------------------+
+    | will give all users access to `/back` for anyone in the server that has the `000000000000` ID in Discord |
     +----------------------------------------------------------------------------------------------------------+
 
 
