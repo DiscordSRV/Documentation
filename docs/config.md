@@ -196,6 +196,9 @@ Converts minecraft messages formatted with format codes into Discord format
 ### [`CancelConsoleCommandIfLoggingFailed`](https://config.discordsrv.com/config/CancelConsoleCommandIfLoggingFailed) {id="CancelConsoleCommandIfLoggingFailed"}
 This option disables running a console command through discord if logging is unsuccessful.
 
+### [`EnableIncompatibleClientAlert`](https://config.discordsrv.com/config/EnableIncompatibleClientAlert) {id="EnableIncompatibleClientAlert"}
+LunarClient does not support hover/click components in messages. Users of LunarClient will receive an automated message stating that their user experience is worsened by the use of the client, if this option is enabled
+
 ### [`ForcedLanguage`](https://config.discordsrv.com/config/ForcedLanguage)[^1] {id="ForcedLanguage"}
 This option forcefully changes the language to the specified type.
 Currently Supported Languages: `[EN,FR,DE,JA,KO,NL,ES,RU,ET,ZH]`
@@ -803,6 +806,9 @@ Setting the timezone as `default` will set it to the system's timezone
     Etc/Universal
     Etc/Zulu
     ```
+
+### [MinecraftMentionSound](https://config.discordsrv.com/config/MinecraftMentionSound) {id="MinecraftMentionSound"}
+Whether a sound should be sent to the player in Minecraft when they are mentioned from Discord
 
 ---
 
