@@ -361,13 +361,17 @@ message to be sent when server shuts down; leave blank to disable
 
 ### [`ServerWatchdogMessage`](https://config.discordsrv.com/messages/ServerWatchdogMessage) {id="ServerWatchdogMessage"}
 
-+----------------+---------------------------------------------+
-|  Placeholders  |  Description                                |
-+================+=============================================+
-| `%guildowner%` | The guild owner's mention tag.              |
-+----------------+---------------------------------------------+
-| `%date%`       | The date & time when the message gets sent. |
-+----------------+---------------------------------------------+
++----------------+--------------------------------------------------------------+
+|  Placeholders  |  Description                                                 |
++================+==============================================================+
+| `%guildowner%` | The guild owner's mention tag.                               |
++----------------+--------------------------------------------------------------+
+| `%date%`       | The date & time when the message gets sent.                  |
++----------------+--------------------------------------------------------------+
+| `%timeout%`    | ServerWatchdogTimeout as a placeholder                       |
++----------------+--------------------------------------------------------------+
+| `%timestamp%`  | For use in discord's timestamp format EG: `<t:%timestamp%:R> |
++----------------+--------------------------------------------------------------+
 
 The watchdog constantly monitors the last time your server performed a game tick.
 If the time since the last tick goes above the set interval in seconds, Discord messages can be triggered.  
