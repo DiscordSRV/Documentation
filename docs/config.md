@@ -875,6 +875,9 @@ Can be a single, static value, or cycle through multiple different options.
     DiscordGameStatus: ["watching %playerlist_online,normal,yes,amount% players", "playing with %playerlist_online,perm,no,amount,discordsrv.hidden% players"]
     ```
 
+### [`DiscordOnlineStatus`](https://config.discordsrv.com/config/DiscordOnlineStatus) {id="DiscordOnlineStatus"}
+Activity status to display. This must be one of the following: `ONLINE`, `DND`, `IDLE` or `INVISIBLE`
+
 ### [`StatusUpdateRateInMinutes`](https://config.discordsrv.com/config/StatusUpdateRateInMinutes) {id="StatusUpdateRateInMinutes"}
 
 This sets the frequency of the status update. It can't be set below 2 minutes.
