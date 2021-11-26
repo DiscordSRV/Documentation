@@ -902,10 +902,10 @@ Types of mentions allowed in Minecraft to Discord messages
 
 Available values: `[user, channel, emote, role, here, everyone]`
 
-#### [`...EmojiBehavior`] (https://config.discordsrv.com/config/DiscordChatChannelEmojiBehavior) {id="DiscordChatChannelEmojiBehavior"}
+#### [`...EmojiBehavior`](https://config.discordsrv.com/config/DiscordChatChannelEmojiBehavior) {id="DiscordChatChannelEmojiBehavior"}
 How emojis should be sent to Minecraft. Can be "show", "name" or "hide"
 
-#### [`...EmoteBehavior`] (https://config.discordsrv.com/config/DiscordChatChannelEmoteBehavior) {id="DiscordChatChannelEmoteBehavior"}
+#### [`...EmoteBehavior`](https://config.discordsrv.com/config/DiscordChatChannelEmoteBehavior) {id="DiscordChatChannelEmoteBehavior"}
 How emotes should be sent to Minecraft. Can be "name" or "hide"
 
 #### [`...PrefixRequiredToProcessMessage`](https://config.discordsrv.com/config/DiscordChatChannelPrefixRequiredToProcessMessage) {id="DiscordChatChannelPrefixRequiredToProcessMessage"}
