@@ -11,7 +11,7 @@
 [:material-cloud-upload: Latest Release](https://get.discordsrv.com/){ .md-button }
 [:material-cloud-tags: Latest Snapshot](https://snapshot.discordsrv.com/){ .md-button }
 
-**Supports All Minecraft Versions from 1.7.9 to 1.17.1**  
+**Supports All Minecraft Versions from 1.7.9 to 1.18**  
 
 _**We only give support for the latest release/dev builds; please update before asking for help**_
 
