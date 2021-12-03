@@ -68,10 +68,16 @@ Visit the [Installation](Installation) page for clear and in-depth instructions 
 ## Donations
 First off, thank you from the bottom of my heart for the pizza. If you would like to donate, go to https://scarsz.me/donate. $10 is the suggested amount but you can donate however much you would like- anything is a massive thank you from me. In the note put your Discord username and if you're in DiscordSRV's server you'll be set as a donator and you'll receive some neat perks in the future. If you donated without the note, send me a PM on Discord and I'll manually check it.  
 ## Developers
-If you want to interface DiscordSRV with your plugin, you can do so by adding the Maven dependency or adding the plugin jar (DiscordSRV version 1.18.0+) to your project. For an example of this, see [DiscordSRV-ApiTest](https://github.com/DiscordSRV/DiscordSRV-ApiTest). Be sure to add "DiscordSRV" to your plugin's `plugin.yml` depends/softdepends list.  
+If you want to interface DiscordSRV with your plugin, you can do so by adding the Maven dependency or adding the plugin jar (DiscordSRV version 1.18.0+) to your project. You also need to add the JDA repository. For an example of this, see [DiscordSRV-ApiTest](https://github.com/DiscordSRV/DiscordSRV-ApiTest). Be sure to add "DiscordSRV" to your plugin's `plugin.yml` depends/softdepends list.  
 
 === "Maven"
     ```xml
+    <repository>
+        <id>dv8tion</id>
+        <name>m2-dv8tion</name>
+        <url>https://m2.dv8tion.net/releases</url>
+    </repository>
+    ...
     <repository>
         <id>Scarsz-Nexus</id>
         <url>https://nexus.scarsz.me/content/groups/public/</url>
@@ -86,6 +92,10 @@ If you want to interface DiscordSRV with your plugin, you can do so by adding th
     ```  
 === "Gradle"
     ```js
+    maven {
+        name 'm2-dv8tion'
+        url 'https://m2.dv8tion.net/releases'
+    }
     repositories {
         maven { url 'https://nexus.scarsz.me/content/groups/public/' }
     }  
