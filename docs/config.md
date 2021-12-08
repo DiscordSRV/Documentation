@@ -101,36 +101,6 @@ Note: DebugLevel is now deprecated
 
 ---
 
-### [`CancelConsoleCommandIfLoggingFailed`](https://config.discordsrv.com/config/CancelConsoleCommandIfLoggingFailed) {id="CancelConsoleCommandIfLoggingFailed"}
-This option disables running a console command through discord if logging is unsuccessful.
-
-
-### [`ForcedLanguage`](https://config.discordsrv.com/config/ForcedLanguage)[^1] {id="ForcedLanguage"}
-This option forcefully changes the language to the specified type.
-Currently Supported Languages: `[EN,FR,DE,JA,KO,NL,ES,RU,ET,ZH]`
-
-### [`AvatarUrl`](https://config.discordsrv.com/config/AvatarUrl) {id="AvatarUrl"}
-
-+-------------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
-|  Placeholders     |  Example                               |  Description                                                                                              |
-+===================+========================================+===========================================================================================================+
-| `{texture}`       | `<unique texture id>`                  | the player's unique texture id that's used in a hacky workaround for discord's inconsistent image caching |
-+-------------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| `{username}`      | `jeb_`                                 | raw player username                                                                                       |
-+-------------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| `{uuid}`          | `d7c1db4d-e57b-488b-b8bc-4462fe49a3e8` | player's UUID                                                                                             |
-+-------------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| `{uuid-nodashes}` | `d7c1db4de57b488bb8bc4462fe49a3e8`     | player's UUID without dashes                                                                              |
-+-------------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
-| `{size}`          | `128`                                  | size of the avatar image                                                                                  |
-+-------------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
-|  [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI) placeholders are also supported                                                                    |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-The link to pull the player's skin from.
-
----
-
 ### Experiment_Jdbc...
 This allows the ability to connect to SQL databases.
 #### [`...AccountLinkBackend`](https://config.discordsrv.com/config/Experiment_JdbcAccountLinkBackend) {id="Experiment_JdbcAccountLinkBackend"}
@@ -185,6 +155,28 @@ Use the discord avatar instead of the minecraft player skin if the user is linke
 
 ---
 
+### [`AvatarUrl`](https://config.discordsrv.com/config/AvatarUrl) {id="AvatarUrl"}
+
++-------------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
+|  Placeholders     |  Example                               |  Description                                                                                              |
++===================+========================================+===========================================================================================================+
+| `{texture}`       | `<unique texture id>`                  | the player's unique texture id that's used in a hacky workaround for discord's inconsistent image caching |
++-------------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| `{username}`      | `jeb_`                                 | raw player username                                                                                       |
++-------------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| `{uuid}`          | `d7c1db4d-e57b-488b-b8bc-4462fe49a3e8` | player's UUID                                                                                             |
++-------------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| `{uuid-nodashes}` | `d7c1db4de57b488bb8bc4462fe49a3e8`     | player's UUID without dashes                                                                              |
++-------------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
+| `{size}`          | `128`                                  | size of the avatar image                                                                                  |
++-------------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------+
+|  [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI) placeholders are also supported                                                                    |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+The link to pull the player's skin from.
+
+---
+
 ### Experiment_MCDiscordReserializer_...
 Converts formatting between Discord and Minecraft (bold, italics, strikethrough, underline)
 >`Minecraft Formatting` → "Output" ← `Discord Formatting`
@@ -201,6 +193,16 @@ Converts minecraft messages formatted with format codes into Discord format
 
 ---
 
+### [`CancelConsoleCommandIfLoggingFailed`](https://config.discordsrv.com/config/CancelConsoleCommandIfLoggingFailed) {id="CancelConsoleCommandIfLoggingFailed"}
+This option disables running a console command through discord if logging is unsuccessful.
+
+### [`EnableIncompatibleClientAlert`](https://config.discordsrv.com/config/EnableIncompatibleClientAlert) {id="EnableIncompatibleClientAlert"}
+LunarClient does not support hover/click components in messages. Users of LunarClient will receive an automated message stating that their user experience is worsened by the use of the client, if this option is enabled
+
+### [`ForcedLanguage`](https://config.discordsrv.com/config/ForcedLanguage)[^1] {id="ForcedLanguage"}
+This option forcefully changes the language to the specified type.
+Currently Supported Languages: `[EN,FR,DE,JA,KO,NL,ES,RU,ET,ZH]`
+
 ### [`PrintGuildsAndChannels`](https://config.discordsrv.com/config/PrintGuildsAndChannels) {id="PrintGuildsAndChannels"}
 Prints Guilds and Channels in the console on startup
 
@@ -210,70 +212,8 @@ Force SSL to TLSv1.2
 ### [`NoopHostnameVerifier`](https://config.discordsrv.com/config/NoopHostnameVerifier) {id="NoopHostnameVerifier"}
 Returns valid hostname without making an attempt to actually validate it (insecure)
 
-### [`ParseEmojisToNames`](https://config.discordsrv.com/config/ParseEmojisToNames) {id="ParseEmojisToNames"}
-Parses emojis from unicode to aliases (😒 -> `:unamused:`) if enabled. Disable if you'd like to strip emojis
-
 ### [`MaximumAttemptsForSystemDNSBeforeUsingFallbackDNS`](https://config.discordsrv.com/config/MaximumAttemptsForSystemDNSBeforeUsingFallbackDNS) {id="MaximumAttemptsForSystemDNSBeforeUsingFallbackDNS"}
 Maximum amount of attempts to try using system DNS servers before using fallback DNS servers.
-
-### [`DisabledPluginHooks`](https://config.discordsrv.com/config/DisabledPluginHooks) {id="DisabledPluginHooks"}
-It is highly recommended you don't mess with this option, as it can break the hooks for plugins.
-
-+------------------------------------------------------------+
-|                      Available values                      |
-+============================================================+
-| [Names of our hooks](Home#Plugins-we-hook-into)            |
-+------------------------------------------------------------+
-| `LuckPerms-Contexts` - more info at [LPContext](LPContext) |
-+------------------------------------------------------------+
-
-### [`VentureChatBungee`](https://config.discordsrv.com/config/VentureChatBungee) {id="VentureChatBungee"}
-
-Enables VentureChat's optional BungeeCord functionality. This will allow the use of only one bot for messaging across multiple servers. (messages are received from every server via VentureChat and passed to a single instance of DiscordSRV)
-
-Make sure to install DiscordSRV on the server with the most consistent players online.
-
-Keep in mind this requires at least 1 player to be online (on the server with DiscordSRV installed) for this feature to operate properly. Also, PlaceholderAPI placeholders that are player related (or require Player) can't be used when using the VentureBungee option.
-
-### [`EnablePresenceInformation`](https://config.discordsrv.com/config/EnablePresenceInformation) {id="EnablePresenceInformation"}
-Enables presence information which is required for some of our PlaceholderAPI placeholders.
-
-Keep in mind this requires `Presence Intent` to be enabled from the [Discord developer portal](https://discord.com/developers/applications)
-
-### [`DiscordGameStatus`](https://config.discordsrv.com/config/DiscordGameStatus) {id="DiscordGameStatus"}
-
-This is the user status shown for the bot in Discord; "Playing ..."
-
-Preface the status with "playing", "watching", or "listening to" to set the activity type
-
-Can be a single, static value, or cycle through multiple different options.
-
-[PlaceholderAPI placeholders](https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders) are supported.
-
-=== "single value"
-    ```yaml
-    DiscordGameStatus: "Minecraft" # The activity type is "playing" by default if not defined
-    ```
-=== "prefaced status"
-    ```yaml
-    DiscordGameStatus: "playing Minecraft"
-    ```
-=== "multiple prefaced statuses"
-    ```yaml
-    DiscordGameStatus: ["playing Minecraft", "watching yourserveripchange.me", "listening to a song"]
-    ```
-=== "example using PlaceholderAPI"
-    For this example you have to run `/papi ecloud download PlayerList` once to install the [required PlaceholderAPI extension](https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders#list-players).
-    ```yaml
-    # Example using PlaceholderAPI to show amount of online players
-    #   First item shows all online players
-    #   Second item excludes players with the discordsrv.hidden permission
-    DiscordGameStatus: ["watching %playerlist_online,normal,yes,amount% players", "playing with %playerlist_online,perm,no,amount,discordsrv.hidden% players"]
-    ```
-
-### [`StatusUpdateRateInMinutes`](https://config.discordsrv.com/config/StatusUpdateRateInMinutes) {id="StatusUpdateRateInMinutes"}
-
-This sets the frequency of the status update. It can't be set below 2 minutes.
 
 ### [`TimestampFormat`](https://config.discordsrv.com/config/TimestampFormat) {id="TimestampFormat"}
 
@@ -867,7 +807,81 @@ Setting the timezone as `default` will set it to the system's timezone
     Etc/Zulu
     ```
 
+### [MinecraftMentionSound](https://config.discordsrv.com/config/MinecraftMentionSound) {id="MinecraftMentionSound"}
+Whether a sound should be sent to the player in Minecraft when they are mentioned from Discord
+
 ---
+
+### [`DisabledPluginHooks`](https://config.discordsrv.com/config/DisabledPluginHooks) {id="DisabledPluginHooks"}
+It is highly recommended you don't mess with this option, as it can break the hooks for plugins.
+
++------------------------------------------------------------+
+|                      Available values                      |
++============================================================+
+| [Names of our hooks](Home#Plugins-we-hook-into)            |
++------------------------------------------------------------+
+| `LuckPerms-Contexts` - more info at [LPContext](LPContext) |
++------------------------------------------------------------+
+
+---
+
+### [`VentureChatBungee`](https://config.discordsrv.com/config/VentureChatBungee) {id="VentureChatBungee"}
+
+Enables VentureChat's optional BungeeCord functionality. This will allow the use of only one bot for messaging across multiple servers. (messages are received from every server via VentureChat and passed to a single instance of DiscordSRV)
+
+Make sure to install DiscordSRV on the server with the most consistent players online.
+
+Keep in mind this requires at least 1 player to be online (on the server with DiscordSRV installed) for this feature to operate properly. Also, PlaceholderAPI placeholders that are player related (or require Player) can't be used when using the VentureBungee option.
+
+### [`EnablePresenceInformation`](https://config.discordsrv.com/config/EnablePresenceInformation) {id="EnablePresenceInformation"}
+Enables presence information which is required for some of our PlaceholderAPI placeholders.
+
+Keep in mind this requires `Presence Intent` to be enabled from the [Discord developer portal](https://discord.com/developers/applications)
+
+### [`UseModernPaperChatEvent`](https://config.discordsrv.com/config/UseModernPaperChatEvent) {id="UseModernPaperChatEvent"}
+
+UseModernPaperChatEvent: only use this if you have a chat plugins that SPECIFICALLY utilizes Paper's "AsyncChatEvent"
+
+---
+
+### [`DiscordGameStatus`](https://config.discordsrv.com/config/DiscordGameStatus) {id="DiscordGameStatus"}
+
+This is the user status shown for the bot in Discord; "Playing ..."
+
+Preface the status with "playing", "watching", or "listening to" to set the activity type
+
+Can be a single, static value, or cycle through multiple different options.
+
+[PlaceholderAPI placeholders](https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders) are supported.
+
+=== "single value"
+    ```yaml
+    DiscordGameStatus: "Minecraft" # The activity type is "playing" by default if not defined
+    ```
+=== "prefaced status"
+    ```yaml
+    DiscordGameStatus: "playing Minecraft"
+    ```
+=== "multiple prefaced statuses"
+    ```yaml
+    DiscordGameStatus: ["playing Minecraft", "watching yourserveripchange.me", "listening to a song"]
+    ```
+=== "example using PlaceholderAPI"
+    For this example you have to run `/papi ecloud download PlayerList` once to install the [required PlaceholderAPI extension](https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders#list-players).
+    ```yaml
+    # Example using PlaceholderAPI to show amount of online players
+    #   First item shows all online players
+    #   Second item excludes players with the discordsrv.hidden permission
+    DiscordGameStatus: ["watching %playerlist_online,normal,yes,amount% players", "playing with %playerlist_online,perm,no,amount,discordsrv.hidden% players"]
+    ```
+
+### [`DiscordOnlineStatus`](https://config.discordsrv.com/config/DiscordOnlineStatus) {id="DiscordOnlineStatus"}
+Activity status to display. This must be one of the following: `ONLINE`, `DND`, `IDLE` or `INVISIBLE`
+
+### [`StatusUpdateRateInMinutes`](https://config.discordsrv.com/config/StatusUpdateRateInMinutes) {id="StatusUpdateRateInMinutes"}
+
+This sets the frequency of the status update. It can't be set below 2 minutes.
+
 
 ### DiscordChatChannel...
 
@@ -887,6 +901,12 @@ Whether or not to translate mentions like [@Person]() for Minecraft to Discord m
 Types of mentions allowed in Minecraft to Discord messages
 
 Available values: `[user, channel, emote, role, here, everyone]`
+
+#### [`...EmojiBehavior`](https://config.discordsrv.com/config/DiscordChatChannelEmojiBehavior) {id="DiscordChatChannelEmojiBehavior"}
+How emojis should be sent to Minecraft. Can be "show", "name" or "hide"
+
+#### [`...EmoteBehavior`](https://config.discordsrv.com/config/DiscordChatChannelEmoteBehavior) {id="DiscordChatChannelEmoteBehavior"}
+How emotes should be sent to Minecraft. Can be "name" or "hide"
 
 #### [`...PrefixRequiredToProcessMessage`](https://config.discordsrv.com/config/DiscordChatChannelPrefixRequiredToProcessMessage) {id="DiscordChatChannelPrefixRequiredToProcessMessage"}
 The character(s) required at the start of a message for it to be sent from Minecraft to Discord. Set to "" to not require a prefix.

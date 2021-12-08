@@ -50,6 +50,10 @@ DiscordToMinecraftChatMessageFormatNoRole_mychannel: "[&bDiscord From MyChannel&
 #### [`...AllRolesSeparator`](https://config.discordsrv.com/messages/DiscordToMinecraftAllRolesSeparator) {id="DiscordToMinecraftAllRolesSeparator"}
 The separator used in between roles in `%allroles%`
 
+#### [`...ReplyFormat`](https://config.discordsrv.com/messages/DiscordToMinecraftReplyFormat) {id="DiscordToMinecraftReplyFormat"}
+The format for the message displayed to indicate that the message is a reply
+NOTE: The %reply% placeholder needs to be present in the format if you want the DiscordToMinecraftMessageReplyFormat to display in your message.
+
 ---
 
 ### MinecraftChatToDiscordMessage...
@@ -347,6 +351,12 @@ This is the message sent to players when they run "`/discord`". It's recommended
 
 ---
 
+### [`NoPermissionMessage`](https://config.discordsrv.com/messages/NoPermissionMessage) {id="NoPermissionMessage"}
+ No permission message
+
+### [`UnknownCommandMessage`](https://config.discordsrv.com/messages/UnknownCommandMessage) {id="UnknownCommandMessage"}
+Unknown command message
+
 ### DiscordChatChannelServer...
 #### [`...StartupMessage`](https://config.discordsrv.com/messages/DiscordChatChannelServerStartupMessage) {id="DiscordChatChannelServerStartupMessage"}
 message to be sent when server starts; leave blank to disable
@@ -357,13 +367,17 @@ message to be sent when server shuts down; leave blank to disable
 
 ### [`ServerWatchdogMessage`](https://config.discordsrv.com/messages/ServerWatchdogMessage) {id="ServerWatchdogMessage"}
 
-+----------------+---------------------------------------------+
-|  Placeholders  |  Description                                |
-+================+=============================================+
-| `%guildowner%` | The guild owner's mention tag.              |
-+----------------+---------------------------------------------+
-| `%date%`       | The date & time when the message gets sent. |
-+----------------+---------------------------------------------+
++----------------+--------------------------------------------------------------+
+|  Placeholders  |  Description                                                 |
++================+==============================================================+
+| `%guildowner%` | The guild owner's mention tag.                               |
++----------------+--------------------------------------------------------------+
+| `%date%`       | The date & time when the message gets sent.                  |
++----------------+--------------------------------------------------------------+
+| `%timeout%`    | ServerWatchdogTimeout as a placeholder                       |
++----------------+--------------------------------------------------------------+
+| `%timestamp%`  | For use in discord's timestamp format EG: `<t:%timestamp%:R> |
++----------------+--------------------------------------------------------------+
 
 The watchdog constantly monitors the last time your server performed a game tick.
 If the time since the last tick goes above the set interval in seconds, Discord messages can be triggered.  
