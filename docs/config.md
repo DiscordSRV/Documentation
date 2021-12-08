@@ -909,9 +909,6 @@ IDs of discord users (or bots) that should not have their messages processed & s
 If the following list should be treated as a whitelist (true) or a blacklist (false)
 #### [`...BlockedRolesIds`](https://config.discordsrv.com/config/DiscordChatChannelBlockedRolesIds) {id="DiscordChatChannelBlockedRolesIds"}
 IDs of discord roles that should not have their messages processed & sent to MC
-#### [`...ColorTranslations`](https://config.discordsrv.com/config/DiscordChatChannelColorTranslations) {id="DiscordChatChannelColorTranslations"}
-States which codes are replaced with which colors. Author needs to have at least one of the roles configured in `DiscordChatChannelRolesAllowedToUseColorCodesInChat` for this to work. Don't touch anything unless you know what you are doing.
-
 #### [`...RolesSelectionAsWhitelist`](https://config.discordsrv.com/config/DiscordChatChannelRolesSelectionAsWhitelist) {id="DiscordChatChannelRolesSelectionAsWhitelist"}
 If the following list should be treated as a whitelist (true) or a blacklist (false)
 #### [`...RolesSelection`](https://config.discordsrv.com/config/DiscordChatChannelRolesSelection) {id="DiscordChatChannelRolesSelection"}
