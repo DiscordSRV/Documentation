@@ -141,17 +141,19 @@ The format for Dynmap messages going to Discord
 ### DiscordConsoleChannel...
 #### [`...Format`](https://config.discordsrv.com/messages/DiscordConsoleChannelFormat) {id="DiscordConsoleChannelFormat"}
 
-+---------------------+-----------------------------------------------+------------------------------+
-| Placeholders        | Example                                       | Description                  |
-+=====================+===============================================+==============================+
-| `%datetime%`        | `Sun Jan 1 15:30:45 PDT 2017`                 | current date & time          |
-+---------------------+-----------------------------------------------+------------------------------+
-| `%level%`           | `INFO, WARN, ERROR`                           | message severity level       |
-+---------------------+-----------------------------------------------+------------------------------+
-| `%line%`            | `[DiscordSRV] Enabling DiscordSRV vX.Y`       | line from the console        |
-+---------------------+-----------------------------------------------+------------------------------+
-| [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI) placeholders are also supported |
-+----------------------------------------------------------------------------------------------------+
++---------------------+-----------------------------------------------+------------------------------------------+
+| Placeholders        | Example                                       | Description                              |
++=====================+===============================================+==========================================+
+| `%datetime%`        | `Sun Jan 1 15:30:45 PDT 2017`                 | current date & time                      |
++---------------------+-----------------------------------------------+------------------------------------------+
+| `%timestamp%`       | `1483313445`                                  | current time in seconds since UNIX epoch |
++---------------------+-----------------------------------------------+------------------------------------------+
+| `%level%`           | `INFO, WARN, ERROR`                           | message severity level                   |
++---------------------+-----------------------------------------------+------------------------------------------+
+| `%line%`            | `[DiscordSRV] Enabling DiscordSRV vX.Y`       | line from the console                    |
++---------------------+-----------------------------------------------+------------------------------------------+
+| [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI) placeholders are also supported             |
++----------------------------------------------------------------------------------------------------------------+
 
 This is the format used when sending a line from the console to the console channel, if enabled  
 
@@ -297,6 +299,10 @@ The message that gets broadcasted when a player gets an achievement.
 | `%playermax%`                   | maximum player count                                              |
 +---------------------------------+-------------------------------------------------------------------+
 | `%date%`                        | current date                                                      |
++---------------------------------+-------------------------------------------------------------------+
+| `%timestamp%`                   | current time in seconds since UNIX epoch                          |
++---------------------------------+-------------------------------------------------------------------+
+| `%starttimestamp%`              | start time in seconds since UNIX epoch                            |
 +---------------------------------+-------------------------------------------------------------------+
 | `%totalplayers%`                | total amount of players to ever join the main world               |
 +---------------------------------+-------------------------------------------------------------------+

@@ -925,6 +925,10 @@ Whether or not to require players have their Discord account linked to their Min
 Whether or not bots should be blocked from Discord -> MC chat
 #### [`...BlockedIds`](https://config.discordsrv.com/config/DiscordChatChannelBlockedIds) {id="DiscordChatChannelBlockedIds"}
 IDs of discord users (or bots) that should not have their messages processed & sent to MC
+#### [`...BlockedRolesAsWhitelist`](https://config.discordsrv.com/config/DiscordChatChannelBlockedRolesAsWhitelist) {id="DiscordChatChannelBlockedRolesAsWhitelist"}
+If the following list should be treated as a whitelist (true) or a blacklist (false)
+#### [`...BlockedRolesIds`](https://config.discordsrv.com/config/DiscordChatChannelBlockedRolesIds) {id="DiscordChatChannelBlockedRolesIds"}
+IDs of discord roles that should not have their messages processed & sent to MC
 #### [`...RolesSelectionAsWhitelist`](https://config.discordsrv.com/config/DiscordChatChannelRolesSelectionAsWhitelist) {id="DiscordChatChannelRolesSelectionAsWhitelist"}
 If the following list should be treated as a whitelist (true) or a blacklist (false)
 #### [`...RolesSelection`](https://config.discordsrv.com/config/DiscordChatChannelRolesSelection) {id="DiscordChatChannelRolesSelection"}
