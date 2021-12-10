@@ -1029,7 +1029,7 @@ commands to run when an account is linked
 commands to run when an account is unlinked
 
 #### [`...LinkedRoleNameToAddUserTo`](https://config.discordsrv.com/config/MinecraftDiscordAccountLinkedRoleNameToAddUserTo) {id="MinecraftDiscordAccountLinkedRoleNameToAddUserTo"}
-the name of a discord role to add a discord user to when they link their account
+the name or id of a discord role to add a discord user to when they link their account
 
 #### [`...LinkedAllowRelinkBySendingANewCode`](https://config.discordsrv.com/config/MinecraftDiscordAccountLinkedAllowRelinkBySendingANewCode) {id="MinecraftDiscordAccountLinkedAllowRelinkBySendingANewCode"}
 allows sending a new code to the bot to unlink and relink with the new code
