@@ -118,9 +118,12 @@ Update the server's Java JRE version to `Java 8` or contact your server provider
 
 ---
 
-### The plugin crashes at serverstart reporting "java.lang.NoClassDefFoundError: com/scarsz/discordsrv/jda/managers/AccountManager" {id="the-plugin-crashes-at-serverstart"}
+### The plugin crashes when the server starts with the error "Caused by: java.lang.IllegalArgumentException: INVOKESPECIAL/STATIC on interfaces require ASM 5" {id="the-plugin-crashes-at-serverstart"}
 
 One of the libraries that DiscordSRV uses ([Reflections](https://github.com/ronmamo/reflections)) requires ASM **Version 5** to work. You're supposedly running a server with an old ASM version (i.e. 4.x) such as kCauldron / Thermos. Sadly this is a server software dependent problem and we are unable to fix it within DiscordSRV without violating plugin guidelines.
+
+!!! warning Warning
+    We do not recommend the use of the following hybrid servers, they are outdated and likely contain bugs and security issues.
 
 ####   Fix for Thermos, Cauldron and early KCauldron {id="thermos-cauldron-and-early-kcauldron"}
 
