@@ -14,6 +14,7 @@ All of DiscordSRV's messages will go to the first channel defined unless there's
 |             channel name             |                      channel defined                       |
 | ------------------------------------ | ---------------------------------------------------------- |
 | `global`                             | all player chat messages <br> (unless using a chat plugin) |
+| `status`                             | for server start/stop messages                             |
 | `awards`                             | achievement/advancement messages                           |
 | `deaths`                             | death messages                                             |
 | `join`                               | join messages                                              |
