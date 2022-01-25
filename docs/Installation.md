@@ -42,7 +42,7 @@
 !!! note "Make sure to enable both the `SERVER MEMBERS INTENT` and `MESSAGE CONTENT INTENT` options shown in the video below to avoid running into issues with DiscordSRV later on."
     <div class="lightgallery">
         <a data-sub-html="enable privileged gateway intents" data-iframe="true" data-width="500" href="../images/enable_all_intents.mp4">
-            <video width="100%" height="auto" autoplay loop>
+            <video width="100%" height="auto" autoplay muted loop>
                 <source src="../images/enable_all_intents.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
