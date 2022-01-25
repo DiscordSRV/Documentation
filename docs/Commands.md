@@ -18,9 +18,9 @@
 +---------------+---------------------------------------+----------------------------------------------------------------------------------+
 | `linked`      | [`discordsrv.linked`](../Permissions) | Shows if your Minecraft account is linked with a discord account.                |
 +---------------+---------------------------------------+----------------------------------------------------------------------------------+
-| `link`        | [`discordsrv.linked`](../Permissions) | Sends you instructions to link your Minecraft account with your Discord account. |
+| `link`        | [`discordsrv.link`](../Permissions)   | Sends you instructions to link your Minecraft account with your Discord account. |
 +---------------+---------------------------------------+----------------------------------------------------------------------------------+
-| `unlink`      | [`discordsrv.linked`](../Permissions) | Unlink your Discord account from your Minecraft account.                         |
+| `unlink`      | [`discordsrv.unlink`](../Permissions) | Unlink your Discord account from your Minecraft account.                         |
 |               |                                       |                                                                                  |
 | ---           |                                       |                                                                                  |
 | `clearlinked` |                                       |                                                                                  |
@@ -57,6 +57,8 @@
 |               |                                       |                                              |                                                                                                                                                                                 |
 | ---           |                                       |                                              |                                                                                                                                                                                 |
 | `lang`        |                                       |                                              |                                                                                                                                                                                 |
++---------------+---------------------------------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| `debugger`    | `<start [categories...]/stop/upload>` | [`discordsrv.debug`](../Permissions)         | A toggleable timings-like command to dump debug information to https://bin.scarsz.me. Use the sub command `upload` to return a debug link ([Debug Categories](../config/#debug))|
 +---------------+---------------------------------------+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ## Deprecated Commands  

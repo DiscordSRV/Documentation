@@ -38,9 +38,16 @@
 
 ---
 
-#### Enable Server Members Intent
-!!! note "Make sure to enable `SERVER MEMBERS INTENT` to avoid running into issues with DiscordSRV later on."
-    ![!enable server members intent](images/enable_server_members_intent.png)
+#### Enable the Privileged Gateway Intents options
+!!! note "Make sure to enable both the `SERVER MEMBERS INTENT` and `MESSAGE CONTENT INTENT` options shown in the video below to avoid running into issues with DiscordSRV later on."
+    <div class="lightgallery">
+        <a data-sub-html="enable privileged gateway intents" data-iframe="true" data-width="500" href="../images/enable_all_intents.mp4">
+            <video width="100%" height="auto" autoplay loop>
+                <source src="../images/enable_all_intents.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+        </a>
+    </div>
 
 ---
 

@@ -318,11 +318,13 @@ You **cannot** use both at the same time!
 
 To synchronize multiple discord roles with one Minecraft group you will need to create a "fake" group in the [GroupRoleSynchronizationGroupsAndRolesToSync](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationGroupsAndRolesToSync) option in synchronization.yml and make use of the `discordsrv.sync.<group name>` permission.
 
-Example: if you want to synchronize both the `Staff` and `Admin` discord role when someone has the `Admin` group in-game, you would do the following.
+Example: if you want to synchronize both the `Discord Staff` and `Discord Admin` discord role when someone has the `MinecraftAdmin` group in-game, you would do the following.
 
 ```yaml
-GroupRoleSynchronizationGroupsAndRolesToSync: {"Admin": "384977475567878145", "staff": "135634730535092224"}
+GroupRoleSynchronizationGroupsAndRolesToSync: {"MinecraftAdmin": "384977475567878145", "MinecraftStaff": "135634730535092224"}
 ```
+
+The `MinecraftStaff` group in the example above is temporary. It is just used to store the role ID of our `Discord Staff` role. You would then give the `MinecraftAdmin` group the permission `discordsrv.sync.MinecraftStaff` so that the `MinecraftAdmin` group gets both the `Discord Admin` and `Discord Staff` Discord role.
 
 ---
 
@@ -354,3 +356,4 @@ Make sure that you have direct messages enabled on the server that you share wit
 If you run an offline mode server you can switch from using `{uuid-nodashes}` to `{username}` in the `AvatarURL` option. Since [crafatar.com](https://crafatar.com/) does not support usage of player names you have to switch to a less stable alternative like [cravatar.eu](https://cravatar.eu/) (less stable meaning it will return a Steve head if the service is heavily used).
 
 ---
+

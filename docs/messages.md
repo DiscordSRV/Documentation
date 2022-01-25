@@ -32,10 +32,27 @@ The format used when sending messages from Discord to Minecraft.
 The format used when sending messages from Discord to Minecraft for the user with no roles.
 #### `...ChatMessageFormat_<channel>`
 The format used when sending messages from Discord to Minecraft for `<channel>`.
+
+You can specify a different format per channel. To add a format for a channel named `mychannel` you'd add the following options to your `messages.yml`:
+```yaml
+DiscordToMinecraftChatMessageFormat_mychannel: "[&bDiscord From MyChannel &r| %toprolecolor%%toprole%&r] %name% » %message%"
+DiscordToMinecraftChatMessageFormatNoRole_mychannel: "[&bDiscord From MyChannel&r] %name% » %message%"
+```
+
 #### `...ChatMessageFormatNoRole_<channel>`
 The format used when sending messages from Discord to Minecraft for the user with no roles for `<channel>`.
+
+This can be formatted using the same idea as the previous option:
+```yaml
+DiscordToMinecraftChatMessageFormatNoRole_mychannel: "[&bDiscord From MyChannel&r] %name% » %message%"
+```
+
 #### [`...AllRolesSeparator`](https://config.discordsrv.com/messages/DiscordToMinecraftAllRolesSeparator) {id="DiscordToMinecraftAllRolesSeparator"}
 The separator used in between roles in `%allroles%`
+
+#### [`...ReplyFormat`](https://config.discordsrv.com/messages/DiscordToMinecraftReplyFormat) {id="DiscordToMinecraftReplyFormat"}
+The format for the message displayed to indicate that the message is a reply
+NOTE: The %reply% placeholder needs to be present in the format if you want the DiscordToMinecraftMessageReplyFormat to display in your message.
 
 ---
 
@@ -124,17 +141,19 @@ The format for Dynmap messages going to Discord
 ### DiscordConsoleChannel...
 #### [`...Format`](https://config.discordsrv.com/messages/DiscordConsoleChannelFormat) {id="DiscordConsoleChannelFormat"}
 
-+---------------------+-----------------------------------------------+------------------------------+
-| Placeholders        | Example                                       | Description                  |
-+=====================+===============================================+==============================+
-| `%datetime%`        | `Sun Jan 1 15:30:45 PDT 2017`                 | current date & time          |
-+---------------------+-----------------------------------------------+------------------------------+
-| `%level%`           | `INFO, WARN, ERROR`                           | message severity level       |
-+---------------------+-----------------------------------------------+------------------------------+
-| `%line%`            | `[DiscordSRV] Enabling DiscordSRV vX.Y`       | line from the console        |
-+---------------------+-----------------------------------------------+------------------------------+
-| [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI) placeholders are also supported |
-+----------------------------------------------------------------------------------------------------+
++---------------------+-----------------------------------------------+------------------------------------------+
+| Placeholders        | Example                                       | Description                              |
++=====================+===============================================+==========================================+
+| `%datetime%`        | `Sun Jan 1 15:30:45 PDT 2017`                 | current date & time                      |
++---------------------+-----------------------------------------------+------------------------------------------+
+| `%timestamp%`       | `1483313445`                                  | current time in seconds since UNIX epoch |
++---------------------+-----------------------------------------------+------------------------------------------+
+| `%level%`           | `INFO, WARN, ERROR`                           | message severity level                   |
++---------------------+-----------------------------------------------+------------------------------------------+
+| `%line%`            | `[DiscordSRV] Enabling DiscordSRV vX.Y`       | line from the console                    |
++---------------------+-----------------------------------------------+------------------------------------------+
+| [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI) placeholders are also supported             |
++----------------------------------------------------------------------------------------------------------------+
 
 This is the format used when sending a line from the console to the console channel, if enabled  
 
@@ -281,6 +300,10 @@ The message that gets broadcasted when a player gets an achievement.
 +---------------------------------+-------------------------------------------------------------------+
 | `%date%`                        | current date                                                      |
 +---------------------------------+-------------------------------------------------------------------+
+| `%timestamp%`                   | current time in seconds since UNIX epoch                          |
++---------------------------------+-------------------------------------------------------------------+
+| `%starttimestamp%`              | start time in seconds since UNIX epoch                            |
++---------------------------------+-------------------------------------------------------------------+
 | `%totalplayers%`                | total amount of players to ever join the main world               |
 +---------------------------------+-------------------------------------------------------------------+
 | `%uptimemins%`                  | amount of minutes since DiscordSRV has started                    |
@@ -328,6 +351,12 @@ This is the message sent to players when they run "`/discord`". It's recommended
 
 ---
 
+### [`NoPermissionMessage`](https://config.discordsrv.com/messages/NoPermissionMessage) {id="NoPermissionMessage"}
+ No permission message
+
+### [`UnknownCommandMessage`](https://config.discordsrv.com/messages/UnknownCommandMessage) {id="UnknownCommandMessage"}
+Unknown command message
+
 ### DiscordChatChannelServer...
 #### [`...StartupMessage`](https://config.discordsrv.com/messages/DiscordChatChannelServerStartupMessage) {id="DiscordChatChannelServerStartupMessage"}
 message to be sent when server starts; leave blank to disable
@@ -338,13 +367,17 @@ message to be sent when server shuts down; leave blank to disable
 
 ### [`ServerWatchdogMessage`](https://config.discordsrv.com/messages/ServerWatchdogMessage) {id="ServerWatchdogMessage"}
 
-+----------------+---------------------------------------------+
-|  Placeholders  |  Description                                |
-+================+=============================================+
-| `%guildowner%` | The guild owner's mention tag.              |
-+----------------+---------------------------------------------+
-| `%date%`       | The date & time when the message gets sent. |
-+----------------+---------------------------------------------+
++----------------+--------------------------------------------------------------+
+|  Placeholders  |  Description                                                 |
++================+==============================================================+
+| `%guildowner%` | The guild owner's mention tag.                               |
++----------------+--------------------------------------------------------------+
+| `%date%`       | The date & time when the message gets sent.                  |
++----------------+--------------------------------------------------------------+
+| `%timeout%`    | ServerWatchdogTimeout as a placeholder                       |
++----------------+--------------------------------------------------------------+
+| `%timestamp%`  | For use in discord's timestamp format EG: `<t:%timestamp%:R> |
++----------------+--------------------------------------------------------------+
 
 The watchdog constantly monitors the last time your server performed a game tick.
 If the time since the last tick goes above the set interval in seconds, Discord messages can be triggered.  

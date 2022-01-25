@@ -25,8 +25,6 @@ If the plugin should server mute people who bypass speaking permission overrides
 Maximum vertical distance between players in order to be connected.
 #### [`Horizontal Strength`](https://config.discordsrv.com/voice/Horizontal%20Strength)
 Maximum horizontal distance between players in order to be connected.
-#### [`Strength`](https://config.discordsrv.com/voice/Strength)
-Maximum distance between players in order to be connected.
 #### [`Falloff`](https://config.discordsrv.com/voice/Falloff)
 Once a player has joined a network, they can be `Strength` + `Falloff` blocks away from the other players before being disconnected.
 #### [`Allow voice activation detection`](https://config.discordsrv.com/voice/Allow%20voice%20activation%20detection)
