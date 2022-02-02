@@ -363,9 +363,9 @@ Helpful resources for learning how to use SpEL:
           Description: |-
             Coords: `[${block.getLocation().getBlockX() + ", " + block.getLocation().getBlockY() + ", " + block.getLocation().getBlockZ()}]`
             ```
-            ${line[0]}
-            ${line[1]}
-            ${line[2]}
-            ${line[3]}
+            ${theLines[0]}
+            ${theLines[1]}
+            ${theLines[2]}
+            ${theLines[3]}
             ```
     ```
