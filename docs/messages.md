@@ -144,23 +144,25 @@ The format for Dynmap messages going to Discord
 +---------------------+-----------------------------------------------+------------------------------------------+
 | Placeholders        | Example                                       | Description                              |
 +=====================+===============================================+==========================================+
-| `%datetime%`        | `Sun Jan 1 15:30:45 PDT 2017`                 | current date & time                      |
+| `{level}`           | `INFO, WARN, ERROR`                           | message severity level                   |
 +---------------------+-----------------------------------------------+------------------------------------------+
-| `%timestamp%`       | `1483313445`                                  | current time in seconds since UNIX epoch |
+| `{name}`            | `Server                               `       | logger name                              |
 +---------------------+-----------------------------------------------+------------------------------------------+
-| `%level%`           | `INFO, WARN, ERROR`                           | message severity level                   |
-+---------------------+-----------------------------------------------+------------------------------------------+
-| `%line%`            | `[DiscordSRV] Enabling DiscordSRV vX.Y`       | line from the console                    |
+| `{datetime}`        | `Sun Jan 1 15:30:45 PDT 2017`                 | current date & time                      |
 +---------------------+-----------------------------------------------+------------------------------------------+
 | [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI) placeholders are also supported             |
 +----------------------------------------------------------------------------------------------------------------+
 
 This is the format used when sending a line from the console to the console channel, if enabled  
 
-#### [`...MessagePrefix`](https://config.discordsrv.com/messages/DiscordConsoleChannelMessagePrefix) {id="DiscordConsoleChannelMessagePrefix"}
+#### [`...TimestampFormat`](https://config.discordsrv.com/messages/DiscordConsoleChannelTimestampFormat) {id="DiscordConsoleChannelTimestampFormat"}
+The date format that will be used for the {date} and {datetime} placeholders
+#### [`...Prefix`](https://config.discordsrv.com/messages/DiscordConsoleChannelPrefix) {id="DiscordConsoleChannelPrefix"}
 The literal prefix to prepend to a batch of lines
-#### [`...MessageSuffix`](https://config.discordsrv.com/messages/DiscordConsoleChannelMessageSuffix) {id="DiscordConsoleChannelMessageSuffix"}
+#### [`...Suffix`](https://config.discordsrv.com/messages/DiscordConsoleChannelSuffix) {id="DiscordConsoleChannelSuffix"}
 The literal suffix to append to a batch of lines
+#### [`...Padding`](https://config.discordsrv.com/messages/DiscordConsoleChannelPadding) {id="DiscordConsoleChannelPadding"}
+The amount of padding to add inside the prefix
 
 ---
 

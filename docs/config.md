@@ -198,7 +198,7 @@ Converts minecraft messages formatted with format codes into Discord format
 This option disables running a console command through discord if logging is unsuccessful.
 
 ### [`EnableIncompatibleClientAlert`](https://config.discordsrv.com/config/EnableIncompatibleClientAlert) {id="EnableIncompatibleClientAlert"}
-LunarClient does not support hover/click components in messages. Users of LunarClient will receive an automated message stating that their user experience is worsened by the use of the client, if this option is enabled
+LunarClient does not support hover/click components in messages. Users of LunarClient will receive an automated message stating that their user experience is being degraded by the use of the client, if this option is enabled. Please see [#1294](https://github.com/DiscordSRV/DiscordSRV/pull/1294) for more details.
 
 ### [`ForcedLanguage`](https://config.discordsrv.com/config/ForcedLanguage)[^1] {id="ForcedLanguage"}
 This option forcefully changes the language to the specified type.
@@ -912,6 +912,9 @@ How emotes should be sent to Minecraft. Can be "name" or "hide"
 #### [`...PrefixRequiredToProcessMessage`](https://config.discordsrv.com/config/DiscordChatChannelPrefixRequiredToProcessMessage) {id="DiscordChatChannelPrefixRequiredToProcessMessage"}
 The character(s) required at the start of a message for it to be sent from Minecraft to Discord. Set to "" to not require a prefix.
 
+#### [`...PrefixActsAsBlacklist`](https://config.discordsrv.com/config/DiscordChatChannelPrefixActsAsBlacklist) {id="DiscordChatChannelPrefixActsAsBlacklist"}
+Whether or not the prefix should act as a blacklist.
+
 #### [`...RolesAllowedToUseColorCodesInChat`](https://config.discordsrv.com/config/DiscordChatChannelRolesAllowedToUseColorCodesInChat) {id="DiscordChatChannelRolesAllowedToUseColorCodesInChat"}
 States which roles are enabled to use colors when sending messages from Discord to Minecraft. Set to [] to disable
 
@@ -966,6 +969,9 @@ Options: `["debug", "info", "warn", "error"]`
 
 #### [`...AllowPluginUpload`](https://config.discordsrv.com/config/DiscordConsoleChannelAllowPluginUpload) {id="DiscordConsoleChannelAllowPluginUpload"}
 Enable for the ability to upload plugins through the console channel.
+
+#### [`...BlockBots`](https://config.discordsrv.com/config/DiscordConsoleChannelBlockBots) {id="DiscordConsoleChannelBlockBots"}
+Whether or not bots should be allowed to send commands in the console channel
 
 ---
 
