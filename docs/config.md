@@ -960,7 +960,7 @@ The blacklisted (or whitelisted) commands for the console channel. Include comma
 #### [`...Filters`](https://config.discordsrv.com/config/DiscordConsoleChannelFilters) {id="DiscordConsoleChannelFilters"}
 The Regex filter to be applied to messages from the console sent to Discord. If you are unfamiliar with Regex, it is likely that you don't need this option
 
-Some examples can be found in the FAQ: [Block special console-output from appearing in console-channel](https://docs.discordsrv.com/FAQ/#Block-special-console-output)
+Some examples can be found in the FAQ: [Block special console-output from appearing in console-channel](FAQ/#Block-special-console-output)
 
 #### [`...Levels`](https://config.discordsrv.com/config/DiscordConsoleChannelLevels) {id="DiscordConsoleChannelLevels"}
 The different debug levels that are sent to the console.
