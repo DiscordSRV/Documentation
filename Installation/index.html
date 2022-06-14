@@ -1,0 +1,1592 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The official documentation for DiscordSRV. The most powerful, configurable, open-source Discord bridge plugin out there.">
+      
+      
+      
+        <meta name="author" content="granny">
+      
+      
+        <link rel="canonical" href="https://docs.discordsrv.com/Installation/">
+      
+      <link rel="icon" href="../images/logo.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
+    
+    
+      
+        <title>Installation - DiscordSRV Wiki</title>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    <link rel="stylesheet" href="../css/lightgallery.min.css">
+
+    
+    
+    <script src="../js/lightgallery.min.js"></script>
+
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#basic-installation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DiscordSRV Wiki" class="md-header__button md-logo" aria-label="DiscordSRV Wiki" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DiscordSRV Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Installation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/DiscordSRV/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Documentation
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DiscordSRV Wiki" class="md-nav__button md-logo" aria-label="DiscordSRV Wiki" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    DiscordSRV Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/DiscordSRV/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Documentation
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Installation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Installation
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-installation" class="md-nav__link">
+    Basic Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-the-plugin" class="md-nav__link">
+    Install the plugin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-the-bot" class="md-nav__link">
+    Setting up the bot
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up the bot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-application" class="md-nav__link">
+    Create the Application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-bot" class="md-nav__link">
+    Create the bot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confirm-the-bot-application" class="md-nav__link">
+    Confirm the bot application
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-up-the-bot" class="md-nav__link">
+    Starting up the bot
+  </a>
+  
+    <nav class="md-nav" aria-label="Starting up the bot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copy-the-bot-token" class="md-nav__link">
+    Copy the bot token
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-the-privileged-gateway-intents-options" class="md-nav__link">
+    Enable the Privileged Gateway Intents options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paste-the-token-into-configyml" class="md-nav__link">
+    Paste the token into config.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invite-the-bot-to-your-guild" class="md-nav__link">
+    Invite the bot to your guild
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-developer-mode" class="md-nav__link">
+    Enable Developer Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-a-basic-channel-relay" class="md-nav__link">
+    Set up a basic channel relay
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#give-the-bot-the-discord-permissions-it-needs-to-run" class="md-nav__link">
+    Give the bot the discord permissions it needs to run
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-information" class="md-nav__link">
+    Advanced Information
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#giving-the-bot-the-administrator-permission" class="md-nav__link">
+    Giving the bot the administrator permission
+  </a>
+  
+    <nav class="md-nav" aria-label="Giving the bot the administrator permission">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#server-permissions" class="md-nav__link">
+    Server Permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-permissions" class="md-nav__link">
+    Channel Permissions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role-hierarchy" class="md-nav__link">
+    Role Hierarchy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group-role-sync" class="md-nav__link">
+    Group &lt;-&gt; Role Sync
+  </a>
+  
+    <nav class="md-nav" aria-label="Group &lt;-&gt; Role Sync">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-the-names-of-the-minecraft-groups-you-want-to-sync" class="md-nav__link">
+    Get the name(s) of the minecraft group(s) you want to sync
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-role-ids-for-the-roles-you-want-to-sync" class="md-nav__link">
+    Get Role ID(s) for the role(s) you want to sync
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-the-role-ids-and-group-names-in-the-synchronization-option" class="md-nav__link">
+    Set the Role ID(s) and group name(s) in the synchronization option
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voice-setup" class="md-nav__link">
+    Voice Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#require-linking-to-join-setup" class="md-nav__link">
+    Require Linking to Join Setup
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        Frequently Asked Questions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Configs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Configs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Configs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alerts/" class="md-nav__link">
+        alerts.yml
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        config.yml
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linking/" class="md-nav__link">
+        linking.yml
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../messages/" class="md-nav__link">
+        messages.yml
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../synchronization/" class="md-nav__link">
+        synchronization.yml
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voice/" class="md-nav__link">
+        voice.yml
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Commands/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Permissions/" class="md-nav__link">
+        Permissions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      <label class="md-nav__link" for="__nav_7">
+        Hooked plugin features
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Hooked plugin features" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Hooked plugin features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LPContext/" class="md-nav__link">
+        LuckPerms Contexts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PAPI-Placeholders/" class="md-nav__link">
+        PlaceholderAPI Placeholders
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+      
+      <label class="md-nav__link" for="__nav_8">
+        Troubleshooting
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Troubleshooting" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Troubleshooting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/DiscordSRV/DiscordSRV/issues" class="md-nav__link">
+        Report a bug
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/DiscordSRV/DiscordSRV/issues" class="md-nav__link">
+        Request a feature
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://discordsrv.com/discord" class="md-nav__link">
+        Ask for support
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      <label class="md-nav__link" for="__nav_9">
+        Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/DiscordSRV/DiscordSRV/blob/master/CONTRIBUTING.md" class="md-nav__link">
+        Contributing guidelines
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/#developers" class="md-nav__link">
+        Using the DiscordSRV-API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://get.discordsrv.com/" class="md-nav__link">
+        Latest Release
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://snapshot.discordsrv.com/" class="md-nav__link">
+        Latest Snapshot
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" data-md-state="indeterminate" type="checkbox" id="__nav_10" checked>
+      
+      <label class="md-nav__link" for="__nav_10">
+        Connections
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Connections" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Connections
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://discordsrv.com/discord" class="md-nav__link">
+        Discord
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.spigotmc.org/resources/discordsrv.18494/" class="md-nav__link">
+        SpigotMC
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://dev.bukkit.org/projects/discordsrv" class="md-nav__link">
+        BukkitDev
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-installation" class="md-nav__link">
+    Basic Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-the-plugin" class="md-nav__link">
+    Install the plugin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-the-bot" class="md-nav__link">
+    Setting up the bot
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up the bot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-application" class="md-nav__link">
+    Create the Application
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-bot" class="md-nav__link">
+    Create the bot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confirm-the-bot-application" class="md-nav__link">
+    Confirm the bot application
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#starting-up-the-bot" class="md-nav__link">
+    Starting up the bot
+  </a>
+  
+    <nav class="md-nav" aria-label="Starting up the bot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copy-the-bot-token" class="md-nav__link">
+    Copy the bot token
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-the-privileged-gateway-intents-options" class="md-nav__link">
+    Enable the Privileged Gateway Intents options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paste-the-token-into-configyml" class="md-nav__link">
+    Paste the token into config.yml
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invite-the-bot-to-your-guild" class="md-nav__link">
+    Invite the bot to your guild
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-developer-mode" class="md-nav__link">
+    Enable Developer Mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-up-a-basic-channel-relay" class="md-nav__link">
+    Set up a basic channel relay
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#give-the-bot-the-discord-permissions-it-needs-to-run" class="md-nav__link">
+    Give the bot the discord permissions it needs to run
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-information" class="md-nav__link">
+    Advanced Information
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#giving-the-bot-the-administrator-permission" class="md-nav__link">
+    Giving the bot the administrator permission
+  </a>
+  
+    <nav class="md-nav" aria-label="Giving the bot the administrator permission">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#server-permissions" class="md-nav__link">
+    Server Permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-permissions" class="md-nav__link">
+    Channel Permissions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role-hierarchy" class="md-nav__link">
+    Role Hierarchy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group-role-sync" class="md-nav__link">
+    Group &lt;-&gt; Role Sync
+  </a>
+  
+    <nav class="md-nav" aria-label="Group &lt;-&gt; Role Sync">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get-the-names-of-the-minecraft-groups-you-want-to-sync" class="md-nav__link">
+    Get the name(s) of the minecraft group(s) you want to sync
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-role-ids-for-the-roles-you-want-to-sync" class="md-nav__link">
+    Get Role ID(s) for the role(s) you want to sync
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-the-role-ids-and-group-names-in-the-synchronization-option" class="md-nav__link">
+    Set the Role ID(s) and group name(s) in the synchronization option
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voice-setup" class="md-nav__link">
+    Voice Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#require-linking-to-join-setup" class="md-nav__link">
+    Require Linking to Join Setup
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/DiscordSRV/Documentation/edit/master/docs/Installation.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Installation</h1>
+                
+                <h2 id="basic-installation">Basic Installation<a class="headerlink" href="#basic-installation" title="Permanent link">🔗</a></h2>
+<hr />
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">🔗</a></h3>
+<ul>
+<li>server software based on the Bukkit API (CraftBukkit/Spigot/Paper/etc)</li>
+<li>ability to read server logs</li>
+<li>ability to modify server files</li>
+</ul>
+<hr />
+<h3 id="install-the-plugin">Install the plugin<a class="headerlink" href="#install-the-plugin" title="Permanent link">🔗</a></h3>
+<ol>
+<li>Put <code>DiscordSRV-Build-VERSION_NUMBER.jar</code> in the server's <code>plugins</code> folder and restart your server (This will generate a folder labeled <code>DiscordSRV</code> with all the config files)</li>
+<li>Open the <code>config.yml</code> file in the <code>plugins/DiscordSRV/</code> folder with your favorite text editor</li>
+</ol>
+<hr />
+<h3 id="setting-up-the-bot">Setting up the bot<a class="headerlink" href="#setting-up-the-bot" title="Permanent link">🔗</a></h3>
+<h4 id="create-the-application">Create the Application<a class="headerlink" href="#create-the-application" title="Permanent link">🔗</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Create a new application at <a href="https://discord.com/developers/applications/">https://discord.com/developers/applications/</a> by clicking <code>"New Application"</code></p>
+<p><div class="lightgallery"><a data-sub-html="create application" href="../images/create_application.png"><img alt="create application" src="../images/create_application.png" />  </a></div></p>
+</div>
+<h4 id="create-the-bot">Create the bot<a class="headerlink" href="#create-the-bot" title="Permanent link">🔗</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Choose a cool name for your bot and click <code>Create</code></p>
+<p><div class="lightgallery"><a data-sub-html="create the bot" href="../images/create_bot.png"><img alt="create the bot" src="../images/create_bot.png" /></a></div></p>
+</div>
+<h4 id="confirm-the-bot-application">Confirm the bot application<a class="headerlink" href="#confirm-the-bot-application" title="Permanent link">🔗</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Under the <code>Settings</code> tab, click <code>Bot</code>, then click <code>Add Bot</code> and confirm with <code>Yes, do it!</code></p>
+<p><div class="lightgallery"><a data-sub-html="confirm action" href="../images/create_bot_confirm.png"><img alt="confirm action" src="../images/create_bot_confirm.png" /></a></div></p>
+</div>
+<hr />
+<h3 id="starting-up-the-bot">Starting up the bot<a class="headerlink" href="#starting-up-the-bot" title="Permanent link">🔗</a></h3>
+<h4 id="copy-the-bot-token">Copy the bot token<a class="headerlink" href="#copy-the-bot-token" title="Permanent link">🔗</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Copy the <code>Token</code> of the bot from the application page. Keep <code>PUBLIC BOT</code> unchecked so only you can invite the bot to the servers you designate.</p>
+<p><div class="lightgallery"><a data-sub-html="copy bot token" href="../images/copy_token.png"><img alt="copy bot token" src="../images/copy_token.png" /></a></div></p>
+</div>
+<hr />
+<h4 id="enable-the-privileged-gateway-intents-options">Enable the Privileged Gateway Intents options<a class="headerlink" href="#enable-the-privileged-gateway-intents-options" title="Permanent link">🔗</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Make sure to enable both the <code>SERVER MEMBERS INTENT</code> and <code>MESSAGE CONTENT INTENT</code> options shown in the video below to avoid running into issues with DiscordSRV later on.</p>
+<p><div class="lightgallery">
+    <a data-sub-html="enable privileged gateway intents" data-iframe="true" data-width="500" href="../images/enable_all_intents.mp4">
+        <video width="100%" height="auto" autoplay muted loop>
+            <source src="../images/enable_all_intents.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+    </a>
+</div></p>
+</div>
+<hr />
+<h4 id="paste-the-token-into-configyml">Paste the token into <code>config.yml</code><a class="headerlink" href="#paste-the-token-into-configyml" title="Permanent link">🔗</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># config.yml Line 8</span>
+<span class="nt">BotToken</span><span class="p">:</span> <span class="s">&quot;MjE5NTE5OTk0MDUxMDM1MTQ3.CqTCYw.SFAbKtfK3ydTy1jx2-fTHUJqsPo&quot;</span>
+</code></pre></div>
+<hr />
+<h4 id="invite-the-bot-to-your-guild">Invite the bot to your guild<a class="headerlink" href="#invite-the-bot-to-your-guild" title="Permanent link">🔗</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Copy the <code>Application ID</code> from the application's <code>General Information</code> page.</p>
+<p><div class="lightgallery"><a data-sub-html="copy client id" href="../images/copy_application_id.png"><img alt="copy client id" src="../images/copy_application_id.png" />  </a></div></p>
+</div>
+<p>Go to the following URL and paste your <code>Application ID</code> to the page (<code>Ctrl + V</code>): <a href="https://scarsz.me/authorize">https://scarsz.me/authorize</a></p>
+<details class="hint"><summary>How does <a href="https://scarsz.me/authorize">https://scarsz.me/authorize</a> work?</summary><p>It loads a small client-side running script which checks for a valid application ID length and redirects back to discord.com for OAuth 2 authorization of your bot. Alternatively, you can manually append the application ID to the end of the following link and open it:<br />
+<code>https://discordapp.com/oauth2/authorize?scope=bot+applications.commands&amp;client_id=</code></p>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Select your guild, then click <code>Authorize</code></p>
+<p><div class="lightgallery"><a data-sub-html="authorize the bot" href="../images/authorize_bot.png"><img alt="authorize the bot" src="../images/authorize_bot.png" width="325" /> </a></div></p>
+</div>
+<hr />
+<h4 id="enable-developer-mode">Enable Developer Mode<a class="headerlink" href="#enable-developer-mode" title="Permanent link">🔗</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Go to your Discord settings by clicking on the cog on the bottom left of Discord.</p>
+<p><div class="lightgallery"><a data-sub-html="open discord settings" href="../images/open_discord_settings.png"><img alt="open discord settings" src="../images/open_discord_settings.png" />  </a></div></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Go to the <code>Advanced</code> tab and enable <code>Developer Mode</code> (Outdated image)</p>
+<p><div class="lightgallery"><a data-sub-html="enable developer mode" href="../images/enable_developer_mode.png"><img alt="enable developer mode" src="../images/enable_developer_mode.png" />  </a></div></p>
+</div>
+<hr />
+<h4 id="set-up-a-basic-channel-relay">Set up a basic channel relay<a class="headerlink" href="#set-up-a-basic-channel-relay" title="Permanent link">🔗</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Right click the Discord-channel you want to use for chat between Discord and Minecraft and click on <code>Copy ID</code></p>
+<p><div class="lightgallery"><a data-sub-html="copy channel id" href="../images/copy_channel_id.png"><img alt="copy channel id" src="../images/copy_channel_id.png" />  </a></div></p>
+</div>
+<p>Open the config.yml file again.<br />
+Search for the option <code>Channels</code> and replace <code>000000000000000000</code> with the copied channel ID.
+<div class="highlight"><pre><span></span><code><span class="c1"># config.yml Line 14</span>
+<span class="nt">Channels</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="s">&quot;global&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;219559668236681216&quot;</span><span class="p p-Indicator">}</span>
+</code></pre></div>
+<em>If you use a chat plugin with channel support like HeroChat, LegendChat, LunaChat, TownyChat or VentureChat, you can set up more channels here with their linked Discord channels. For example, if you want to add an "admin" channel it would look like this:</em>
+<div class="highlight"><pre><span></span><code><span class="c1"># config.yml Line 14</span>
+<span class="nt">Channels</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="s">&quot;global&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;219559668236681216&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;admin&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;221419146028646401&quot;</span><span class="p p-Indicator">}</span>
+</code></pre></div>
+<em>Keep in mind that "admin" indicates an ingame channel, not a Discord channel name!</em>  </p>
+<hr />
+<p><strong>Optionally:</strong>
+Copy the Channel ID of a second Discord-channel for use as console-channel and paste it into <code>config.yml</code>
+<div class="highlight"><pre><span></span><code><span class="c1"># config.yml Line 17</span>
+<span class="nt">DiscordConsoleChannelId</span><span class="p">:</span> <span class="s">&quot;219559838890459137&quot;</span>
+</code></pre></div></p>
+<hr />
+<h4 id="give-the-bot-the-discord-permissions-it-needs-to-run">Give the bot the discord permissions it needs to run<a class="headerlink" href="#give-the-bot-the-discord-permissions-it-needs-to-run" title="Permanent link">🔗</a></h4>
+<div class="admonition note">
+<p class="admonition-title">Open your server settings by clicking on the arrow to the right of the server name and choose <code>Server Settings</code></p>
+<p><div class="lightgallery"><a data-sub-html="open server settings" href="../images/open_server_settings.png"><img alt="open server settings" src="../images/open_server_settings.png" />  </a></div></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Go to the <code>Roles</code> tab and create a new role. We've named ours <code>Bot</code>. Add the <code>Administrator</code> permission (or permissions listed below) to the new role.</p>
+<p><div class="lightgallery"><a data-sub-html="create bot role" href="../images/create_bot_role.png"><img alt="create bot role" src="../images/create_bot_role.png" />  </a></div></p>
+</div>
+<hr />
+<div class="admonition note">
+<p class="admonition-title">Switch to the <code>Members</code> tab and add the new <code>Bot</code> role to your bot by clicking on the <code>+</code> next to the bot's name and choosing the role.</p>
+<p><div class="lightgallery"><a data-sub-html="Add Bot-rule to bot" href="../images/add_role.png"><img alt="Add Bot-rule to bot" src="../images/add_role.png" />  </a></div></p>
+</div>
+<p>(Re)start your server</p>
+<p><strong>You're done with installing DiscordSRV!</strong></p>
+<p>Now run through all the config options in <a href="https://config.discordsrv.com/config/_"><code>config.yml</code></a>. You'll be surprised with how many features this plugin has</p>
+<hr />
+<h3 id="advanced-information">Advanced Information<a class="headerlink" href="#advanced-information" title="Permanent link">🔗</a></h3>
+<h4 id="giving-the-bot-the-administrator-permission">Giving the bot the administrator permission<a class="headerlink" href="#giving-the-bot-the-administrator-permission" title="Permanent link">🔗</a></h4>
+<p>Usually it's not recommended to give the bot the Administrator permission, since it gives the bot complete control over your server. We recommend it because it makes the installation process easier on the server owner, and DiscordSRV doesn't do anything that would jeopardize the server. The only way this can be abused is by keeping the bot token secure.</p>
+<p>If you don't feel comfortable with this, you can define the following permissions that the bot requires for certain features. This list can/will change and new permissions will need to be added for any new features that require them.</p>
+<hr />
+<h5 id="server-permissions">Server Permissions<a class="headerlink" href="#server-permissions" title="Permanent link">🔗</a></h5>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Permission</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Features</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Manage Roles</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><a href="https://config.discordsrv.com/synchronization/GroupRoleSynchronizationGroupsAndRolesToSync">role synchronization</a> and <a href="https://config.discordsrv.com/config/MinecraftDiscordAccountLinkedRoleNameToAddUserTo">adding roles to linked players</a></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Manage Channels</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><a href="https://config.discordsrv.com/messages/ChannelTopicUpdaterChatChannelTopicFormat">channel topic updater</a> and the <a href="https://config.discordsrv.com/voice/_">voice module</a></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Ban Members</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><a href="https://config.discordsrv.com/synchronization/BanSynchronizationDiscordToMinecraft">ban synchronization</a></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Manage Nicknames</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><a href="https://config.discordsrv.com/synchronization/NicknameSynchronizationEnabled">nickname synchronization</a></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Manage Webhooks</code>
+</p>
+</td>
+<td colspan="1" rowspan="1">
+<p><a href="https://config.discordsrv.com/config/Experiment_WebhookChatMessageDelivery">experimental webhook usage</a>
+(Server-wide permission is <em>recommended</em>, but can be applied on a per-channel basis)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h5 id="channel-permissions">Channel Permissions<a class="headerlink" href="#channel-permissions" title="Permanent link">🔗</a></h5>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Permission</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Features</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Read Text Channels &amp; See Voice Channels</code>
+and <code>Send Messages</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Required for DiscordSRV's channel options (including <a href="https://config.discordsrv.com/config/DiscordConsoleChannelId">console</a> and <a href="https://config.discordsrv.com/voice/Lobby%20channel">voice lobby</a>), the <a href="https://config.discordsrv.com/voice/Voice%20category">voice module category</a> and any other channels you want for <a href="https://config.discordsrv.com/config/DiscordCannedResponses">canned responses</a>
+</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Manage Messages</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>when messages are deleted by <a href="https://config.discordsrv.com/config/DiscordChatChannelListCommandEnabled">playerlist</a> &amp; <a href="https://config.discordsrv.com/config/DiscordChatChannelConsoleCommandEnabled">chat channel commands</a></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Embed Links</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>optionally for embedding ingame-posted links and required when embed messages are used <a href="https://config.discordsrv.com/messages/MinecraftPlayerDeathMessage">death</a>, <a href="https://config.discordsrv.com/messages/MinecraftPlayerJoinMessage">join/Leave</a></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Mention @everyone, @here and All Roles</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>for mentioning @everyone if added to <a href="https://config.discordsrv.com/config/DiscordChatChannelAllowedMentions">allowed mentions in config.yml</a> and <a href="https://config.discordsrv.com/config/DiscordChatChannelTranslateMentions">mentions enabled</a></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Add Reactions</code> and <code>Read Message History</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>for when the bot reacts with "💬" and "❗" to notify a <a href="https://config.discordsrv.com/config/DiscordChatChannelTruncateLength">truncated message</a> is being sent from Discord to Minecraft</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Move Members</code>, <code>Mute Members</code> and <code>Manage Permissions</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>required for the <a href="https://config.discordsrv.com/voice/Lobby%20channel">voice lobby</a> and <a href="https://config.discordsrv.com/voice/Voice%20category">voice category</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="role-hierarchy">Role Hierarchy<a class="headerlink" href="#role-hierarchy" title="Permanent link">🔗</a></h4>
+<p>Make sure the new Bot role is above any roles you want to synchronize using our role/nickname synchronization system (eg. if you want Moderators names to synchronize, you need to have the Bot role above the Moderator role)</p>
+<hr />
+<h2 id="group-role-sync">Group &lt;-&gt; Role Sync<a class="headerlink" href="#group-role-sync" title="Permanent link">🔗</a></h2>
+<hr />
+<p><strong>Please make sure to go through the <a href="#basic-installation">Basic Installation</a> before going through with this setup.</strong></p>
+<hr />
+<h3 id="get-the-names-of-the-minecraft-groups-you-want-to-sync">Get the name(s) of the minecraft group(s) you want to sync<a class="headerlink" href="#get-the-names-of-the-minecraft-groups-you-want-to-sync" title="Permanent link">🔗</a></h3>
+<p>the synchronization is case-sensitive so make sure you don't mess up with the capitalization</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example from generic permissions plugin</span>
+<span class="nt">groups</span><span class="p">:</span>
+  <span class="nt">MinecraftGroup1</span><span class="p">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">permissions</span>
+    <span class="l l-Scalar l-Scalar-Plain">...</span>
+  <span class="nt">MinecraftGroup2</span><span class="p">:</span>
+    <span class="l l-Scalar l-Scalar-Plain">permissions</span>
+    <span class="l l-Scalar l-Scalar-Plain">...</span>
+</code></pre></div>
+<p>You can see what groups DiscordSRV can see in the <code>discordsrv-info.txt</code> file of debug reports, which can be accessed through the link generated from <code>/discordsrv debug</code>  </p>
+<div class="highlight"><pre><span></span><code><span class="c1"># discordsrv-info.txt from debug report</span>
+<span class="nt">vault groups</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">default</span><span class="p p-Indicator">,</span> <span class="nv">MinecraftGroup1</span><span class="p p-Indicator">,</span> <span class="nv">MinecraftGroup2</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+<hr />
+<h3 id="get-role-ids-for-the-roles-you-want-to-sync">Get Role ID(s) for the role(s) you want to sync<a class="headerlink" href="#get-role-ids-for-the-roles-you-want-to-sync" title="Permanent link">🔗</a></h3>
+<p>If you have <code>Developer Mode</code> enabled (see <a href="#basic-installation">Basic Installation</a>), you can get the IDs from <code>Server Settings &gt; Roles</code> by right-clicking the role(s)  </p>
+<p>Role IDs are also in the <code>discordsrv-info.txt</code> file of debug reports, which can be accessed through the link generated from <code>/discordsrv debug</code>  </p>
+<div class="highlight"><pre><span></span><code><span class="c1">//discordsrv-info.txt from debug report</span>
+<span class="n">discord</span> <span class="n">guild</span> <span class="nl">roles</span><span class="p">:</span> <span class="p">[</span><span class="nl">R</span><span class="p">:</span><span class="n">DiscordRole1</span><span class="p">(</span><span class="mi">680679725206994947</span><span class="p">),</span> <span class="nl">R</span><span class="p">:</span><span class="n">DiscordRole2</span><span class="p">(</span><span class="mi">680679790025506861</span><span class="p">)]</span>
+</code></pre></div>
+<hr />
+<h3 id="set-the-role-ids-and-group-names-in-the-synchronization-option">Set the Role ID(s) and group name(s) in the synchronization option<a class="headerlink" href="#set-the-role-ids-and-group-names-in-the-synchronization-option" title="Permanent link">🔗</a></h3>
+<p>Now that you have both the Role ID(s) and the Minecraft Group Name(s), add them into <code>GroupRoleSynchronizationGroupsAndRolesToSync</code> located inside the <code>synchronization.yml</code> config file.
+<div class="highlight"><pre><span></span><code><span class="c1"># synchronization.yml Line 27</span>
+ <span class="nt">GroupRoleSynchronizationGroupsAndRolesToSync</span><span class="p">:</span> <span class="p p-Indicator">{</span><span class="s">&quot;MinecraftGroup1&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;680679725206994947&quot;</span><span class="p p-Indicator">,</span> <span class="s">&quot;MinecraftGroup2&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;680679790025506861&quot;</span><span class="p p-Indicator">}</span>
+</code></pre></div></p>
+<p>That's the basics of it! Read the comments for the other options in the <code>synchronization.yml</code> for more control over this system.</p>
+<hr />
+<h2 id="voice-setup">Voice Setup<a class="headerlink" href="#voice-setup" title="Permanent link">🔗</a></h2>
+<hr />
+<p><strong>Please make sure to go through the <a href="#basic-installation">Basic Installation</a> before going through with this setup.</strong></p>
+<hr />
+<p>Make sure <code>Voice enabled</code> is set to <code>true</code> in the <code>voice.yml</code> config</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># voice.yml Line 8</span>
+<span class="nt">Voice enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Create a category (name doesn't matter) where the voice module will create/delete/move voice channels</p>
+<p><div class="lightgallery"><a data-sub-html="create a voice category" href="../images/create_voice_category.png"><img alt="create a voice category" src="../images/create_voice_category.png" width="325" /></a></div></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Right click on the Category and select <code>Copy ID</code></p>
+<p><div class="lightgallery"><a data-sub-html="copy category id" href="../images/copy_category_id.png"><img alt="copy category id" src="../images/copy_category_id.png" width="325" /></a></div></p>
+</div>
+<p>In the <code>voice.yml</code> config search for the <code>Voice category</code> option and replace <code>000000000000000000</code> with the copied Category ID.
+<div class="highlight"><pre><span></span><code><span class="c1"># voice.yml Line 13</span>
+<span class="nt">Voice category</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">000000000000000000</span>
+</code></pre></div></p>
+<p>Create a channel (name doesn't matter) underneath the voice category you just made; This will be your "Lobby" voice channel.</p>
+<div class="admonition note">
+<p class="admonition-title">Right click on the Channel after moving it and select <code>Copy ID</code></p>
+<p><div class="lightgallery"><a data-sub-html="copy voice channel id" href="../images/copy_voice_channel_id.png"><img alt="copy voice channel id" src="../images/copy_voice_channel_id.png" width="325" /></a></div></p>
+</div>
+<p>In the <code>voice.yml</code> config search for the <code>Lobby channel</code> option and replace <code>000000000000000000</code> with the copied Channel ID.
+<div class="highlight"><pre><span></span><code><span class="c1"># voice.yml Line 17</span>
+<span class="nt">Lobby channel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">000000000000000000</span>
+</code></pre></div></p>
+<p>(Re)start your server and you're done with configuring the voice module in DiscordSRV!</p>
+<h2 id="require-linking-to-join-setup">Require Linking to Join Setup<a class="headerlink" href="#require-linking-to-join-setup" title="Permanent link">🔗</a></h2>
+<hr />
+<p><strong>Please make sure to go through the <a href="#basic-installation">Basic Installation</a> before going through with this setup.</strong></p>
+<hr />
+<p>This allows you to require the player have their discord account linked to their minecraft account before they can play on the server. When a player attempts to join, they get automatically kicked with a message saying that they need to message your DiscordSRV bot a code for them to be able to join.</p>
+<p>Once the player is linked, more restrictions can be added, such as:</p>
+<ul>
+<li>The linked player must be in the discord server</li>
+<li>The linked player must have certain role[s] (this can be used to whitelist Twitch subscribers through the subscriber role if the user's twitch is linked to their discord account)</li>
+</ul>
+<p>Make sure <code>Enabled</code> is set to <code>true</code> in the <a href="../linking"><code>linking.yml</code></a> config to enable this feature, then restart your server.
+<div class="highlight"><pre><span></span><code><span class="c1"># linking.yml Line 2</span>
+<span class="nt">Enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div></p>
+<p>Each option inside <a href="../linking"><code>linking.yml</code></a> is explained using comments, so read through them to get a better understanding of what you can do.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Home
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../FAQ/" class="md-footer__link md-footer__link--next" aria-label="Next: Frequently Asked Questions" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Frequently Asked Questions
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="http://discordsrv.com/discord" target="_blank" rel="noopener" title="DiscordSRV Discord Server" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+    
+      <script src="../assets/javascripts/bundle.82b56eb2.min.js"></script>
+      
+    
+    <script>
+    var elements = document.getElementsByClassName("lightgallery");
+    for(var i=0; i<elements.length; i++) {
+       lightGallery(elements[i]);
+    }
+    </script>
+
+  </body>
+</html>

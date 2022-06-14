@@ -1,0 +1,3118 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The official documentation for DiscordSRV. The most powerful, configurable, open-source Discord bridge plugin out there.">
+      
+      
+      
+        <meta name="author" content="granny">
+      
+      
+        <link rel="canonical" href="https://docs.discordsrv.com/messages/">
+      
+      <link rel="icon" href="../images/logo.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
+    
+    
+      
+        <title>messages.yml - DiscordSRV Wiki</title>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    <link rel="stylesheet" href="../css/lightgallery.min.css">
+
+    
+    
+    <script src="../js/lightgallery.min.js"></script>
+
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#messagesyml" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DiscordSRV Wiki" class="md-header__button md-logo" aria-label="DiscordSRV Wiki" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DiscordSRV Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              messages.yml
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/DiscordSRV/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Documentation
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DiscordSRV Wiki" class="md-nav__button md-logo" aria-label="DiscordSRV Wiki" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    DiscordSRV Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/DiscordSRV/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Documentation
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        Frequently Asked Questions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Configs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Configs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Configs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alerts/" class="md-nav__link">
+        alerts.yml
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        config.yml
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linking/" class="md-nav__link">
+        linking.yml
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          messages.yml
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        messages.yml
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#discordtominecraft" class="md-nav__link">
+    DiscordToMinecraft...
+  </a>
+  
+    <nav class="md-nav" aria-label="DiscordToMinecraft...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#DiscordToMinecraftChatMessageFormat" class="md-nav__link">
+    ...ChatMessageFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordToMinecraftChatMessageFormatNoRole" class="md-nav__link">
+    ...ChatMessageFormatNoRole
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatmessageformat_channel" class="md-nav__link">
+    ...ChatMessageFormat_&lt;channel&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatmessageformatnorole_channel" class="md-nav__link">
+    ...ChatMessageFormatNoRole_&lt;channel&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordToMinecraftAllRolesSeparator" class="md-nav__link">
+    ...AllRolesSeparator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordToMinecraftReplyFormat" class="md-nav__link">
+    ...ReplyFormat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minecraftchattodiscordmessage" class="md-nav__link">
+    MinecraftChatToDiscordMessage...
+  </a>
+  
+    <nav class="md-nav" aria-label="MinecraftChatToDiscordMessage...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#MinecraftChatToDiscordMessageFormat" class="md-nav__link">
+    ...Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#MinecraftChatToDiscordMessageFormatNoPrimaryGroup" class="md-nav__link">
+    ...FormatNoPrimaryGroup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ChatChannelHookMessageFormat" class="md-nav__link">
+    ChatChannelHookMessageFormat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynmap" class="md-nav__link">
+    Dynmap...
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynmap...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#DynmapNameFormat" class="md-nav__link">
+    ...NameFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DynmapChatFormat" class="md-nav__link">
+    ...ChatFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DynmapDiscordFormat" class="md-nav__link">
+    ...DiscordFormat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discordconsolechannel" class="md-nav__link">
+    DiscordConsoleChannel...
+  </a>
+  
+    <nav class="md-nav" aria-label="DiscordConsoleChannel...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#DiscordConsoleChannelFormat" class="md-nav__link">
+    ...Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordConsoleChannelTimestampFormat" class="md-nav__link">
+    ...TimestampFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordConsoleChannelPrefix" class="md-nav__link">
+    ...Prefix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordConsoleChannelSuffix" class="md-nav__link">
+    ...Suffix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordConsoleChannelPadding" class="md-nav__link">
+    ...Padding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#DiscordChatChannelConsoleCommandNotifyErrorsFormat" class="md-nav__link">
+    DiscordChatChannelConsoleCommandNotifyErrorsFormat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discordchatchannellistcommand" class="md-nav__link">
+    DiscordChatChannelListCommand...
+  </a>
+  
+    <nav class="md-nav" aria-label="DiscordChatChannelListCommand...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#DiscordChatChannelListCommandFormatOnlinePlayers" class="md-nav__link">
+    ...FormatOnlinePlayers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordChatChannelListCommandFormatNoOnlinePlayers" class="md-nav__link">
+    ...FormatNoOnlinePlayers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordChatChannelListCommandPlayerFormat" class="md-nav__link">
+    ...PlayerFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordChatChannelListCommandAllPlayersSeparator" class="md-nav__link">
+    ...AllPlayersSeparator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minecraftplayer" class="md-nav__link">
+    MinecraftPlayer...
+  </a>
+  
+    <nav class="md-nav" aria-label="MinecraftPlayer...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#MinecraftPlayerJoinMessageFormat" class="md-nav__link">
+    ...JoinMessageFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#MinecraftPlayerFirstJoinMessageFormat" class="md-nav__link">
+    ...FirstJoinMessageFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#MinecraftPlayerLeaveMessageFormat" class="md-nav__link">
+    ...LeaveMessageFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#MinecraftPlayerDeathMessageFormat" class="md-nav__link">
+    ...DeathMessageFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#MinecraftPlayerAchievementMessagesFormat" class="md-nav__link">
+    ...AchievementMessagesFormat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#channeltopicupdater" class="md-nav__link">
+    ChannelTopicUpdater...
+  </a>
+  
+    <nav class="md-nav" aria-label="ChannelTopicUpdater...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ChannelTopicUpdaterChatChannelTopicFormat" class="md-nav__link">
+    ...ChatChannelTopicFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ChannelTopicUpdaterConsoleChannelTopicFormat" class="md-nav__link">
+    ...ConsoleChannelTopicFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ChannelTopicUpdaterChatChannelTopicAtServerShutdownFormat" class="md-nav__link">
+    ...ChatChannelTopicAtServerShutdownFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ChannelTopicUpdaterConsoleChannelTopicAtServerShutdownFormat" class="md-nav__link">
+    ...ConsoleChannelTopicAtServerShutdownFormat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#DiscordCommandFormat" class="md-nav__link">
+    DiscordCommandFormat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#NoPermissionMessage" class="md-nav__link">
+    NoPermissionMessage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#UnknownCommandMessage" class="md-nav__link">
+    UnknownCommandMessage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discordchatchannelserver" class="md-nav__link">
+    DiscordChatChannelServer...
+  </a>
+  
+    <nav class="md-nav" aria-label="DiscordChatChannelServer...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#DiscordChatChannelServerStartupMessage" class="md-nav__link">
+    ...StartupMessage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordChatChannelServerShutdownMessage" class="md-nav__link">
+    ...ShutdownMessage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ServerWatchdogMessage" class="md-nav__link">
+    ServerWatchdogMessage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#CodeGenerated" class="md-nav__link">
+    CodeGenerated
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#UnknownCode" class="md-nav__link">
+    UnknownCode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#InvalidCode" class="md-nav__link">
+    InvalidCode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#DiscordAccountLinked" class="md-nav__link">
+    DiscordAccountLinked
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#DiscordAccountAlreadyLinked" class="md-nav__link">
+    DiscordAccountAlreadyLinked
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#DiscordLinkedAccountRequired" class="md-nav__link">
+    DiscordLinkedAccountRequired
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#DiscordLinkedAccountCheckFailed" class="md-nav__link">
+    DiscordLinkedAccountCheckFailed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ClickToCopyCode" class="md-nav__link">
+    ClickToCopyCode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#MinecraftAccountLinked" class="md-nav__link">
+    MinecraftAccountLinked
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#MinecraftAccountAlreadyLinked" class="md-nav__link">
+    MinecraftAccountAlreadyLinked
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#LinkedCommandSuccess" class="md-nav__link">
+    LinkedCommandSuccess
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#UnlinkCommandSuccess" class="md-nav__link">
+    UnlinkCommandSuccess
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#MinecraftNoLinkedAccount" class="md-nav__link">
+    MinecraftNoLinkedAccount
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#LinkingError" class="md-nav__link">
+    LinkingError
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#MinecraftNobodyFound" class="md-nav__link">
+    MinecraftNobodyFound
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../synchronization/" class="md-nav__link">
+        synchronization.yml
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voice/" class="md-nav__link">
+        voice.yml
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Commands/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Permissions/" class="md-nav__link">
+        Permissions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      <label class="md-nav__link" for="__nav_7">
+        Hooked plugin features
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Hooked plugin features" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Hooked plugin features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LPContext/" class="md-nav__link">
+        LuckPerms Contexts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PAPI-Placeholders/" class="md-nav__link">
+        PlaceholderAPI Placeholders
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+      
+      <label class="md-nav__link" for="__nav_8">
+        Troubleshooting
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Troubleshooting" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Troubleshooting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/DiscordSRV/DiscordSRV/issues" class="md-nav__link">
+        Report a bug
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/DiscordSRV/DiscordSRV/issues" class="md-nav__link">
+        Request a feature
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://discordsrv.com/discord" class="md-nav__link">
+        Ask for support
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      <label class="md-nav__link" for="__nav_9">
+        Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/DiscordSRV/DiscordSRV/blob/master/CONTRIBUTING.md" class="md-nav__link">
+        Contributing guidelines
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/#developers" class="md-nav__link">
+        Using the DiscordSRV-API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://get.discordsrv.com/" class="md-nav__link">
+        Latest Release
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://snapshot.discordsrv.com/" class="md-nav__link">
+        Latest Snapshot
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" data-md-state="indeterminate" type="checkbox" id="__nav_10" checked>
+      
+      <label class="md-nav__link" for="__nav_10">
+        Connections
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Connections" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Connections
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://discordsrv.com/discord" class="md-nav__link">
+        Discord
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.spigotmc.org/resources/discordsrv.18494/" class="md-nav__link">
+        SpigotMC
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://dev.bukkit.org/projects/discordsrv" class="md-nav__link">
+        BukkitDev
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#discordtominecraft" class="md-nav__link">
+    DiscordToMinecraft...
+  </a>
+  
+    <nav class="md-nav" aria-label="DiscordToMinecraft...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#DiscordToMinecraftChatMessageFormat" class="md-nav__link">
+    ...ChatMessageFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordToMinecraftChatMessageFormatNoRole" class="md-nav__link">
+    ...ChatMessageFormatNoRole
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatmessageformat_channel" class="md-nav__link">
+    ...ChatMessageFormat_&lt;channel&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chatmessageformatnorole_channel" class="md-nav__link">
+    ...ChatMessageFormatNoRole_&lt;channel&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordToMinecraftAllRolesSeparator" class="md-nav__link">
+    ...AllRolesSeparator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordToMinecraftReplyFormat" class="md-nav__link">
+    ...ReplyFormat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minecraftchattodiscordmessage" class="md-nav__link">
+    MinecraftChatToDiscordMessage...
+  </a>
+  
+    <nav class="md-nav" aria-label="MinecraftChatToDiscordMessage...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#MinecraftChatToDiscordMessageFormat" class="md-nav__link">
+    ...Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#MinecraftChatToDiscordMessageFormatNoPrimaryGroup" class="md-nav__link">
+    ...FormatNoPrimaryGroup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ChatChannelHookMessageFormat" class="md-nav__link">
+    ChatChannelHookMessageFormat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynmap" class="md-nav__link">
+    Dynmap...
+  </a>
+  
+    <nav class="md-nav" aria-label="Dynmap...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#DynmapNameFormat" class="md-nav__link">
+    ...NameFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DynmapChatFormat" class="md-nav__link">
+    ...ChatFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DynmapDiscordFormat" class="md-nav__link">
+    ...DiscordFormat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discordconsolechannel" class="md-nav__link">
+    DiscordConsoleChannel...
+  </a>
+  
+    <nav class="md-nav" aria-label="DiscordConsoleChannel...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#DiscordConsoleChannelFormat" class="md-nav__link">
+    ...Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordConsoleChannelTimestampFormat" class="md-nav__link">
+    ...TimestampFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordConsoleChannelPrefix" class="md-nav__link">
+    ...Prefix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordConsoleChannelSuffix" class="md-nav__link">
+    ...Suffix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordConsoleChannelPadding" class="md-nav__link">
+    ...Padding
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#DiscordChatChannelConsoleCommandNotifyErrorsFormat" class="md-nav__link">
+    DiscordChatChannelConsoleCommandNotifyErrorsFormat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discordchatchannellistcommand" class="md-nav__link">
+    DiscordChatChannelListCommand...
+  </a>
+  
+    <nav class="md-nav" aria-label="DiscordChatChannelListCommand...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#DiscordChatChannelListCommandFormatOnlinePlayers" class="md-nav__link">
+    ...FormatOnlinePlayers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordChatChannelListCommandFormatNoOnlinePlayers" class="md-nav__link">
+    ...FormatNoOnlinePlayers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordChatChannelListCommandPlayerFormat" class="md-nav__link">
+    ...PlayerFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordChatChannelListCommandAllPlayersSeparator" class="md-nav__link">
+    ...AllPlayersSeparator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minecraftplayer" class="md-nav__link">
+    MinecraftPlayer...
+  </a>
+  
+    <nav class="md-nav" aria-label="MinecraftPlayer...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#MinecraftPlayerJoinMessageFormat" class="md-nav__link">
+    ...JoinMessageFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#MinecraftPlayerFirstJoinMessageFormat" class="md-nav__link">
+    ...FirstJoinMessageFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#MinecraftPlayerLeaveMessageFormat" class="md-nav__link">
+    ...LeaveMessageFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#MinecraftPlayerDeathMessageFormat" class="md-nav__link">
+    ...DeathMessageFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#MinecraftPlayerAchievementMessagesFormat" class="md-nav__link">
+    ...AchievementMessagesFormat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#channeltopicupdater" class="md-nav__link">
+    ChannelTopicUpdater...
+  </a>
+  
+    <nav class="md-nav" aria-label="ChannelTopicUpdater...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ChannelTopicUpdaterChatChannelTopicFormat" class="md-nav__link">
+    ...ChatChannelTopicFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ChannelTopicUpdaterConsoleChannelTopicFormat" class="md-nav__link">
+    ...ConsoleChannelTopicFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ChannelTopicUpdaterChatChannelTopicAtServerShutdownFormat" class="md-nav__link">
+    ...ChatChannelTopicAtServerShutdownFormat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ChannelTopicUpdaterConsoleChannelTopicAtServerShutdownFormat" class="md-nav__link">
+    ...ConsoleChannelTopicAtServerShutdownFormat
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#DiscordCommandFormat" class="md-nav__link">
+    DiscordCommandFormat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#NoPermissionMessage" class="md-nav__link">
+    NoPermissionMessage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#UnknownCommandMessage" class="md-nav__link">
+    UnknownCommandMessage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discordchatchannelserver" class="md-nav__link">
+    DiscordChatChannelServer...
+  </a>
+  
+    <nav class="md-nav" aria-label="DiscordChatChannelServer...">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#DiscordChatChannelServerStartupMessage" class="md-nav__link">
+    ...StartupMessage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#DiscordChatChannelServerShutdownMessage" class="md-nav__link">
+    ...ShutdownMessage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ServerWatchdogMessage" class="md-nav__link">
+    ServerWatchdogMessage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#CodeGenerated" class="md-nav__link">
+    CodeGenerated
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#UnknownCode" class="md-nav__link">
+    UnknownCode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#InvalidCode" class="md-nav__link">
+    InvalidCode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#DiscordAccountLinked" class="md-nav__link">
+    DiscordAccountLinked
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#DiscordAccountAlreadyLinked" class="md-nav__link">
+    DiscordAccountAlreadyLinked
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#DiscordLinkedAccountRequired" class="md-nav__link">
+    DiscordLinkedAccountRequired
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#DiscordLinkedAccountCheckFailed" class="md-nav__link">
+    DiscordLinkedAccountCheckFailed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ClickToCopyCode" class="md-nav__link">
+    ClickToCopyCode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#MinecraftAccountLinked" class="md-nav__link">
+    MinecraftAccountLinked
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#MinecraftAccountAlreadyLinked" class="md-nav__link">
+    MinecraftAccountAlreadyLinked
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#LinkedCommandSuccess" class="md-nav__link">
+    LinkedCommandSuccess
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#UnlinkCommandSuccess" class="md-nav__link">
+    UnlinkCommandSuccess
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#MinecraftNoLinkedAccount" class="md-nav__link">
+    MinecraftNoLinkedAccount
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#LinkingError" class="md-nav__link">
+    LinkingError
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#MinecraftNobodyFound" class="md-nav__link">
+    MinecraftNobodyFound
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/DiscordSRV/Documentation/edit/master/docs/messages.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="messagesyml"><a href="https://config.discordsrv.com/messages/_">messages.yml</a><a class="headerlink" href="#messagesyml" title="Permanent link">🔗</a></h1>
+<h3 id="discordtominecraft">DiscordToMinecraft...<a class="headerlink" href="#discordtominecraft" title="Permanent link">🔗</a></h3>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Example</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%allroles%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>Owner | Developer | Boss man</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>All the user's roles separated by <a href="../config/#DiscordToMinecraftAllRolesSeparator"><code>DiscordToMinecraftAllRolesSeparator</code></a></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%message%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>Hello!</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The message content</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%toprole%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>Owner</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The user's highest ranking role</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%toprolealias%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>Owner</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The alias for the role from <a href="../config/#DiscordChatChannelRoleAliases"><code>DiscordChatChannelRoleAliases</code></a>, otherwise the role's name</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%toproleinitial%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>O</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The first initial of the user's highest ranking role</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%toprolecolor%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>&lt;dark_red&gt;</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The approximate color of the highest ranking role</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%username%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>scarsz</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The user's username/nickname if set</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%channelname%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>global</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The name of the Discord channel the message is coming from</p>
+</td>
+</tr>
+<tr>
+<td colspan="3" rowspan="1">
+<p><a href="https://github.com/PlaceholderAPI/PlaceholderAPI">PlaceholderAPI</a> placeholders are also supported
+           <!-- TODO Modify the mdx-grid-tables extension to allow centering items --></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="DiscordToMinecraftChatMessageFormat"><a href="https://config.discordsrv.com/messages/DiscordToMinecraftChatMessageFormat"><code>...ChatMessageFormat</code></a><a class="headerlink" href="#DiscordToMinecraftChatMessageFormat" title="Permanent link">🔗</a></h4>
+<p>The format used when sending messages from Discord to Minecraft.</p>
+<h4 id="DiscordToMinecraftChatMessageFormatNoRole"><a href="https://config.discordsrv.com/messages/DiscordToMinecraftChatMessageFormatNoRole"><code>...ChatMessageFormatNoRole</code></a><a class="headerlink" href="#DiscordToMinecraftChatMessageFormatNoRole" title="Permanent link">🔗</a></h4>
+<p>The format used when sending messages from Discord to Minecraft for the user with no roles.</p>
+<h4 id="chatmessageformat_channel"><code>...ChatMessageFormat_&lt;channel&gt;</code><a class="headerlink" href="#chatmessageformat_channel" title="Permanent link">🔗</a></h4>
+<p>The format used when sending messages from Discord to Minecraft for <code>&lt;channel&gt;</code>.</p>
+<p>You can specify a different format per channel. To add a format for a channel named <code>mychannel</code> you'd add the following options to your <code>messages.yml</code>:
+<div class="highlight"><pre><span></span><code><span class="nt">DiscordToMinecraftChatMessageFormat_mychannel</span><span class="p">:</span> <span class="s">&quot;[&amp;bDiscord</span><span class="nv"> </span><span class="s">From</span><span class="nv"> </span><span class="s">MyChannel</span><span class="nv"> </span><span class="s">&amp;r|</span><span class="nv"> </span><span class="s">%toprolecolor%%toprole%&amp;r]</span><span class="nv"> </span><span class="s">%name%</span><span class="nv"> </span><span class="s">»</span><span class="nv"> </span><span class="s">%message%&quot;</span>
+<span class="nt">DiscordToMinecraftChatMessageFormatNoRole_mychannel</span><span class="p">:</span> <span class="s">&quot;[&amp;bDiscord</span><span class="nv"> </span><span class="s">From</span><span class="nv"> </span><span class="s">MyChannel&amp;r]</span><span class="nv"> </span><span class="s">%name%</span><span class="nv"> </span><span class="s">»</span><span class="nv"> </span><span class="s">%message%&quot;</span>
+</code></pre></div></p>
+<h4 id="chatmessageformatnorole_channel"><code>...ChatMessageFormatNoRole_&lt;channel&gt;</code><a class="headerlink" href="#chatmessageformatnorole_channel" title="Permanent link">🔗</a></h4>
+<p>The format used when sending messages from Discord to Minecraft for the user with no roles for <code>&lt;channel&gt;</code>.</p>
+<p>This can be formatted using the same idea as the previous option:
+<div class="highlight"><pre><span></span><code><span class="nt">DiscordToMinecraftChatMessageFormatNoRole_mychannel</span><span class="p">:</span> <span class="s">&quot;[&amp;bDiscord</span><span class="nv"> </span><span class="s">From</span><span class="nv"> </span><span class="s">MyChannel&amp;r]</span><span class="nv"> </span><span class="s">%name%</span><span class="nv"> </span><span class="s">»</span><span class="nv"> </span><span class="s">%message%&quot;</span>
+</code></pre></div></p>
+<h4 id="DiscordToMinecraftAllRolesSeparator"><a href="https://config.discordsrv.com/messages/DiscordToMinecraftAllRolesSeparator"><code>...AllRolesSeparator</code></a><a class="headerlink" href="#DiscordToMinecraftAllRolesSeparator" title="Permanent link">🔗</a></h4>
+<p>The separator used in between roles in <code>%allroles%</code></p>
+<h4 id="DiscordToMinecraftReplyFormat"><a href="https://config.discordsrv.com/messages/DiscordToMinecraftReplyFormat"><code>...ReplyFormat</code></a><a class="headerlink" href="#DiscordToMinecraftReplyFormat" title="Permanent link">🔗</a></h4>
+<p>The format for the message displayed to indicate that the message is a reply
+NOTE: The %reply% placeholder needs to be present in the format if you want the DiscordToMinecraftMessageReplyFormat to display in your message.</p>
+<hr />
+<h3 id="minecraftchattodiscordmessage">MinecraftChatToDiscordMessage...<a class="headerlink" href="#minecraftchattodiscordmessage" title="Permanent link">🔗</a></h3>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Example</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%username%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>jeb_</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>raw player username</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%displayname%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>BigBossManJeb</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>display name from things like nicknames</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%usernamenoescapes%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>jeb_</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>raw player username without escaping discord format (for use in inline code &amp; code block markdown)</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%displaynamenoescapes%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>BigBossManJeb</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>display name from things like nicknames without escaping discord format (for use in inline code &amp; code block markdown)</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%message%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>Hello!</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>message content</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%primarygroup%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>Owner</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the name of the user's primary group</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%world%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>world</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>name of world player is in</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%worldalias%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>Mainland</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>alias of world player is in via Multiverse-Core</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%date%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>Sun Jan 1 15:30:45 PDT 2017</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>current date &amp; time</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%channelname%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>global</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the name of the channel that the message was sent in, if the message was sent in a channel at all</p>
+</td>
+</tr>
+<tr>
+<td colspan="3" rowspan="1">
+<p><a href="https://github.com/PlaceholderAPI/PlaceholderAPI">PlaceholderAPI</a> placeholders are also supported
+           <!-- TODO Modify the mdx-grid-tables extension to allow centering items --></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="MinecraftChatToDiscordMessageFormat"><a href="https://config.discordsrv.com/messages/MinecraftChatToDiscordMessageFormat"><code>...Format</code></a><a class="headerlink" href="#MinecraftChatToDiscordMessageFormat" title="Permanent link">🔗</a></h4>
+<p>the format used when sending messages from Minecraft to Discord.</p>
+<h4 id="MinecraftChatToDiscordMessageFormatNoPrimaryGroup"><a href="https://config.discordsrv.com/messages/MinecraftChatToDiscordMessageFormatNoPrimaryGroup"><code>...FormatNoPrimaryGroup</code></a><a class="headerlink" href="#MinecraftChatToDiscordMessageFormatNoPrimaryGroup" title="Permanent link">🔗</a></h4>
+<p>used in place of <code>MinecraftChatToDiscordMessageFormat</code> when no primary group for the player was found.</p>
+<hr />
+<h3 id="ChatChannelHookMessageFormat"><a href="https://config.discordsrv.com/messages/ChatChannelHookMessageFormat"><code>ChatChannelHookMessageFormat</code></a><a class="headerlink" href="#ChatChannelHookMessageFormat" title="Permanent link">🔗</a></h3>
+<p>This is a special message that's only used when a supported chat channel plugin is hooked.
+It modifies what the message would be like in-game to include information related to the channel the message is from.  </p>
+<table>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p>Placeholders</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Explanations</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%channelcolor%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the color character corresponding to the channel</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%channelname%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the literal name of the channel, usually the name only the server sees internally</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%channelnickname%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the formal nickname of the channel, usually the name of the channel that players see</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%message%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the message after processing through <a href="#DiscordToMinecraftChatMessageFormat"><code>DiscordToMinecraftChatMessageFormat</code></a>/<a href="#DiscordToMinecraftChatMessageFormatNoRole"><code>DiscordToMinecraftChatMessageFormatNoRole</code></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dynmap">Dynmap...<a class="headerlink" href="#dynmap" title="Permanent link">🔗</a></h3>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Example</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="3" rowspan="1">
+<p>Same as <a href="#discordtominecraft">Discord -&gt; Minecraft placeholders</a></p>
+</td>
+</tr>
+<tr>
+<td colspan="3" rowspan="1">
+<p><a href="https://github.com/PlaceholderAPI/PlaceholderAPI">PlaceholderAPI</a> placeholders are also supported</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="DynmapNameFormat"><a href="https://config.discordsrv.com/messages/DynmapNameFormat"><code>...NameFormat</code></a><a class="headerlink" href="#DynmapNameFormat" title="Permanent link">🔗</a></h4>
+<p>The format for the username part of the message sent to Dynmap (this may be hidden depending on dynmap settings).</p>
+<h4 id="DynmapChatFormat"><a href="https://config.discordsrv.com/messages/DynmapChatFormat"><code>...ChatFormat</code></a><a class="headerlink" href="#DynmapChatFormat" title="Permanent link">🔗</a></h4>
+<p>The format for the message part of the message sent to Dynmap.</p>
+<h4 id="DynmapDiscordFormat"><a href="https://config.discordsrv.com/messages/DynmapDiscordFormat"><code>...DiscordFormat</code></a><a class="headerlink" href="#DynmapDiscordFormat" title="Permanent link">🔗</a></h4>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Example</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%name%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>Notch</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the username for the message sent on the Dynmap web chat (could be blank)</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%message%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>Hello!</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>message content</p>
+</td>
+</tr>
+<tr>
+<td colspan="3" rowspan="1">
+<p><a href="https://github.com/PlaceholderAPI/PlaceholderAPI">PlaceholderAPI</a> placeholders are also supported</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The format for Dynmap messages going to Discord</p>
+<hr />
+<h3 id="discordconsolechannel">DiscordConsoleChannel...<a class="headerlink" href="#discordconsolechannel" title="Permanent link">🔗</a></h3>
+<h4 id="DiscordConsoleChannelFormat"><a href="https://config.discordsrv.com/messages/DiscordConsoleChannelFormat"><code>...Format</code></a><a class="headerlink" href="#DiscordConsoleChannelFormat" title="Permanent link">🔗</a></h4>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Example</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>{level}</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>INFO, WARN, ERROR</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>message severity level</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>{name}</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>Server</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>logger name</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>{datetime}</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>Sun Jan 1 15:30:45 PDT 2017</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>current date &amp; time</p>
+</td>
+</tr>
+<tr>
+<td colspan="3" rowspan="1">
+<p><a href="https://github.com/PlaceholderAPI/PlaceholderAPI">PlaceholderAPI</a> placeholders are also supported</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>This is the format used when sending a line from the console to the console channel, if enabled  </p>
+<h4 id="DiscordConsoleChannelTimestampFormat"><a href="https://config.discordsrv.com/messages/DiscordConsoleChannelTimestampFormat"><code>...TimestampFormat</code></a><a class="headerlink" href="#DiscordConsoleChannelTimestampFormat" title="Permanent link">🔗</a></h4>
+<p>The date format that will be used for the {date} and {datetime} placeholders</p>
+<h4 id="DiscordConsoleChannelPrefix"><a href="https://config.discordsrv.com/messages/DiscordConsoleChannelPrefix"><code>...Prefix</code></a><a class="headerlink" href="#DiscordConsoleChannelPrefix" title="Permanent link">🔗</a></h4>
+<p>The literal prefix to prepend to a batch of lines</p>
+<h4 id="DiscordConsoleChannelSuffix"><a href="https://config.discordsrv.com/messages/DiscordConsoleChannelSuffix"><code>...Suffix</code></a><a class="headerlink" href="#DiscordConsoleChannelSuffix" title="Permanent link">🔗</a></h4>
+<p>The literal suffix to append to a batch of lines</p>
+<h4 id="DiscordConsoleChannelPadding"><a href="https://config.discordsrv.com/messages/DiscordConsoleChannelPadding"><code>...Padding</code></a><a class="headerlink" href="#DiscordConsoleChannelPadding" title="Permanent link">🔗</a></h4>
+<p>The amount of padding to add inside the prefix</p>
+<hr />
+<h3 id="DiscordChatChannelConsoleCommandNotifyErrorsFormat"><a href="https://config.discordsrv.com/messages/DiscordChatChannelConsoleCommandNotifyErrorsFormat"><code>DiscordChatChannelConsoleCommandNotifyErrorsFormat</code></a><a class="headerlink" href="#DiscordChatChannelConsoleCommandNotifyErrorsFormat" title="Permanent link">🔗</a></h3>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Example</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%user%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>scarsz</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the name of the user that tried running the command</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%error%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>no permission</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the reason for the error</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Used when an error occurs with permissions for the player to run the command, not an error running the command itself. This is sent as a PM to the user.  </p>
+<hr />
+<h3 id="discordchatchannellistcommand">DiscordChatChannelListCommand...<a class="headerlink" href="#discordchatchannellistcommand" title="Permanent link">🔗</a></h3>
+<h4 id="DiscordChatChannelListCommandFormatOnlinePlayers"><a href="https://config.discordsrv.com/messages/DiscordChatChannelListCommandFormatOnlinePlayers"><code>...FormatOnlinePlayers</code></a><a class="headerlink" href="#DiscordChatChannelListCommandFormatOnlinePlayers" title="Permanent link">🔗</a></h4>
+<p>the message at the beginning of the list, before all of the player names.</p>
+<h4 id="DiscordChatChannelListCommandFormatNoOnlinePlayers"><a href="https://config.discordsrv.com/messages/DiscordChatChannelListCommandFormatNoOnlinePlayers"><code>...FormatNoOnlinePlayers</code></a><a class="headerlink" href="#DiscordChatChannelListCommandFormatNoOnlinePlayers" title="Permanent link">🔗</a></h4>
+<p>used instead for when no players are online</p>
+<h4 id="DiscordChatChannelListCommandPlayerFormat"><a href="https://config.discordsrv.com/messages/DiscordChatChannelListCommandPlayerFormat"><code>...PlayerFormat</code></a><a class="headerlink" href="#DiscordChatChannelListCommandPlayerFormat" title="Permanent link">🔗</a></h4>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Example</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%username%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>jeb_</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>raw player username</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%displayname%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>BigBossManJeb</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>display name from things like nicknames</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%primarygroup%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>Owner</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the name of the user's primary group</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%world%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>world</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>name of world player is in</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%worldalias%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>Mainland</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>alias of world player is in via Multiverse-Core</p>
+</td>
+</tr>
+<tr>
+<td colspan="3" rowspan="1">
+<p><a href="https://github.com/PlaceholderAPI/PlaceholderAPI">PlaceholderAPI</a> placeholders are also supported</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>the format of how each player should appear in the list  </p>
+<h4 id="DiscordChatChannelListCommandAllPlayersSeparator"><a href="https://config.discordsrv.com/messages/DiscordChatChannelListCommandAllPlayersSeparator"><code>...AllPlayersSeparator</code></a><a class="headerlink" href="#DiscordChatChannelListCommandAllPlayersSeparator" title="Permanent link">🔗</a></h4>
+<p>the separator used in between players  </p>
+<hr />
+<h3 id="minecraftplayer">MinecraftPlayer...<a class="headerlink" href="#minecraftplayer" title="Permanent link">🔗</a></h3>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Embed Information</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p>Color</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>accepts a hex color code (eg. "#ffffff") or a rgb integer (eg. 0)</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>Fields</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>format is "title;value;inline" (eg. "Who joined?;%displayname%;true") or "blank" to add a blank field</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p>Timestamp</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>set to true to use the time the message was sent or use a epoch timestamp for a specific time (<a href="https://www.epochconverter.com/">https://www.epochconverter.com/</a>)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Example</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%displayname%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>BigBossManJeb</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>display name from things like nicknames</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%username%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>jeb_</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>raw player username</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%displaynamenoescapes%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>BigBossManJeb</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>display name from things like nicknames without escaping discord format (for use in inline code &amp; code block markdown)</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%usernamenoescapes%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>jeb_</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>raw player username without escaping discord format (for use in inline code &amp; code block markdown)</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%date%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>Sun Jan 1 15:30:45 PDT 2017</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>current date &amp; time</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%embedavatarurl%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><a href="../config/#AvatarUrl"><code>&lt;AvatarUrl&gt;</code></a></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the user's avatar</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%botavatarurl%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>&lt;Bot Avatar Url&gt;</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the bot's avatar</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%botname%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><code>DiscordSRV bot</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the bot's name</p>
+</td>
+</tr>
+<tr>
+<td colspan="3" rowspan="1">
+<p><a href="https://github.com/PlaceholderAPI/PlaceholderAPI">PlaceholderAPI</a> placeholders are also supported</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="MinecraftPlayerJoinMessageFormat"><a href="https://config.discordsrv.com/messages/MinecraftPlayerJoinMessageFormat"><code>...JoinMessageFormat</code></a><a class="headerlink" href="#MinecraftPlayerJoinMessageFormat" title="Permanent link">🔗</a></h4>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%message%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>join message as seen in-game</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" rowspan="1">
+<p><a href="https://github.com/PlaceholderAPI/PlaceholderAPI">PlaceholderAPI</a> placeholders are also supported</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The message that gets broadcasted when a player joins the server.</p>
+<h4 id="MinecraftPlayerFirstJoinMessageFormat"><a href="https://config.discordsrv.com/messages/MinecraftPlayerFirstJoinMessageFormat"><code>...FirstJoinMessageFormat</code></a><a class="headerlink" href="#MinecraftPlayerFirstJoinMessageFormat" title="Permanent link">🔗</a></h4>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%message%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>first join message as seen in-game</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" rowspan="1">
+<p><a href="https://github.com/PlaceholderAPI/PlaceholderAPI">PlaceholderAPI</a> placeholders are also supported</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The message that gets broadcasted when a player joins for the first time.</p>
+<h4 id="MinecraftPlayerLeaveMessageFormat"><a href="https://config.discordsrv.com/messages/MinecraftPlayerLeaveMessageFormat"><code>...LeaveMessageFormat</code></a><a class="headerlink" href="#MinecraftPlayerLeaveMessageFormat" title="Permanent link">🔗</a></h4>
+<p>The message that gets broadcasted when a player leaves.</p>
+<h4 id="MinecraftPlayerDeathMessageFormat"><a href="https://config.discordsrv.com/messages/MinecraftPlayerDeathMessageFormat"><code>...DeathMessageFormat</code></a><a class="headerlink" href="#MinecraftPlayerDeathMessageFormat" title="Permanent link">🔗</a></h4>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%deathmessage%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Raw death message</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" rowspan="1">
+<p><a href="https://github.com/PlaceholderAPI/PlaceholderAPI">PlaceholderAPI</a> placeholders are also supported</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The message that gets broadcasted on player death.  </p>
+<h4 id="MinecraftPlayerAchievementMessagesFormat"><a href="https://config.discordsrv.com/messages/MinecraftPlayerAchievementMessagesFormat"><code>...AchievementMessagesFormat</code></a><a class="headerlink" href="#MinecraftPlayerAchievementMessagesFormat" title="Permanent link">🔗</a></h4>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%achievement%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Title of the achievement/advancement</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" rowspan="1">
+<p><a href="https://github.com/PlaceholderAPI/PlaceholderAPI">PlaceholderAPI</a> placeholders are also supported</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The message that gets broadcasted when a player gets an achievement.</p>
+<hr />
+<h3 id="channeltopicupdater">ChannelTopicUpdater...<a class="headerlink" href="#channeltopicupdater" title="Permanent link">🔗</a></h3>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%playercount%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>current player count</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%playermax%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>maximum player count</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%date%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>current date</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%timestamp%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>current time in seconds since UNIX epoch</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%starttimestamp%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>start time in seconds since UNIX epoch</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%totalplayers%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>total amount of players to ever join the main world</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%uptimemins%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>amount of minutes since DiscordSRV has started</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%uptimehours%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>amount of hours since DiscordSRV has started</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%motd%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>motto of the day of the server</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%serverversion%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>server version such as Spigot-1.9</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%freememory%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>free memory of the JVM in MB</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%usedmemory%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>used memory of the JVM in MB</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%totalmemory%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>total memory of the JVM in MB</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%maxmemory%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>max memory of the JVM in MB</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%freememorygb%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>free memory of the JVM in GB</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%usedmemorygb%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>used memory of the JVM in GB</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%totalmemorygb%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>total memory of the JVM in GB</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%maxmemorygb%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>max memory of the JVM in GB</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%tps%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>average TPS of the server</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" rowspan="1">
+<p><a href="https://github.com/PlaceholderAPI/PlaceholderAPI">PlaceholderAPI</a> placeholders are also supported</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ChannelTopicUpdaterChatChannelTopicFormat"><a href="https://config.discordsrv.com/messages/ChannelTopicUpdaterChatChannelTopicFormat"><code>...ChatChannelTopicFormat</code></a><a class="headerlink" href="#ChannelTopicUpdaterChatChannelTopicFormat" title="Permanent link">🔗</a></h4>
+<p>message to set the chat channel's topic to every X seconds</p>
+<h4 id="ChannelTopicUpdaterConsoleChannelTopicFormat"><a href="https://config.discordsrv.com/messages/ChannelTopicUpdaterConsoleChannelTopicFormat"><code>...ConsoleChannelTopicFormat</code></a><a class="headerlink" href="#ChannelTopicUpdaterConsoleChannelTopicFormat" title="Permanent link">🔗</a></h4>
+<p>message to set the console channel's topic to every X seconds</p>
+<h4 id="ChannelTopicUpdaterChatChannelTopicAtServerShutdownFormat"><a href="https://config.discordsrv.com/messages/ChannelTopicUpdaterChatChannelTopicAtServerShutdownFormat"><code>...ChatChannelTopicAtServerShutdownFormat</code></a><a class="headerlink" href="#ChannelTopicUpdaterChatChannelTopicAtServerShutdownFormat" title="Permanent link">🔗</a></h4>
+<p>message to set the chat channel's topic when the server shuts down</p>
+<h4 id="ChannelTopicUpdaterConsoleChannelTopicAtServerShutdownFormat"><a href="https://config.discordsrv.com/messages/ChannelTopicUpdaterConsoleChannelTopicAtServerShutdownFormat"><code>...ConsoleChannelTopicAtServerShutdownFormat</code></a><a class="headerlink" href="#ChannelTopicUpdaterConsoleChannelTopicAtServerShutdownFormat" title="Permanent link">🔗</a></h4>
+<p>message to set the console channel's topic when the server shuts down  </p>
+<hr />
+<h3 id="DiscordCommandFormat"><a href="https://config.discordsrv.com/messages/DiscordCommandFormat"><code>DiscordCommandFormat</code></a><a class="headerlink" href="#DiscordCommandFormat" title="Permanent link">🔗</a></h3>
+<p>This is the message sent to players when they run "<code>/discord</code>". It's recommended to leave command syntax as a part of this.  </p>
+<hr />
+<h3 id="NoPermissionMessage"><a href="https://config.discordsrv.com/messages/NoPermissionMessage"><code>NoPermissionMessage</code></a><a class="headerlink" href="#NoPermissionMessage" title="Permanent link">🔗</a></h3>
+<p>No permission message</p>
+<h3 id="UnknownCommandMessage"><a href="https://config.discordsrv.com/messages/UnknownCommandMessage"><code>UnknownCommandMessage</code></a><a class="headerlink" href="#UnknownCommandMessage" title="Permanent link">🔗</a></h3>
+<p>Unknown command message</p>
+<h3 id="discordchatchannelserver">DiscordChatChannelServer...<a class="headerlink" href="#discordchatchannelserver" title="Permanent link">🔗</a></h3>
+<h4 id="DiscordChatChannelServerStartupMessage"><a href="https://config.discordsrv.com/messages/DiscordChatChannelServerStartupMessage"><code>...StartupMessage</code></a><a class="headerlink" href="#DiscordChatChannelServerStartupMessage" title="Permanent link">🔗</a></h4>
+<p>message to be sent when server starts; leave blank to disable</p>
+<h4 id="DiscordChatChannelServerShutdownMessage"><a href="https://config.discordsrv.com/messages/DiscordChatChannelServerShutdownMessage"><code>...ShutdownMessage</code></a><a class="headerlink" href="#DiscordChatChannelServerShutdownMessage" title="Permanent link">🔗</a></h4>
+<p>message to be sent when server shuts down; leave blank to disable  </p>
+<hr />
+<h3 id="ServerWatchdogMessage"><a href="https://config.discordsrv.com/messages/ServerWatchdogMessage"><code>ServerWatchdogMessage</code></a><a class="headerlink" href="#ServerWatchdogMessage" title="Permanent link">🔗</a></h3>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%guildowner%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The guild owner's mention tag.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%date%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>The date &amp; time when the message gets sent.</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%timeout%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>ServerWatchdogTimeout as a placeholder</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%timestamp%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>For use in discord's timestamp format EG: `<t:%timestamp%:R></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The watchdog constantly monitors the last time your server performed a game tick.
+If the time since the last tick goes above the set interval in seconds, Discord messages can be triggered.  </p>
+<h3 id="CodeGenerated"><a href="https://config.discordsrv.com/messages/CodeGenerated"><code>CodeGenerated</code></a><a class="headerlink" href="#CodeGenerated" title="Permanent link">🔗</a></h3>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%code%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the code generated for the player to link their account with</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%botname%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the name of the bot on Discord</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The message that appears in minecraft when a player runs the <code>/discordsrv link</code> command.  </p>
+<h3 id="UnknownCode"><a href="https://config.discordsrv.com/messages/UnknownCode"><code>UnknownCode</code></a><a class="headerlink" href="#UnknownCode" title="Permanent link">🔗</a></h3>
+<p>The message that appears in the bot's discord DMs if a user sends a 4 character message that isn't a generated code.  </p>
+<h3 id="InvalidCode"><a href="https://config.discordsrv.com/messages/InvalidCode"><code>InvalidCode</code></a><a class="headerlink" href="#InvalidCode" title="Permanent link">🔗</a></h3>
+<p>The message that appears in the bot's discord DMs if a user sends any message that isn't a generated code.  </p>
+<h3 id="DiscordAccountLinked"><a href="https://config.discordsrv.com/messages/DiscordAccountLinked"><code>DiscordAccountLinked</code></a><a class="headerlink" href="#DiscordAccountLinked" title="Permanent link">🔗</a></h3>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%name%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the name of the Minecraft player that the user's Discord account was linked to</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%uuid%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the uuid of the Minecraft player that the user's Discord account was linked to</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The bot's DM response when a user gets their discord account linked.  </p>
+<h3 id="DiscordAccountAlreadyLinked"><a href="https://config.discordsrv.com/messages/DiscordAccountAlreadyLinked"><code>DiscordAccountAlreadyLinked</code></a><a class="headerlink" href="#DiscordAccountAlreadyLinked" title="Permanent link">🔗</a></h3>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%name%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the Minecraft uuid of the user's linked Minecraft account</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%uuid%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the Minecraft username of the user's linked Minecraft account</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The bot's DM response if a user tries to link their minecraft account but they're already linked.  </p>
+<h3 id="DiscordLinkedAccountRequired"><a href="https://config.discordsrv.com/messages/DiscordLinkedAccountRequired"><code>DiscordLinkedAccountRequired</code></a><a class="headerlink" href="#DiscordLinkedAccountRequired" title="Permanent link">🔗</a></h3>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%message%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the message the user was not able to send because they were not linked</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The bot's reply if a player that isn't linked tries to send a discord message through the registered text channel.  </p>
+<h3 id="DiscordLinkedAccountCheckFailed"><a href="https://config.discordsrv.com/messages/DiscordLinkedAccountCheckFailed"><code>DiscordLinkedAccountCheckFailed</code></a><a class="headerlink" href="#DiscordLinkedAccountCheckFailed" title="Permanent link">🔗</a></h3>
+<p>The bot's reply if it can't check if a player is linked.  </p>
+<h3 id="ClickToCopyCode"><a href="https://config.discordsrv.com/messages/ClickToCopyCode"><code>ClickToCopyCode</code></a><a class="headerlink" href="#ClickToCopyCode" title="Permanent link">🔗</a></h3>
+<p>The hover text for <a href="#CodeGenerated">CodeGenerated</a>'s <code>%code%</code> placeholder.</p>
+<h3 id="MinecraftAccountLinked"><a href="https://config.discordsrv.com/messages/MinecraftAccountLinked"><code>MinecraftAccountLinked</code></a><a class="headerlink" href="#MinecraftAccountLinked" title="Permanent link">🔗</a></h3>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%id%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the discord id of the Discord user that the user's Minecraft account was linked to</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%username%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the discord name of the Discord user that the user's Minecraft account was linked to</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The message to the player that gets sent when the player links their discord account.  </p>
+<h3 id="MinecraftAccountAlreadyLinked"><a href="https://config.discordsrv.com/messages/MinecraftAccountAlreadyLinked"><code>MinecraftAccountAlreadyLinked</code></a><a class="headerlink" href="#MinecraftAccountAlreadyLinked" title="Permanent link">🔗</a></h3>
+<p>The message to the player if they try to link their discord account but they're already linked.  </p>
+<h3 id="LinkedCommandSuccess"><a href="https://config.discordsrv.com/messages/LinkedCommandSuccess"><code>LinkedCommandSuccess</code></a><a class="headerlink" href="#LinkedCommandSuccess" title="Permanent link">🔗</a></h3>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%name%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the discord username of the Discord user that the user's Minecraft account is linked to</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The message that appears to a linked player when they run <code>/discordsrv linked</code>.</p>
+<h3 id="UnlinkCommandSuccess"><a href="https://config.discordsrv.com/messages/UnlinkCommandSuccess"><code>UnlinkCommandSuccess</code></a><a class="headerlink" href="#UnlinkCommandSuccess" title="Permanent link">🔗</a></h3>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%name%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the discord username of the Discord user that the user's Minecraft account was linked to</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The message that appears to a linked player when they run <code>/discordsrv unlink</code>.</p>
+<h3 id="MinecraftNoLinkedAccount"><a href="https://config.discordsrv.com/messages/MinecraftNoLinkedAccount"><code>MinecraftNoLinkedAccount</code></a><a class="headerlink" href="#MinecraftNoLinkedAccount" title="Permanent link">🔗</a></h3>
+<p>The message that appears to an unlinked player when they try to use <code>/discordsrv linked</code> or <code>/discordsrv unlink</code></p>
+<h3 id="LinkingError"><a href="https://config.discordsrv.com/messages/LinkingError"><code>LinkingError</code></a><a class="headerlink" href="#LinkingError" title="Permanent link">🔗</a></h3>
+<p>The message that appears to a player if the linking system did not register.</p>
+<h3 id="MinecraftNobodyFound"><a href="https://config.discordsrv.com/messages/MinecraftNobodyFound"><code>MinecraftNobodyFound</code></a><a class="headerlink" href="#MinecraftNobodyFound" title="Permanent link">🔗</a></h3>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Description</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%target%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the input that led to no results being found</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The message that appears to the player/console if <code>/discord linked %target%</code> is not found.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Requires a server restart for changes to take effect.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../linking/" class="md-footer__link md-footer__link--prev" aria-label="Previous: linking.yml" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              linking.yml
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../synchronization/" class="md-footer__link md-footer__link--next" aria-label="Next: synchronization.yml" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              synchronization.yml
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="http://discordsrv.com/discord" target="_blank" rel="noopener" title="DiscordSRV Discord Server" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+    
+      <script src="../assets/javascripts/bundle.82b56eb2.min.js"></script>
+      
+    
+    <script>
+    var elements = document.getElementsByClassName("lightgallery");
+    for(var i=0; i<elements.length; i++) {
+       lightGallery(elements[i]);
+    }
+    </script>
+
+  </body>
+</html>

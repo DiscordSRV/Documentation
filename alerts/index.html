@@ -1,0 +1,1517 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The official documentation for DiscordSRV. The most powerful, configurable, open-source Discord bridge plugin out there.">
+      
+      
+      
+        <meta name="author" content="granny">
+      
+      
+        <link rel="canonical" href="https://docs.discordsrv.com/alerts/">
+      
+      <link rel="icon" href="../images/logo.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
+    
+    
+      
+        <title>alerts.yml - DiscordSRV Wiki</title>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    <link rel="stylesheet" href="../css/lightgallery.min.css">
+
+    
+    
+    <script src="../js/lightgallery.min.js"></script>
+
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#alertsyml" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="DiscordSRV Wiki" class="md-header__button md-logo" aria-label="DiscordSRV Wiki" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DiscordSRV Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              alerts.yml
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/DiscordSRV/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Documentation
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="DiscordSRV Wiki" class="md-nav__button md-logo" aria-label="DiscordSRV Wiki" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    DiscordSRV Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/DiscordSRV/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Documentation
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        Frequently Asked Questions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Configs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Configs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Configs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          alerts.yml
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        alerts.yml
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#available-placeholders" class="md-nav__link">
+    Available Placeholders
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage-examples" class="md-nav__link">
+    Usage examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advancedban" class="md-nav__link">
+    AdvancedBan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-management-interface-cmi" class="md-nav__link">
+    Content Management Interface (CMI)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#essentials" class="md-nav__link">
+    Essentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matrix" class="md-nav__link">
+    Matrix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mythicmobs" class="md-nav__link">
+    MythicMobs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#playerauctions" class="md-nav__link">
+    PlayerAuctions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spartan" class="md-nav__link">
+    Spartan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-triggers" class="md-nav__link">
+    Command Triggers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#social-spy" class="md-nav__link">
+    Social Spy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        config.yml
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linking/" class="md-nav__link">
+        linking.yml
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../messages/" class="md-nav__link">
+        messages.yml
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../synchronization/" class="md-nav__link">
+        synchronization.yml
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voice/" class="md-nav__link">
+        voice.yml
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Commands/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Permissions/" class="md-nav__link">
+        Permissions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      <label class="md-nav__link" for="__nav_7">
+        Hooked plugin features
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Hooked plugin features" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Hooked plugin features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LPContext/" class="md-nav__link">
+        LuckPerms Contexts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PAPI-Placeholders/" class="md-nav__link">
+        PlaceholderAPI Placeholders
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+      
+      <label class="md-nav__link" for="__nav_8">
+        Troubleshooting
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Troubleshooting" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Troubleshooting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/DiscordSRV/DiscordSRV/issues" class="md-nav__link">
+        Report a bug
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/DiscordSRV/DiscordSRV/issues" class="md-nav__link">
+        Request a feature
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://discordsrv.com/discord" class="md-nav__link">
+        Ask for support
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      <label class="md-nav__link" for="__nav_9">
+        Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/DiscordSRV/DiscordSRV/blob/master/CONTRIBUTING.md" class="md-nav__link">
+        Contributing guidelines
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/#developers" class="md-nav__link">
+        Using the DiscordSRV-API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://get.discordsrv.com/" class="md-nav__link">
+        Latest Release
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://snapshot.discordsrv.com/" class="md-nav__link">
+        Latest Snapshot
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" data-md-state="indeterminate" type="checkbox" id="__nav_10" checked>
+      
+      <label class="md-nav__link" for="__nav_10">
+        Connections
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Connections" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Connections
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://discordsrv.com/discord" class="md-nav__link">
+        Discord
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.spigotmc.org/resources/discordsrv.18494/" class="md-nav__link">
+        SpigotMC
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://dev.bukkit.org/projects/discordsrv" class="md-nav__link">
+        BukkitDev
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#available-placeholders" class="md-nav__link">
+    Available Placeholders
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage-examples" class="md-nav__link">
+    Usage examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advancedban" class="md-nav__link">
+    AdvancedBan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-management-interface-cmi" class="md-nav__link">
+    Content Management Interface (CMI)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#essentials" class="md-nav__link">
+    Essentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matrix" class="md-nav__link">
+    Matrix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mythicmobs" class="md-nav__link">
+    MythicMobs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#playerauctions" class="md-nav__link">
+    PlayerAuctions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spartan" class="md-nav__link">
+    Spartan
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-triggers" class="md-nav__link">
+    Command Triggers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#social-spy" class="md-nav__link">
+    Social Spy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/DiscordSRV/Documentation/edit/master/docs/alerts.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="alertsyml"><a href="https://config.discordsrv.com/alerts/_">alerts.yml</a><a class="headerlink" href="#alertsyml" title="Permanent link">🔗</a></h1>
+<p>This is an <em>advanced</em> feature of DiscordSRV that allows you to send messages to Discord when a game event happens or when a command is run.</p>
+<p>You will need a working knowledge of how Bukkit events work and their properties.</p>
+<p>If you aren't sure about what you're doing here, maybe ask a developer or <a href="https://discordsrv.com/discord/">join our discord support server</a>  </p>
+<p>Refer to the Bukkit API javadoc to find events &amp; properties to use:</p>
+<ul>
+<li><a href="https://hub.spigotmc.org/javadocs/bukkit">https://hub.spigotmc.org/javadocs/bukkit</a>  </li>
+</ul>
+<p>Helpful resources for learning how to use SpEL:</p>
+<ul>
+<li><a href="https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/expressions.html">https://docs.spring.io/</a></li>
+<li><a href="https://dzone.com/articles/learn-spring-expression-language-with-examples">https://dzone.com/</a></li>
+</ul>
+<h2 id="available-placeholders">Available Placeholders<a class="headerlink" href="#available-placeholders" title="Permanent link">🔗</a></h2>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Explanation</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>{tps}</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>server TPS</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>{time}</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>formatted time</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>{date}</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>formatted date</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>{name}</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>if alert is for a player event, the name of the player</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>{ping}</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>if alert is for a player event, the ping of the player</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>{username}</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>if alert is for a player event, the username of the player</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>{displayname}</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>if alert is for a player event, the display name of the player</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>{usernamenoescapes}</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>if alert is for a player event, the username of the player without escaping discord format (for use in inline code &amp; code block markdown)</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>{displaynamenoescapes}</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>if alert is for a player event, the display name of the player without escaping discord format (for use in inline code &amp; code block markdown)</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>{world}</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>if alert is for a player event, the world the player is in</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>{embedavatarurl}</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>if alert is for a player event, the avatar url for the player's head, otherwise, the bot's avatar url</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>{botavatarurl}</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the bot's avatar url</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>{botname}</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the bot's name</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%placeholder%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>any PlaceholderAPI placeholders, can only use player ones when alert is for a player event</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">SpEL Examples</label><div class="tabbed-content">
+<p>Getting a player's IP</p>
+<ul>
+<li><code>${#player.address.address.hostAddress}</code></li>
+</ul>
+<p>Getting a player's game mode</p>
+<ul>
+<li><code>${#player.gameMode.name()}</code></li>
+</ul>
+<p>Getting a player's linked Discord account ID</p>
+<ul>
+<li><code>${#discordsrv.accountLinkManager.getDiscordId(player.uniqueId)}</code></li>
+</ul>
+<p>Getting the online player count</p>
+<ul>
+<li><code>${#server.onlinePlayers.size()}</code></li>
+</ul>
+<p>Getting the status of DiscordSRV's connection to Discord</p>
+<ul>
+<li><code>${#jda.status.name()}</code></li>
+</ul>
+<p>Checking if a player is in a specific world</p>
+<ul>
+<li><code>${#player.world.name == 'world_the_end'}</code></li>
+</ul>
+<p>Checking if it's day in the world that the player is in</p>
+<ul>
+<li><code>${#player.world.time &gt; 0 &amp;&amp; player.world.time &lt; 13000}</code></li>
+</ul>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">SpEL placeholders</label><div class="tabbed-content">
+<table>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>#plugins.&lt;plugin&gt;</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the specified plugin instance, <em><code>null if doesn't exist</code></em></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>#event</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the event that's triggering the alert <em><code>if this alert is an event alert</code></em></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>#server</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the Bukkit API server instance, equivalent to <a href="https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Bukkit.html#getServer()">Bukkit#getServer</a></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>#discordsrv</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the DiscordSRV plugin instance</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>#player</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the player that the event is for, <em><code>if this is a player event or command</code></em></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>#sender</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the command sender, <em><code>if this is a command alert</code></em></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>#command</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the full command, with no leading slash, <em><code>if this is a command alert</code></em></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>#args</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the command arguments, <em><code>if this is a command alert</code></em></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>#allArgs</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the command arguments as one string, <em><code>if this is a command alert</code></em></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>#channel</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>the destination channel for this alert</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>#jda</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>DiscordSRV's JDA instance that it uses to communicate with Discord</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h2 id="usage-examples">Usage examples<a class="headerlink" href="#usage-examples" title="Permanent link">🔗</a></h2>
+<h3 id="advancedban">AdvancedBan<a class="headerlink" href="#advancedban" title="Permanent link">🔗</a></h3>
+<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">PunishmentEvent</label><div class="tabbed-content">
+<p><a href="https://github.com/DevLeoko/AdvancedBan/blob/master/bukkit/src/main/java/me/leoko/advancedban/bukkit/event/PunishmentEvent.java">PunishmentEvent.java</a>
+<div class="highlight"><pre><span></span><code>  <span class="p p-Indicator">-</span> <span class="nt">Trigger</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PunishmentEvent</span>
+    <span class="nt">Channel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">punishments</span>
+    <span class="nt">Embed</span><span class="p">:</span>
+      <span class="nt">Color</span><span class="p">:</span> <span class="s">&quot;#4287f5&quot;</span>
+      <span class="nt">Author</span><span class="p">:</span>
+        <span class="nt">ImageUrl</span><span class="p">:</span> <span class="s">&quot;https://www.spigotmc.org/data/resource_icons/8/8695.jpg&quot;</span>
+        <span class="nt">Name</span><span class="p">:</span> <span class="s">&quot;${punishment.name}</span><span class="nv"> </span><span class="s">was</span><span class="nv"> </span><span class="s">punished</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">reason:</span><span class="nv"> </span><span class="s">${punishment.reason}&quot;</span>
+</code></pre></div></p>
+</div>
+</div>
+<h3 id="content-management-interface-cmi">Content Management Interface (CMI)<a class="headerlink" href="#content-management-interface-cmi" title="Permanent link">🔗</a></h3>
+<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">CMIAfkEnterEvent</label><div class="tabbed-content">
+<p><a href="https://github.com/Zrips/CMI-API/blob/master/src/com/Zrips/CMI/events/CMIAfkEnterEvent.java">CMIAfkEnterEvent.java</a>
+<div class="highlight"><pre><span></span><code>  <span class="c1"># Send an AFK alert when someone is AFK</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Trigger</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CMIAfkEnterEvent</span>
+    <span class="nt">Channel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">afk</span>
+    <span class="nt">Embed</span><span class="p">:</span>
+      <span class="nt">Color</span><span class="p">:</span> <span class="s">&quot;#869600&quot;</span>
+      <span class="nt">Author</span><span class="p">:</span>
+        <span class="nt">ImageUrl</span><span class="p">:</span> <span class="s">&quot;https://crafatar.com/avatars/${player.getUniqueId()}?overlay&quot;</span>
+        <span class="nt">Name</span><span class="p">:</span> <span class="s">&#39;${player.displayName</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&quot;</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">now</span><span class="nv"> </span><span class="s">AFK&quot;}&#39;</span>
+</code></pre></div></p>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">CMIAfkLeaveEvent</label><div class="tabbed-content">
+<p><a href="https://github.com/Zrips/CMI-API/blob/master/src/com/Zrips/CMI/events/CMIAfkLeaveEvent.java">CMIAfkLeaveEvent.java</a>
+<div class="highlight"><pre><span></span><code>  <span class="c1"># Send an AFK alert when someone is no longer AFK</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Trigger</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CMIAfkLeaveEvent</span>
+    <span class="nt">Channel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">afk</span>
+    <span class="nt">Embed</span><span class="p">:</span>
+      <span class="nt">Color</span><span class="p">:</span> <span class="s">&quot;#869600&quot;</span>
+      <span class="nt">Author</span><span class="p">:</span>
+        <span class="nt">ImageUrl</span><span class="p">:</span> <span class="s">&quot;https://crafatar.com/avatars/${player.getUniqueId()}?overlay&quot;</span>
+        <span class="nt">Name</span><span class="p">:</span> <span class="s">&#39;${player.displayName</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&quot;</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">longer</span><span class="nv"> </span><span class="s">AFK&quot;}&#39;</span>
+</code></pre></div></p>
+</div>
+</div>
+<h3 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">🔗</a></h3>
+<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">AfkStatusChangeEvent</label><div class="tabbed-content">
+<p><a href="https://github.com/EssentialsX/Essentials/blob/master/Essentials/src/main/java/net/ess3/api/events/AfkStatusChangeEvent.java">AfkStatusChangeEvent.java</a>
+<div class="highlight"><pre><span></span><code>  <span class="c1"># Send an AFK alert when someone is AFK / is no longer AFK</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Trigger</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AfkStatusChangeEvent</span>
+    <span class="nt">Channel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">afk</span>
+    <span class="nt">Embed</span><span class="p">:</span>
+      <span class="nt">Color</span><span class="p">:</span> <span class="s">&quot;#869600&quot;</span>
+      <span class="nt">Author</span><span class="p">:</span>
+        <span class="nt">ImageUrl</span><span class="p">:</span> <span class="s">&quot;https://crafatar.com/avatars/${#event.getAffected().getBase().getUniqueId()}?overlay&quot;</span>
+        <span class="nt">Name</span><span class="p">:</span> <span class="s">&#39;${#event.getAffected().getName()</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&quot;</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">&quot;</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">(#event.value</span><span class="nv"> </span><span class="s">?</span><span class="nv"> </span><span class="s">&quot;now&quot;</span><span class="nv"> </span><span class="s">:</span><span class="nv"> </span><span class="s">&quot;no</span><span class="nv"> </span><span class="s">longer&quot;)</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">&quot;</span><span class="nv"> </span><span class="s">AFK&quot;}&#39;</span>
+</code></pre></div></p>
+</div>
+</div>
+<h3 id="matrix">Matrix<a class="headerlink" href="#matrix" title="Permanent link">🔗</a></h3>
+<div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">PlayerViolationEvent</label><div class="tabbed-content">
+<p><a href="https://github.com/jiangdashao/matrix-api-repo/blob/master/matrix-api/src/main/java/me/rerere/matrix/api/events/PlayerViolationEvent.java">PlayerViolationEvent.java</a>
+<div class="highlight"><pre><span></span><code>  <span class="p p-Indicator">-</span> <span class="nt">Trigger</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PlayerViolationEvent</span>
+    <span class="nt">Channel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">matrix</span>
+    <span class="nt">Conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">violations &gt;= 5</span> <span class="c1"># don&#39;t send events for players with &lt; 5 violations</span>
+    <span class="nt">Embed</span><span class="p">:</span>
+      <span class="nt">Color</span><span class="p">:</span> <span class="s">&quot;#ff0000&quot;</span>
+      <span class="nt">Author</span><span class="p">:</span>
+        <span class="nt">ImageUrl</span><span class="p">:</span> <span class="s">&quot;{embedavatarurl}&quot;</span>
+        <span class="nt">Name</span><span class="p">:</span> <span class="s">&quot;{username}</span><span class="nv"> </span><span class="s">failed</span><span class="nv"> </span><span class="s">${hackType.name().toLowerCase()}</span><span class="nv"> </span><span class="s">check</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">${component}</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">vl:${violations}</span><span class="nv"> </span><span class="s">ping:${player.ping}</span><span class="nv"> </span><span class="s">tps:{tps}&quot;</span>
+</code></pre></div></p>
+</div>
+</div>
+<h3 id="mythicmobs">MythicMobs<a class="headerlink" href="#mythicmobs" title="Permanent link">🔗</a></h3>
+<div class="tabbed-set" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">MythicMobSpawnEvent</label><div class="tabbed-content">
+<p><a href="https://mythicmobs.net/javadocs/io/lumine/xikage/mythicmobs/api/bukkit/events/MythicMobSpawnEvent.html">MythicMobSpawnEvent.java</a>
+<div class="highlight"><pre><span></span><code>  <span class="c1"># Example alert to send a message when a MythicMobs ender dragon spawns</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Trigger</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MythicMobSpawnEvent</span>
+    <span class="nt">Channel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mobs</span>
+    <span class="nt">Conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&#39;entity.type.name()</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">&quot;ENDER_DRAGON&quot;&#39;</span>
+    <span class="nt">Embed</span><span class="p">:</span>
+      <span class="nt">Color</span><span class="p">:</span> <span class="s">&quot;#4b064c&quot;</span>
+      <span class="nt">Author</span><span class="p">:</span>
+        <span class="nt">ImageUrl</span><span class="p">:</span> <span class="s">&quot;https://vignette.wikia.nocookie.net/minecraft/images/0/0a/Ender_Dragon.gif/revision/latest?cb=20200819042230&quot;</span>
+        <span class="nt">Name</span><span class="p">:</span> <span class="s">&quot;An</span><span class="nv"> </span><span class="s">ender</span><span class="nv"> </span><span class="s">dragon</span><span class="nv"> </span><span class="s">has</span><span class="nv"> </span><span class="s">spawned!&quot;</span>
+</code></pre></div></p>
+</div>
+</div>
+<h3 id="playerauctions">PlayerAuctions<a class="headerlink" href="#playerauctions" title="Permanent link">🔗</a></h3>
+<div class="tabbed-set" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">PlayerAuctionBuyEvent</label><div class="tabbed-content">
+<p><a href="https://javadocs.olziedev.com/playerauctions/com/olziedev/playerauctions/api/events/PlayerAuctionBuyEvent.html">PlayerAuctionBuyEvent.java</a>
+<div class="highlight"><pre><span></span><code>  <span class="c1"># Example alert to send a message when a player buys something from the auction</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Trigger</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PlayerAuctionBuyEvent</span>
+    <span class="nt">Async</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+    <span class="nt">Channel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">auctions</span>
+    <span class="nt">Embed</span><span class="p">:</span>
+      <span class="nt">Color</span><span class="p">:</span> <span class="s">&quot;#48f542&quot;</span> <span class="c1">#Green</span>
+      <span class="nt">Author</span><span class="p">:</span>
+        <span class="nt">ImageUrl</span><span class="p">:</span> <span class="s">&quot;https://crafatar.com/avatars/${buyer.getUniqueId()}/&quot;</span>
+        <span class="nt">Name</span><span class="p">:</span> <span class="s">&quot;${buyer.getName()}</span><span class="nv"> </span><span class="s">bought</span><span class="nv"> </span><span class="s">${playerAuction.getItem().getType()}</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">$${price}&quot;</span>
+      <span class="nt">Title</span><span class="p">:</span>
+        <span class="nt">Text</span><span class="p">:</span> <span class="s">&quot;Auction</span><span class="nv"> </span><span class="s">Information:&quot;</span>
+        <span class="nt">Url</span><span class="p">:</span> <span class="s">&quot;&quot;</span>
+      <span class="nt">Fields</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="s">&quot;Buyer;${buyer.getName()};true&quot;</span>
+        <span class="p p-Indicator">-</span> <span class="s">&quot;Seller;${playerAuction.getAuctionPlayer().getName()};true&quot;</span>
+        <span class="p p-Indicator">-</span> <span class="s">&quot;Item;${itemStack.getType()};true&quot;</span>
+        <span class="p p-Indicator">-</span> <span class="s">&quot;Amount;${playerAuction.getItem().getAmount()};true&quot;</span>
+        <span class="p p-Indicator">-</span> <span class="s">&quot;Price;$${price};true&quot;</span>
+      <span class="nt">Footer</span><span class="p">:</span>
+        <span class="nt">Text</span><span class="p">:</span> <span class="s">&quot;Auction</span><span class="nv"> </span><span class="s">ID:</span><span class="nv"> </span><span class="s">${playerAuction.getID()}&quot;</span>
+</code></pre></div></p>
+</div>
+<input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><label for="__tabbed_7_2">PlayerAuctionSellEvent</label><div class="tabbed-content">
+<p><a href="https://javadocs.olziedev.com/playerauctions/com/olziedev/playerauctions/api/events/PlayerAuctionSellEvent.html">PlayerAuctionSellEvent.java</a>
+<div class="highlight"><pre><span></span><code>  <span class="c1"># Example alert to send a message when a player starts selling something from the auction</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Trigger</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PlayerAuctionSellEvent</span>
+    <span class="nt">Channel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">auctions</span>
+    <span class="nt">Embed</span><span class="p">:</span>
+      <span class="nt">Color</span><span class="p">:</span> <span class="s">&quot;#4287f5&quot;</span> <span class="c1">#Blue</span>
+      <span class="nt">Author</span><span class="p">:</span>
+        <span class="nt">ImageUrl</span><span class="p">:</span> <span class="s">&quot;https://crafatar.com/avatars/${getSeller().getUniqueId()}/&quot;</span>
+        <span class="nt">Name</span><span class="p">:</span> <span class="s">&quot;${seller.getName()}</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">selling</span><span class="nv"> </span><span class="s">${playerAuction.getItem().getType()}</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">$${playerAuction.getPrice()}&quot;</span>
+      <span class="nt">Title</span><span class="p">:</span>
+        <span class="nt">Text</span><span class="p">:</span> <span class="s">&quot;Auction</span><span class="nv"> </span><span class="s">Information:&quot;</span>
+        <span class="nt">Url</span><span class="p">:</span> <span class="s">&quot;&quot;</span>
+      <span class="nt">Fields</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="s">&quot;Seller;${seller.getName()};true&quot;</span>
+        <span class="p p-Indicator">-</span> <span class="s">&quot;Item;${playerAuction.getItem().getType()};true&quot;</span>
+        <span class="p p-Indicator">-</span> <span class="s">&quot;Amount;${playerAuction.getItem().getAmount()};true&quot;</span>
+        <span class="p p-Indicator">-</span> <span class="s">&quot;Price;$${playerAuction.getPrice()};true&quot;</span>
+      <span class="nt">Footer</span><span class="p">:</span>
+        <span class="nt">Text</span><span class="p">:</span> <span class="s">&quot;Auction</span><span class="nv"> </span><span class="s">ID:</span><span class="nv"> </span><span class="s">${playerAuction.getID()}&quot;</span>
+</code></pre></div></p>
+</div>
+<input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><label for="__tabbed_7_3">PlayerAuctionExpireEvent</label><div class="tabbed-content">
+<p><a href="https://javadocs.olziedev.com/playerauctions/com/olziedev/playerauctions/api/events/PlayerAuctionExpireEvent.html">PlayerAuctionExpireEvent.java</a>
+<div class="highlight"><pre><span></span><code>  <span class="c1"># Example alert to send a message when a player&#39;s item gets removed from the auction</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Trigger</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PlayerAuctionExpireEvent</span>
+    <span class="nt">Channel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">auctions</span>
+    <span class="nt">Conditions</span><span class="p">:</span> 
+      <span class="p p-Indicator">-</span> <span class="s">&#39;playerAuction.getExpireTime()</span><span class="nv"> </span><span class="s">==</span><span class="nv"> </span><span class="s">null&#39;</span>
+    <span class="nt">Embed</span><span class="p">:</span>
+      <span class="nt">Color</span><span class="p">:</span> <span class="s">&quot;#bf2a2a&quot;</span> <span class="c1">#Red</span>
+      <span class="nt">Author</span><span class="p">:</span>
+        <span class="nt">ImageUrl</span><span class="p">:</span> <span class="s">&quot;https://crafatar.com/avatars/${getPlayerAuction().getAuctionPlayer().getUUID()}/&quot;</span>
+        <span class="nt">Name</span><span class="p">:</span> <span class="s">&quot;${playerAuction.getAuctionPlayer().getName()}</span><span class="nv"> </span><span class="s">removed</span><span class="nv"> </span><span class="s">${getPlayerAuction().getItem().getType()}</span><span class="nv"> </span><span class="s">from</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">Auction</span><span class="nv"> </span><span class="s">House.&quot;</span>
+      <span class="nt">Title</span><span class="p">:</span>
+        <span class="nt">Text</span><span class="p">:</span> <span class="s">&quot;Auction</span><span class="nv"> </span><span class="s">Information:&quot;</span>
+        <span class="nt">Url</span><span class="p">:</span> <span class="s">&quot;&quot;</span>
+      <span class="nt">Fields</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="s">&quot;Owner;${playerAuction.getAuctionPlayer().getName()};true&quot;</span>
+        <span class="p p-Indicator">-</span> <span class="s">&quot;Item;${playerAuction.getItem().getType()};true&quot;</span>
+        <span class="p p-Indicator">-</span> <span class="s">&quot;Amount;${playerAuction.getItem().getAmount()};true&quot;</span>
+        <span class="p p-Indicator">-</span> <span class="s">&quot;Price;$${playerAuction.getPrice()};true&quot;</span>
+      <span class="nt">Footer</span><span class="p">:</span>
+        <span class="nt">Text</span><span class="p">:</span> <span class="s">&quot;Auction</span><span class="nv"> </span><span class="s">ID:</span><span class="nv"> </span><span class="s">${playerAuction.getID()}&quot;</span>
+</code></pre></div></p>
+</div>
+</div>
+<h3 id="spartan">Spartan<a class="headerlink" href="#spartan" title="Permanent link">🔗</a></h3>
+<div class="tabbed-set" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">PlayerViolationEvent</label><div class="tabbed-content">
+<p><a href="https://docs.google.com/document/d/e/2PACX-1vTzeCDiD2goCFO3oWIs3ANwmOvOqI2TLYVkjHO4Z-2q3yTDZPyYZ9bFX4OCwlBamWA_SOP7Ib5uARc8/pub">PlayerViolationEvent.java</a>
+<div class="highlight"><pre><span></span><code>  <span class="p p-Indicator">-</span> <span class="nt">Trigger</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PlayerViolationEvent</span>
+    <span class="nt">Channel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">spartan</span>
+    <span class="nt">Conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">violation &gt;= 5</span> <span class="c1"># don&#39;t send events for players with &lt; 5 violations</span>
+    <span class="nt">Embed</span><span class="p">:</span>
+      <span class="nt">Color</span><span class="p">:</span> <span class="s">&quot;#ff0000&quot;</span>
+      <span class="nt">Author</span><span class="p">:</span>
+        <span class="nt">ImageUrl</span><span class="p">:</span> <span class="s">&quot;{embedavatarurl}&quot;</span>
+        <span class="nt">Name</span><span class="p">:</span> <span class="s">&quot;{username}</span><span class="nv"> </span><span class="s">failed</span><span class="nv"> </span><span class="s">${hackType.name().toLowerCase()}</span><span class="nv"> </span><span class="s">check</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">${message}</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">vl:${violation}</span><span class="nv"> </span><span class="s">ping:${player.ping}</span><span class="nv"> </span><span class="s">tps:{tps}&quot;</span>
+</code></pre></div></p>
+</div>
+</div>
+<h3 id="command-triggers">Command Triggers<a class="headerlink" href="#command-triggers" title="Permanent link">🔗</a></h3>
+<div class="tabbed-set" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><label for="__tabbed_9_1">/gamemode</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>  <span class="p p-Indicator">-</span> <span class="nt">Trigger</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/gamemode</span>
+    <span class="nt">Channel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gamemode</span>
+    <span class="nt">Conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&#39;#player.hasPermission(&quot;minecraft.command.gamemode&quot;)&#39;</span>
+    <span class="nt">Embed</span><span class="p">:</span>
+      <span class="nt">Color</span><span class="p">:</span> <span class="s">&quot;#ff0000&quot;</span>
+      <span class="nt">Author</span><span class="p">:</span>
+        <span class="nt">ImageUrl</span><span class="p">:</span> <span class="s">&quot;{embedavatarurl}&quot;</span>
+        <span class="nt">Name</span><span class="p">:</span> <span class="s">&quot;{username}</span><span class="nv"> </span><span class="s">changed</span><span class="nv"> </span><span class="s">game</span><span class="nv"> </span><span class="s">mode</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">${#args.get(0)}&quot;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><label for="__tabbed_9_2">/me</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>  <span class="p p-Indicator">-</span> <span class="nt">Trigger</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/me</span>
+    <span class="nt">Channel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">me</span>
+    <span class="nt">Conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&#39;#player.hasPermission(&quot;minecraft.command.me&quot;)</span><span class="nv"> </span><span class="s">||</span><span class="nv"> </span><span class="s">#player.hasPermission(&quot;essentials.me&quot;)&#39;</span>
+    <span class="nt">Embed</span><span class="p">:</span>
+      <span class="nt">Color</span><span class="p">:</span> <span class="s">&quot;#ff0000&quot;</span>
+      <span class="nt">Author</span><span class="p">:</span>
+        <span class="nt">ImageUrl</span><span class="p">:</span> <span class="s">&quot;{embedavatarurl}&quot;</span>
+        <span class="nt">Name</span><span class="p">:</span> <span class="s">&quot;*</span><span class="nv"> </span><span class="s">{username}</span><span class="nv"> </span><span class="s">${#allArgs}&quot;</span>
+</code></pre></div>
+</div>
+</div>
+<h3 id="social-spy">Social Spy<a class="headerlink" href="#social-spy" title="Permanent link">🔗</a></h3>
+<div class="tabbed-set" data-tabs="10:3"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><label for="__tabbed_10_1">Private messages</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>  <span class="p p-Indicator">-</span> <span class="nt">Trigger</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">/msg</span><span class="p p-Indicator">,</span> <span class="nv">/w</span><span class="p p-Indicator">,</span> <span class="nv">/m</span><span class="p p-Indicator">,</span> <span class="nv">/pm</span><span class="p p-Indicator">,</span> <span class="nv">/emsg</span><span class="p p-Indicator">,</span> <span class="nv">/epm</span><span class="p p-Indicator">,</span> <span class="nv">/tell</span><span class="p p-Indicator">,</span> <span class="nv">/etell</span><span class="p p-Indicator">,</span> <span class="nv">/whisper</span><span class="p p-Indicator">,</span> <span class="nv">/ewhisper</span><span class="p p-Indicator">]</span>
+    <span class="nt">Channel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SocialSpy</span>
+    <span class="nt">Embed</span><span class="p">:</span>
+      <span class="nt">Color</span><span class="p">:</span> <span class="s">&quot;#000001&quot;</span>
+      <span class="nt">Author</span><span class="p">:</span>
+        <span class="nt">ImageUrl</span><span class="p">:</span> <span class="s">&quot;{embedavatarurl}&quot;</span>
+        <span class="nt">Name</span><span class="p">:</span> <span class="s">&quot;[{username}&gt;</span><span class="nv"> </span><span class="s">${#allArgs}]&quot;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><label for="__tabbed_10_2">Commands</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>  <span class="p p-Indicator">-</span> <span class="nt">Trigger</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PlayerCommandPreprocessEvent</span> 
+    <span class="nt">Channel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SocialSpy</span>
+    <span class="nt">Conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;!(#command.split(\&quot;\\s+|$\&quot;)[0].equals(\&quot;msg\&quot;))&quot;</span>      <span class="c1">#ignores the /msg command</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;!(#command.split(\&quot;\\s+|$\&quot;)[0].equals(\&quot;w\&quot;))&quot;</span>        <span class="c1">#ignores the /w command</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;!(#command.split(\&quot;\\s+|$\&quot;)[0].equals(\&quot;m\&quot;))&quot;</span>        <span class="c1">#ignores the /m command</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;!(#command.split(\&quot;\\s+|$\&quot;)[0].equals(\&quot;pm\&quot;))&quot;</span>       <span class="c1">#ignores the /pm command</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;!(#command.split(\&quot;\\s+|$\&quot;)[0].equals(\&quot;emsg\&quot;))&quot;</span>     <span class="c1">#ignores the /emsg command</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;!(#command.split(\&quot;\\s+|$\&quot;)[0].equals(\&quot;epm\&quot;))&quot;</span>      <span class="c1">#ignores the /epm command</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;!(#command.split(\&quot;\\s+|$\&quot;)[0].equals(\&quot;tell\&quot;))&quot;</span>     <span class="c1">#ignores the /tell command</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;!(#command.split(\&quot;\\s+|$\&quot;)[0].equals(\&quot;etell\&quot;))&quot;</span>    <span class="c1">#ignores the /etell command</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;!(#command.split(\&quot;\\s+|$\&quot;)[0].equals(\&quot;whisper\&quot;))&quot;</span>  <span class="c1">#ignores the /whisper command</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;!(#command.split(\&quot;\\s+|$\&quot;)[0].equals(\&quot;ewhisper\&quot;))&quot;</span> <span class="c1">#ignores the /ewhisper command</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;!(#command.split(\&quot;\\s+|$\&quot;)[0].equals(\&quot;r\&quot;))&quot;</span>        <span class="c1">#ignores the /r command</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;!(#command.split(\&quot;\\s+|$\&quot;)[0].equals(\&quot;er\&quot;))&quot;</span>       <span class="c1">#ignores the /er command</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;!(#command.split(\&quot;\\s+|$\&quot;)[0].equals(\&quot;reply\&quot;))&quot;</span>    <span class="c1">#ignores the /reply command</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;!(#command.split(\&quot;\\s+|$\&quot;)[0].equals(\&quot;ereply\&quot;))&quot;</span>   <span class="c1">#ignores the /ereply command</span>
+<span class="c1">#      - &quot;!(#command.split(\&quot;\\s+|$\&quot;)[0].equals(\&quot;example\&quot;))&quot;   #ignores the /example command</span>
+    <span class="nt">Embed</span><span class="p">:</span>
+      <span class="nt">Color</span><span class="p">:</span> <span class="s">&quot;#000001&quot;</span>
+      <span class="nt">Author</span><span class="p">:</span>
+        <span class="nt">ImageUrl</span><span class="p">:</span> <span class="s">&quot;{embedavatarurl}&quot;</span>
+        <span class="nt">Name</span><span class="p">:</span> <span class="s">&#39;{username}</span><span class="nv"> </span><span class="s">issued</span><span class="nv"> </span><span class="s">command:</span><span class="nv"> </span><span class="s">/${#command}&#39;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_10_3" name="__tabbed_10" type="radio" /><label for="__tabbed_10_3">Sign placement</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>  <span class="p p-Indicator">-</span> <span class="nt">Trigger</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SignChangeEvent</span>
+    <span class="nt">Channel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SocialSpy</span>
+    <span class="nt">Conditions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&#39;getLine(0)</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">getLine(1)</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">getLine(2)</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">getLine(3)</span><span class="nv"> </span><span class="s">!=</span><span class="nv"> </span><span class="s">&quot;&quot;&#39;</span>
+    <span class="nt">Embed</span><span class="p">:</span>
+      <span class="nt">Color</span><span class="p">:</span> <span class="s">&quot;#000001&quot;</span>
+      <span class="nt">Author</span><span class="p">:</span>
+        <span class="nt">ImageUrl</span><span class="p">:</span> <span class="s">&quot;https://crafatar.com/avatars/${#event.getPlayer().getUniqueId()}?overlay&quot;</span>
+        <span class="nt">Name</span><span class="p">:</span> <span class="s">&#39;${#event.getPlayer().getName()}&#39;</span>
+      <span class="nt">Description</span><span class="p">:</span> <span class="p p-Indicator">|-</span>
+        <span class="no">Coords: `[${block.getLocation().getBlockX() + &quot;, &quot; + block.getLocation().getBlockY() + &quot;, &quot; + block.getLocation().getBlockZ()}]`</span>
+        <span class="no">```</span>
+        <span class="no">${theLines[0]}</span>
+        <span class="no">${theLines[1]}</span>
+        <span class="no">${theLines[2]}</span>
+        <span class="no">${theLines[3]}</span>
+        <span class="no">```</span>
+</code></pre></div>
+</div>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../FAQ/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Frequently Asked Questions" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Frequently Asked Questions
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../config/" class="md-footer__link md-footer__link--next" aria-label="Next: config.yml" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              config.yml
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="http://discordsrv.com/discord" target="_blank" rel="noopener" title="DiscordSRV Discord Server" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+    
+      <script src="../assets/javascripts/bundle.82b56eb2.min.js"></script>
+      
+    
+    <script>
+    var elements = document.getElementsByClassName("lightgallery");
+    for(var i=0; i<elements.length; i++) {
+       lightGallery(elements[i]);
+    }
+    </script>
+
+  </body>
+</html>

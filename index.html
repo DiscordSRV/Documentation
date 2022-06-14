@@ -1,0 +1,1317 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The official documentation for DiscordSRV. The most powerful, configurable, open-source Discord bridge plugin out there.">
+      
+      
+      
+        <meta name="author" content="granny">
+      
+      
+        <link rel="canonical" href="https://docs.discordsrv.com/">
+      
+      <link rel="icon" href="images/logo.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.9">
+    
+    
+      
+        <title>DiscordSRV Wiki</title>
+      
+    
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ca7ac06f.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    <link rel="stylesheet" href="./css/lightgallery.min.css">
+
+    
+    
+    <script src="./js/lightgallery.min.js"></script>
+
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="blue">
+  
+    
+    <script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#features" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="DiscordSRV Wiki" class="md-header__button md-logo" aria-label="DiscordSRV Wiki" data-md-component="logo">
+      
+  <img src="images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DiscordSRV Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="blue"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/DiscordSRV/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Documentation
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="DiscordSRV Wiki" class="md-nav__button md-logo" aria-label="DiscordSRV Wiki" data-md-component="logo">
+      
+  <img src="images/logo.png" alt="logo">
+
+    </a>
+    DiscordSRV Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/DiscordSRV/Documentation/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Documentation
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Home
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        Home
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+    <nav class="md-nav" aria-label="Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plugins-we-hook-into" class="md-nav__link">
+    Plugins we hook into:
+  </a>
+  
+    <nav class="md-nav" aria-label="Plugins we hook into:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chat" class="md-nav__link">
+    Chat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vanish" class="md-nav__link">
+    Vanish
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#world" class="md-nav__link">
+    World
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugins-that-use-our-api" class="md-nav__link">
+    Plugins that use our API:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intended-usage" class="md-nav__link">
+    Intended usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bot-permissions" class="md-nav__link">
+    Bot Permissions
+  </a>
+  
+    <nav class="md-nav" aria-label="Bot Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#server-permissions" class="md-nav__link">
+    Server Permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-permissions" class="md-nav__link">
+    Channel Permissions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donations" class="md-nav__link">
+    Donations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#developers" class="md-nav__link">
+    Developers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-usage" class="md-nav__link">
+    Data usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Data usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-collection" class="md-nav__link">
+    Data collection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-checking" class="md-nav__link">
+    Update checking
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="FAQ/" class="md-nav__link">
+        Frequently Asked Questions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" data-md-state="indeterminate" type="checkbox" id="__nav_4" checked>
+      
+      <label class="md-nav__link" for="__nav_4">
+        Configs
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Configs" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Configs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="alerts/" class="md-nav__link">
+        alerts.yml
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="config/" class="md-nav__link">
+        config.yml
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="linking/" class="md-nav__link">
+        linking.yml
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="messages/" class="md-nav__link">
+        messages.yml
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="synchronization/" class="md-nav__link">
+        synchronization.yml
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="voice/" class="md-nav__link">
+        voice.yml
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Commands/" class="md-nav__link">
+        Commands
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Permissions/" class="md-nav__link">
+        Permissions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" data-md-state="indeterminate" type="checkbox" id="__nav_7" checked>
+      
+      <label class="md-nav__link" for="__nav_7">
+        Hooked plugin features
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Hooked plugin features" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Hooked plugin features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="LPContext/" class="md-nav__link">
+        LuckPerms Contexts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="PAPI-Placeholders/" class="md-nav__link">
+        PlaceholderAPI Placeholders
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" data-md-state="indeterminate" type="checkbox" id="__nav_8" checked>
+      
+      <label class="md-nav__link" for="__nav_8">
+        Troubleshooting
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Troubleshooting" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Troubleshooting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/DiscordSRV/DiscordSRV/issues" class="md-nav__link">
+        Report a bug
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/DiscordSRV/DiscordSRV/issues" class="md-nav__link">
+        Request a feature
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://discordsrv.com/discord" class="md-nav__link">
+        Ask for support
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" data-md-state="indeterminate" type="checkbox" id="__nav_9" checked>
+      
+      <label class="md-nav__link" for="__nav_9">
+        Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/DiscordSRV/DiscordSRV/blob/master/CONTRIBUTING.md" class="md-nav__link">
+        Contributing guidelines
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="/#developers" class="md-nav__link">
+        Using the DiscordSRV-API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://get.discordsrv.com/" class="md-nav__link">
+        Latest Release
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://snapshot.discordsrv.com/" class="md-nav__link">
+        Latest Snapshot
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" data-md-state="indeterminate" type="checkbox" id="__nav_10" checked>
+      
+      <label class="md-nav__link" for="__nav_10">
+        Connections
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Connections" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Connections
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://discordsrv.com/discord" class="md-nav__link">
+        Discord
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.spigotmc.org/resources/discordsrv.18494/" class="md-nav__link">
+        SpigotMC
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://dev.bukkit.org/projects/discordsrv" class="md-nav__link">
+        BukkitDev
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#features" class="md-nav__link">
+    Features
+  </a>
+  
+    <nav class="md-nav" aria-label="Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plugins-we-hook-into" class="md-nav__link">
+    Plugins we hook into:
+  </a>
+  
+    <nav class="md-nav" aria-label="Plugins we hook into:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chat" class="md-nav__link">
+    Chat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vanish" class="md-nav__link">
+    Vanish
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#world" class="md-nav__link">
+    World
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugins-that-use-our-api" class="md-nav__link">
+    Plugins that use our API:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intended-usage" class="md-nav__link">
+    Intended usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bot-permissions" class="md-nav__link">
+    Bot Permissions
+  </a>
+  
+    <nav class="md-nav" aria-label="Bot Permissions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#server-permissions" class="md-nav__link">
+    Server Permissions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#channel-permissions" class="md-nav__link">
+    Channel Permissions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donations" class="md-nav__link">
+    Donations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#developers" class="md-nav__link">
+    Developers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-usage" class="md-nav__link">
+    Data usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Data usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-collection" class="md-nav__link">
+    Data collection
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-checking" class="md-nav__link">
+    Update checking
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/DiscordSRV/Documentation/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Home</h1>
+                
+                <p><img alt="DiscordSRV" src="https://lol.scarsz.me/AiKvTS/Logo-filled-stroke.png" />  </p>
+<div id="center">
+<p><strong>The most powerful, configurable, open-source Discord bridge plugin out there.</strong>  </p>
+<p><a class="md-button" href="https://discordsrv.com/discord"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m22 24-5.25-5 .63 2H4.5A2.5 2.5 0 0 1 2 18.5v-15A2.5 2.5 0 0 1 4.5 1h15A2.5 2.5 0 0 1 22 3.5V24M12 6.8c-2.68 0-4.56 1.15-4.56 1.15 1.03-.92 2.83-1.45 2.83-1.45l-.17-.17c-1.69.03-3.22 1.2-3.22 1.2-1.72 3.59-1.61 6.69-1.61 6.69 1.4 1.81 3.48 1.68 3.48 1.68l.71-.9c-1.25-.27-2.04-1.38-2.04-1.38S9.3 14.9 12 14.9s4.58-1.28 4.58-1.28-.79 1.11-2.04 1.38l.71.9s2.08.13 3.48-1.68c0 0 .11-3.1-1.61-6.69 0 0-1.53-1.17-3.22-1.2l-.17.17s1.8.53 2.83 1.45c0 0-1.88-1.15-4.56-1.15m-2.07 3.79c.65 0 1.18.57 1.17 1.27 0 .69-.52 1.27-1.17 1.27-.64 0-1.16-.58-1.16-1.27 0-.7.51-1.27 1.16-1.27m4.17 0c.65 0 1.17.57 1.17 1.27 0 .69-.52 1.27-1.17 1.27-.64 0-1.16-.58-1.16-1.27 0-.7.51-1.27 1.16-1.27z"/></svg></span> Discord</a>
+<a class="md-button" href="https://www.spigotmc.org/resources/discordsrv.18494/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 256h-38.61c-15.71-13.44-35.46-23.07-57.39-28v-47.56l-32-3.38-32 3.38V228c-21.93 5-41.68 14.6-57.39 28H16a16 16 0 0 0-16 16v96a16 16 0 0 0 16 16h92.79C129.38 421.73 173 448 224 448s94.62-26.27 115.21-64H352a32 32 0 0 1 32 32 32 32 0 0 0 32 32h64a32 32 0 0 0 32-32 160 160 0 0 0-160-160zM81.59 159.91l142.41-15 142.41 15c9.42 1 17.59-6.81 17.59-16.8v-30.22c0-10-8.17-17.8-17.59-16.81L256 107.74V80a16 16 0 0 0-16-16h-32a16 16 0 0 0-16 16v27.74L81.59 96.08C72.17 95.09 64 102.9 64 112.89v30.22c0 9.99 8.17 17.8 17.59 16.8z"/></svg></span> SpigotMC</a>
+<a class="md-button" href="https://dev.bukkit.org/projects/discordsrv"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 4h18v3h-1l-2.5 14h-11L4 7H3V4m14.97 3H6.03l2.12 12h7.7l2.12-12z"/></svg></span> BukkitDev</a></p>
+<p><a class="md-button" href="https://get.discordsrv.com/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 13v4h-4v-4H7l5-5 5 5m2.35-2.97A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.03A6.004 6.004 0 0 0 0 14a6 6 0 0 0 6 6h13a5 5 0 0 0 5-5c0-2.64-2.05-4.78-4.65-4.97z"/></svg></span> Latest Release</a>
+<a class="md-button" href="https://snapshot.discordsrv.com/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 20a6 6 0 0 1-6-6c0-3.09 2.34-5.64 5.35-5.96A7.496 7.496 0 0 1 12 4a7.5 7.5 0 0 1 7.35 6A5.02 5.02 0 0 1 24 15a5 5 0 0 1-5 5H6M9.09 8.4 4.5 13l4.59 4.6 1.41-1.42L7.32 13l3.18-3.18L9.09 8.4m5.82 0L13.5 9.82 16.68 13l-3.18 3.18 1.41 1.42L19.5 13l-4.59-4.6z"/></svg></span> Latest Snapshot</a></p>
+<p><strong>Supports All Minecraft Versions from 1.7.9 to 1.18</strong>  </p>
+<p><em><strong>We only give support for the latest release/dev builds; please update before asking for help</strong></em></p>
+</div>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">🔗</a></h2>
+<ul>
+<li>Bridge between Minecraft and Discord chats</li>
+<li>Forward your Minecraft Console to a Discord text channel  </li>
+<li>Broadcast alerts based on certain events</li>
+<li>Voice Proximity through the Discord Voice Chat (<a href="voice"><code>voice.yml</code></a>)  </li>
+<li>Require linking accounts (or certain role/s) to play (<a href="linking"><code>linking.yml</code></a>)  </li>
+<li>Support for popular chat plugins (listed below)  </li>
+<li>Highly customizable</li>
+</ul>
+<h3 id="plugins-we-hook-into">Plugins we hook into:<a class="headerlink" href="#plugins-we-hook-into" title="Permanent link">🔗</a></h3>
+<ul>
+<li>
+<h4 id="chat">Chat<a class="headerlink" href="#chat" title="Permanent link">🔗</a></h4>
+<ul>
+<li><a href="https://www.spigotmc.org/resources/herochat.34305/updates"><code>Herochat</code></a>, <a href="https://www.spigotmc.org/resources/legendchat.6268/"><code>LegendChat</code></a>, <a href="https://github.com/ucchyocean/LunaChat"><code>LunaChat</code></a>, <a href="https://www.spigotmc.org/resources/towny-advanced.72694/"><code>TownyChat</code></a>, <a href="https://www.spigotmc.org/resources/venturechat.771/"><code>VentureChat</code></a></li>
+</ul>
+</li>
+<li>
+<h4 id="vanish">Vanish<a class="headerlink" href="#vanish" title="Permanent link">🔗</a></h4>
+<ul>
+<li><a href="https://www.spigotmc.org/resources/essentialsx.9089/"><code>Essentials</code></a>, <a href="https://www.spigotmc.org/resources/phantomadmin.37845/"><code>PhantomAdmin</code></a>, <a href="https://www.spigotmc.org/resources/supervanish-be-invisible.1331/"><code>SuperVanish</code></a>, <a href="https://dev.bukkit.org/projects/vanish"><code>VanishNoPacket</code></a></li>
+</ul>
+</li>
+<li>
+<h4 id="world">World<a class="headerlink" href="#world" title="Permanent link">🔗</a></h4>
+<ul>
+<li><a href="https://dev.bukkit.org/projects/multiverse-core/"><code>Multiverse</code></a></li>
+</ul>
+</li>
+<li><a href="https://www.spigotmc.org/resources/vault.34315/"><code>Vault</code></a>  </li>
+<li><a href="https://luckperms.net/"><code>LuckPerms</code></a></li>
+<li><a href="https://www.spigotmc.org/resources/placeholderapi.6245/"><code>PlaceholderAPI</code></a>  - <a href="PAPI-Placeholders">DiscordSRV Expansion Placeholders</a></li>
+</ul>
+<h3 id="plugins-that-use-our-api">Plugins that use our API:<a class="headerlink" href="#plugins-that-use-our-api" title="Permanent link">🔗</a></h3>
+<ul>
+<li><a href="https://www.spigotmc.org/resources/discordsrv-staff-chat.44245/">DiscordSRV StaffChat</a></li>
+<li><a href="https://www.spigotmc.org/resources/chatcontrol-pro.10258/">ChatControlPro</a></li>
+<li><a href="https://www.spigotmc.org/resources/cmi.3742/">CMI</a></li>
+<li><a href="https://www.spigotmc.org/resources/plan-player-analytics.32536/">Plan</a></li>
+<li><a href="https://www.spigotmc.org/resources/emojichat.50955/">EmojiChat</a></li>
+<li><a href="https://www.spigotmc.org/resources/purpleirc.2836/">PurpleIRC</a></li>
+<li><a href="https://www.spigotmc.org/resources/chatreplay.28982/">ChatReplay</a></li>
+<li><a href="https://www.spigotmc.org/resources/auctionhouse.61836/">AuctionHouse</a></li>
+<li><a href="https://www.spigotmc.org/resources/staff-facilities.13097/">Staff Facilities</a></li>
+<li><a href="https://www.spigotmc.org/resources/staff.83562/">Staff++</a></li>
+<li><a href="https://www.spigotmc.org/resources/litebansbridge.76326/">LiteBansBridge</a></li>
+<li><a href="https://www.spigotmc.org/resources/mcsf.54115/">MCSF (My Christian Swear Filter)</a></li>
+<li><a href="https://www.spigotmc.org/resources/mzp-voteparty.89754/">MZP-VoteParty</a></li>
+<li><a href="https://www.spigotmc.org/resources/interactivechat-discordsrv-addon.83917/">InteractiveChat DiscordSRV Addon</a></li>
+<li>If you would like your plugin listed here, please bring it to <code>granny</code>'s attention in our <a href="https://discordsrv.com/discord">Discord</a> server.</li>
+</ul>
+<h2 id="intended-usage">Intended usage<a class="headerlink" href="#intended-usage" title="Permanent link">🔗</a></h2>
+<p>By using this plugin, you are able to give players the ability to chat in-game with players on your Discord server, as well as having people on the Discord server be able to chat with people in the minecraft server - This can be useful for players that still want to communicate with players in-game, but can't access the Minecraft server for whatever reason.  </p>
+<p>This plugin has a remote console feature. You can designate a text channel for the plugin to forward console messages, which also runs all messages sent into that channel as commands by the server console (You should restrict sending this channel to a developer or high ranking role only). Due to how Discord's permissions work, you can have some server roles have access to see the console, while also not allowing them to send messages in that channel, thus creating a read-only console for trusted staff members.  </p>
+<p>Both chat and console are toggleable through the configuration file. Some options can be refreshed with <code>/discordsrv reload</code> by an OP or a player with the <code>discordsrv.reload</code> permission.  </p>
+<h2 id="bot-permissions">Bot Permissions<a class="headerlink" href="#bot-permissions" title="Permanent link">🔗</a></h2>
+<h5 id="server-permissions">Server Permissions<a class="headerlink" href="#server-permissions" title="Permanent link">🔗</a></h5>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Permission</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Features</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Manage Roles</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><a href="https://config.discordsrv.com/synchronization/GroupRoleSynchronizationGroupsAndRolesToSync">role synchronization</a> and <a href="https://config.discordsrv.com/config/MinecraftDiscordAccountLinkedRoleNameToAddUserTo">adding roles to linked players</a></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Manage Channels</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><a href="https://config.discordsrv.com/messages/ChannelTopicUpdaterChatChannelTopicFormat">channel topic updater</a> and the <a href="https://config.discordsrv.com/voice/_">voice module</a></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Ban Members</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><a href="https://config.discordsrv.com/synchronization/BanSynchronizationDiscordToMinecraft">ban synchronization</a></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Manage Nicknames</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p><a href="https://config.discordsrv.com/synchronization/NicknameSynchronizationEnabled">nickname synchronization</a></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Manage Webhooks</code>
+</p>
+</td>
+<td colspan="1" rowspan="1">
+<p><a href="https://config.discordsrv.com/config/Experiment_WebhookChatMessageDelivery">experimental webhook usage</a>
+(Server-wide permission is <em>recommended</em>, but can be applied on a per-channel basis)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h5 id="channel-permissions">Channel Permissions<a class="headerlink" href="#channel-permissions" title="Permanent link">🔗</a></h5>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Permission</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Features</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Read Text Channels &amp; See Voice Channels</code>
+and <code>Send Messages</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Required for DiscordSRV's channel options (including <a href="https://config.discordsrv.com/config/DiscordConsoleChannelId">console</a> and <a href="https://config.discordsrv.com/voice/Lobby%20channel">voice lobby</a>), the <a href="https://config.discordsrv.com/voice/Voice%20category">voice module category</a> and any other channels you want for <a href="https://config.discordsrv.com/config/DiscordCannedResponses">canned responses</a>
+</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Manage Messages</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>when messages are deleted by <a href="https://config.discordsrv.com/config/DiscordChatChannelListCommandEnabled">playerlist</a> &amp; <a href="https://config.discordsrv.com/config/DiscordChatChannelConsoleCommandEnabled">chat channel commands</a></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Embed Links</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>optionally for embedding ingame-posted links and required when embed messages are used <a href="https://config.discordsrv.com/messages/MinecraftPlayerDeathMessage">death</a>, <a href="https://config.discordsrv.com/messages/MinecraftPlayerJoinMessage">join/Leave</a></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Mention @everyone, @here and All Roles</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>for mentioning @everyone if added to <a href="https://config.discordsrv.com/config/DiscordChatChannelAllowedMentions">allowed mentions in config.yml</a> and <a href="https://config.discordsrv.com/config/DiscordChatChannelTranslateMentions">mentions enabled</a></p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Add Reactions</code> and <code>Read Message History</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>for when the bot reacts with "💬" and "❗" to notify a <a href="https://config.discordsrv.com/config/DiscordChatChannelTruncateLength">truncated message</a> is being sent from Discord to Minecraft</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>Move Members</code>, <code>Mute Members</code> and <code>Manage Permissions</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>required for the <a href="https://config.discordsrv.com/voice/Lobby%20channel">voice lobby</a> and <a href="https://config.discordsrv.com/voice/Voice%20category">voice category</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">🔗</a></h2>
+<p>Visit the <a href="Installation">Installation</a> page for clear and in-depth instructions on installing and setting up DiscordSRV.  </p>
+<h2 id="donations">Donations<a class="headerlink" href="#donations" title="Permanent link">🔗</a></h2>
+<p>First off, thank you from the bottom of my heart for the pizza. If you would like to donate, go to <a href="https://scarsz.me/donate">https://scarsz.me/donate</a>. $10 is the suggested amount but you can donate however much you would like- anything is a massive thank you from me. In the note put your Discord username and if you're in DiscordSRV's server you'll be set as a donator and you'll receive some neat perks in the future. If you donated without the note, send me a PM on Discord and I'll manually check it.  </p>
+<h2 id="developers">Developers<a class="headerlink" href="#developers" title="Permanent link">🔗</a></h2>
+<p>If you want to interface DiscordSRV with your plugin, you can do so by adding the Maven dependency or adding the plugin jar (DiscordSRV version 1.18.0+) to your project. You also need to add the JDA repository. For an example of this, see <a href="https://github.com/DiscordSRV/DiscordSRV-ApiTest">DiscordSRV-ApiTest</a>. Be sure to add "DiscordSRV" to your plugin's <code>plugin.yml</code> depends/softdepends list.  </p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Maven</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;repository&gt;</span>
+    <span class="nt">&lt;id&gt;</span>dv8tion<span class="nt">&lt;/id&gt;</span>
+    <span class="nt">&lt;name&gt;</span>m2-dv8tion<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;url&gt;</span>https://m2.dv8tion.net/releases<span class="nt">&lt;/url&gt;</span>
+<span class="nt">&lt;/repository&gt;</span>
+...
+<span class="nt">&lt;repository&gt;</span>
+    <span class="nt">&lt;id&gt;</span>Scarsz-Nexus<span class="nt">&lt;/id&gt;</span>
+    <span class="nt">&lt;url&gt;</span>https://nexus.scarsz.me/content/groups/public/<span class="nt">&lt;/url&gt;</span>
+<span class="nt">&lt;/repository&gt;</span>  
+...  
+<span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>com.discordsrv<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>discordsrv<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.25.0<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Gradle</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="nx">maven</span> <span class="p">{</span>
+    <span class="nx">name</span> <span class="s1">&#39;m2-dv8tion&#39;</span>
+    <span class="nx">url</span> <span class="s1">&#39;https://m2.dv8tion.net/releases&#39;</span>
+<span class="p">}</span>
+<span class="nx">repositories</span> <span class="p">{</span>
+    <span class="nx">maven</span> <span class="p">{</span> <span class="nx">url</span> <span class="s1">&#39;https://nexus.scarsz.me/content/groups/public/&#39;</span> <span class="p">}</span>
+<span class="p">}</span>  
+<span class="nx">dependencies</span> <span class="p">{</span>
+    <span class="nx">compileOnly</span> <span class="s1">&#39;com.discordsrv:discordsrv:1.25.0&#39;</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<h2 id="data-usage">Data usage<a class="headerlink" href="#data-usage" title="Permanent link">🔗</a></h2>
+<h3 id="data-collection">Data collection<a class="headerlink" href="#data-collection" title="Permanent link">🔗</a></h3>
+<p>Anything and everything shown at <a href="https://bstats.org/plugin/bukkit/DiscordSRV">https://bstats.org/plugin/bukkit/DiscordSRV</a> will be visible to the public with your server included in the statistics. This is only for statistics; no private information of your server is sent. If you don't want your server included in this, specify the config option <code>MetricsDisabled</code> and set it to <code>true</code> in the config.yml file.  </p>
+<h2 id="update-checking">Update checking<a class="headerlink" href="#update-checking" title="Permanent link">🔗</a></h2>
+<p>DiscordSRV checks for updates using GitHub's API, and makes sure the version is safe to use via a minimum version (security feature), you may disable update checking by setting <code>UpdateCheckDisabled</code> to <code>true</code> in the config.yml file; however this may leave your server at risk if there is a security issue/exploit and you're running a vulnerable version.   </p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+      
+        
+        <a href="Installation/" class="md-footer__link md-footer__link--next" aria-label="Next: Installation" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Installation
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="http://discordsrv.com/discord" target="_blank" rel="noopener" title="DiscordSRV Discord Server" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336 0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8 26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776 28.416 26.112 28.416c14.592 0 26.112-12.8 26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448 52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568 47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0 52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96 242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584 4.096c43.52 13.312 63.744 32.512 63.744 32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104 7.424-15.104 7.424s21.248-20.224 67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864 149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52 17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053 10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192 29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896 20.736 56.576-1.792 78.336-38.912 78.336-38.912z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+    
+      <script src="assets/javascripts/bundle.82b56eb2.min.js"></script>
+      
+    
+    <script>
+    var elements = document.getElementsByClassName("lightgallery");
+    for(var i=0; i<elements.length; i++) {
+       lightGallery(elements[i]);
+    }
+    </script>
+
+  </body>
+</html>
