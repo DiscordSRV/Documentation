@@ -24,7 +24,6 @@ These are super permissions that grant a bunch of standard permissions for your 
 |                       |             |                                                            | `discordsrv.unlink.others`         |
 |                       |             |                                                            | `discordsrv.groupsyncwithcommands` |
 |                       |             |                                                            | `discordsrv.updatenotification`    |
-|                       |             |                                                            | `discordsrv.resync`                |
 |                       |             |                                                            | `discordsrv.language`              |
 +-----------------------+-------------+------------------------------------------------------------+------------------------------------+
 
