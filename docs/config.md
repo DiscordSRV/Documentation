@@ -197,9 +197,6 @@ Converts minecraft messages formatted with format codes into Discord format
 ### [`CancelConsoleCommandIfLoggingFailed`](https://config.discordsrv.com/config/CancelConsoleCommandIfLoggingFailed) {id="CancelConsoleCommandIfLoggingFailed"}
 This option disables running a console command through discord if logging is unsuccessful.
 
-### [`EnableIncompatibleClientAlert`](https://config.discordsrv.com/config/EnableIncompatibleClientAlert) {id="EnableIncompatibleClientAlert"}
-LunarClient does not support hover/click components in messages. Users of LunarClient will receive an automated message stating that their user experience is worsened by the use of the client, if this option is enabled
-
 ### [`ForcedLanguage`](https://config.discordsrv.com/config/ForcedLanguage)[^1] {id="ForcedLanguage"}
 This option forcefully changes the language to the specified type.
 Currently Supported Languages: `[EN,FR,DE,JA,KO,NL,ES,RU,ET,ZH]`
@@ -924,6 +921,8 @@ Whether or not to print messages sent to Discord in Minecraft console.
 Whether or not to require players have their Discord account linked to their Minecraft to have their Discord messages sent to Minecraft
 #### [`...BlockBots`](https://config.discordsrv.com/config/DiscordChatChannelBlockBots) {id="DiscordChatChannelBlockBots"}
 Whether or not bots should be blocked from Discord -> MC chat
+#### [`...BlockWebhooks`](https://config.discordsrv.com/config/DiscordChatChannelBlockWebhooks) {id="DiscordChatChannelBlockWebhooks"}
+Whether or not webhooks should be blocked from Discord -> MC chat
 #### [`...BlockedIds`](https://config.discordsrv.com/config/DiscordChatChannelBlockedIds) {id="DiscordChatChannelBlockedIds"}
 IDs of discord users (or bots) that should not have their messages processed & sent to MC
 #### [`...BlockedRolesAsWhitelist`](https://config.discordsrv.com/config/DiscordChatChannelBlockedRolesAsWhitelist) {id="DiscordChatChannelBlockedRolesAsWhitelist"}
@@ -963,6 +962,9 @@ Some examples can be found in the FAQ: [Block special console-output from appear
 The different debug levels that are sent to the console.
 
 Options: `["debug", "info", "warn", "error"]`
+
+#### [`...UseCodeBlocks`](https://config.discordsrv.com/config/DiscordConsoleChannelUseCodeBlocks) {id="DiscordConsoleChannelUseCodeBlocks"}
+If the console should be wrapped in code blocks and colored
 
 #### [`...AllowPluginUpload`](https://config.discordsrv.com/config/DiscordConsoleChannelAllowPluginUpload) {id="DiscordConsoleChannelAllowPluginUpload"}
 Enable for the ability to upload plugins through the console channel.
