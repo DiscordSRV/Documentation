@@ -909,6 +909,9 @@ How emotes should be sent to Minecraft. Can be "name" or "hide"
 #### [`...PrefixRequiredToProcessMessage`](https://config.discordsrv.com/config/DiscordChatChannelPrefixRequiredToProcessMessage) {id="DiscordChatChannelPrefixRequiredToProcessMessage"}
 The character(s) required at the start of a message for it to be sent from Minecraft to Discord. Set to "" to not require a prefix.
 
+#### [`...PrefixActsAsBlacklist`](https://config.discordsrv.com/config/DiscordChatChannelPrefixActsAsBlacklist) {id="DiscordChatChannelPrefixActsAsBlacklist"}
+Whether or not the prefix should act as a blacklist.
+
 #### [`...RolesAllowedToUseColorCodesInChat`](https://config.discordsrv.com/config/DiscordChatChannelRolesAllowedToUseColorCodesInChat) {id="DiscordChatChannelRolesAllowedToUseColorCodesInChat"}
 States which roles are enabled to use colors when sending messages from Discord to Minecraft. Set to [] to disable
 
@@ -956,7 +959,7 @@ The blacklisted (or whitelisted) commands for the console channel. Include comma
 #### [`...Filters`](https://config.discordsrv.com/config/DiscordConsoleChannelFilters) {id="DiscordConsoleChannelFilters"}
 The Regex filter to be applied to messages from the console sent to Discord. If you are unfamiliar with Regex, it is likely that you don't need this option
 
-Some examples can be found in the FAQ: [Block special console-output from appearing in console-channel](FAQ#block-special-console-output-from-appearing-in-console-channel)
+Some examples can be found in the FAQ: [Block special console-output from appearing in console-channel](/FAQ#Block-special-console-output)
 
 #### [`...Levels`](https://config.discordsrv.com/config/DiscordConsoleChannelLevels) {id="DiscordConsoleChannelLevels"}
 The different debug levels that are sent to the console.
@@ -968,6 +971,9 @@ If the console should be wrapped in code blocks and colored
 
 #### [`...AllowPluginUpload`](https://config.discordsrv.com/config/DiscordConsoleChannelAllowPluginUpload) {id="DiscordConsoleChannelAllowPluginUpload"}
 Enable for the ability to upload plugins through the console channel.
+
+#### [`...BlockBots`](https://config.discordsrv.com/config/DiscordConsoleChannelBlockBots) {id="DiscordConsoleChannelBlockBots"}
+Whether or not bots should be allowed to send commands in the console channel
 
 ---
 
