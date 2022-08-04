@@ -1,14 +1,14 @@
 ### Minecraft chat to Discord chat doesn't work
 
 ??? info "DiscordSRV Minecraft -> Discord chat flowchart"
-    ![!DiscordSRV Minecraft -> Discord chat flowchart](https://u.vankka.dev/discordsrv_flowchart/chat.png)
+    ![!DiscordSRV Minecraft -> Discord chat flowchart](images/mc_to_discord_debugging_flowchart.png)
 
 ---
 
 ### I need help with Minecraft group <-> Discord Role synchronization {id="Minecraft-to-Discord-Role-synchronization"}
 
 ??? info "DiscordSRV Minecraft group <-> Discord Role synchronization flowchart"
-    ![!DiscordSRV Minecraft group <-> Discord Role synchronization flowchart](https://u.vankka.dev/discordsrv_flowchart/group.png)
+    ![!DiscordSRV Minecraft group <-> Discord Role synchronization flowchart](images/group_sync_debugging_flowchart.png)
 
 ---
 
