@@ -157,7 +157,7 @@ Helpful resources for learning how to use SpEL:
         Embed:
           Color: "#869600"
           Author:
-            ImageUrl: "https://crafatar.com/avatars/${#event.getAffected().getBase().getUniqueId()}?overlay"
+            ImageUrl: "https://crafatar.com/avatars/${#event.getAffected().getUUID()}?overlay"
             Name: '${#event.getAffected().getName() + " is " + (#event.value ? "now" : "no longer") + " AFK"}'
     ```
 
