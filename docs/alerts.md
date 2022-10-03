@@ -268,6 +268,20 @@ Helpful resources for learning how to use SpEL:
     ```
 
 
+### Purpur
+
+=== "PlayerAFKEvent"
+    [PlayerAFKEvent](https://purpurmc.org/javadoc/org/purpurmc/purpur/event/PlayerAFKEvent.html)
+    ```yaml
+      - Trigger: PlayerAFKEvent
+        Channel: afk
+        Embed:
+          Color: "#fbfb54"
+          Author:
+            ImageUrl: "{embedavatarurl}"
+            Name: '{username} is ${#event.isGoingAfk() ? "now" : "no longer"} AFK'
+    ```
+
 ### Spartan
 
 === "PlayerViolationEvent"
