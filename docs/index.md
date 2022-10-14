@@ -52,6 +52,7 @@ _**We only give support for the latest release/dev builds; please update before 
 * [MZP-VoteParty](https://www.spigotmc.org/resources/mzp-voteparty.89754/)
 * [InteractiveChat DiscordSRV Addon](https://www.spigotmc.org/resources/interactivechat-discordsrv-addon.83917/)
 * [ActivityRoles](https://modrinth.com/plugin/activityroles)
+* [EconomyShopGUI](https://www.spigotmc.org/resources/economyshopgui.69927/)
 * If you would like your plugin listed here, please bring it to `granny`'s attention in our [Discord](https://discordsrv.com/discord) server.
 ## Intended usage
 By using this plugin, you are able to give players the ability to chat in-game with players on your Discord server, as well as having people on the Discord server be able to chat with people in the minecraft server - This can be useful for players that still want to communicate with players in-game, but can't access the Minecraft server for whatever reason.  
