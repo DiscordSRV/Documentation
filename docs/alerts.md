@@ -157,7 +157,7 @@ Helpful resources for learning how to use SpEL:
         Embed:
           Color: "#869600"
           Author:
-            ImageUrl: "https://crafatar.com/avatars/${#event.getAffected().getBase().getUniqueId()}?overlay"
+            ImageUrl: "https://crafatar.com/avatars/${#event.getAffected().getUUID()}?overlay"
             Name: '${#event.getAffected().getName() + " is " + (#event.value ? "now" : "no longer") + " AFK"}'
     ```
 
@@ -267,6 +267,20 @@ Helpful resources for learning how to use SpEL:
             Text: "Auction ID: ${playerAuction.getID()}"
     ```
 
+
+### Purpur
+
+=== "PlayerAFKEvent"
+    [PlayerAFKEvent](https://purpurmc.org/javadoc/org/purpurmc/purpur/event/PlayerAFKEvent.html)
+    ```yaml
+      - Trigger: PlayerAFKEvent
+        Channel: afk
+        Embed:
+          Color: "#fbfb54"
+          Author:
+            ImageUrl: "{embedavatarurl}"
+            Name: '{username} is ${#event.isGoingAfk() ? "now" : "no longer"} AFK'
+    ```
 
 ### Spartan
 
