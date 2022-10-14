@@ -88,7 +88,7 @@ If you want to interface DiscordSRV with your plugin, you can do so by adding th
     <dependency>
         <groupId>com.discordsrv</groupId>
         <artifactId>discordsrv</artifactId>
-        <version>1.25.0</version>
+        <version>1.26.0</version>
         <scope>provided</scope>
     </dependency>
     ```  
@@ -102,7 +102,7 @@ If you want to interface DiscordSRV with your plugin, you can do so by adding th
         maven { url 'https://nexus.scarsz.me/content/groups/public/' }
     }  
     dependencies {
-        compileOnly 'com.discordsrv:discordsrv:1.25.0'
+        compileOnly 'com.discordsrv:discordsrv:1.26.0'
     }
     ```
 
