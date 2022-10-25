@@ -45,15 +45,15 @@ theme:
   name: material
   favicon: images/logo.png
   logo: images/logo.png
-  custom_dir: 'custom_theme'
   features:
     - navigation.expand
   palette:
     - scheme: slate
       primary: light blue
       accent: blue
+plugins:
+  - glightbox
 markdown_extensions:
-  - lightgallery
   - mdx_grid_tables
   - attr_list
   - footnotes

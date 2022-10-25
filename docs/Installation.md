@@ -21,33 +21,26 @@
 
 #### Create the Application
 !!! note "Create a new application at https://discord.com/developers/applications/ by clicking `"New Application"`"
-    ![!create application](images/create_application.png)  
+    ![create application](images/create_application.png)  
 #### Create the bot
 !!! note "Choose a cool name for your bot and click `Create`"
-    ![!create the bot](images/create_bot.png)
+    ![create the bot](images/create_bot.png)
 #### Confirm the bot application
 !!! note "Under the `Settings` tab, click `Bot`, then click `Add Bot` and confirm with `Yes, do it!`"
-    ![!confirm action](images/create_bot_confirm.png)
+    ![confirm action](images/create_bot_confirm.png)
 ---
 
 ### Starting up the bot
 
 #### Copy the bot token
 !!! note "Copy the `Token` of the bot from the application page. Keep `PUBLIC BOT` unchecked so only you can invite the bot to the servers you designate."
-    ![!copy bot token](images/copy_token.png)
+    ![copy bot token](images/copy_token.png)
 
 ---
 
 #### Enable the Privileged Gateway Intents options
 !!! note "Make sure to enable both the `SERVER MEMBERS INTENT` and `MESSAGE CONTENT INTENT` options shown in the video below to avoid running into issues with DiscordSRV later on."
-    <div class="lightgallery">
-        <a data-sub-html="enable privileged gateway intents" data-iframe="true" data-width="500" href="../images/enable_all_intents.mp4">
-            <video width="100%" height="auto" autoplay muted loop>
-                <source src="../images/enable_all_intents.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
-        </a>
-    </div>
+    ![](images/enable_all_intents.mp4)
 
 ---
 
@@ -62,7 +55,7 @@ BotToken: "MjE5NTE5OTk0MDUxMDM1MTQ3.CqTCYw.SFAbKtfK3ydTy1jx2-fTHUJqsPo"
 #### Invite the bot to your guild
 
 !!! note "Copy the `Application ID` from the application's `General Information` page."
-    ![!copy client id](images/copy_application_id.png)  
+    ![copy client id](images/copy_application_id.png)  
 
 Go to the following URL and paste your `Application ID` to the page (`Ctrl + V`): https://scarsz.me/authorize
 
@@ -71,24 +64,24 @@ Go to the following URL and paste your `Application ID` to the page (`Ctrl + V`)
     `https://discordapp.com/oauth2/authorize?scope=bot+applications.commands&client_id=`
 
 !!! note "Select your guild, then click `Authorize`"
-    ![!authorize the bot](images/authorize_bot.png){width=325} 
+    ![authorize the bot](images/authorize_bot.png){width=325} 
 
 ---
 
 #### Enable Developer Mode
 
 !!! note "Go to your Discord settings by clicking on the cog on the bottom left of Discord."
-    ![!open discord settings](images/open_discord_settings.png)  
+    ![open discord settings](images/open_discord_settings.png)  
 
 !!! note "Go to the `Advanced` tab and enable `Developer Mode` (Outdated image)"
-    ![!enable developer mode](images/enable_developer_mode.png)  
+    ![enable developer mode](images/enable_developer_mode.png)  
 
 ---
 
 #### Set up a basic channel relay
 
 !!! note "Right click the Discord-channel you want to use for chat between Discord and Minecraft and click on `Copy ID`"
-    ![!copy channel id](images/copy_channel_id.png)  
+    ![copy channel id](images/copy_channel_id.png)  
 
 Open the config.yml file again.  
 Search for the option `Channels` and replace `000000000000000000` with the copied channel ID.
@@ -115,15 +108,15 @@ DiscordConsoleChannelId: "219559838890459137"
 #### Give the bot the discord permissions it needs to run
 
 !!! note "Open your server settings by clicking on the arrow to the right of the server name and choose `Server Settings`"
-    ![!open server settings](images/open_server_settings.png)  
+    ![open server settings](images/open_server_settings.png)  
 
 !!! note "Go to the `Roles` tab and create a new role. We've named ours `Bot`. Add the `Administrator` permission (or permissions listed below) to the new role."
-    ![!create bot role](images/create_bot_role.png)  
+    ![create bot role](images/create_bot_role.png)  
 
 ---
 
 !!! note "Switch to the `Members` tab and add the new `Bot` role to your bot by clicking on the `+` next to the bot's name and choosing the role."
-    ![!Add Bot-rule to bot](images/add_role.png)  
+    ![Add Bot-rule to bot](images/add_role.png)  
 
 (Re)start your server
 
@@ -222,10 +215,10 @@ Voice enabled: true
 ```
 
 !!! note "Create a category (name doesn't matter) where the voice module will create/delete/move voice channels"
-    ![!create a voice category](images/create_voice_category.png){width=325}
+    ![create a voice category](images/create_voice_category.png){width=325}
 
 !!! note "Right click on the Category and select `Copy ID`"
-    ![!copy category id](images/copy_category_id.png){width=325}
+    ![copy category id](images/copy_category_id.png){width=325}
 
 In the `voice.yml` config search for the `Voice category` option and replace `000000000000000000` with the copied Category ID.
 ```yaml
@@ -236,7 +229,7 @@ Voice category: 000000000000000000
 Create a channel (name doesn't matter) underneath the voice category you just made; This will be your "Lobby" voice channel.
 
 !!! note "Right click on the Channel after moving it and select `Copy ID`"
-    ![!copy voice channel id](images/copy_voice_channel_id.png){width=325}
+    ![copy voice channel id](images/copy_voice_channel_id.png){width=325}
 
 In the `voice.yml` config search for the `Lobby channel` option and replace `000000000000000000` with the copied Channel ID.
 ```yaml
