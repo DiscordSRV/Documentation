@@ -7,33 +7,29 @@ site_description: >-
   The most powerful, configurable, open-source Discord bridge plugin out there.
 nav:
   - Home: index.md
-  - Installation: Installation.md
-  - 'Frequently Asked Questions': 'FAQ.md'
-  - 'Configs':
-    - 'alerts.yml': 'alerts.md'
-    - 'config.yml': 'config.md'
-    - 'linking.yml': 'linking.md'
-    - 'messages.yml': 'messages.md'
-    - 'synchronization.yml': 'synchronization.md'
-    - 'voice.yml': 'voice.md'
-  - Commands: Commands.md
-  - Permissions: Permissions.md
-  - 'Hooked plugin features':
-    - 'LuckPerms Contexts': 'LPContext.md'
-    - 'PlaceholderAPI Placeholders': 'PAPI-Placeholders.md'
-  - 'Troubleshooting':
-    - 'Report a bug': 'https://github.com/DiscordSRV/DiscordSRV/issues'
-    - 'Request a feature': 'https://github.com/DiscordSRV/DiscordSRV/issues'
-    - 'Ask for support': 'https://discordsrv.com/discord'
-  - 'Development':  
-    - 'Contributing guidelines': 'https://github.com/DiscordSRV/DiscordSRV/blob/master/CONTRIBUTING.md'
-    - 'Using the DiscordSRV-API': '/#developers'
-    - 'Latest Release': 'https://get.discordsrv.com/'
-    - 'Latest Snapshot': 'https://snapshot.discordsrv.com/'
-  - 'Connections':
-    - 'Discord': 'https://discordsrv.com/discord'
-    - 'SpigotMC': 'https://www.spigotmc.org/resources/discordsrv.18494/'
-    - 'BukkitDev': 'https://dev.bukkit.org/projects/discordsrv'
+  - Frequently Asked Questions: faq.md
+  - Installation:
+    - installation/index.md
+    - Basic Setup: installation/basic-setup.md
+    - Sync Setup: installation/sync-setup.md
+    - Voice Setup: installation/voice-setup.md
+    - Link to Join Setup: installation/link-to-join-setup.md
+  - Configs:
+    - alerts.yml: alerts.md
+    - config.yml: config.md
+    - linking.yml: linking.md
+    - messages.yml: messages.md
+    - synchronization.yml: synchronization.md
+    - voice.yml: voice.md
+  - Commands: commands.md
+  - Permissions: permissions.md
+  - Hooked plugin features:
+    - LuckPerms Contexts: lp-contexts.md
+    - PlaceholderAPI Placeholders: papi-placeholders.md
+  - Troubleshooting:
+    - Report a bug: https://github.com/DiscordSRV/DiscordSRV/issues
+    - Request a feature: https://github.com/DiscordSRV/DiscordSRV/issues
+    - Ask for support: https://discordsrv.com/discord
 repo_url: https://github.com/DiscordSRV/Documentation
 repo_name: Documentation
 edit_uri: edit/master/docs/
@@ -47,13 +43,23 @@ theme:
   logo: images/logo.png
   features:
     - navigation.expand
+    - navigation.indexes
   palette:
     - scheme: slate
       primary: light blue
       accent: blue
 plugins:
   - glightbox
+  - redirects:
+      redirect_maps:
+        'Installation.md': 'installation/index.md'
+        'PAPI-Placeholders.md': 'papi-placeholders.md'
+        'LPContext.md': 'lp-contexts.md'
+        'FAQ.md': 'faq.md'
+        'Commands.md': 'commands.md'
+        'Permissions.md': 'permissions.md'
 markdown_extensions:
+  - def_list
   - mdx_grid_tables
   - attr_list
   - footnotes
