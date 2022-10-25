@@ -62,7 +62,8 @@ markdown_extensions:
   - pymdownx.snippets:
       base_path:
       - docs/_snippets
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.magiclink

@@ -4,14 +4,14 @@
 
 **The most powerful, configurable, open-source Discord bridge plugin out there.**  
 
-[:material-discord: Discord](https://discordsrv.com/discord){ .md-button }
+[:simple-discord: Discord](https://discordsrv.com/discord){ .md-button }
 [:fontawesome-solid-faucet: SpigotMC](https://www.spigotmc.org/resources/discordsrv.18494/){ .md-button }
 [:material-bucket-outline: BukkitDev](https://dev.bukkit.org/projects/discordsrv){ .md-button }
 
 [:material-cloud-upload: Latest Release](https://get.discordsrv.com/){ .md-button }
 [:material-cloud-tags: Latest Snapshot](https://snapshot.discordsrv.com/){ .md-button }
 
-**Supports All Minecraft Versions from 1.7.9 to 1.18**  
+**Supports All Minecraft Versions from 1.7.9 to 1.19.x**  
 
 _**We only give support for the latest release/dev builds; please update before asking for help**_
 
@@ -74,6 +74,7 @@ First off, thank you from the bottom of my heart for the pizza. If you would lik
 If you want to interface DiscordSRV with your plugin, you can do so by adding the Maven dependency or adding the plugin jar (DiscordSRV version 1.18.0+) to your project. You also need to add the JDA repository. For an example of this, see [DiscordSRV-ApiTest](https://github.com/DiscordSRV/DiscordSRV-ApiTest). Be sure to add "DiscordSRV" to your plugin's `plugin.yml` depends/softdepends list.  
 
 === "Maven"
+
     ```xml
     <repository>
         <id>dv8tion</id>
@@ -93,6 +94,7 @@ If you want to interface DiscordSRV with your plugin, you can do so by adding th
         <scope>provided</scope>
     </dependency>
     ```  
+
 === "Gradle"
     ```js
     maven {
