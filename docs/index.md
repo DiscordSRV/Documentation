@@ -51,6 +51,7 @@ _**We only give support for the latest release/dev builds; please update before 
 * [MCSF (My Christian Swear Filter)](https://www.spigotmc.org/resources/mcsf.54115/)
 * [MZP-VoteParty](https://www.spigotmc.org/resources/mzp-voteparty.89754/)
 * [InteractiveChat DiscordSRV Addon](https://www.spigotmc.org/resources/interactivechat-discordsrv-addon.83917/)
+* [DiscordSRVUtils Addon](https://discordsrvutils.xyz/)
 * [ActivityRoles](https://modrinth.com/plugin/activityroles)
 * [EconomyShopGUI](https://www.spigotmc.org/resources/economyshopgui.69927/)
 * If you would like your plugin listed here, please bring it to `granny`'s attention in our [Discord](https://discordsrv.com/discord) server.
