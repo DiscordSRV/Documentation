@@ -128,7 +128,7 @@ Now run through all the config options in [`config.yml`](https://config.discords
 
 Usually it's not recommended to give the bot the Administrator permission, since it gives the bot complete control over your server. We recommend it because it makes the installation process easier on the server owner, and DiscordSRV doesn't do anything that would jeopardize the server. The only way this can be abused is by sharing the bot token with others. Therefore, you should keep the bot token private, and only use it in the context of setting up DiscordSRV. If others were to know your token, they can hijack your bot, so if you suspect the token has been leaked you should reset it immediately in the Discord Developers portal.
 
-Howerver, if you don't feel comfortable with giving the Administrator permission, you can define the following permissions that the bot requires for certain features. This list can/will change and new permissions will need to be added for any new features that require them.
+However, if you don't feel comfortable with giving the Administrator permission, you can define the following permissions that the bot requires for certain features. This list can/will change and new permissions will need to be added for any new features that require them.
  
 ---
 
