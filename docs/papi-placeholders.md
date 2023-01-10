@@ -13,7 +13,7 @@ These placeholders are only available with [PlaceholderAPI](https://www.spigotmc
     * %discordsrv_user_game_name%
     * %discordsrv_user_game_url%
 
-    Please note that to use these placeholders you need to have the Presence Intent enabled on your bot using the Discord developer portal. You enable this intent the same way you enabled the [`Server Members Intent`](../Installation/#enable-server-members-intent).
+    Please note that to use these placeholders you need to have the Presence Intent enabled on your bot using the Discord developer portal. You enable this intent the same way you enabled the [`Server Members Intent`](../installation/basic-setup#enable-server-members-intent).
 
 ### Placeholders
 
