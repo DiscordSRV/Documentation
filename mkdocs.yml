@@ -60,6 +60,7 @@ plugins:
         'Commands.md': 'commands.md'
         'Permissions.md': 'permissions.md'
 markdown_extensions:
+  - pymdownx.caret
   - def_list
   - mdx_grid_tables
   - attr_list
