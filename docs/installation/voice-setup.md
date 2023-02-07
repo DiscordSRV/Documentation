@@ -1,5 +1,5 @@
 ***
-**Please make sure to go through the [Basic Setup](basic-setup.md) before going through with this setup.**
+**Please make sure to go through the [Initial Setup](initial-setup.md) before going through with this setup.**
 ***
 
 Make sure `Voice enabled` is set to `true` in the `voice.yml` config
