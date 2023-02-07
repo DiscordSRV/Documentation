@@ -10,7 +10,7 @@ nav:
   - Frequently Asked Questions: faq.md
   - Installation:
     - installation/index.md
-    - Basic Setup: installation/basic-setup.md
+    - Initial Setup: installation/initial-setup.md
     - Sync Setup: installation/sync-setup.md
     - Voice Setup: installation/voice-setup.md
     - Link to Join Setup: installation/link-to-join-setup.md
