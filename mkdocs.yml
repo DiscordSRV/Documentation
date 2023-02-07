@@ -59,6 +59,7 @@ plugins:
         'FAQ.md': 'faq.md'
         'Commands.md': 'commands.md'
         'Permissions.md': 'permissions.md'
+        'installation/basic-setup.md': 'installation/initial-setup.md'
 markdown_extensions:
   - pymdownx.caret
   - def_list
