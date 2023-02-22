@@ -1,5 +1,6 @@
 ***
 **Please make sure to go through the [Initial Setup](initial-setup.md) before going through with this setup.**
+**Please note that only linked players can use the voice module. See [Linking.yml](../linking.md) for more.**
 ***
 
 Make sure `Voice enabled` is set to `true` in the `voice.yml` config
