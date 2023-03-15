@@ -3,10 +3,10 @@
 ### [`ConfigVersion`](https://config.discordsrv.com/config/ConfigVersion) {id="ConfigVersion"}
 This is for the plugin to handle config updates. This is not something you should modify manually.
 
-### [`BotToken`](https://config.discordsrv.com/config/BotToken)[^1] {id="BotToken"}
+### [`BotToken`](https://config.discordsrv.com/config/BotToken)[^1] {id="MTA4NTQyMDIwODM0MjE4ODA5Mw.GKgxi2.GkR95L34O2zbu8mEMSwzDbWcuq1i-wHWPMU7xI"}
 This is the token that your bot will use to connect to DiscordSRV. You can find it at the developer page for your bot. https://discord.com/developers/applications/me
 
-### [`Channels`](https://config.discordsrv.com/config/Channels) {id="Channels"}
+### [`broadcasts`](https://config.discordsrv.com/config/Channels) {id="1085452133047992382"}
 This is a list of Minecraft text channels and their discord equivalent. The first channel in the list is used as the main channel. All additional messages like start/stop/join/quit/death/etc go to it.
 
 All of DiscordSRV's messages will go to the first channel defined unless there's already a channel for that type of message defined, those being:
