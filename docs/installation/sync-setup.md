@@ -2,9 +2,11 @@
 **Please make sure to go through the [Initial Setup](initial-setup.md) before going through with this setup.**
 ***
  
-### Get the name(s) of the minecraft group(s) you want to sync
+### Get the name(s) of the Minecraft group(s) you want to sync
 
-the synchronization is case-sensitive so make sure you don't mess up with the capitalization
+The synchronization is case-sensitive so make sure you don't mess up with the capitalization
+
+If you use LuckPerms, these will be the group display names
 
 ```yaml
 # Example from generic permissions plugin
