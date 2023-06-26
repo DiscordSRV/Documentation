@@ -264,7 +264,7 @@ in our [DiscordGameStatus](https://config.discordsrv.com/config/DiscordGameStatu
 | the plugin is working      | the plugin is not working |
 +----------------------------+---------------------------+ 
 
-First thing you should do is check your *server logs*. If you need further help understanding the errors then join [our discord server](https://discordsrv.com/discord) and create a ticket through the #support channel. Send a copy of what you find or the whole log file.
+First thing you should do is check your *server logs*. If you need further help understanding the errors then join [our discord server](https://discordsrv.com/discord) and create a ticket through the #create-a-ticket channel. Send a copy of what you find or the whole log file.
 
 ### Where can I find the server log? {id="find-log"}
 
@@ -283,8 +283,8 @@ On Minehut and server.pro:
 ### What should I do with the server log? {id="do-with-log"}
 
 - First of all, read it! I mean, that's what you do all the time when you run a server, isn't it? Try to locate any errors that have anything to do with DiscordSRV. If you're having trouble scrolling through the file you can use `Ctrl+F` to search the file for the phrase "DiscordSRV". This will highlight all occurrences of "DiscordSRV" which will make locating the error less difficult.
-- If you got the `latest.log` file or created a `.txt` file with the necessary errors then join [our discord server](https://discordsrv.com/discord) and create a ticket through the #support channel and send it there.
-- If you have trouble downloading the log file, copy/paste the text to a paste service (like [mclo.gs](https://mclo.gs/)). Copy the link that it gives you. Join [our discord server](https://discordsrv.com/discord) and create a ticket through the #support channel, then send that link in your ticket.
+- If you got the `latest.log` file or created a `.txt` file with the necessary errors then join [our discord server](https://discordsrv.com/discord) and create a ticket through the #create-a-ticket channel and send it there.
+- If you have trouble downloading the log file, copy/paste the text to a paste service (like [mclo.gs](https://mclo.gs/)). Copy the link that it gives you. Join [our discord server](https://discordsrv.com/discord) and create a ticket through the #create-a-ticket channel, then send that link in your ticket.
 
 ---
 
