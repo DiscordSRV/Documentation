@@ -1,0 +1,677 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="The official documentation for DiscordSRV. The most powerful, configurable, open-source Discord bridge plugin out there." name="description"/>
+<meta content="granny" name="author"/>
+<link href="https://docs.discordsrv.com/master/synchronization/" rel="canonical"/>
+<link href="../images/logo.png" rel="icon"/>
+<meta content="mkdocs-1.4.1, mkdocs-material-8.5.7" name="generator"/>
+<title>synchronization.yml - DiscordSRV Wiki</title>
+<link href="../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gdesc-inner { font-size: 0.75rem; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                </style><script src="../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="blue" data-md-color-primary="light-blue" data-md-color-scheme="slate" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#synchronizationyml">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<div data-md-component="outdated" hidden="">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="DiscordSRV Wiki" class="md-header__button md-logo" data-md-component="logo" href=".." title="DiscordSRV Wiki">
+<img alt="logo" src="../images/logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DiscordSRV Wiki
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              synchronization.yml
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-hidden="true" class="md-option" data-md-color-accent="blue" data-md-color-media="" data-md-color-primary="light-blue" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DiscordSRV/Documentation" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    Documentation
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DiscordSRV Wiki" class="md-nav__button md-logo" data-md-component="logo" href=".." title="DiscordSRV Wiki">
+<img alt="logo" src="../images/logo.png"/>
+</a>
+    DiscordSRV Wiki
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/DiscordSRV/Documentation" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    Documentation
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="..">
+        Home
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../faq/">
+        Frequently Asked Questions
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../installation/">Installation</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Installation" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../installation/initial-setup/">
+        Initial Setup
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../installation/sync-setup/">
+        Sync Setup
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../installation/voice-setup/">
+        Voice Setup
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../installation/link-to-join-setup/">
+        Link to Join Setup
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4">
+          Configs
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Configs" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Configs
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../alerts/">
+        alerts.yml
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../config/">
+        config.yml
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../linking/">
+        linking.yml
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../messages/">
+        messages.yml
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          synchronization.yml
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        synchronization.yml
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nicknamesynchronization">
+    NicknameSynchronization...
+  </a>
+<nav aria-label="NicknameSynchronization..." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#NicknameSynchronizationEnabled">
+    Enabled
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#NicknameSynchronizationCycleTime">
+    CycleTime
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#NicknameSynchronizationFormat">
+    Format
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#grouprolesynchronization">
+    GroupRoleSynchronization...
+  </a>
+<nav aria-label="GroupRoleSynchronization..." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#GroupRoleSynchronizationGroupsAndRolesToSync">
+    ...GroupsAndRolesToSync
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#GroupRoleSynchronizationMinecraftIsAuthoritative">
+    ...MinecraftIsAuthoritative
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#GroupRoleSynchronizationOneWay">
+    ...OneWay
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#GroupRoleSynchronizationEnableDenyPermission">
+    ...EnableDenyPermission
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#GroupRoleSynchronizationPrimaryGroupOnly">
+    PrimaryGroupOnly
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#GroupRoleSynchronizationOnLink">
+    ...OnLink
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#GroupRoleSynchronizationCycleTime">
+    ...CycleTime
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#GroupRoleSynchronizationCycleCompletely">
+    ...CycleCompletely
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bansynchronization">
+    BanSynchronization...
+  </a>
+<nav aria-label="BanSynchronization..." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#BanSynchronizationDiscordToMinecraft">
+    ...DiscordToMinecraft
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#BanSynchronizationDiscordToMinecraftReason">
+    ...DiscordToMinecraftReason
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#BanSynchronizationMinecraftToDiscord">
+    ...MinecraftToDiscord
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../voice/">
+        voice.yml
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../commands/">
+        Commands
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../permissions/">
+        Permissions
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7">
+          Hooked plugin features
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Hooked plugin features" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+          Hooked plugin features
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../lp-contexts/">
+        LuckPerms Contexts
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../papi-placeholders/">
+        PlaceholderAPI Placeholders
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8">
+          Troubleshooting
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Troubleshooting" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+          Troubleshooting
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://github.com/DiscordSRV/DiscordSRV/issues">
+        Report a bug
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://github.com/DiscordSRV/DiscordSRV/issues">
+        Request a feature
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://discordsrv.com/discord">
+        Ask for support
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#nicknamesynchronization">
+    NicknameSynchronization...
+  </a>
+<nav aria-label="NicknameSynchronization..." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#NicknameSynchronizationEnabled">
+    Enabled
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#NicknameSynchronizationCycleTime">
+    CycleTime
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#NicknameSynchronizationFormat">
+    Format
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#grouprolesynchronization">
+    GroupRoleSynchronization...
+  </a>
+<nav aria-label="GroupRoleSynchronization..." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#GroupRoleSynchronizationGroupsAndRolesToSync">
+    ...GroupsAndRolesToSync
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#GroupRoleSynchronizationMinecraftIsAuthoritative">
+    ...MinecraftIsAuthoritative
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#GroupRoleSynchronizationOneWay">
+    ...OneWay
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#GroupRoleSynchronizationEnableDenyPermission">
+    ...EnableDenyPermission
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#GroupRoleSynchronizationPrimaryGroupOnly">
+    PrimaryGroupOnly
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#GroupRoleSynchronizationOnLink">
+    ...OnLink
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#GroupRoleSynchronizationCycleTime">
+    ...CycleTime
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#GroupRoleSynchronizationCycleCompletely">
+    ...CycleCompletely
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#bansynchronization">
+    BanSynchronization...
+  </a>
+<nav aria-label="BanSynchronization..." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#BanSynchronizationDiscordToMinecraft">
+    ...DiscordToMinecraft
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#BanSynchronizationDiscordToMinecraftReason">
+    ...DiscordToMinecraftReason
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#BanSynchronizationMinecraftToDiscord">
+    ...MinecraftToDiscord
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/DiscordSRV/Documentation/edit/master/docs/synchronization.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+</a>
+<h1 id="synchronizationyml"><a href="https://config.discordsrv.com/synchronization/_">synchronization.yml</a><a class="headerlink" href="#synchronizationyml" title="Permanent link">🔗</a></h1>
+<h3 id="nicknamesynchronization">NicknameSynchronization...<a class="headerlink" href="#nicknamesynchronization" title="Permanent link">🔗</a></h3>
+<h4 id="NicknameSynchronizationEnabled"><a href="https://config.discordsrv.com/synchronization/NicknameSynchronizationEnabled"><code>Enabled</code></a><a class="headerlink" href="#NicknameSynchronizationEnabled" title="Permanent link">🔗</a></h4>
+<p>whether or not to set the discord user's nickname to the nickname format automatically</p>
+<h4 id="NicknameSynchronizationCycleTime"><a href="https://config.discordsrv.com/synchronization/NicknameSynchronizationCycleTime"><code>CycleTime</code></a><a class="headerlink" href="#NicknameSynchronizationCycleTime" title="Permanent link">🔗</a></h4>
+<p>amount of minutes between repeatedly triggering synchronization for all online players</p>
+<h4 id="NicknameSynchronizationFormat"><a href="https://config.discordsrv.com/synchronization/NicknameSynchronizationFormat"><code>Format</code></a><a class="headerlink" href="#NicknameSynchronizationFormat" title="Permanent link">🔗</a></h4>
+<p>the nickname format (keep in mind this shouldn't go over 32 characters)</p>
+<table>
+<thead>
+<tr>
+<th colspan="1" rowspan="1">
+<p>Available Placeholders</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Explanation</p>
+</th>
+<th colspan="1" rowspan="1">
+<p>Example</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%displayname%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>player's display name</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Jeb</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%username%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>player's username</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Jeb_</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%discord_name%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>player's discord username</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>Jeb</p>
+</td>
+</tr>
+<tr>
+<td colspan="1" rowspan="1">
+<p><code>%discord_discriminator%</code></p>
+</td>
+<td colspan="1" rowspan="1">
+<p>player's discord discriminator</p>
+</td>
+<td colspan="1" rowspan="1">
+<p>4988</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>PlaceholderAPI placeholders are supported</p>
+<h3 id="grouprolesynchronization">GroupRoleSynchronization...<a class="headerlink" href="#grouprolesynchronization" title="Permanent link">🔗</a></h3>
+<h4 id="GroupRoleSynchronizationGroupsAndRolesToSync"><a href="https://config.discordsrv.com/synchronization/GroupRoleSynchronizationGroupsAndRolesToSync"><code>...GroupsAndRolesToSync</code></a><a class="headerlink" href="#GroupRoleSynchronizationGroupsAndRolesToSync" title="Permanent link">🔗</a></h4>
+<p>these are roles/groups you'd like synchronized between Discord and Minecraft</p>
+<h4 id="GroupRoleSynchronizationMinecraftIsAuthoritative"><a href="https://config.discordsrv.com/synchronization/GroupRoleSynchronizationMinecraftIsAuthoritative"><code>...MinecraftIsAuthoritative</code></a><a class="headerlink" href="#GroupRoleSynchronizationMinecraftIsAuthoritative" title="Permanent link">🔗</a></h4>
+<p>whether or not Minecraft group changes override Discord role changes</p>
+<h4 id="GroupRoleSynchronizationOneWay"><a href="https://config.discordsrv.com/synchronization/GroupRoleSynchronizationOneWay"><code>...OneWay</code></a><a class="headerlink" href="#GroupRoleSynchronizationOneWay" title="Permanent link">🔗</a></h4>
+<p>whether or not to synchronise only one way, the way it is synchronised depends on the value of MinecraftIsAuthoritative.</p>
+<h4 id="GroupRoleSynchronizationEnableDenyPermission"><a href="https://config.discordsrv.com/synchronization/GroupRoleSynchronizationEnableDenyPermission"><code>...EnableDenyPermission</code></a><a class="headerlink" href="#GroupRoleSynchronizationEnableDenyPermission" title="Permanent link">🔗</a></h4>
+<p>whether or not discordsrv.sync.deny.<role id=""> permissions are enabled</role></p>
+<h4 id="GroupRoleSynchronizationPrimaryGroupOnly"><a href="https://config.discordsrv.com/synchronization/GroupRoleSynchronizationPrimaryGroupOnly"><code>PrimaryGroupOnly</code></a><a class="headerlink" href="#GroupRoleSynchronizationPrimaryGroupOnly" title="Permanent link">🔗</a></h4>
+<p>if true, only the player's primary group is counted for synchronization, otherwise, group sync counts all groups the player is in, including parent groups</p>
+<h4 id="GroupRoleSynchronizationOnLink"><a href="https://config.discordsrv.com/synchronization/GroupRoleSynchronizationOnLink"><code>...OnLink</code></a><a class="headerlink" href="#GroupRoleSynchronizationOnLink" title="Permanent link">🔗</a></h4>
+<p>whether or not to resync when a player links</p>
+<h4 id="GroupRoleSynchronizationCycleTime"><a href="https://config.discordsrv.com/synchronization/GroupRoleSynchronizationCycleTime"><code>...CycleTime</code></a><a class="headerlink" href="#GroupRoleSynchronizationCycleTime" title="Permanent link">🔗</a></h4>
+<p>amount of minutes between repeatedly triggering synchronization for all online players</p>
+<h4 id="GroupRoleSynchronizationCycleCompletely"><a href="https://config.discordsrv.com/synchronization/GroupRoleSynchronizationCycleCompletely"><code>...CycleCompletely</code></a><a class="headerlink" href="#GroupRoleSynchronizationCycleCompletely" title="Permanent link">🔗</a></h4>
+<p>whether or not synchronizations running on a timer should synchronize every member in the bots Discord servers</p>
+<h3 id="bansynchronization">BanSynchronization...<a class="headerlink" href="#bansynchronization" title="Permanent link">🔗</a></h3>
+<h4 id="BanSynchronizationDiscordToMinecraft"><a href="https://config.discordsrv.com/synchronization/BanSynchronizationDiscordToMinecraft"><code>...DiscordToMinecraft</code></a><a class="headerlink" href="#BanSynchronizationDiscordToMinecraft" title="Permanent link">🔗</a></h4>
+<p>the message at the beginning of the list, before all of the player names.</p>
+<h4 id="BanSynchronizationDiscordToMinecraftReason"><a href="https://config.discordsrv.com/synchronization/BanSynchronizationDiscordToMinecraftReason"><code>...DiscordToMinecraftReason</code></a><a class="headerlink" href="#BanSynchronizationDiscordToMinecraftReason" title="Permanent link">🔗</a></h4>
+<p>used instead for when no players are online</p>
+<h4 id="BanSynchronizationMinecraftToDiscord"><a href="https://config.discordsrv.com/synchronization/BanSynchronizationMinecraftToDiscord"><code>...MinecraftToDiscord</code></a><a class="headerlink" href="#BanSynchronizationMinecraftToDiscord" title="Permanent link">🔗</a></h4>
+<hr/>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: messages.yml" class="md-footer__link md-footer__link--prev" href="../messages/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              messages.yml
+            </div>
+</div>
+</a>
+<a aria-label="Next: voice.yml" class="md-footer__link md-footer__link--next" href="../voice/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              voice.yml
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="http://discordsrv.com/discord" rel="noopener" target="_blank" title="DiscordSRV Discord Server">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.indexes", "navigation.instant"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+<script src="../assets/javascripts/bundle.8492ddcf.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+</html>
