@@ -7,10 +7,10 @@
     <meta http-equiv="refresh" content="1; url=master/404.html" />
   </noscript>
   <script>
-    window.location.replace("master/404.html" + window.location.hash);
+    window.location.replace(window.location.pathname.split('/')[1] + "/404.html" + window.location.hash);
   </script>
 </head>
 <body>
-  Redirecting to <a href="master/404.html">master/404.html</a>...
+  Redirecting to <a href="404.html">404.html</a>...
 </body>
 </html>
