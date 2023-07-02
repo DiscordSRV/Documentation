@@ -87,6 +87,8 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 extra:
+  version:
+    provider: mike
   project:
     version: 1.26.2
     supported_version:
