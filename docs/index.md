@@ -11,7 +11,7 @@
 [:material-cloud-upload: Latest Release](https://get.discordsrv.com/){ .md-button }
 [:material-cloud-tags: Latest Snapshot](https://snapshot.discordsrv.com/){ .md-button }
 
-**Supports All Minecraft Versions from 1.7.9 to 1.19.x**  
+**Supports All Minecraft Versions from {{ project.supported_version.min }} to {{ project.supported_version.max }}**  
 
 _**We only give support for the latest release/dev builds; please update before asking for help**_
 
@@ -92,7 +92,7 @@ If you want to interface DiscordSRV with your plugin, you can do so by adding th
     <dependency>
         <groupId>com.discordsrv</groupId>
         <artifactId>discordsrv</artifactId>
-        <version>1.26.0</version>
+        <version>{{ project.version }}</version>
         <scope>provided</scope>
     </dependency>
     ```  
@@ -107,7 +107,7 @@ If you want to interface DiscordSRV with your plugin, you can do so by adding th
         maven { url 'https://nexus.scarsz.me/content/groups/public/' }
     }  
     dependencies {
-        compileOnly 'com.discordsrv:discordsrv:1.26.0'
+        compileOnly 'com.discordsrv:discordsrv:{{ project.version }}'
     }
     ```
 
