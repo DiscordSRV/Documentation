@@ -2,7 +2,7 @@ These placeholders are only available with [PlaceholderAPI](https://www.spigotmc
 
 **The placeholders are integrated into DiscordSRV; you do not need an expansion for them to work.**
 
-??? info "What placeholders require [`EnablePresenceInformation`](https://config.discordsrv.com/config/EnablePresenceInformation) enabled"
+??? info "Some placeholders require [`EnablePresenceInformation`](https://config.discordsrv.com/config/EnablePresenceInformation) to be enabled!"
     These placeholders are:     
 
     * %discordsrv_guild_owner_game_name%

@@ -22,6 +22,7 @@ All of DiscordSRV's messages will go to the first channel defined unless there's
 | `dynmap`                             | dynmap messages                                            |
 | `watchdog`                           | watchdog messages                                          |
 | `broadcasts` <br> (unless specified) | default `/discord broadcast` channel                       |
+| `link`                               | account linking via text channel                           |
 
 The first part of channel pairs is not the Discord channel name!
 

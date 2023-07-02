@@ -50,6 +50,10 @@ theme:
       primary: light blue
       accent: blue
 plugins:
+  - search
+  - markdownextradata:
+      jinja_options:
+        comment_start_string: __CUSTOMCOMMENTSTART__
   - glightbox
   - redirects:
       redirect_maps:
@@ -83,6 +87,11 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 extra:
+  project:
+    version: 1.26.3-SNAPSHOT
+    supported_version:
+      min: 1.7.9
+      max: 1.20.x
   social:
     - icon: fontawesome/brands/discord
       link: http://discordsrv.com/discord
