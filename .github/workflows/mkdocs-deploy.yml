@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+      - develop
     paths:
       - '**.md'
       - 'docs/**'
@@ -15,10 +16,18 @@ jobs:
     name: Deploy docs
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout master
-        uses: actions/checkout@v3
-
-      - name: Deploy docs
-        uses: mhausenblas/mkdocs-deploy-gh-pages@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: fregante/setup-git-user@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - run: |
+          pip install -r requirements.txt
+          mike deploy -p -u ${GITHUB_REF##*/}
+#      - run: mkdocs build
+#      - uses: actions/upload-pages-artifact@v1
+#        with:
+#          path: 'site'
+#        uses: actions/deploy-pages@v1
