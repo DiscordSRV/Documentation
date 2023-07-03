@@ -11,7 +11,7 @@ DiscordSRV requires Java 8 or newer
 | Velocity              | ✅ 3.0.0 and up<br/>❌ 2.0.0 and below                 |
 | Sponge                | ✅ API 9 and up<br/>❌ API 8 and below                 |
 
-[^1]: Requires [updating ASM](faq#asm-update)
+[^1]: Requires [updating ASM](faq#asm-update) <!-- TODO: fix anchor -->
 
 ## Plugin integrations and compatability
 
