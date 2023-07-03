@@ -1,4 +1,4 @@
-![DiscordSRV](https://lol.scarsz.me/AiKvTS/Logo-filled-stroke.png)  
+![DiscordSRV](/images/logo-filled-stroke.png)  
 
 <div markdown="1" id="center">
 
