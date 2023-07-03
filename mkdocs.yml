@@ -96,5 +96,5 @@ extra:
       max: 1.20.x
   social:
     - icon: fontawesome/brands/discord
-      link: http://discordsrv.com/discord
+      link: https://discordsrv.com/discord
       name: DiscordSRV Discord Server
