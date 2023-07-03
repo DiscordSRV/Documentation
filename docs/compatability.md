@@ -9,7 +9,7 @@ DiscordSRV requires Java 8 or newer
 | Bukkit, Spigot, Paper | ✅ Minecraft 1.8.8 and up<br/>⚠️ Minecraft 1.7.10[^1] |
 | BungeeCord, Waterfall | ✅ Minecraft 1.7.10 and up                            |
 | Velocity              | ✅ 3.0.0 and up<br/>❌ 2.0.0 and below                 |
-| Sponge                | ✅ API 9 and up<br/>❌ API 8 and below                 |
+| Sponge                | ✅ API 8 and up<br/>❌ API 7 and below                 |
 
 [^1]: Requires [updating ASM](faq#asm-update) <!-- TODO: fix anchor -->
 
