@@ -33,10 +33,10 @@ DiscordSRV requires Java 8 or newer
     #### Compatability notes  
     | Plugin | Status | Explanation |
     |---|---|---|
-    | FactionsUUID | ✅ | `1.6.9.5-U0.3.0b133+` |
+    | FactionsUUID | ✅ | For global chat to be forwarded requires `1.6.9.5-U0.3.0b133+` |
     | SARanks<br/>TModsServerAddons_Ranks | ❌ | Cancels all chat events |
     | EpicChatFormat<br/>EpicChatPrefix | ❌ | Cancels all chat events |
-    | **Chat reporting plugins** |
+    | **Chat report disabling plugins** |
     | FreedomChat | ✅ | Works at packet level |
     | NoChatReports | ❌ | Cancels all chat events |
 === "BungeeCord, Waterfall"
