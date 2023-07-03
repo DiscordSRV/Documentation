@@ -7,25 +7,26 @@ site_description: >-
   The most powerful, configurable, open-source Discord bridge plugin out there.
 nav:
   - Home: index.md
-  - Frequently Asked Questions: faq.md
-  - Installation:
-    - installation/index.md
-    - Initial Setup: installation/initial-setup.md
-    - Sync Setup: installation/sync-setup.md
-    - Voice Setup: installation/voice-setup.md
-    - Link to Join Setup: installation/link-to-join-setup.md
-  - Configs:
-    - alerts.yml: alerts.md
-    - config.yml: config.md
-    - linking.yml: linking.md
-    - messages.yml: messages.md
-    - synchronization.yml: synchronization.md
-    - voice.yml: voice.md
-  - Commands: commands.md
-  - Permissions: permissions.md
-  - Hooked plugin features:
-    - LuckPerms Contexts: lp-contexts.md
-    - PlaceholderAPI Placeholders: papi-placeholders.md
+# TODO: remove (and add redirects) for pages that will be removed for ascension
+#  - Frequently Asked Questions: faq.md
+#  - Installation:
+#    - installation/index.md
+#    - Initial Setup: installation/initial-setup.md
+#    - Sync Setup: installation/sync-setup.md
+#    - Voice Setup: installation/voice-setup.md
+#    - Link to Join Setup: installation/link-to-join-setup.md
+#  - Configs:
+#    - alerts.yml: alerts.md
+#    - config.yml: config.md
+#    - linking.yml: linking.md
+#    - messages.yml: messages.md
+#    - synchronization.yml: synchronization.md
+#    - voice.yml: voice.md
+#  - Commands: commands.md
+#  - Permissions: permissions.md
+#  - Hooked plugin features:
+#    - LuckPerms Contexts: lp-contexts.md
+#    - PlaceholderAPI Placeholders: papi-placeholders.md
   - Troubleshooting:
     - Report a bug: https://github.com/DiscordSRV/DiscordSRV/issues
     - Request a feature: https://github.com/DiscordSRV/DiscordSRV/issues
@@ -56,7 +57,7 @@ plugins:
         comment_start_string: __CUSTOMCOMMENTSTART__
   - glightbox
   - redirects:
-      redirect_maps:
+      redirect_maps: # TODO: add redirects for pages that will be removed for Ascension
         'Installation.md': 'installation/index.md'
         'PAPI-Placeholders.md': 'papi-placeholders.md'
         'LPContext.md': 'lp-contexts.md'
