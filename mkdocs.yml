@@ -7,6 +7,7 @@ site_description: >-
   The most powerful, configurable, open-source Discord bridge plugin out there.
 nav:
   - Home: index.md
+  - Compatability: compatability.md
 # TODO: remove (and add redirects) for pages that will be removed for ascension
 #  - Frequently Asked Questions: faq.md
 #  - Installation:
