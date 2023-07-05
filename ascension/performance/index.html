@@ -7,18 +7,18 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="The official documentation for DiscordSRV. The most powerful, configurable, open-source Discord bridge plugin out there." name="description"/>
 <meta content="granny" name="author"/>
-<link href="https://docs.discordsrv.com/ascension/v1/lp-contexts/" rel="canonical"/>
-<link href="../../images/logo.png" rel="icon"/>
+<link href="https://docs.discordsrv.com/ascension/performance/" rel="canonical"/>
+<link href="../images/logo.png" rel="icon"/>
 <meta content="mkdocs-1.4.1, mkdocs-material-8.5.7" name="generator"/>
-<title>Lp contexts - DiscordSRV Wiki</title>
-<link href="../../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
-<link href="../../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
+<title>Performance - DiscordSRV Wiki</title>
+<link href="../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../stylesheets/extra.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+<link href="../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gdesc-inner { font-size: 0.75rem; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -26,14 +26,14 @@
             .gslide-image img { background: white; }
             
                 .gscrollbar-fixer { padding-right: 15px; }
-                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+                </style><script src="../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="blue" data-md-color-primary="light-blue" data-md-color-scheme="slate" dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#examples">
+<a class="md-skip" href="#performance">
           Skip to content
         </a>
 </div>
@@ -43,8 +43,8 @@
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="DiscordSRV Wiki" class="md-header__button md-logo" data-md-component="logo" href="../.." title="DiscordSRV Wiki">
-<img alt="logo" src="../../images/logo.png"/>
+<a aria-label="DiscordSRV Wiki" class="md-header__button md-logo" data-md-component="logo" href=".." title="DiscordSRV Wiki">
+<img alt="logo" src="../images/logo.png"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
@@ -59,7 +59,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Lp contexts
+              Performance
             
           </span>
 </div>
@@ -118,8 +118,8 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="DiscordSRV Wiki" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="DiscordSRV Wiki">
-<img alt="logo" src="../../images/logo.png"/>
+<a aria-label="DiscordSRV Wiki" class="md-nav__button md-logo" data-md-component="logo" href=".." title="DiscordSRV Wiki">
+<img alt="logo" src="../images/logo.png"/>
 </a>
     DiscordSRV Wiki
   </label>
@@ -135,22 +135,40 @@
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../..">
+<a class="md-nav__link" href="..">
         Home
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../compatability/">
+<a class="md-nav__link" href="../compatability/">
         Compatability
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../performance/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Performance
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Performance
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#memory-usage">
+    Memory Usage
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../security/">
+<a class="md-nav__link" href="../security/">
         Security
       </a>
 </li>
@@ -199,8 +217,8 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#examples">
-    Examples
+<a class="md-nav__link" href="#memory-usage">
+    Memory Usage
   </a>
 </li>
 </ul>
@@ -210,162 +228,70 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/DiscordSRV/Documentation/edit/master/docs/v1/lp-contexts.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/DiscordSRV/Documentation/edit/master/docs/performance.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1>Lp contexts</h1>
-<p>Allows permissions/groups/prefixes/etc to be assigned easily based on certain DiscordSRV states.</p>
-<p>More information about contexts can be found here: <a href="https://luckperms.net/wiki/Context">https://luckperms.net/wiki/Context</a></p>
-<p>Available contexts:</p>
-<ul>
-<li><code>discordsrv:linked</code> - whether the player has linked a Discord account (true/false)</li>
-<li><code>discordsrv:boosting</code> - whether the player is boosting the Discord guild (true/false)</li>
-<li><code>discordsrv:role</code> - the role the user has in Discord</li>
-<li><code>discordsrv:role_id</code> - the role id the user has in Discord</li>
-<li><code>discordsrv:server_id</code> - whether the user is a member of the server with the given id (which the bot is also a part of)</li>
-</ul>
-<h5 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">🔗</a></h5>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">discordsrv:linked</label><label for="__tabbed_1_2">discordsrv:boosting</label><label for="__tabbed_1_3">discordsrv:role</label><label for="__tabbed_1_4">discordsrv:role_id</label><label for="__tabbed_1_5">discordsrv:server_id</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
+<h1 id="performance">Performance<a class="headerlink" href="#performance" title="Permanent link">🔗</a></h1>
+<p>DiscordSRV aims to run async as much as possible, avoiding slowing down game threads or affecting tick speed.</p>
+<h2 id="memory-usage">Memory Usage<a class="headerlink" href="#memory-usage" title="Permanent link">🔗</a></h2>
+<p>For a 10,000 member Discord server with member caching enabled for all members, members accounted for (measurements 7.2023):</p>
 <table>
+<thead>
+<tr>
+<th>Object</th>
+<th>Used memory</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td colspan="1" rowspan="1">
-<p>Command</p>
-</td>
+<td>User</td>
+<td>430 kB</td>
 </tr>
 <tr>
-<td colspan="1" rowspan="1">
-<p><code>/lp group default permission set essentials.fly true discordsrv:linked=true</code></p>
-</td>
+<td>Member</td>
+<td>5.28 MB</td>
 </tr>
 <tr>
-<td colspan="1" rowspan="1">
-<p>Explanation</p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p>will give all users access to <code>/fly</code> if they have their account linked to Discord</p>
-</td>
+<td>Total</td>
+<td>5.71 MB</td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="tabbed-block">
-<table>
-<tbody>
-<tr>
-<td colspan="1" rowspan="1">
-<p>Command</p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p><code>/lp group default meta addsuffix 100 &amp;d[Boost] discordsrv:boosting=true</code></p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p>Explanation</p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p>will give a pink <code>[Boost]</code> suffix to all users boosting the Discord guild</p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="tabbed-block">
-<table>
-<tbody>
-<tr>
-<td colspan="1" rowspan="1">
-<p>Command</p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p><code>/lp group default permission set chat.use false discordsrv:role=muted</code></p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p>Explanation</p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p>will negate the <code>chat.use</code> permission for anyone with the <code>muted</code> role in Discord</p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="tabbed-block">
-<table>
-<tbody>
-<tr>
-<td colspan="1" rowspan="1">
-<p>Command</p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p><code>/lp group default permission set chat.use false discordsrv:role_id=000000000000</code></p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p>Explanation</p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p>will negate the <code>chat.use</code> permission for anyone with the role that has the <code>000000000000</code> ID in Discord</p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="tabbed-block">
-<table>
-<tbody>
-<tr>
-<td colspan="1" rowspan="1">
-<p>Command</p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p><code>/lp group default permission set essentials.back true discordsrv:server_id=000000000000</code></p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p>Explanation</p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p>will give all users access to <code>/back</code> for anyone in the server that has the <code>000000000000</code> ID in Discord</p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</input></input></input></input></input></div>
-<p>These can be disabled using a <code>LuckPerms-Contexts</code> entry in the <code>DisabledPluginHooks</code> config section.</p>
-<p>Original implementation: <a href="https://github.com/DiscordSRV/DiscordSRV/pull/728">https://github.com/DiscordSRV/DiscordSRV/pull/728</a></p>
+<p>This accounts for most of DiscordSRV's memory usage, meaning DiscordSRV's memory usage is very low.
+By default, DiscordSRV only caches linked users.</p>
 </article>
 </div>
 </div>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Compatability" class="md-footer__link md-footer__link--prev" href="../compatability/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Compatability
+            </div>
+</div>
+</a>
+<a aria-label="Next: Security" class="md-footer__link md-footer__link--next" href="../security/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              Security
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -388,7 +314,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "navigation.indexes", "navigation.instant"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
-<script src="../../assets/javascripts/bundle.8492ddcf.min.js"></script>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand", "navigation.indexes", "navigation.instant"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": {"provider": "mike"}}</script>
+<script src="../assets/javascripts/bundle.8492ddcf.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
 </html>
