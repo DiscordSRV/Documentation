@@ -16,7 +16,7 @@ DiscordSRV requires Java 8 or newer
 ## Plugin integrations and compatability
 
 === "Bukkit, Spigot, Paper"
-    #### Plugin integrations
+    **Plugin integrations**
     | Plugin | Supported added by | Version |
     |---|---|---|
     | LuckPerms       | DiscordSRV | `5.0+` |
@@ -30,7 +30,7 @@ DiscordSRV requires Java 8 or newer
     | TownyChat          | DiscordSRV | `0.45+` |
     | VentureChat        | DiscordSRV | `3.5.0+` |
     
-    #### Compatability notes  
+    **Compatability notes**  
     | Plugin | Status | Explanation |
     |---|---|---|
     | FactionsUUID | ✅ | For global chat to be forwarded requires `1.6.9.5-U0.3.0b133+` |
@@ -40,17 +40,17 @@ DiscordSRV requires Java 8 or newer
     | FreedomChat | ✅ | Works at packet level |
     | NoChatReports | ❌ | Cancels all chat events |
 === "BungeeCord, Waterfall"
-    #### Plugin integrations
+    **Plugin integrations**
     | Plugin| Supported added by | Version |
     |---|---|---|
     | LuckPerms | DiscordSRV | `5.0+` |
 === "Velocity"
-    #### Plugin integrations
+    **Plugin integrations**
     | Plugin | Supported added by | Version |
     |---|---|---|
     | LuckPerms | DiscordSRV | `5.0+` |
 === "Sponge"
-    #### Plugin integrations
+    **Plugin integrations**
     | Plugin | Supported added by | Version |
     |---|---|---|
     | LuckPerms | DiscordSRV | `5.0+` |
