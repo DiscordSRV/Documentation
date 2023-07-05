@@ -9,10 +9,10 @@ Once the player is linked, more restrictions can be added, such as:
 - The linked player must be in the discord server
 - The linked player must have certain role[s] (this can be used to whitelist Twitch subscribers through the subscriber role if the user's twitch is linked to their discord account)
 
-Make sure `Enabled` is set to `true` in the [`linking.yml`](../linking) config to enable this feature, then restart your server.
+Make sure `Enabled` is set to `true` in the [`linking.yml`](../../linking) config to enable this feature, then restart your server.
 ```yaml
 # linking.yml Line 2
 Enabled: true
 ```
 
-Each option inside [`linking.yml`](../linking) is explained using comments, so read through them to get a better understanding of what you can do.
+Each option inside [`linking.yml`](../../linking) is explained using comments, so read through them to get a better understanding of what you can do.
