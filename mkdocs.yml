@@ -10,6 +10,7 @@ nav:
   - Compatability: compatability.md
   - Performance: performance.md
   - Security: security.md
+  - Placeholders: placeholders.md
 # TODO: remove (and add redirects) for pages that will be removed for ascension
 #  - Frequently Asked Questions: faq.md
 #  - Installation:
