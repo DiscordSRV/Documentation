@@ -38,7 +38,7 @@ _**We only give support for the latest release/dev builds; please update before 
 * [`PlaceholderAPI`](https://www.spigotmc.org/resources/placeholderapi.6245/)  - [DiscordSRV Expansion Placeholders](PAPI-Placeholders)
 ### Plugins that use our API:
 * [DiscordSRV StaffChat](https://www.spigotmc.org/resources/discordsrv-staff-chat.44245/)
-* [ChatControlPro](https://www.spigotmc.org/resources/chatcontrol-pro.10258/)
+* [ChatControlRed](https://mineacademy.org/chatcontrol)
 * [CMI](https://www.spigotmc.org/resources/cmi.3742/)
 * [Plan](https://www.spigotmc.org/resources/plan-player-analytics.32536/)
 * [EmojiChat](https://www.spigotmc.org/resources/emojichat.50955/)
