@@ -54,6 +54,7 @@ _**We only give support for the latest release/dev builds; please update before 
 * [DiscordSRVUtils](https://www.spigotmc.org/resources/discordsrvutils.85958/) ^(Not^ ^associated^ ^with^ ^DiscordSRV)^
 * [ActivityRoles](https://modrinth.com/plugin/activityroles)
 * [EconomyShopGUI](https://www.spigotmc.org/resources/economyshopgui.69927/)
+* [VelocityVanish](https://www.spigotmc.org/resources/velocityvanish-1-8-1-19-3-no-database-required.105992/)
 * [DiscordSchematicUploader](https://modrinth.com/plugin/discordschematicuploader) ^(Not^ ^associated^ ^with^ ^DiscordSRV)^
 * If you would like your plugin listed here, please bring it to `granny`'s attention in our [Discord](https://discordsrv.com/discord) server.
 ## Intended usage
