@@ -30,7 +30,7 @@ _**We only give support for the latest release/dev builds; please update before 
 * #### Chat
     * [`Herochat`](https://www.spigotmc.org/resources/herochat.34305/updates), [`LegendChat`](https://www.spigotmc.org/resources/legendchat.6268/), [`LunaChat`](https://github.com/ucchyocean/LunaChat), [`TownyChat`](https://www.spigotmc.org/resources/towny-advanced.72694/), [`VentureChat`](https://www.spigotmc.org/resources/venturechat.771/)
 * #### Vanish
-    * [`Essentials`](https://www.spigotmc.org/resources/essentialsx.9089/), [`PhantomAdmin`](https://www.spigotmc.org/resources/phantomadmin.37845/), [`SuperVanish`](https://www.spigotmc.org/resources/supervanish-be-invisible.1331/), [`VanishNoPacket`](https://dev.bukkit.org/projects/vanish), [`VelocityVanish`](https://www.spigotmc.org/resources/velocityvanish-1-8-1-19-3-no-database-required.105992/)
+    * [`Essentials`](https://www.spigotmc.org/resources/essentialsx.9089/), [`PhantomAdmin`](https://www.spigotmc.org/resources/phantomadmin.37845/), [`SuperVanish`](https://www.spigotmc.org/resources/supervanish-be-invisible.1331/), [`VanishNoPacket`](https://dev.bukkit.org/projects/vanish)
 * #### World
     * [`Multiverse`](https://dev.bukkit.org/projects/multiverse-core/)
 * [`Vault`](https://www.spigotmc.org/resources/vault.34315/)  
@@ -54,6 +54,7 @@ _**We only give support for the latest release/dev builds; please update before 
 * [DiscordSRVUtils](https://www.spigotmc.org/resources/discordsrvutils.85958/) ^(Not^ ^associated^ ^with^ ^DiscordSRV)^
 * [ActivityRoles](https://modrinth.com/plugin/activityroles)
 * [EconomyShopGUI](https://www.spigotmc.org/resources/economyshopgui.69927/)
+* [VelocityVanish](https://www.spigotmc.org/resources/velocityvanish-1-8-1-19-3-no-database-required.105992/)
 * [DiscordSchematicUploader](https://modrinth.com/plugin/discordschematicuploader) ^(Not^ ^associated^ ^with^ ^DiscordSRV)^
 * If you would like your plugin listed here, please bring it to `granny`'s attention in our [Discord](https://discordsrv.com/discord) server.
 ## Intended usage
