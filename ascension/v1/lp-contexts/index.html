@@ -140,8 +140,8 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../compatability/">
-        Compatability
+<a class="md-nav__link" href="../../compatibility/">
+        Compatibility
       </a>
 </li>
 <li class="md-nav__item">
@@ -225,140 +225,56 @@
 <li><code>discordsrv:server_id</code> - whether the user is a member of the server with the given id (which the bot is also a part of)</li>
 </ul>
 <h5 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">🔗</a></h5>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">discordsrv:linked</label><label for="__tabbed_1_2">discordsrv:boosting</label><label for="__tabbed_1_3">discordsrv:role</label><label for="__tabbed_1_4">discordsrv:role_id</label><label for="__tabbed_1_5">discordsrv:server_id</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<table>
-<tbody>
-<tr>
-<td colspan="1" rowspan="1">
-<p>Command</p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p><code>/lp group default permission set essentials.fly true discordsrv:linked=true</code></p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p>Explanation</p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p>will give all users access to <code>/fly</code> if they have their account linked to Discord</p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="tabbed-block">
-<table>
-<tbody>
-<tr>
-<td colspan="1" rowspan="1">
-<p>Command</p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p><code>/lp group default meta addsuffix 100 &amp;d[Boost] discordsrv:boosting=true</code></p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p>Explanation</p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p>will give a pink <code>[Boost]</code> suffix to all users boosting the Discord guild</p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="tabbed-block">
-<table>
-<tbody>
-<tr>
-<td colspan="1" rowspan="1">
-<p>Command</p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p><code>/lp group default permission set chat.use false discordsrv:role=muted</code></p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p>Explanation</p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p>will negate the <code>chat.use</code> permission for anyone with the <code>muted</code> role in Discord</p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="tabbed-block">
-<table>
-<tbody>
-<tr>
-<td colspan="1" rowspan="1">
-<p>Command</p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p><code>/lp group default permission set chat.use false discordsrv:role_id=000000000000</code></p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p>Explanation</p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p>will negate the <code>chat.use</code> permission for anyone with the role that has the <code>000000000000</code> ID in Discord</p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="tabbed-block">
-<table>
-<tbody>
-<tr>
-<td colspan="1" rowspan="1">
-<p>Command</p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p><code>/lp group default permission set essentials.back true discordsrv:server_id=000000000000</code></p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p>Explanation</p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p>will give all users access to <code>/back</code> for anyone in the server that has the <code>000000000000</code> ID in Discord</p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</input></input></input></input></input></div>
+<p>=== "discordsrv:linked"
+    +-----------------------------------------------------------------------------------+
+    | Command                                                                           |
+    +-----------------------------------------------------------------------------------+
+    | <code>/lp group default permission set essentials.fly true discordsrv:linked=true</code>     |
+    +-----------------------------------------------------------------------------------+
+    | Explanation                                                                       |
+    +-----------------------------------------------------------------------------------+
+    | will give all users access to <code>/fly</code> if they have their account linked to Discord |
+    +-----------------------------------------------------------------------------------+
+=== "discordsrv:boosting"
+    +-----------------------------------------------------------------------------------+
+    | Command                                                                           |
+    +-----------------------------------------------------------------------------------+
+    | <code>/lp group default meta addsuffix 100 &amp;d[Boost] discordsrv:boosting=true</code>         |
+    +-----------------------------------------------------------------------------------+
+    | Explanation                                                                       |
+    +-----------------------------------------------------------------------------------+
+    | will give a pink <code>[Boost]</code> suffix to all users boosting the Discord guild         |
+    +-----------------------------------------------------------------------------------+
+=== "discordsrv:role"
+    +-----------------------------------------------------------------------------------+
+    | Command                                                                           |
+    +-----------------------------------------------------------------------------------+
+    | <code>/lp group default permission set chat.use false discordsrv:role=muted</code>           |
+    +-----------------------------------------------------------------------------------+
+    | Explanation                                                                       |
+    +-----------------------------------------------------------------------------------+
+    | will negate the <code>chat.use</code> permission for anyone with the <code>muted</code> role in Discord |
+    +-----------------------------------------------------------------------------------+
+=== "discordsrv:role_id"
+    +----------------------------------------------------------------------------------------------------------+
+    | Command                                                                                                  |
+    +----------------------------------------------------------------------------------------------------------+
+    | <code>/lp group default permission set chat.use false discordsrv:role_id=000000000000</code>                        |
+    +----------------------------------------------------------------------------------------------------------+
+    | Explanation                                                                                              |
+    +----------------------------------------------------------------------------------------------------------+
+    | will negate the <code>chat.use</code> permission for anyone with the role that has the <code>000000000000</code> ID in Discord |
+    +----------------------------------------------------------------------------------------------------------+
+=== "discordsrv:server_id"
+    +----------------------------------------------------------------------------------------------------------+
+    | Command                                                                                                  |
+    +----------------------------------------------------------------------------------------------------------+
+    | <code>/lp group default permission set essentials.back true discordsrv:server_id=000000000000</code>                |
+    +----------------------------------------------------------------------------------------------------------+
+    | Explanation                                                                                              |
+    +----------------------------------------------------------------------------------------------------------+
+    | will give all users access to <code>/back</code> for anyone in the server that has the <code>000000000000</code> ID in Discord |
+    +----------------------------------------------------------------------------------------------------------+</p>
 <p>These can be disabled using a <code>LuckPerms-Contexts</code> entry in the <code>DisabledPluginHooks</code> config section.</p>
 <p>Original implementation: <a href="https://github.com/DiscordSRV/DiscordSRV/pull/728">https://github.com/DiscordSRV/DiscordSRV/pull/728</a></p>
 </article>

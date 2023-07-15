@@ -140,8 +140,8 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../compatability/">
-        Compatability
+<a class="md-nav__link" href="../../compatibility/">
+        Compatibility
       </a>
 </li>
 <li class="md-nav__item">
@@ -412,140 +412,62 @@
 </tr>
 </tbody>
 </table>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">SpEL Examples</label><label for="__tabbed_1_2">SpEL placeholders</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>Getting a player's IP</p>
-<ul>
-<li><code>${#player.address.address.hostAddress}</code></li>
-</ul>
-<p>Getting a player's game mode</p>
-<ul>
-<li><code>${#player.gameMode.name()}</code></li>
-</ul>
-<p>Getting a player's linked Discord account ID</p>
-<ul>
-<li><code>${#discordsrv.accountLinkManager.getDiscordId(player.uniqueId)}</code></li>
-</ul>
-<p>Getting the online player count</p>
-<ul>
-<li><code>${#server.onlinePlayers.size()}</code></li>
-</ul>
-<p>Getting the status of DiscordSRV's connection to Discord</p>
-<ul>
-<li><code>${#jda.status.name()}</code></li>
-</ul>
-<p>Checking if a player is in a specific world</p>
-<ul>
-<li><code>${#player.world.name == 'world_the_end'}</code></li>
-</ul>
-<p>Checking if it's day in the world that the player is in</p>
-<ul>
-<li><code>${#player.world.time &gt; 0 &amp;&amp; player.world.time &lt; 13000}</code></li>
-</ul>
-</div>
-<div class="tabbed-block">
-<table>
-<tbody>
-<tr>
-<td colspan="1" rowspan="1">
-<p><code>#plugins.&lt;plugin&gt;</code></p>
-</td>
-<td colspan="1" rowspan="1">
-<p>the specified plugin instance, <em><code>null if doesn't exist</code></em></p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p><code>#event</code></p>
-</td>
-<td colspan="1" rowspan="1">
-<p>the event that's triggering the alert <em><code>if this alert is an event alert</code></em></p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p><code>#server</code></p>
-</td>
-<td colspan="1" rowspan="1">
-<p>the Bukkit API server instance, equivalent to <a href="https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Bukkit.html#getServer()">Bukkit#getServer</a></p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p><code>#discordsrv</code></p>
-</td>
-<td colspan="1" rowspan="1">
-<p>the DiscordSRV plugin instance</p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p><code>#player</code></p>
-</td>
-<td colspan="1" rowspan="1">
-<p>the player that the event is for, <em><code>if this is a player event or command</code></em></p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p><code>#sender</code></p>
-</td>
-<td colspan="1" rowspan="1">
-<p>the command sender, <em><code>if this is a command alert</code></em></p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p><code>#command</code></p>
-</td>
-<td colspan="1" rowspan="1">
-<p>the full command, with no leading slash, <em><code>if this is a command alert</code></em></p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p><code>#args</code></p>
-</td>
-<td colspan="1" rowspan="1">
-<p>the command arguments, <em><code>if this is a command alert</code></em></p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p><code>#allArgs</code></p>
-</td>
-<td colspan="1" rowspan="1">
-<p>the command arguments as one string, <em><code>if this is a command alert</code></em></p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p><code>#channel</code></p>
-</td>
-<td colspan="1" rowspan="1">
-<p>the destination channel for this alert</p>
-</td>
-</tr>
-<tr>
-<td colspan="1" rowspan="1">
-<p><code>#jda</code></p>
-</td>
-<td colspan="1" rowspan="1">
-<p>DiscordSRV's JDA instance that it uses to communicate with Discord</p>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</input></input></div>
+<p>=== "SpEL Examples"
+    Getting a player's IP</p>
+<div class="highlight"><pre><span></span><code>- `${#player.address.address.hostAddress}`
+
+Getting a player's game mode
+
+- `${#player.gameMode.name()}`
+
+Getting a player's linked Discord account ID
+
+- `${#discordsrv.accountLinkManager.getDiscordId(player.uniqueId)}`
+
+Getting the online player count
+
+- `${#server.onlinePlayers.size()}`
+
+Getting the status of DiscordSRV's connection to Discord
+
+- `${#jda.status.name()}`
+
+Checking if a player is in a specific world
+
+- `${#player.world.name == 'world_the_end'}`
+
+Checking if it's day in the world that the player is in
+
+- `${#player.world.time &gt; 0 &amp;&amp; player.world.time &lt; 13000}`
+</code></pre></div>
+<p>=== "SpEL placeholders"
+    +---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+    | <code>#plugins.&lt;plugin&gt;</code> | the specified plugin instance, <em><code>null if doesn't exist</code></em>                                                                                      |
+    +---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+    | <code>#event</code>            | the event that's triggering the alert <em><code>if this alert is an event alert</code></em>                                                                     |
+    +---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+    | <code>#server</code>           | the Bukkit API server instance, equivalent to <a href="https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Bukkit.html#getServer()">Bukkit#getServer</a> |
+    +---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+    | <code>#discordsrv</code>       | the DiscordSRV plugin instance                                                                                                                |
+    +---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+    | <code>#player</code>           | the player that the event is for, <em><code>if this is a player event or command</code></em>                                                                    |
+    +---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+    | <code>#sender</code>           | the command sender, <em><code>if this is a command alert</code></em>                                                                                            |
+    +---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+    | <code>#command</code>          | the full command, with no leading slash, <em><code>if this is a command alert</code></em>                                                                       |
+    +---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+    | <code>#args</code>             | the command arguments, <em><code>if this is a command alert</code></em>                                                                                         |
+    +---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+    | <code>#allArgs</code>          | the command arguments as one string, <em><code>if this is a command alert</code></em>                                                                           |
+    +---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+    | <code>#channel</code>          | the destination channel for this alert                                                                                                        |
+    +---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+    | <code>#jda</code>              | DiscordSRV's JDA instance that it uses to communicate with Discord                                                                            |
+    +---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+</p>
 <h2 id="usage-examples">Usage examples<a class="headerlink" href="#usage-examples" title="Permanent link">🔗</a></h2>
 <h3 id="advancedban">AdvancedBan<a class="headerlink" href="#advancedban" title="Permanent link">🔗</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">PunishmentEvent</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><a href="https://github.com/DevLeoko/AdvancedBan/blob/master/bukkit/src/main/java/me/leoko/advancedban/bukkit/event/PunishmentEvent.java">PunishmentEvent.java</a>
+<p>=== "PunishmentEvent"
+    <a href="https://github.com/DevLeoko/AdvancedBan/blob/master/bukkit/src/main/java/me/leoko/advancedban/bukkit/event/PunishmentEvent.java">PunishmentEvent.java</a>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PunishmentEvent</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">punishments</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Embed</span><span class="p">:</span><span class="w"></span>
@@ -554,14 +476,9 @@
 <span class="w">        </span><span class="nt">ImageUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"https://www.spigotmc.org/data/resource_icons/8/8695.jpg"</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="s">"${punishment.name}</span><span class="nv"> </span><span class="s">was</span><span class="nv"> </span><span class="s">punished</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">reason:</span><span class="nv"> </span><span class="s">${punishment.reason}"</span><span class="w"></span>
 </code></pre></div></p>
-</div>
-</div>
-</input></div>
 <h3 id="content-management-interface-cmi">Content Management Interface (CMI)<a class="headerlink" href="#content-management-interface-cmi" title="Permanent link">🔗</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">CMIAfkEnterEvent</label><label for="__tabbed_3_2">CMIAfkLeaveEvent</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><a href="https://github.com/Zrips/CMI-API/blob/master/src/com/Zrips/CMI/events/CMIAfkEnterEvent.java">CMIAfkEnterEvent.java</a>
+<p>=== "CMIAfkEnterEvent"
+    <a href="https://github.com/Zrips/CMI-API/blob/master/src/com/Zrips/CMI/events/CMIAfkEnterEvent.java">CMIAfkEnterEvent.java</a>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="c1"># Send an AFK alert when someone is AFK</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CMIAfkEnterEvent</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">afk</span><span class="w"></span>
@@ -570,10 +487,9 @@
 <span class="w">      </span><span class="nt">Author</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">ImageUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"https://crafatar.com/avatars/${player.getUniqueId()}?overlay"</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="s">'${player.displayName</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">"</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">now</span><span class="nv"> </span><span class="s">AFK"}'</span><span class="w"></span>
-</code></pre></div></p>
-</div>
-<div class="tabbed-block">
-<p><a href="https://github.com/Zrips/CMI-API/blob/master/src/com/Zrips/CMI/events/CMIAfkLeaveEvent.java">CMIAfkLeaveEvent.java</a>
+</code></pre></div>
+=== "CMIAfkLeaveEvent"
+    <a href="https://github.com/Zrips/CMI-API/blob/master/src/com/Zrips/CMI/events/CMIAfkLeaveEvent.java">CMIAfkLeaveEvent.java</a>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="c1"># Send an AFK alert when someone is no longer AFK</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CMIAfkLeaveEvent</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">afk</span><span class="w"></span>
@@ -583,14 +499,9 @@
 <span class="w">        </span><span class="nt">ImageUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"https://crafatar.com/avatars/${player.getUniqueId()}?overlay"</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="s">'${player.displayName</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">"</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">no</span><span class="nv"> </span><span class="s">longer</span><span class="nv"> </span><span class="s">AFK"}'</span><span class="w"></span>
 </code></pre></div></p>
-</div>
-</div>
-</input></input></div>
 <h3 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">🔗</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"/><div class="tabbed-labels"><label for="__tabbed_4_1">AfkStatusChangeEvent</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><a href="https://github.com/EssentialsX/Essentials/blob/master/Essentials/src/main/java/net/ess3/api/events/AfkStatusChangeEvent.java">AfkStatusChangeEvent.java</a>
+<p>=== "AfkStatusChangeEvent"
+    <a href="https://github.com/EssentialsX/Essentials/blob/master/Essentials/src/main/java/net/ess3/api/events/AfkStatusChangeEvent.java">AfkStatusChangeEvent.java</a>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="c1"># Send an AFK alert when someone is AFK / is no longer AFK</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AfkStatusChangeEvent</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">afk</span><span class="w"></span>
@@ -600,14 +511,9 @@
 <span class="w">        </span><span class="nt">ImageUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"https://crafatar.com/avatars/${#event.getAffected().getUUID()}?overlay"</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="s">'${#event.getAffected().getName()</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">"</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">"</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">(#event.value</span><span class="nv"> </span><span class="s">?</span><span class="nv"> </span><span class="s">"now"</span><span class="nv"> </span><span class="s">:</span><span class="nv"> </span><span class="s">"no</span><span class="nv"> </span><span class="s">longer")</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">"</span><span class="nv"> </span><span class="s">AFK"}'</span><span class="w"></span>
 </code></pre></div></p>
-</div>
-</div>
-</div>
 <h3 id="matrix">Matrix<a class="headerlink" href="#matrix" title="Permanent link">🔗</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"/><div class="tabbed-labels"><label for="__tabbed_5_1">PlayerViolationEvent</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><a href="https://github.com/jiangdashao/matrix-api-repo/blob/master/matrix-api/src/main/java/me/rerere/matrix/api/events/PlayerViolationEvent.java">PlayerViolationEvent.java</a>
+<p>=== "PlayerViolationEvent"
+    <a href="https://github.com/jiangdashao/matrix-api-repo/blob/master/matrix-api/src/main/java/me/rerere/matrix/api/events/PlayerViolationEvent.java">PlayerViolationEvent.java</a>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PlayerViolationEvent</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matrix</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Conditions</span><span class="p">:</span><span class="w"></span>
@@ -618,14 +524,9 @@
 <span class="w">        </span><span class="nt">ImageUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"{embedavatarurl}"</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="s">"{username}</span><span class="nv"> </span><span class="s">failed</span><span class="nv"> </span><span class="s">${hackType.name().toLowerCase()}</span><span class="nv"> </span><span class="s">check</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">${component}</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">vl:${violations}</span><span class="nv"> </span><span class="s">ping:${player.ping}</span><span class="nv"> </span><span class="s">tps:{tps}"</span><span class="w"></span>
 </code></pre></div></p>
-</div>
-</div>
-</div>
 <h3 id="mythicmobs">MythicMobs<a class="headerlink" href="#mythicmobs" title="Permanent link">🔗</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"/><div class="tabbed-labels"><label for="__tabbed_6_1">MythicMobSpawnEvent</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><a href="https://mythicmobs.net/javadocs/io/lumine/xikage/mythicmobs/api/bukkit/events/MythicMobSpawnEvent.html">MythicMobSpawnEvent.java</a>
+<p>=== "MythicMobSpawnEvent"
+    <a href="https://mythicmobs.net/javadocs/io/lumine/xikage/mythicmobs/api/bukkit/events/MythicMobSpawnEvent.html">MythicMobSpawnEvent.java</a>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="c1"># Example alert to send a message when a MythicMobs ender dragon spawns</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MythicMobSpawnEvent</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mobs</span><span class="w"></span>
@@ -637,14 +538,9 @@
 <span class="w">        </span><span class="nt">ImageUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"https://vignette.wikia.nocookie.net/minecraft/images/0/0a/Ender_Dragon.gif/revision/latest?cb=20200819042230"</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="s">"An</span><span class="nv"> </span><span class="s">ender</span><span class="nv"> </span><span class="s">dragon</span><span class="nv"> </span><span class="s">has</span><span class="nv"> </span><span class="s">spawned!"</span><span class="w"></span>
 </code></pre></div></p>
-</div>
-</div>
-</div>
 <h3 id="playerauctions">PlayerAuctions<a class="headerlink" href="#playerauctions" title="Permanent link">🔗</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio"/><input id="__tabbed_7_2" name="__tabbed_7" type="radio"/><input id="__tabbed_7_3" name="__tabbed_7" type="radio"/><div class="tabbed-labels"><label for="__tabbed_7_1">PlayerAuctionBuyEvent</label><label for="__tabbed_7_2">PlayerAuctionSellEvent</label><label for="__tabbed_7_3">PlayerAuctionExpireEvent</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><a href="https://javadocs.olziedev.com/playerauctions/com/olziedev/playerauctions/api/events/PlayerAuctionBuyEvent.html">PlayerAuctionBuyEvent.java</a>
+<p>=== "PlayerAuctionBuyEvent"
+    <a href="https://javadocs.olziedev.com/playerauctions/com/olziedev/playerauctions/api/events/PlayerAuctionBuyEvent.html">PlayerAuctionBuyEvent.java</a>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="c1"># Example alert to send a message when a player buys something from the auction</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PlayerAuctionBuyEvent</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Async</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
@@ -665,10 +561,9 @@
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"Price;$${price};true"</span><span class="w"></span>
 <span class="w">      </span><span class="nt">Footer</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Text</span><span class="p">:</span><span class="w"> </span><span class="s">"Auction</span><span class="nv"> </span><span class="s">ID:</span><span class="nv"> </span><span class="s">${playerAuction.getID()}"</span><span class="w"></span>
-</code></pre></div></p>
-</div>
-<div class="tabbed-block">
-<p><a href="https://javadocs.olziedev.com/playerauctions/com/olziedev/playerauctions/api/events/PlayerAuctionSellEvent.html">PlayerAuctionSellEvent.java</a>
+</code></pre></div>
+=== "PlayerAuctionSellEvent"
+    <a href="https://javadocs.olziedev.com/playerauctions/com/olziedev/playerauctions/api/events/PlayerAuctionSellEvent.html">PlayerAuctionSellEvent.java</a>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="c1"># Example alert to send a message when a player starts selling something from the auction</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PlayerAuctionSellEvent</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auctions</span><span class="w"></span>
@@ -687,10 +582,9 @@
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"Price;$${playerAuction.getPrice()};true"</span><span class="w"></span>
 <span class="w">      </span><span class="nt">Footer</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Text</span><span class="p">:</span><span class="w"> </span><span class="s">"Auction</span><span class="nv"> </span><span class="s">ID:</span><span class="nv"> </span><span class="s">${playerAuction.getID()}"</span><span class="w"></span>
-</code></pre></div></p>
-</div>
-<div class="tabbed-block">
-<p><a href="https://javadocs.olziedev.com/playerauctions/com/olziedev/playerauctions/api/events/PlayerAuctionExpireEvent.html">PlayerAuctionExpireEvent.java</a>
+</code></pre></div>
+=== "PlayerAuctionExpireEvent"
+    <a href="https://javadocs.olziedev.com/playerauctions/com/olziedev/playerauctions/api/events/PlayerAuctionExpireEvent.html">PlayerAuctionExpireEvent.java</a>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="c1"># Example alert to send a message when a player's item gets removed from the auction</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PlayerAuctionExpireEvent</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auctions</span><span class="w"></span>
@@ -712,14 +606,9 @@
 <span class="w">      </span><span class="nt">Footer</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Text</span><span class="p">:</span><span class="w"> </span><span class="s">"Auction</span><span class="nv"> </span><span class="s">ID:</span><span class="nv"> </span><span class="s">${playerAuction.getID()}"</span><span class="w"></span>
 </code></pre></div></p>
-</div>
-</div>
-</div>
 <h3 id="purpur">Purpur<a class="headerlink" href="#purpur" title="Permanent link">🔗</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio"/><div class="tabbed-labels"><label for="__tabbed_8_1">PlayerAFKEvent</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><a href="https://purpurmc.org/javadoc/org/purpurmc/purpur/event/PlayerAFKEvent.html">PlayerAFKEvent</a>
+<p>=== "PlayerAFKEvent"
+    <a href="https://purpurmc.org/javadoc/org/purpurmc/purpur/event/PlayerAFKEvent.html">PlayerAFKEvent</a>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PlayerAFKEvent</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">afk</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Embed</span><span class="p">:</span><span class="w"></span>
@@ -728,14 +617,9 @@
 <span class="w">        </span><span class="nt">ImageUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"{embedavatarurl}"</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="s">'{username}</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">${#event.isGoingAfk()</span><span class="nv"> </span><span class="s">?</span><span class="nv"> </span><span class="s">"now"</span><span class="nv"> </span><span class="s">:</span><span class="nv"> </span><span class="s">"no</span><span class="nv"> </span><span class="s">longer"}</span><span class="nv"> </span><span class="s">AFK'</span><span class="w"></span>
 </code></pre></div></p>
-</div>
-</div>
-</div>
 <h3 id="spartan">Spartan<a class="headerlink" href="#spartan" title="Permanent link">🔗</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio"/><div class="tabbed-labels"><label for="__tabbed_9_1">PlayerViolationEvent</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><a href="https://docs.google.com/document/d/e/2PACX-1vTzeCDiD2goCFO3oWIs3ANwmOvOqI2TLYVkjHO4Z-2q3yTDZPyYZ9bFX4OCwlBamWA_SOP7Ib5uARc8/pub">PlayerViolationEvent.java</a>
+<p>=== "PlayerViolationEvent"
+    <a href="https://docs.google.com/document/d/e/2PACX-1vTzeCDiD2goCFO3oWIs3ANwmOvOqI2TLYVkjHO4Z-2q3yTDZPyYZ9bFX4OCwlBamWA_SOP7Ib5uARc8/pub">PlayerViolationEvent.java</a>
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PlayerViolationEvent</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spartan</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Conditions</span><span class="p">:</span><span class="w"></span>
@@ -746,14 +630,9 @@
 <span class="w">        </span><span class="nt">ImageUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"{embedavatarurl}"</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="s">"{username}</span><span class="nv"> </span><span class="s">failed</span><span class="nv"> </span><span class="s">${hackType.name().toLowerCase()}</span><span class="nv"> </span><span class="s">check</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">${message}</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">vl:${violation}</span><span class="nv"> </span><span class="s">ping:${player.ping}</span><span class="nv"> </span><span class="s">tps:{tps}"</span><span class="w"></span>
 </code></pre></div></p>
-</div>
-</div>
-</div>
 <h3 id="command-triggers">Command Triggers<a class="headerlink" href="#command-triggers" title="Permanent link">🔗</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio"/><input id="__tabbed_10_2" name="__tabbed_10" type="radio"/><div class="tabbed-labels"><label for="__tabbed_10_1">/gamemode</label><label for="__tabbed_10_2">/me</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/gamemode</span><span class="w"></span>
+<p>=== "/gamemode"
+    <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/gamemode</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gamemode</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Conditions</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#player.hasPermission("minecraft.command.gamemode")'</span><span class="w"></span>
@@ -763,9 +642,8 @@
 <span class="w">        </span><span class="nt">ImageUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"{embedavatarurl}"</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="s">"{username}</span><span class="nv"> </span><span class="s">changed</span><span class="nv"> </span><span class="s">game</span><span class="nv"> </span><span class="s">mode</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">${#args.get(0)}"</span><span class="w"></span>
 </code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/me</span><span class="w"></span>
+=== "/me"
+    <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/me</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">me</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Conditions</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'#player.hasPermission("minecraft.command.me")</span><span class="nv"> </span><span class="s">||</span><span class="nv"> </span><span class="s">#player.hasPermission("essentials.me")'</span><span class="w"></span>
@@ -774,15 +652,10 @@
 <span class="w">      </span><span class="nt">Author</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">ImageUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"{embedavatarurl}"</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="s">"*</span><span class="nv"> </span><span class="s">{username}</span><span class="nv"> </span><span class="s">${#allArgs}"</span><span class="w"></span>
-</code></pre></div>
-</div>
-</div>
-</div>
+</code></pre></div></p>
 <h3 id="social-spy">Social Spy<a class="headerlink" href="#social-spy" title="Permanent link">🔗</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="11:3"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio"/><input id="__tabbed_11_2" name="__tabbed_11" type="radio"/><input id="__tabbed_11_3" name="__tabbed_11" type="radio"/><div class="tabbed-labels"><label for="__tabbed_11_1">Private messages</label><label for="__tabbed_11_2">Commands</label><label for="__tabbed_11_3">Sign placement</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">/msg</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/w</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/m</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/pm</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/emsg</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/epm</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/tell</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/etell</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/whisper</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/ewhisper</span><span class="p p-Indicator">]</span><span class="w"></span>
+<p>=== "Private messages"
+    <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">/msg</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/w</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/m</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/pm</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/emsg</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/epm</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/tell</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/etell</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/whisper</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/ewhisper</span><span class="p p-Indicator">]</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SocialSpy</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Embed</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="nt">Color</span><span class="p">:</span><span class="w"> </span><span class="s">"#000001"</span><span class="w"></span>
@@ -790,9 +663,8 @@
 <span class="w">        </span><span class="nt">ImageUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"{embedavatarurl}"</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="s">"[{username}&gt;</span><span class="nv"> </span><span class="s">${#allArgs}]"</span><span class="w"></span>
 </code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PlayerCommandPreprocessEvent</span><span class="w"> </span>
+=== "Commands"
+    <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PlayerCommandPreprocessEvent</span><span class="w"> </span>
 <span class="w">    </span><span class="nt">Channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SocialSpy</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Conditions</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"!(#command.split(\"\\s+|$\")[0].equals(\"msg\"))"</span><span class="w">      </span><span class="c1">#ignores the /msg command</span><span class="w"></span>
@@ -816,9 +688,8 @@
 <span class="w">        </span><span class="nt">ImageUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"{embedavatarurl}"</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="s">'{username}</span><span class="nv"> </span><span class="s">issued</span><span class="nv"> </span><span class="s">command:</span><span class="nv"> </span><span class="s">/${#command}'</span><span class="w"></span>
 </code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SignChangeEvent</span><span class="w"></span>
+=== "Sign placement"
+    <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SignChangeEvent</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SocialSpy</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Conditions</span><span class="p">:</span><span class="w"></span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">'getLine(0)</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">getLine(1)</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">getLine(2)</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">getLine(3)</span><span class="nv"> </span><span class="s">!=</span><span class="nv"> </span><span class="s">""'</span><span class="w"></span>
@@ -835,10 +706,7 @@
 <span class="w">        </span><span class="no">${theLines[2]}</span><span class="w"></span>
 <span class="w">        </span><span class="no">${theLines[3]}</span><span class="w"></span>
 <span class="w">        </span><span class="no">```</span><span class="w"></span>
-</code></pre></div>
-</div>
-</div>
-</div>
+</code></pre></div></p>
 </article>
 </div>
 </div>

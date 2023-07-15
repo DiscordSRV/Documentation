@@ -140,8 +140,8 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../compatability/">
-        Compatability
+<a class="md-nav__link" href="../compatibility/">
+        Compatibility
       </a>
 </li>
 <li class="md-nav__item">
@@ -506,30 +506,29 @@ and <code>Send Messages</code></p>
 <p>First off, thank you from the bottom of my heart for the pizza. If you would like to donate, go to <a href="https://scarsz.me/donate">https://scarsz.me/donate</a>. $10 is the suggested amount but you can donate however much you would like- anything is a massive thank you from me. In the note put your Discord username and if you're in DiscordSRV's server you'll be set as a donator and you'll receive some neat perks in the future. If you donated without the note, send me a PM on Discord and I'll manually check it.  </p>
 <h2 id="developers">Developers<a class="headerlink" href="#developers" title="Permanent link">🔗</a></h2>
 <p>If you want to interface DiscordSRV with your plugin, you can do so by adding the Maven dependency or adding the plugin jar (DiscordSRV version 1.18.0+) to your project. You also need to add the JDA repository. For an example of this, see <a href="https://github.com/DiscordSRV/DiscordSRV-ApiTest">DiscordSRV-ApiTest</a>. Be sure to add "DiscordSRV" to your plugin's <code>plugin.yml</code> depends/softdepends list.  </p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Maven</label><label for="__tabbed_1_2">Gradle</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;repository&gt;</span>
-    <span class="nt">&lt;id&gt;</span>dv8tion<span class="nt">&lt;/id&gt;</span>
-    <span class="nt">&lt;name&gt;</span>m2-dv8tion<span class="nt">&lt;/name&gt;</span>
-    <span class="nt">&lt;url&gt;</span>https://m2.dv8tion.net/releases<span class="nt">&lt;/url&gt;</span>
-<span class="nt">&lt;/repository&gt;</span>
+<p>=== "Maven"</p>
+<div class="highlight"><pre><span></span><code>```xml
+&lt;repository&gt;
+    &lt;id&gt;dv8tion&lt;/id&gt;
+    &lt;name&gt;m2-dv8tion&lt;/name&gt;
+    &lt;url&gt;https://m2.dv8tion.net/releases&lt;/url&gt;
+&lt;/repository&gt;
 ...
-<span class="nt">&lt;repository&gt;</span>
-    <span class="nt">&lt;id&gt;</span>Scarsz-Nexus<span class="nt">&lt;/id&gt;</span>
-    <span class="nt">&lt;url&gt;</span>https://nexus.scarsz.me/content/groups/public/<span class="nt">&lt;/url&gt;</span>
-<span class="nt">&lt;/repository&gt;</span>  
+&lt;repository&gt;
+    &lt;id&gt;Scarsz-Nexus&lt;/id&gt;
+    &lt;url&gt;https://nexus.scarsz.me/content/groups/public/&lt;/url&gt;
+&lt;/repository&gt;  
 ...  
-<span class="nt">&lt;dependency&gt;</span>
-    <span class="nt">&lt;groupId&gt;</span>com.discordsrv<span class="nt">&lt;/groupId&gt;</span>
-    <span class="nt">&lt;artifactId&gt;</span>discordsrv<span class="nt">&lt;/artifactId&gt;</span>
-    <span class="nt">&lt;version&gt;</span>1.26.2<span class="nt">&lt;/version&gt;</span>
-    <span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
+&lt;dependency&gt;
+    &lt;groupId&gt;com.discordsrv&lt;/groupId&gt;
+    &lt;artifactId&gt;discordsrv&lt;/artifactId&gt;
+    &lt;version&gt;1.26.2&lt;/version&gt;
+    &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+```
 </code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nx">maven</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<p>=== "Gradle"
+    <div class="highlight"><pre><span></span><code><span class="nx">maven</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">name</span><span class="w"> </span><span class="s1">'m2-dv8tion'</span><span class="w"></span>
 <span class="w">    </span><span class="nx">url</span><span class="w"> </span><span class="s1">'https://m2.dv8tion.net/releases'</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -539,10 +538,7 @@ and <code>Send Messages</code></p>
 <span class="nx">dependencies</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">compileOnly</span><span class="w"> </span><span class="s1">'com.discordsrv:discordsrv:1.26.2'</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
-</code></pre></div>
-</div>
-</div>
-</input></input></div>
+</code></pre></div></p>
 <h2 id="data-usage">Data usage<a class="headerlink" href="#data-usage" title="Permanent link">🔗</a></h2>
 <h3 id="data-collection">Data collection<a class="headerlink" href="#data-collection" title="Permanent link">🔗</a></h3>
 <p>Anything and everything shown at <a href="https://bstats.org/plugin/bukkit/DiscordSRV">https://bstats.org/plugin/bukkit/DiscordSRV</a> will be visible to the public with your server included in the statistics. This is only for statistics; no private information of your server is sent. If you don't want your server included in this, specify the config option <code>MetricsDisabled</code> and set it to <code>true</code> in the config.yml file.  </p>

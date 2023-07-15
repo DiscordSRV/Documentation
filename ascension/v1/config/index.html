@@ -140,8 +140,8 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../compatability/">
-        Compatability
+<a class="md-nav__link" href="../../compatibility/">
+        Compatibility
       </a>
 </li>
 <li class="md-nav__item">
@@ -1834,30 +1834,22 @@ Etc/Zulu
 <p>Preface the status with "playing", "watching", or "listening to" to set the activity type</p>
 <p>Can be a single, static value, or cycle through multiple different options.</p>
 <p><a href="https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders">PlaceholderAPI placeholders</a> are supported.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">single value</label><label for="__tabbed_1_2">prefaced status</label><label for="__tabbed_1_3">multiple prefaced statuses</label><label for="__tabbed_1_4">example using PlaceholderAPI</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nt">DiscordGameStatus</span><span class="p">:</span><span class="w"> </span><span class="s">"Minecraft"</span><span class="w"> </span><span class="c1"># The activity type is "playing" by default if not defined</span><span class="w"></span>
+<p>=== "single value"
+    <div class="highlight"><pre><span></span><code><span class="nt">DiscordGameStatus</span><span class="p">:</span><span class="w"> </span><span class="s">"Minecraft"</span><span class="w"> </span><span class="c1"># The activity type is "playing" by default if not defined</span><span class="w"></span>
 </code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nt">DiscordGameStatus</span><span class="p">:</span><span class="w"> </span><span class="s">"playing</span><span class="nv"> </span><span class="s">Minecraft"</span><span class="w"></span>
+=== "prefaced status"
+    <div class="highlight"><pre><span></span><code><span class="nt">DiscordGameStatus</span><span class="p">:</span><span class="w"> </span><span class="s">"playing</span><span class="nv"> </span><span class="s">Minecraft"</span><span class="w"></span>
 </code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><span class="nt">DiscordGameStatus</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"playing</span><span class="nv"> </span><span class="s">Minecraft"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"watching</span><span class="nv"> </span><span class="s">yourserveripchange.me"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"listening</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">song"</span><span class="p p-Indicator">]</span><span class="w"></span>
+=== "multiple prefaced statuses"
+    <div class="highlight"><pre><span></span><code><span class="nt">DiscordGameStatus</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"playing</span><span class="nv"> </span><span class="s">Minecraft"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"watching</span><span class="nv"> </span><span class="s">yourserveripchange.me"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"listening</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">a</span><span class="nv"> </span><span class="s">song"</span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div>
-</div>
-<div class="tabbed-block">
-<p>For this example you have to run <code>/papi ecloud download PlayerList</code> once to install the <a href="https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders#list-players">required PlaceholderAPI extension</a>.
-<div class="highlight"><pre><span></span><code><span class="c1"># Example using PlaceholderAPI to show amount of online players</span><span class="w"></span>
+=== "example using PlaceholderAPI"
+    For this example you have to run <code>/papi ecloud download PlayerList</code> once to install the <a href="https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders#list-players">required PlaceholderAPI extension</a>.
+    <div class="highlight"><pre><span></span><code><span class="c1"># Example using PlaceholderAPI to show amount of online players</span><span class="w"></span>
 <span class="c1">#   First item shows all online players</span><span class="w"></span>
 <span class="c1">#   Second item excludes players with the discordsrv.hidden permission</span><span class="w"></span>
 <span class="nt">DiscordGameStatus</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"watching</span><span class="nv"> </span><span class="s">%playerlist_online,normal,yes,amount%</span><span class="nv"> </span><span class="s">players"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"playing</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">%playerlist_online,perm,no,amount,discordsrv.hidden%</span><span class="nv"> </span><span class="s">players"</span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div></p>
-</div>
-</div>
-</input></input></input></input></div>
 <h3 id="DiscordOnlineStatus"><a href="https://config.discordsrv.com/config/DiscordOnlineStatus"><code>DiscordOnlineStatus</code></a><a class="headerlink" href="#DiscordOnlineStatus" title="Permanent link">🔗</a></h3>
 <p>Activity status to display. This must be one of the following: <code>ONLINE</code>, <code>DND</code>, <code>IDLE</code> or <code>INVISIBLE</code></p>
 <h3 id="StatusUpdateRateInMinutes"><a href="https://config.discordsrv.com/config/StatusUpdateRateInMinutes"><code>StatusUpdateRateInMinutes</code></a><a class="headerlink" href="#StatusUpdateRateInMinutes" title="Permanent link">🔗</a></h3>
