@@ -176,17 +176,19 @@ Here are some examples to visualize how it works:
 DiscordConsoleChannelFilters: {"^Saving\\.\\.\\.$|^Saved the game$": ""}
 ```
 
-=== "Before"
-    ```css
-    >> save-all
-    [Mon, 20. Apr 2020 04:20:69 CDT INFO] Saving the game (this may take a moment!)
-    [Mon, 20. Apr 2020 04:20:69 CDT INFO] Saved the game
-    ```
-=== "After"
-    ```css
-    >> save-all
-    ```
+/// tab | Before
+```css
+>> save-all
+[Mon, 20. Apr 2020 04:20:69 CDT INFO] Saving the game (this may take a moment!)
+[Mon, 20. Apr 2020 04:20:69 CDT INFO] Saved the game
+```
+///
 
+/// tab | After
+```css
+>> save-all
+```
+///
 
 #### Example 2: Hide lines which contain the string `The updater found an update:`
 
@@ -200,15 +202,17 @@ DiscordConsoleChannelFilters: {"^.*The updater found an update:.*$": ""}
 DiscordConsoleChannelFilters: {"\\[\\/[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+(?::[0-9]+)?\\]": ""}
 ```
 
-=== "Before"
-    ```css
-    [Mon, 20. Apr 2020 04:20:69 CDT INFO] Scarsz[/192.168.1.2:58076] logged in with entity id 564875 at ([world]0.0, 0.0, 0.0)
-    ```
+/// tab | Before
+```css
+[Mon, 20. Apr 2020 04:20:69 CDT INFO] Scarsz[/192.168.1.2:58076] logged in with entity id 564875 at ([world]0.0, 0.0, 0.0)
+```
+///
 
-=== "After"
-    ```css
-    [Mon, 20. Apr 2020 04:20:69 CDT INFO] Scarsz logged in with entity id 564875 at ([world]0.0, 0.0, 0.0)
-    ```
+/// tab | After
+```css
+[Mon, 20. Apr 2020 04:20:69 CDT INFO] Scarsz logged in with entity id 564875 at ([world]0.0, 0.0, 0.0)
+```
+///
 
 ### Can we op players from the discord console? {id="op-players-discord-console"}  
 
@@ -356,4 +360,3 @@ Make sure that you have direct messages enabled on the server that you share wit
 If you run an offline mode server you can switch from using `{uuid-nodashes}` to `{username}` in the `AvatarURL` option. Since [crafatar.com](https://crafatar.com/) does not support usage of player names you have to switch to a less stable alternative like [cravatar.eu](https://cravatar.eu/) (less stable meaning it will return a Steve head if the service is heavily used).
 
 ---
-

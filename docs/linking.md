@@ -4,10 +4,13 @@ Require players to link their account to Discord before letting them play and op
 
 ## Screenshots
 
-=== "Kick Message :camera:"
-    ![Must link account to play](./images/javaw_12rAo3Y4RJ.png)
-=== "Failed to find subscriber role Message :camera:"
-    ![Must be subscribed to play](./images/javaw_uJSdOF2OAa.png)
+/// tab | Kick Message :camera:
+![Must link account to play](./images/javaw_12rAo3Y4RJ.png)
+///
+
+/// tab | Failed to find subscriber role Message :camera:
+![Must be subscribed to play](./images/javaw_uJSdOF2OAa.png)
+///
 
 ---
 
@@ -73,4 +76,4 @@ What gets displayed as the kick reason if the required role[s] were not found on
 ### [`Failed for unknown reason`](https://config.discordsrv.com/linking/Failed%20for%20unknown%20reason)
 What gets displayed as the kick reason if an error occurs.
 ### [`Kicked for unlinking`](https://config.discordsrv.com/linking/Kicked%20for%20unlinking)
-What gets displayed as the kick reason if the player unlinks in-game.  
+What gets displayed as the kick reason if the player unlinks in-game.
