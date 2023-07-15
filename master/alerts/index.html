@@ -912,9 +912,6 @@
 <span class="w">        </span><span class="nt">ImageUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"{embedavatarurl}"</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="s">'{username}</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">${#event.isGoingAfk()</span><span class="nv"> </span><span class="s">?</span><span class="nv"> </span><span class="s">"now"</span><span class="nv"> </span><span class="s">:</span><span class="nv"> </span><span class="s">"no</span><span class="nv"> </span><span class="s">longer"}</span><span class="nv"> </span><span class="s">AFK'</span><span class="w"></span>
 </code></pre></div></p>
-</div>
-</div>
-</div>
 <h3 id="spartan">Spartan<a class="headerlink" href="#spartan" title="Permanent link">🔗</a></h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="9:1"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio"/><div class="tabbed-labels"><label for="__tabbed_9_1">PlayerViolationEvent</label></div>
 <div class="tabbed-content">
@@ -930,11 +927,8 @@
 <span class="w">        </span><span class="nt">ImageUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"{embedavatarurl}"</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="s">"{username}</span><span class="nv"> </span><span class="s">failed</span><span class="nv"> </span><span class="s">${hackType.name().toLowerCase()}</span><span class="nv"> </span><span class="s">check</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">${message}</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">vl:${violation}</span><span class="nv"> </span><span class="s">ping:${player.ping}</span><span class="nv"> </span><span class="s">tps:{tps}"</span><span class="w"></span>
 </code></pre></div></p>
-</div>
-</div>
-</div>
 <h3 id="command-triggers">Command Triggers<a class="headerlink" href="#command-triggers" title="Permanent link">🔗</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio"/><input id="__tabbed_10_2" name="__tabbed_10" type="radio"/><div class="tabbed-labels"><label for="__tabbed_10_1">/gamemode</label><label for="__tabbed_10_2">/me</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:1"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio"/><div class="tabbed-labels"><label for="__tabbed_10_1">/gamemode</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/gamemode</span><span class="w"></span>
@@ -947,7 +941,8 @@
 <span class="w">        </span><span class="nt">ImageUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"{embedavatarurl}"</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="s">"{username}</span><span class="nv"> </span><span class="s">changed</span><span class="nv"> </span><span class="s">game</span><span class="nv"> </span><span class="s">mode</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">${#args.get(0)}"</span><span class="w"></span>
 </code></pre></div>
-</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:1"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio"/><div class="tabbed-labels"><label for="__tabbed_11_1">/me</label></div>
+<div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/me</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">me</span><span class="w"></span>
@@ -959,11 +954,8 @@
 <span class="w">        </span><span class="nt">ImageUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"{embedavatarurl}"</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="s">"*</span><span class="nv"> </span><span class="s">{username}</span><span class="nv"> </span><span class="s">${#allArgs}"</span><span class="w"></span>
 </code></pre></div>
-</div>
-</div>
-</div>
 <h3 id="social-spy">Social Spy<a class="headerlink" href="#social-spy" title="Permanent link">🔗</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="11:3"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio"/><input id="__tabbed_11_2" name="__tabbed_11" type="radio"/><input id="__tabbed_11_3" name="__tabbed_11" type="radio"/><div class="tabbed-labels"><label for="__tabbed_11_1">Private messages</label><label for="__tabbed_11_2">Commands</label><label for="__tabbed_11_3">Sign placement</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:1"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio"/><div class="tabbed-labels"><label for="__tabbed_12_1">Private messages</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">/msg</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/w</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/m</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/pm</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/emsg</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/epm</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/tell</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/etell</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/whisper</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">/ewhisper</span><span class="p p-Indicator">]</span><span class="w"></span>
@@ -974,7 +966,8 @@
 <span class="w">        </span><span class="nt">ImageUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"{embedavatarurl}"</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="s">"[{username}&gt;</span><span class="nv"> </span><span class="s">${#allArgs}]"</span><span class="w"></span>
 </code></pre></div>
-</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:1"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio"/><div class="tabbed-labels"><label for="__tabbed_13_1">Commands</label></div>
+<div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PlayerCommandPreprocessEvent</span><span class="w"> </span>
 <span class="w">    </span><span class="nt">Channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SocialSpy</span><span class="w"></span>
@@ -1000,7 +993,8 @@
 <span class="w">        </span><span class="nt">ImageUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"{embedavatarurl}"</span><span class="w"></span>
 <span class="w">        </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="s">'{username}</span><span class="nv"> </span><span class="s">issued</span><span class="nv"> </span><span class="s">command:</span><span class="nv"> </span><span class="s">/${#command}'</span><span class="w"></span>
 </code></pre></div>
-</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:1"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio"/><div class="tabbed-labels"><label for="__tabbed_14_1">Sign placement</label></div>
+<div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Trigger</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SignChangeEvent</span><span class="w"></span>
 <span class="w">    </span><span class="nt">Channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SocialSpy</span><span class="w"></span>
@@ -1020,6 +1014,24 @@
 <span class="w">        </span><span class="no">${theLines[3]}</span><span class="w"></span>
 <span class="w">        </span><span class="no">```</span><span class="w"></span>
 </code></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
