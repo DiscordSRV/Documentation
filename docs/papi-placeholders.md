@@ -50,4 +50,3 @@ These placeholders are only available with [PlaceholderAPI](https://www.spigotmc
 %discordsrv_user_top_role_color_hex%
 %discordsrv_user_top_role_color_code%
 ```
-

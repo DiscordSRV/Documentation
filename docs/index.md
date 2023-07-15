@@ -28,33 +28,34 @@ _**We only give support for the latest release/dev builds; please update before 
 
 ### Plugins we hook into:  
 * #### Chat
-    * [`Herochat`](https://www.spigotmc.org/resources/herochat.34305/updates), [`LegendChat`](https://www.spigotmc.org/resources/legendchat.6268/), [`LunaChat`](https://github.com/ucchyocean/LunaChat), [`TownyChat`](https://www.spigotmc.org/resources/towny-advanced.72694/), [`VentureChat`](https://www.spigotmc.org/resources/venturechat.771/)
+    * [Herochat], [LegendChat], [LunaChat], [TownyChat], [VentureChat]
 * #### Vanish
-    * [`Essentials`](https://www.spigotmc.org/resources/essentialsx.9089/), [`PhantomAdmin`](https://www.spigotmc.org/resources/phantomadmin.37845/), [`SuperVanish`](https://www.spigotmc.org/resources/supervanish-be-invisible.1331/), [`VanishNoPacket`](https://dev.bukkit.org/projects/vanish)
+    * [Essentials], [PhantomAdmin], [SuperVanish], [VanishNoPacket]
 * #### World
-    * [`Multiverse`](https://dev.bukkit.org/projects/multiverse-core/)
-* [`Vault`](https://www.spigotmc.org/resources/vault.34315/)  
-* [`LuckPerms`](https://luckperms.net/)
-* [`PlaceholderAPI`](https://www.spigotmc.org/resources/placeholderapi.6245/)  - [DiscordSRV Expansion Placeholders](PAPI-Placeholders)
+    * [Multiverse]
+* [Vault]  
+* [LuckPerms]
+* [PlaceholderAPI]  - [DiscordSRV Expansion Placeholders](PAPI-Placeholders)
+
 ### Plugins that use our API:
-* [DiscordSRV StaffChat](https://www.spigotmc.org/resources/discordsrv-staff-chat.44245/)
-* [ChatControlRed](https://mineacademy.org/chatcontrol)
-* [CMI](https://www.spigotmc.org/resources/cmi.3742/)
-* [Plan](https://www.spigotmc.org/resources/plan-player-analytics.32536/)
-* [EmojiChat](https://www.spigotmc.org/resources/emojichat.50955/)
-* [PurpleIRC](https://www.spigotmc.org/resources/purpleirc.2836/)
-* [ChatReplay](https://www.spigotmc.org/resources/chatreplay.28982/)
-* [AuctionHouse](https://www.spigotmc.org/resources/auctionhouse.61836/)
-* [Staff Facilities](https://www.spigotmc.org/resources/staff-facilities.13097/)
-* [Staff++](https://www.spigotmc.org/resources/staff.83562/)
-* [LiteBansBridge](https://www.spigotmc.org/resources/litebansbridge.76326/)
-* [MCSF (My Christian Swear Filter)](https://www.spigotmc.org/resources/mcsf.54115/)
-* [MZP-VoteParty](https://www.spigotmc.org/resources/mzp-voteparty.89754/)
-* [InteractiveChat DiscordSRV Addon](https://www.spigotmc.org/resources/interactivechat-discordsrv-addon.83917/) ^(Not^ ^associated^ ^with^ ^DiscordSRV)^
-* [DiscordSRVUtils](https://www.spigotmc.org/resources/discordsrvutils.85958/) ^(Not^ ^associated^ ^with^ ^DiscordSRV)^
-* [ActivityRoles](https://modrinth.com/plugin/activityroles)
-* [EconomyShopGUI](https://www.spigotmc.org/resources/economyshopgui.69927/)
-* [DiscordSchematicUploader](https://modrinth.com/plugin/discordschematicuploader) ^(Not^ ^associated^ ^with^ ^DiscordSRV)^
+* [DiscordSRV StaffChat]
+* [ChatControlRed]
+* [CMI]
+* [Plan]
+* [EmojiChat]
+* [PurpleIRC]
+* [ChatReplay]
+* [AuctionHouse]
+* [Staff Facilities]
+* [Staff++]
+* [LiteBansBridge]
+* [MCSF (My Christian Swear Filter)]
+* [MZP-VoteParty]
+* [InteractiveChat DiscordSRV Addon] ^(Not^ ^associated^ ^with^ ^DiscordSRV)^
+* [DiscordSRVUtils] ^(Not^ ^associated^ ^with^ ^DiscordSRV)^
+* [ActivityRoles]
+* [EconomyShopGUI]
+* [DiscordSchematicUploader] ^(Not^ ^associated^ ^with^ ^DiscordSRV)^
 * If you would like your plugin listed here, please bring it to `granny`'s attention in our [Discord](https://discordsrv.com/discord) server.
 ## Intended usage
 By using this plugin, you are able to give players the ability to chat in-game with players on your Discord server, as well as having people on the Discord server be able to chat with people in the minecraft server - This can be useful for players that still want to communicate with players in-game, but can't access the Minecraft server for whatever reason.  
@@ -75,41 +76,42 @@ First off, thank you from the bottom of my heart for the pizza. If you would lik
 ## Developers
 If you want to interface DiscordSRV with your plugin, you can do so by adding the Maven dependency or adding the plugin jar (DiscordSRV version 1.18.0+) to your project. You also need to add the JDA repository. For an example of this, see [DiscordSRV-ApiTest](https://github.com/DiscordSRV/DiscordSRV-ApiTest). Be sure to add "DiscordSRV" to your plugin's `plugin.yml` depends/softdepends list.  
 
-=== "Maven"
+/// tab | Maven
+```xml
+<repository>
+    <id>dv8tion</id>
+    <name>m2-dv8tion</name>
+    <url>https://m2.dv8tion.net/releases</url>
+</repository>
+...
+<repository>
+    <id>Scarsz-Nexus</id>
+    <url>https://nexus.scarsz.me/content/groups/public/</url>
+</repository>  
+...  
+<dependency>
+    <groupId>com.discordsrv</groupId>
+    <artifactId>discordsrv</artifactId>
+    <version>{{ project.version }}</version>
+    <scope>provided</scope>
+</dependency>
+```
+///
 
-    ```xml
-    <repository>
-        <id>dv8tion</id>
-        <name>m2-dv8tion</name>
-        <url>https://m2.dv8tion.net/releases</url>
-    </repository>
-    ...
-    <repository>
-        <id>Scarsz-Nexus</id>
-        <url>https://nexus.scarsz.me/content/groups/public/</url>
-    </repository>  
-    ...  
-    <dependency>
-        <groupId>com.discordsrv</groupId>
-        <artifactId>discordsrv</artifactId>
-        <version>{{ project.version }}</version>
-        <scope>provided</scope>
-    </dependency>
-    ```  
-
-=== "Gradle"
-    ```js
-    maven {
-        name 'm2-dv8tion'
-        url 'https://m2.dv8tion.net/releases'
-    }
-    repositories {
-        maven { url 'https://nexus.scarsz.me/content/groups/public/' }
-    }  
-    dependencies {
-        compileOnly 'com.discordsrv:discordsrv:{{ project.version }}'
-    }
-    ```
+/// tab | Gradle
+```js
+maven {
+    name 'm2-dv8tion'
+    url 'https://m2.dv8tion.net/releases'
+}
+repositories {
+    maven { url 'https://nexus.scarsz.me/content/groups/public/' }
+}  
+dependencies {
+    compileOnly 'com.discordsrv:discordsrv:{{ project.version }}'
+}
+```
+///
 
 ## Data usage
 ### Data collection
@@ -117,3 +119,36 @@ Anything and everything shown at https://bstats.org/plugin/bukkit/DiscordSRV wil
 
 ## Update checking
 DiscordSRV checks for updates using GitHub's API, and makes sure the version is safe to use via a minimum version (security feature), you may disable update checking by setting `UpdateCheckDisabled` to `true` in the config.yml file; however this may leave your server at risk if there is a security issue/exploit and you're running a vulnerable version.   
+
+[Herochat]: https://www.spigotmc.org/resources/34305/
+[LegendChat]: https://www.spigotmc.org/resources/6268/
+[LunaChat]: https://github.com/ucchyocean/LunaChat/
+[TownyChat]: https://www.spigotmc.org/resources/towny-72694/
+[VentureChat]: https://www.spigotmc.org/resources/771/
+[Essentials]: https://www.spigotmc.org/resources/9089/
+[PhantomAdmin]: https://www.spigotmc.org/resources/37845/
+[SuperVanish]: https://www.spigotmc.org/resources/1331/
+[VanishNoPacket]: https://dev.bukkit.org/projects/vanish/
+[Multiverse]: https://dev.bukkit.org/projects/multiverse-core/
+[Vault]: https://www.spigotmc.org/resources/34315/
+[LuckPerms]: https://luckperms.net/
+[PlaceholderAPI]: https://www.spigotmc.org/resources/6245/
+
+[DiscordSRV StaffChat]: https://www.spigotmc.org/resources/44245/
+[ChatControlRed]: https://mineacademy.org/chatcontrol/
+[CMI]: https://www.spigotmc.org/resources/3742/
+[Plan]: https://www.spigotmc.org/resources/32536/
+[EmojiChat]: https://www.spigotmc.org/resources/50955/
+[PurpleIRC]: https://www.spigotmc.org/resources/2836/
+[ChatReplay]: https://www.spigotmc.org/resources/28982/
+[AuctionHouse]: https://www.spigotmc.org/resources/61836/
+[Staff Facilities]: https://www.spigotmc.org/resources/13097/
+[Staff++]: https://www.spigotmc.org/resources/83562/
+[LiteBansBridge]: https://www.spigotmc.org/resources/76326/
+[MCSF (My Christian Swear Filter)]: https://www.spigotmc.org/resources/54115/
+[MZP-VoteParty]: https://www.spigotmc.org/resources/89754/
+[InteractiveChat DiscordSRV Addon]: https://www.spigotmc.org/resources/83917/
+[DiscordSRVUtils]: https://www.spigotmc.org/resources/85958/
+[ActivityRoles]: https://modrinth.com/plugin/activityroles/
+[EconomyShopGUI]: https://www.spigotmc.org/resources/69927/
+[DiscordSchematicUploader]: https://modrinth.com/plugin/discordschematicuploader/

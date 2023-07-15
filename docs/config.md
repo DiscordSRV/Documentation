@@ -853,26 +853,33 @@ Can be a single, static value, or cycle through multiple different options.
 
 [PlaceholderAPI placeholders](https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders) are supported.
 
-=== "single value"
-    ```yaml
-    DiscordGameStatus: "Minecraft" # The activity type is "playing" by default if not defined
-    ```
-=== "prefaced status"
-    ```yaml
-    DiscordGameStatus: "playing Minecraft"
-    ```
-=== "multiple prefaced statuses"
-    ```yaml
-    DiscordGameStatus: ["playing Minecraft", "watching yourserveripchange.me", "listening to a song"]
-    ```
-=== "example using PlaceholderAPI"
-    For this example you have to run `/papi ecloud download PlayerList` once to install the [required PlaceholderAPI extension](https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders#list-players).
-    ```yaml
-    # Example using PlaceholderAPI to show amount of online players
-    #   First item shows all online players
-    #   Second item excludes players with the discordsrv.hidden permission
-    DiscordGameStatus: ["watching %playerlist_online,normal,yes,amount% players", "playing with %playerlist_online,perm,no,amount,discordsrv.hidden% players"]
-    ```
+/// tab | single value
+```yaml
+DiscordGameStatus: "Minecraft" # The activity type is "playing" by default if not defined
+```
+///
+
+/// tab | prefaced status
+```yaml
+DiscordGameStatus: "playing Minecraft"
+```
+///
+
+/// tab | multiple prefaced statuses
+```yaml
+DiscordGameStatus: ["playing Minecraft", "watching yourserveripchange.me", "listening to a song"]
+```
+///
+
+/// tab | example using PlaceholderAPI
+For this example you have to run `/papi ecloud download PlayerList` once to install the [required PlaceholderAPI extension](https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders#list-players).
+```yaml
+# Example using PlaceholderAPI to show amount of online players
+#   First item shows all online players
+#   Second item excludes players with the discordsrv.hidden permission
+DiscordGameStatus: ["watching %playerlist_online,normal,yes,amount% players", "playing with %playerlist_online,perm,no,amount,discordsrv.hidden% players"]
+```
+///
 
 ### [`DiscordOnlineStatus`](https://config.discordsrv.com/config/DiscordOnlineStatus) {id="DiscordOnlineStatus"}
 Activity status to display. This must be one of the following: `ONLINE`, `DND`, `IDLE` or `INVISIBLE`
