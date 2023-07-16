@@ -2,107 +2,112 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.discordsrv.com/ascension/</loc>
-         <lastmod>2023-07-15</lastmod>
+         <lastmod>2023-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.discordsrv.com/ascension/compatibility/</loc>
-         <lastmod>2023-07-15</lastmod>
+         <lastmod>2023-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.discordsrv.com/ascension/performance/</loc>
-         <lastmod>2023-07-15</lastmod>
+         <lastmod>2023-07-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.discordsrv.com/ascension/placeholders/</loc>
+         <lastmod>2023-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.discordsrv.com/ascension/security/</loc>
-         <lastmod>2023-07-15</lastmod>
+         <lastmod>2023-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.discordsrv.com/ascension/v1/</loc>
-         <lastmod>2023-07-15</lastmod>
+         <lastmod>2023-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.discordsrv.com/ascension/v1/alerts/</loc>
-         <lastmod>2023-07-15</lastmod>
+         <lastmod>2023-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.discordsrv.com/ascension/v1/commands/</loc>
-         <lastmod>2023-07-15</lastmod>
+         <lastmod>2023-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.discordsrv.com/ascension/v1/config/</loc>
-         <lastmod>2023-07-15</lastmod>
+         <lastmod>2023-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.discordsrv.com/ascension/v1/faq/</loc>
-         <lastmod>2023-07-15</lastmod>
+         <lastmod>2023-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.discordsrv.com/ascension/v1/linking/</loc>
-         <lastmod>2023-07-15</lastmod>
+         <lastmod>2023-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.discordsrv.com/ascension/v1/lp-contexts/</loc>
-         <lastmod>2023-07-15</lastmod>
+         <lastmod>2023-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.discordsrv.com/ascension/v1/messages/</loc>
-         <lastmod>2023-07-15</lastmod>
+         <lastmod>2023-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.discordsrv.com/ascension/v1/papi-placeholders/</loc>
-         <lastmod>2023-07-15</lastmod>
+         <lastmod>2023-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.discordsrv.com/ascension/v1/permissions/</loc>
-         <lastmod>2023-07-15</lastmod>
+         <lastmod>2023-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.discordsrv.com/ascension/v1/synchronization/</loc>
-         <lastmod>2023-07-15</lastmod>
+         <lastmod>2023-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.discordsrv.com/ascension/v1/voice/</loc>
-         <lastmod>2023-07-15</lastmod>
+         <lastmod>2023-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.discordsrv.com/ascension/v1/installation/</loc>
-         <lastmod>2023-07-15</lastmod>
+         <lastmod>2023-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.discordsrv.com/ascension/v1/installation/initial-setup/</loc>
-         <lastmod>2023-07-15</lastmod>
+         <lastmod>2023-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.discordsrv.com/ascension/v1/installation/link-to-join-setup/</loc>
-         <lastmod>2023-07-15</lastmod>
+         <lastmod>2023-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.discordsrv.com/ascension/v1/installation/sync-setup/</loc>
-         <lastmod>2023-07-15</lastmod>
+         <lastmod>2023-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://docs.discordsrv.com/ascension/v1/installation/voice-setup/</loc>
-         <lastmod>2023-07-15</lastmod>
+         <lastmod>2023-07-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
