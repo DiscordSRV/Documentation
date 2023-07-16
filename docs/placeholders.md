@@ -21,7 +21,7 @@ Placeholders which provide a list of items can have a suffix set between each it
 
 For example `%user_roles:', '%`, lists the users roles seperated by a comma and a space (`', '`).
 
-## Relookup Placeholders
+## Recursive Placeholders
 Relookup placeholders are a special type of placeholder which allow you to specify what information you want from it.
 
 In this example we will be using `%user_highest_role_<role>%`. The `%user_highest_role_` part returns the highest role of the user and turns it into a [role placeholder](#role).
@@ -106,4 +106,7 @@ This same premise is used for all the re lookup placeholders.
 
 `%player_suffix%` - The suffix of the Minecraft player
 
+---
 
+# Misc
+`%text:'<text>'"` - Returns arbitrary text. An example of a use case would be changing the placeholder to custom text if it is empty. For example `%player_prefix|text:'No Prefix'%`
