@@ -22,7 +22,7 @@ Placeholders which provide a list of items can have a suffix set between each it
 For example `%user_roles:', '%`, lists the users roles seperated by a comma and a space (`', '`).
 
 ## Recursive Placeholders
-Relookup placeholders are a special type of placeholder which allow you to specify what information you want from it.
+Recursive placeholders are a special type of placeholder which allow you to specify what information you want from it.
 
 In this example we will be using `%user_highest_role_<role>%`. The `%user_highest_role_` part returns the highest role of the user and turns it into a [role placeholder](#role).
 
@@ -54,9 +54,9 @@ This same premise is used for all the re lookup placeholders.
 
 `%user_isboosting%` - Whether this member is currently boosting the server
 
-`%user_highest_role_<role>%` - The highest role of the member. Replace <role\> with any of the [role](#role) placeholders. More information about relookup placeholders [here](#re-lookup-placeholders)
+`%user_highest_role_<role>%` - The highest role of the member. Replace <role\> with any of the [role](#role) placeholders. More information about recursive placeholders [here](#recursive-placeholders)
 
-`%user_hoisted_role_<role>%` - The highest hoisted role of the member. Replace <role\> with any of the [role](#role). More information about relookup placeholders [here](#re-lookup-placeholders)
+`%user_hoisted_role_<role>%` - The highest hoisted role of the member. Replace <role\> with any of the [role](#role). More information about recursive placeholders [here](#recursive-placeholders)
 
 `%user_roles%` - The roles of the member. This placeholder supports a suffix to be set, more information can be found [here](#placeholder-suffixes)
 
