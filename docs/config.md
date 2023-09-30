@@ -977,9 +977,6 @@ Options: `["debug", "info", "warn", "error"]`
 #### [`...UseCodeBlocks`](https://config.discordsrv.com/config/DiscordConsoleChannelUseCodeBlocks) {id="DiscordConsoleChannelUseCodeBlocks"}
 If the console should be wrapped in code blocks and colored
 
-#### [`...AllowPluginUpload`](https://config.discordsrv.com/config/DiscordConsoleChannelAllowPluginUpload) {id="DiscordConsoleChannelAllowPluginUpload"}
-Enable for the ability to upload plugins through the console channel.
-
 #### [`...BlockBots`](https://config.discordsrv.com/config/DiscordConsoleChannelBlockBots) {id="DiscordConsoleChannelBlockBots"}
 Whether or not bots should be allowed to send commands in the console channel
 
