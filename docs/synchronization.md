@@ -32,7 +32,7 @@ whether or not Minecraft group changes override Discord role changes
 #### [`...OneWay`](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationOneWay) {id="GroupRoleSynchronizationOneWay"}
 whether or not to synchronise only one way, the way it is synchronised depends on the value of MinecraftIsAuthoritative.
 #### [`...EnableDenyPermission`](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationEnableDenyPermission) {id="GroupRoleSynchronizationEnableDenyPermission"}
-whether or not discordsrv.sync.deny.<role id> permissions are enabled
+whether or not discordsrv.sync.deny.&lt;role id&gt; permissions are enabled
 
 #### [`PrimaryGroupOnly`](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationPrimaryGroupOnly) {id="GroupRoleSynchronizationPrimaryGroupOnly"}
 if true, only the player's primary group is counted for synchronization, otherwise, group sync counts all groups the player is in, including parent groups
