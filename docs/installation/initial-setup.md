@@ -17,26 +17,17 @@
 
 #### Create the Application
 !!! note "Create a new application at https://discord.com/developers/applications/ by clicking `"New Application"`"
-    ![create application](../images/create_application.png)  
-#### Create the bot
-!!! note "Choose a cool name for your bot and click `Create`"
-    ![create the bot](../images/create_bot.png)
-#### Confirm the bot application
-!!! note "Under the `Settings` tab, click `Bot`, then click `Add Bot` and confirm with `Yes, do it!`"
-    ![confirm action](../images/create_bot_confirm.png)
----
+    ![create application](../images/create_application.png)
+
+#### Enable the Privileged Gateway Intents options
+!!! note "Make sure to enable both the `SERVER MEMBERS INTENT` and `MESSAGE CONTENT INTENT` options shown in the video below to avoid running into issues with DiscordSRV later on."
+    ![](../images/enable_all_intents.mp4)
 
 ### Starting up the bot
 
 #### Copy the bot token
 !!! note "Copy the `Token` of the bot from the application page. Keep `PUBLIC BOT` unchecked so only you can invite the bot to the servers you designate."
     ![copy bot token](../images/copy_token.png)
-
----
-
-#### Enable the Privileged Gateway Intents options
-!!! note "Make sure to enable both the `SERVER MEMBERS INTENT` and `MESSAGE CONTENT INTENT` options shown in the video below to avoid running into issues with DiscordSRV later on."
-    ![](../images/enable_all_intents.mp4)
 
 ---
 
