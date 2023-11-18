@@ -18,10 +18,11 @@
 #### Create the Application
 !!! note "Create a new application at https://discord.com/developers/applications/ by clicking `"New Application"`"
     ![create application](../images/create_application.png)
-
 #### Enable the Privileged Gateway Intents options
 !!! note "Make sure to enable both the `SERVER MEMBERS INTENT` and `MESSAGE CONTENT INTENT` options shown in the video below to avoid running into issues with DiscordSRV later on."
     ![](../images/enable_all_intents.mp4)
+
+---
 
 ### Starting up the bot
 
