@@ -30,7 +30,7 @@ The format is `{"Minecraft-Channel-Name": "Discord-Channel-ID"}`. If you have no
 
 You can get a channel's ID by right-clicking a channel and choosing "Copy ID" after enabling Developer Mode in your Discord Settings; `Settings → Appearance → Developer Mode`.
 
-you can define more than one pair of linked channels if you have a plugin installed that supports additional chats. What you *can't* do is have multiple "Channels" with duplicate IDs or Channel names.
+You can define more than one pair of linked channels. What you *can't* do is have multiple "Channels" with duplicate names.
 
 Example:
 ```yaml
