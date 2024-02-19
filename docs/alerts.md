@@ -152,6 +152,39 @@ Checking if it's day in the world that the player is in
 ```
 ///
 
+### DiscordSRV
+
+/// tab | AccountLinkedEvent
+[AccountLinkedEvent.java](https://github.com/DiscordSRV/DiscordSRV/blob/master/src/main/java/github/scarsz/discordsrv/api/events/AccountLinkedEvent.java)
+```yaml
+  # Send an AFK alert when someone is AFK
+  - Trigger: AccountLinkedEvent
+    Channel: linked
+    Embed:
+      Enabled: true
+      Color: "#ffffff"
+      Author:
+        ImageUrl: "{embedavatarurl}"
+        Name: "User '${#event.getPlayer().getName()}' linked their account with the discord user '${#event.getUser().getAsTag()}'" # This message will show the users ingame name, not their nickname (for clarification) and the username from discord as well as their #Tag number.
+      Timestamp: true
+```
+///
+
+/// tab | AccountUnlinkedEvent
+[AccountLinkedEvent.java](https://github.com/DiscordSRV/DiscordSRV/blob/master/src/main/java/github/scarsz/discordsrv/api/events/AccountUnlinkedEvent.java)
+```yaml
+  - Trigger: AccountUnlinkedEvent
+    Channel: linked
+    Embed:
+      Enabled: true
+      Color: "#ffffff"
+      Author:
+        ImageUrl: "{embedavatarurl}"
+        Name: "User '${#event.getPlayer().getName()}' unlinked their account from the discord user '${#event.getDiscordUser().getAsTag()}'"
+      Timestamp: true
+```
+///
+
 ### Essentials
 
 /// tab | AfkStatusChangeEvent
