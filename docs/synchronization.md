@@ -13,17 +13,12 @@ amount of minutes between repeatedly triggering synchronization for all online p
 #### [`Format`](https://config.discordsrv.com/synchronization/NicknameSynchronizationFormat) {#NicknameSynchronizationFormat}
 the nickname format (keep in mind this shouldn't go over 32 characters)
 
-+---------------------------+--------------------------------+---------+
 | Available Placeholders    | Explanation                    | Example |
-+===========================+================================+=========+
+|---------------------------|--------------------------------|---------|
 | `%displayname%`           | player's display name          | Jeb     |
-+---------------------------+--------------------------------+---------+
 | `%username%`              | player's username              | Jeb_    |
-+---------------------------+--------------------------------+---------+
 | `%discord_name%`          | player's discord username      | Jeb     |
-+---------------------------+--------------------------------+---------+
 | `%discord_discriminator%` | player's discord discriminator | 4988    |
-+---------------------------+--------------------------------+---------+
 
 PlaceholderAPI placeholders are supported
 
@@ -56,5 +51,3 @@ the message at the beginning of the list, before all of the player names.
 #### [`...DiscordToMinecraftReason`](https://config.discordsrv.com/synchronization/BanSynchronizationDiscordToMinecraftReason) {#BanSynchronizationDiscordToMinecraftReason}
 used instead for when no players are online
 #### [`...MinecraftToDiscord`](https://config.discordsrv.com/synchronization/BanSynchronizationMinecraftToDiscord) {#BanSynchronizationMinecraftToDiscord}
-
----
