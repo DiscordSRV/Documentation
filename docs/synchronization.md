@@ -1,3 +1,7 @@
+---
+title: synchronization.yml
+---
+
 # [synchronization.yml](https://config.discordsrv.com/synchronization/_)
 
 ### NicknameSynchronization...

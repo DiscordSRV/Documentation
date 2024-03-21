@@ -1,3 +1,7 @@
+---
+title: messages.yml
+---
+
 # [messages.yml](https://config.discordsrv.com/messages/_)
 
 ### DiscordToMinecraft...
