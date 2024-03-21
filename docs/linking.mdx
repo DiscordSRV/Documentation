@@ -21,7 +21,7 @@ Require players to link their account to Discord before letting them play and op
 Enable/Disable the `RequireLink4Gameplay` module.
 ## [`Listener priority`](https://config.discordsrv.com/linking/Listener%20priority)
 Control the priority `RequireLink4Gameplay`'s join listener is on.
-If 
+If
 Available values are [`LOWEST`, `LOW`, `NORMAL`, `HIGH`, `HIGHEST`]
 ## [`Listener event`](https://config.discordsrv.com/linking/Listener%20event)
 The event that the link module should listen and disallow logins on.
@@ -45,13 +45,13 @@ Placeholders:
 If enabled, players will not only need to have their accounts linked but will also be required to be a member of a Discord server that the bot is also in.
 Acceptable formats:
 
-* `true`/`false`: linked account must be in at least one Discord server that the bot is also in  
+* `true`/`false`: linked account must be in at least one Discord server that the bot is also in
   example: `true`
 
-* `<server id>`: linked account must be in the given Discord server  
+* `<server id>`: linked account must be in the given Discord server
   example: `135634590575493120`
 
-* `[<server id>, <server id>, ...]`: linked account must be in ALL of the given Discord servers  
+* `[<server id>, <server id>, ...]`: linked account must be in ALL of the given Discord servers
   example: `[135634590575493120, 690411863766466590]`
 
 This option's value is superseded when you have subscriber roles enforced below.
