@@ -26,9 +26,9 @@
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-#### [`...ChatMessageFormat`](https://config.discordsrv.com/messages/DiscordToMinecraftChatMessageFormat) {id="DiscordToMinecraftChatMessageFormat"}
+#### [`...ChatMessageFormat`](https://config.discordsrv.com/messages/DiscordToMinecraftChatMessageFormat) {#DiscordToMinecraftChatMessageFormat}
 The format used when sending messages from Discord to Minecraft.
-#### [`...ChatMessageFormatNoRole`](https://config.discordsrv.com/messages/DiscordToMinecraftChatMessageFormatNoRole) {id="DiscordToMinecraftChatMessageFormatNoRole"}
+#### [`...ChatMessageFormatNoRole`](https://config.discordsrv.com/messages/DiscordToMinecraftChatMessageFormatNoRole) {#DiscordToMinecraftChatMessageFormatNoRole}
 The format used when sending messages from Discord to Minecraft for the user with no roles.
 #### `...ChatMessageFormat_<channel>`
 The format used when sending messages from Discord to Minecraft for `<channel>`.
@@ -47,10 +47,10 @@ This can be formatted using the same idea as the previous option:
 DiscordToMinecraftChatMessageFormatNoRole_mychannel: "[&bDiscord From MyChannel&r] %name% » %message%"
 ```
 
-#### [`...AllRolesSeparator`](https://config.discordsrv.com/messages/DiscordToMinecraftAllRolesSeparator) {id="DiscordToMinecraftAllRolesSeparator"}
+#### [`...AllRolesSeparator`](https://config.discordsrv.com/messages/DiscordToMinecraftAllRolesSeparator) {#DiscordToMinecraftAllRolesSeparator}
 The separator used in between roles in `%allroles%`
 
-#### [`...ReplyFormat`](https://config.discordsrv.com/messages/DiscordToMinecraftReplyFormat) {id="DiscordToMinecraftReplyFormat"}
+#### [`...ReplyFormat`](https://config.discordsrv.com/messages/DiscordToMinecraftReplyFormat) {#DiscordToMinecraftReplyFormat}
 The format for the message displayed to indicate that the message is a reply
 NOTE: The %reply% placeholder needs to be present in the format if you want the DiscordToMinecraftMessageReplyFormat to display in your message.
 
@@ -85,14 +85,14 @@ NOTE: The %reply% placeholder needs to be present in the format if you want the 
 |                                                    <!-- TODO Modify the mdx-grid-tables extension to allow centering items -->                                                    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-#### [`...Format`](https://config.discordsrv.com/messages/MinecraftChatToDiscordMessageFormat) {id="MinecraftChatToDiscordMessageFormat"}
+#### [`...Format`](https://config.discordsrv.com/messages/MinecraftChatToDiscordMessageFormat) {#MinecraftChatToDiscordMessageFormat}
 the format used when sending messages from Minecraft to Discord.
-#### [`...FormatNoPrimaryGroup`](https://config.discordsrv.com/messages/MinecraftChatToDiscordMessageFormatNoPrimaryGroup) {id="MinecraftChatToDiscordMessageFormatNoPrimaryGroup"}
+#### [`...FormatNoPrimaryGroup`](https://config.discordsrv.com/messages/MinecraftChatToDiscordMessageFormatNoPrimaryGroup) {#MinecraftChatToDiscordMessageFormatNoPrimaryGroup}
 used in place of `MinecraftChatToDiscordMessageFormat` when no primary group for the player was found.
 
 ---
 
-### [`ChatChannelHookMessageFormat`](https://config.discordsrv.com/messages/ChatChannelHookMessageFormat) {id="ChatChannelHookMessageFormat"}
+### [`ChatChannelHookMessageFormat`](https://config.discordsrv.com/messages/ChatChannelHookMessageFormat) {#ChatChannelHookMessageFormat}
 This is a special message that's only used when a supported chat channel plugin is hooked.
 It modifies what the message would be like in-game to include information related to the channel the message is from.  
 
@@ -118,11 +118,11 @@ It modifies what the message would be like in-game to include information relate
 |  [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI) placeholders are also supported |
 +-----------------------------------------------------------------------------------------------------+
 
-#### [`...NameFormat`](https://config.discordsrv.com/messages/DynmapNameFormat) {id="DynmapNameFormat"}
+#### [`...NameFormat`](https://config.discordsrv.com/messages/DynmapNameFormat) {#DynmapNameFormat}
 The format for the username part of the message sent to Dynmap (this may be hidden depending on dynmap settings).
-#### [`...ChatFormat`](https://config.discordsrv.com/messages/DynmapChatFormat) {id="DynmapChatFormat"}
+#### [`...ChatFormat`](https://config.discordsrv.com/messages/DynmapChatFormat) {#DynmapChatFormat}
 The format for the message part of the message sent to Dynmap.
-#### [`...DiscordFormat`](https://config.discordsrv.com/messages/DynmapDiscordFormat) {id="DynmapDiscordFormat"}
+#### [`...DiscordFormat`](https://config.discordsrv.com/messages/DynmapDiscordFormat) {#DynmapDiscordFormat}
 
 +--------------+----------+---------------------------------------------------------------------------+
 | Placeholders | Example  | Description                                                               |
@@ -139,7 +139,7 @@ The format for Dynmap messages going to Discord
 ---
 
 ### DiscordConsoleChannel...
-#### [`...Format`](https://config.discordsrv.com/messages/DiscordConsoleChannelFormat) {id="DiscordConsoleChannelFormat"}
+#### [`...Format`](https://config.discordsrv.com/messages/DiscordConsoleChannelFormat) {#DiscordConsoleChannelFormat}
 
 +---------------------+-----------------------------------------------+------------------------------------------+
 | Placeholders        | Example                                       | Description                              |
@@ -155,18 +155,18 @@ The format for Dynmap messages going to Discord
 
 This is the format used when sending a line from the console to the console channel, if enabled  
 
-#### [`...TimestampFormat`](https://config.discordsrv.com/messages/DiscordConsoleChannelTimestampFormat) {id="DiscordConsoleChannelTimestampFormat"}
+#### [`...TimestampFormat`](https://config.discordsrv.com/messages/DiscordConsoleChannelTimestampFormat) {#DiscordConsoleChannelTimestampFormat}
 The date format that will be used for the {date} and {datetime} placeholders
-#### [`...Prefix`](https://config.discordsrv.com/messages/DiscordConsoleChannelPrefix) {id="DiscordConsoleChannelPrefix"}
+#### [`...Prefix`](https://config.discordsrv.com/messages/DiscordConsoleChannelPrefix) {#DiscordConsoleChannelPrefix}
 The literal prefix to prepend to a batch of lines
-#### [`...Suffix`](https://config.discordsrv.com/messages/DiscordConsoleChannelSuffix) {id="DiscordConsoleChannelSuffix"}
+#### [`...Suffix`](https://config.discordsrv.com/messages/DiscordConsoleChannelSuffix) {#DiscordConsoleChannelSuffix}
 The literal suffix to append to a batch of lines
-#### [`...Padding`](https://config.discordsrv.com/messages/DiscordConsoleChannelPadding) {id="DiscordConsoleChannelPadding"}
+#### [`...Padding`](https://config.discordsrv.com/messages/DiscordConsoleChannelPadding) {#DiscordConsoleChannelPadding}
 The amount of padding to add inside the prefix
 
 ---
 
-### [`DiscordChatChannelConsoleCommandNotifyErrorsFormat`](https://config.discordsrv.com/messages/DiscordChatChannelConsoleCommandNotifyErrorsFormat) {id="DiscordChatChannelConsoleCommandNotifyErrorsFormat"}
+### [`DiscordChatChannelConsoleCommandNotifyErrorsFormat`](https://config.discordsrv.com/messages/DiscordChatChannelConsoleCommandNotifyErrorsFormat) {#DiscordChatChannelConsoleCommandNotifyErrorsFormat}
 
 +--------------+-----------------+-----------------------------------------------------+
 | Placeholders | Example         | Description                                         |
@@ -181,11 +181,11 @@ Used when an error occurs with permissions for the player to run the command, no
 ---
 
 ### DiscordChatChannelListCommand...
-#### [`...FormatOnlinePlayers`](https://config.discordsrv.com/messages/DiscordChatChannelListCommandFormatOnlinePlayers) {id="DiscordChatChannelListCommandFormatOnlinePlayers"}
+#### [`...FormatOnlinePlayers`](https://config.discordsrv.com/messages/DiscordChatChannelListCommandFormatOnlinePlayers) {#DiscordChatChannelListCommandFormatOnlinePlayers}
 the message at the beginning of the list, before all of the player names.
-#### [`...FormatNoOnlinePlayers`](https://config.discordsrv.com/messages/DiscordChatChannelListCommandFormatNoOnlinePlayers) {id="DiscordChatChannelListCommandFormatNoOnlinePlayers"}
+#### [`...FormatNoOnlinePlayers`](https://config.discordsrv.com/messages/DiscordChatChannelListCommandFormatNoOnlinePlayers) {#DiscordChatChannelListCommandFormatNoOnlinePlayers}
 used instead for when no players are online
-#### [`...PlayerFormat`](https://config.discordsrv.com/messages/DiscordChatChannelListCommandPlayerFormat) {id="DiscordChatChannelListCommandPlayerFormat"}
+#### [`...PlayerFormat`](https://config.discordsrv.com/messages/DiscordChatChannelListCommandPlayerFormat) {#DiscordChatChannelListCommandPlayerFormat}
 
 +-----------------------+----------------------+------------------------------------------------------+
 |  Placeholders         |  Example             |  Description                                         |
@@ -204,7 +204,7 @@ used instead for when no players are online
 +-----------------------------------------------------------------------------------------------------+
 
 the format of how each player should appear in the list  
-#### [`...AllPlayersSeparator`](https://config.discordsrv.com/messages/DiscordChatChannelListCommandAllPlayersSeparator) {id="DiscordChatChannelListCommandAllPlayersSeparator"}
+#### [`...AllPlayersSeparator`](https://config.discordsrv.com/messages/DiscordChatChannelListCommandAllPlayersSeparator) {#DiscordChatChannelListCommandAllPlayersSeparator}
 the separator used in between players  
 
 ---
@@ -242,7 +242,7 @@ the separator used in between players
 |  [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI) placeholders are also supported                                                                                                      |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-#### [`...JoinMessageFormat`](https://config.discordsrv.com/messages/MinecraftPlayerJoinMessageFormat) {id="MinecraftPlayerJoinMessageFormat"}
+#### [`...JoinMessageFormat`](https://config.discordsrv.com/messages/MinecraftPlayerJoinMessageFormat) {#MinecraftPlayerJoinMessageFormat}
 
 +-------------------------------------------+---------------------------------------------------------+
 |  Placeholders                             |  Description                                            |
@@ -253,7 +253,7 @@ the separator used in between players
 +-----------------------------------------------------------------------------------------------------+
 
 The message that gets broadcasted when a player joins the server.
-#### [`...FirstJoinMessageFormat`](https://config.discordsrv.com/messages/MinecraftPlayerFirstJoinMessageFormat) {id="MinecraftPlayerFirstJoinMessageFormat"}
+#### [`...FirstJoinMessageFormat`](https://config.discordsrv.com/messages/MinecraftPlayerFirstJoinMessageFormat) {#MinecraftPlayerFirstJoinMessageFormat}
 
 +-------------------------------------------+---------------------------------------------------------+
 |  Placeholders                             |  Description                                            |
@@ -264,9 +264,9 @@ The message that gets broadcasted when a player joins the server.
 +-----------------------------------------------------------------------------------------------------+
 
 The message that gets broadcasted when a player joins for the first time.
-#### [`...LeaveMessageFormat`](https://config.discordsrv.com/messages/MinecraftPlayerLeaveMessageFormat) {id="MinecraftPlayerLeaveMessageFormat"}
+#### [`...LeaveMessageFormat`](https://config.discordsrv.com/messages/MinecraftPlayerLeaveMessageFormat) {#MinecraftPlayerLeaveMessageFormat}
 The message that gets broadcasted when a player leaves.
-#### [`...DeathMessageFormat`](https://config.discordsrv.com/messages/MinecraftPlayerDeathMessageFormat) {id="MinecraftPlayerDeathMessageFormat"}
+#### [`...DeathMessageFormat`](https://config.discordsrv.com/messages/MinecraftPlayerDeathMessageFormat) {#MinecraftPlayerDeathMessageFormat}
 
 +-------------------------------------------+---------------------------------------------------------+
 |  Placeholders                             |  Description                                            |
@@ -277,7 +277,7 @@ The message that gets broadcasted when a player leaves.
 +-----------------------------------------------------------------------------------------------------+
 
 The message that gets broadcasted on player death.  
-#### [`...AchievementMessagesFormat`](https://config.discordsrv.com/messages/MinecraftPlayerAchievementMessagesFormat) {id="MinecraftPlayerAchievementMessagesFormat"}
+#### [`...AchievementMessagesFormat`](https://config.discordsrv.com/messages/MinecraftPlayerAchievementMessagesFormat) {#MinecraftPlayerAchievementMessagesFormat}
 
 +-------------------------------------------+---------------------------------------------------------+
 |  Placeholders                             |  Description                                            |
@@ -337,37 +337,37 @@ The message that gets broadcasted when a player gets an achievement.
 |  [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI) placeholders are also supported |
 +-----------------------------------------------------------------------------------------------------+
 
-#### [`...ChatChannelTopicFormat`](https://config.discordsrv.com/messages/ChannelTopicUpdaterChatChannelTopicFormat) {id="ChannelTopicUpdaterChatChannelTopicFormat"}
+#### [`...ChatChannelTopicFormat`](https://config.discordsrv.com/messages/ChannelTopicUpdaterChatChannelTopicFormat) {#ChannelTopicUpdaterChatChannelTopicFormat}
 message to set the chat channel's topic to every X seconds
-#### [`...ConsoleChannelTopicFormat`](https://config.discordsrv.com/messages/ChannelTopicUpdaterConsoleChannelTopicFormat) {id="ChannelTopicUpdaterConsoleChannelTopicFormat"}
+#### [`...ConsoleChannelTopicFormat`](https://config.discordsrv.com/messages/ChannelTopicUpdaterConsoleChannelTopicFormat) {#ChannelTopicUpdaterConsoleChannelTopicFormat}
 message to set the console channel's topic to every X seconds
-#### [`...ChatChannelTopicAtServerShutdownFormat`](https://config.discordsrv.com/messages/ChannelTopicUpdaterChatChannelTopicAtServerShutdownFormat) {id="ChannelTopicUpdaterChatChannelTopicAtServerShutdownFormat"}
+#### [`...ChatChannelTopicAtServerShutdownFormat`](https://config.discordsrv.com/messages/ChannelTopicUpdaterChatChannelTopicAtServerShutdownFormat) {#ChannelTopicUpdaterChatChannelTopicAtServerShutdownFormat}
 message to set the chat channel's topic when the server shuts down
-#### [`...ConsoleChannelTopicAtServerShutdownFormat`](https://config.discordsrv.com/messages/ChannelTopicUpdaterConsoleChannelTopicAtServerShutdownFormat) {id="ChannelTopicUpdaterConsoleChannelTopicAtServerShutdownFormat"}
+#### [`...ConsoleChannelTopicAtServerShutdownFormat`](https://config.discordsrv.com/messages/ChannelTopicUpdaterConsoleChannelTopicAtServerShutdownFormat) {#ChannelTopicUpdaterConsoleChannelTopicAtServerShutdownFormat}
 message to set the console channel's topic when the server shuts down  
 
 ---
 
-### [`DiscordCommandFormat`](https://config.discordsrv.com/messages/DiscordCommandFormat) {id="DiscordCommandFormat"}
+### [`DiscordCommandFormat`](https://config.discordsrv.com/messages/DiscordCommandFormat) {#DiscordCommandFormat}
 This is the message sent to players when they run "`/discord`". It's recommended to leave command syntax as a part of this.  
 
 ---
 
-### [`NoPermissionMessage`](https://config.discordsrv.com/messages/NoPermissionMessage) {id="NoPermissionMessage"}
+### [`NoPermissionMessage`](https://config.discordsrv.com/messages/NoPermissionMessage) {#NoPermissionMessage}
  No permission message
 
-### [`UnknownCommandMessage`](https://config.discordsrv.com/messages/UnknownCommandMessage) {id="UnknownCommandMessage"}
+### [`UnknownCommandMessage`](https://config.discordsrv.com/messages/UnknownCommandMessage) {#UnknownCommandMessage}
 Unknown command message
 
 ### DiscordChatChannelServer...
-#### [`...StartupMessage`](https://config.discordsrv.com/messages/DiscordChatChannelServerStartupMessage) {id="DiscordChatChannelServerStartupMessage"}
+#### [`...StartupMessage`](https://config.discordsrv.com/messages/DiscordChatChannelServerStartupMessage) {#DiscordChatChannelServerStartupMessage}
 message to be sent when server starts; leave blank to disable
-#### [`...ShutdownMessage`](https://config.discordsrv.com/messages/DiscordChatChannelServerShutdownMessage) {id="DiscordChatChannelServerShutdownMessage"}
+#### [`...ShutdownMessage`](https://config.discordsrv.com/messages/DiscordChatChannelServerShutdownMessage) {#DiscordChatChannelServerShutdownMessage}
 message to be sent when server shuts down; leave blank to disable  
 
 ---
 
-### [`ServerWatchdogMessage`](https://config.discordsrv.com/messages/ServerWatchdogMessage) {id="ServerWatchdogMessage"}
+### [`ServerWatchdogMessage`](https://config.discordsrv.com/messages/ServerWatchdogMessage) {#ServerWatchdogMessage}
 
 +----------------+--------------------------------------------------------------+
 |  Placeholders  |  Description                                                 |
@@ -378,13 +378,13 @@ message to be sent when server shuts down; leave blank to disable
 +----------------+--------------------------------------------------------------+
 | `%timeout%`    | ServerWatchdogTimeout as a placeholder                       |
 +----------------+--------------------------------------------------------------+
-| `%timestamp%`  | For use in discord's timestamp format EG: `<t:%timestamp%:R> |
+| `%timestamp%`  | For use in discord's timestamp format EG: `\<t:%timestamp%:R> |
 +----------------+--------------------------------------------------------------+
 
 The watchdog constantly monitors the last time your server performed a game tick.
 If the time since the last tick goes above the set interval in seconds, Discord messages can be triggered.  
 
-### [`CodeGenerated`](https://config.discordsrv.com/messages/CodeGenerated) {id="CodeGenerated"}
+### [`CodeGenerated`](https://config.discordsrv.com/messages/CodeGenerated) {#CodeGenerated}
 
 +---------------+--------------------------------------------------------------+
 |  Placeholders |  Description                                                 |
@@ -396,13 +396,13 @@ If the time since the last tick goes above the set interval in seconds, Discord 
 
 The message that appears in minecraft when a player runs the `/discordsrv link` command.  
 
-### [`UnknownCode`](https://config.discordsrv.com/messages/UnknownCode) {id="UnknownCode"}
+### [`UnknownCode`](https://config.discordsrv.com/messages/UnknownCode) {#UnknownCode}
 The message that appears in the bot's discord DMs if a user sends a 4 character message that isn't a generated code.  
 
-### [`InvalidCode`](https://config.discordsrv.com/messages/InvalidCode) {id="InvalidCode"}
+### [`InvalidCode`](https://config.discordsrv.com/messages/InvalidCode) {#InvalidCode}
 The message that appears in the bot's discord DMs if a user sends any message that isn't a generated code.  
 
-### [`DiscordAccountLinked`](https://config.discordsrv.com/messages/DiscordAccountLinked) {id="DiscordAccountLinked"}
+### [`DiscordAccountLinked`](https://config.discordsrv.com/messages/DiscordAccountLinked) {#DiscordAccountLinked}
 
 +---------------+--------------------------------------------------------------------------------+
 |  Placeholders |  Description                                                                   |
@@ -414,7 +414,7 @@ The message that appears in the bot's discord DMs if a user sends any message th
 
 The bot's DM response when a user gets their discord account linked.  
 
-### [`DiscordAccountAlreadyLinked`](https://config.discordsrv.com/messages/DiscordAccountAlreadyLinked) {id="DiscordAccountAlreadyLinked"}
+### [`DiscordAccountAlreadyLinked`](https://config.discordsrv.com/messages/DiscordAccountAlreadyLinked) {#DiscordAccountAlreadyLinked}
 
 +---------------+---------------------------------------------------------------+
 |  Placeholders |  Description                                                  |
@@ -426,7 +426,7 @@ The bot's DM response when a user gets their discord account linked.
 
 The bot's DM response if a user tries to link their minecraft account but they're already linked.  
 
-### [`DiscordLinkedAccountRequired`](https://config.discordsrv.com/messages/DiscordLinkedAccountRequired) {id="DiscordLinkedAccountRequired"}
+### [`DiscordLinkedAccountRequired`](https://config.discordsrv.com/messages/DiscordLinkedAccountRequired) {#DiscordLinkedAccountRequired}
 
 +---------------+------------------------------------------------------------------------+
 |  Placeholders |  Description                                                           |
@@ -436,13 +436,13 @@ The bot's DM response if a user tries to link their minecraft account but they'r
 
 The bot's reply if a player that isn't linked tries to send a discord message through the registered text channel.  
 
-### [`DiscordLinkedAccountCheckFailed`](https://config.discordsrv.com/messages/DiscordLinkedAccountCheckFailed) {id="DiscordLinkedAccountCheckFailed"}
+### [`DiscordLinkedAccountCheckFailed`](https://config.discordsrv.com/messages/DiscordLinkedAccountCheckFailed) {#DiscordLinkedAccountCheckFailed}
 The bot's reply if it can't check if a player is linked.  
 
-### [`ClickToCopyCode`](https://config.discordsrv.com/messages/ClickToCopyCode) {id="ClickToCopyCode"}
+### [`ClickToCopyCode`](https://config.discordsrv.com/messages/ClickToCopyCode) {#ClickToCopyCode}
 The hover text for [CodeGenerated](#CodeGenerated)'s `%code%` placeholder.
 
-### [`MinecraftAccountLinked`](https://config.discordsrv.com/messages/MinecraftAccountLinked) {id="MinecraftAccountLinked"}
+### [`MinecraftAccountLinked`](https://config.discordsrv.com/messages/MinecraftAccountLinked) {#MinecraftAccountLinked}
 
 +---------------+--------------------------------------------------------------------------------------+
 |  Placeholders |  Description                                                                         |
@@ -454,10 +454,10 @@ The hover text for [CodeGenerated](#CodeGenerated)'s `%code%` placeholder.
 
 The message to the player that gets sent when the player links their discord account.  
 
-### [`MinecraftAccountAlreadyLinked`](https://config.discordsrv.com/messages/MinecraftAccountAlreadyLinked) {id="MinecraftAccountAlreadyLinked"}
+### [`MinecraftAccountAlreadyLinked`](https://config.discordsrv.com/messages/MinecraftAccountAlreadyLinked) {#MinecraftAccountAlreadyLinked}
 The message to the player if they try to link their discord account but they're already linked.  
 
-### [`LinkedCommandSuccess`](https://config.discordsrv.com/messages/LinkedCommandSuccess) {id="LinkedCommandSuccess"}
+### [`LinkedCommandSuccess`](https://config.discordsrv.com/messages/LinkedCommandSuccess) {#LinkedCommandSuccess}
 
 +---------------+-----------------------------------------------------------------------------------------+
 |  Placeholders |  Description                                                                            |
@@ -467,7 +467,7 @@ The message to the player if they try to link their discord account but they're 
 
 The message that appears to a linked player when they run `/discordsrv linked`.
 
-### [`UnlinkCommandSuccess`](https://config.discordsrv.com/messages/UnlinkCommandSuccess) {id="UnlinkCommandSuccess"}
+### [`UnlinkCommandSuccess`](https://config.discordsrv.com/messages/UnlinkCommandSuccess) {#UnlinkCommandSuccess}
 
 +---------------+------------------------------------------------------------------------------------------+
 |  Placeholders |  Description                                                                             |
@@ -477,13 +477,13 @@ The message that appears to a linked player when they run `/discordsrv linked`.
 
 The message that appears to a linked player when they run `/discordsrv unlink`.
 
-### [`MinecraftNoLinkedAccount`](https://config.discordsrv.com/messages/MinecraftNoLinkedAccount) {id="MinecraftNoLinkedAccount"}
+### [`MinecraftNoLinkedAccount`](https://config.discordsrv.com/messages/MinecraftNoLinkedAccount) {#MinecraftNoLinkedAccount}
 The message that appears to an unlinked player when they try to use `/discordsrv linked` or `/discordsrv unlink`
 
-### [`LinkingError`](https://config.discordsrv.com/messages/LinkingError) {id="LinkingError"}
+### [`LinkingError`](https://config.discordsrv.com/messages/LinkingError) {#LinkingError}
 The message that appears to a player if the linking system did not register.
 
-### [`MinecraftNobodyFound`](https://config.discordsrv.com/messages/MinecraftNobodyFound) {id="MinecraftNobodyFound"}
+### [`MinecraftNobodyFound`](https://config.discordsrv.com/messages/MinecraftNobodyFound) {#MinecraftNobodyFound}
 
 +---------------+----------------------------------------------+
 |  Placeholders |  Description                                 |
