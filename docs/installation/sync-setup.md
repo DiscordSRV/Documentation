@@ -1,8 +1,8 @@
 # Sync Setup
 
-***
+:::warning
 **Please make sure to go through the [Initial Setup](initial-setup.md) before going through with this setup.**
-***
+:::
  
 ### Get the name(s) of the Minecraft group(s) you want to sync
 
@@ -26,9 +26,7 @@ You can see what groups DiscordSRV can see in the `discordsrv-info.txt` file of 
 ```yaml
 # discordsrv-info.txt from debug report
 vault groups: [default, MinecraftGroup1, MinecraftGroup2]
-```  
-
----
+```
 
 ### Get Role ID(s) for the role(s) you want to sync  
 
@@ -41,8 +39,6 @@ Role IDs are also in the `discordsrv-info.txt` file of debug reports, which can 
 discord guild roles: [R:DiscordRole1(680679725206994947), R:DiscordRole2(680679790025506861)]
 ```
 
----
-
 ### Set the Role ID(s) and group name(s) in the synchronization option
 
 Now that you have both the Role ID(s) and the Minecraft Group Name(s), add them into `GroupRoleSynchronizationGroupsAndRolesToSync` located inside the `synchronization.yml` config file.
@@ -52,5 +48,3 @@ Now that you have both the Role ID(s) and the Minecraft Group Name(s), add them 
 ```
 
 That's the basics of it! Read the comments for the other options in the `synchronization.yml` for more control over this system.
-
----
