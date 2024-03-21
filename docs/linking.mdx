@@ -7,15 +7,15 @@ Require players to link their account to Discord before letting them play and op
 
 ## Screenshots
 
-/// tab | Kick Message :camera:
+<Tabs>
+<TabItem value='kick-message' label='📷 Kick Message'>
 ![Must link account to play](/images/javaw_12rAo3Y4RJ.png)
-///
+</TabItem>
 
-/// tab | Failed to find subscriber role Message :camera:
+<TabItem value='failed-role-message' label='📷 Failed to find subscriber role Message'>
 ![Must be subscribed to play](/images/javaw_uJSdOF2OAa.png)
-///
-
----
+</TabItem>
+</Tabs>
 
 ## [`Enabled`](https://config.discordsrv.com/linking/Enabled)
 Enable/Disable the `RequireLink4Gameplay` module.
@@ -56,8 +56,6 @@ Acceptable formats:
 
 This option's value is superseded when you have subscriber roles enforced below.
 
----
-
 ## Subscriber role:
 Optionally require people to not only be linked but to have one/all specified role[s].
 ### [`Require subscriber role to join`](https://config.discordsrv.com/linking/Require%20subscriber%20role%20to%20join)
@@ -68,8 +66,6 @@ The roles required to join the server.
 Enable/Disable requiring all listed roles. When false, only one of the roles listed in `Subscriber roles` is required.
 ### [`Kick message`](https://config.discordsrv.com/linking/Kick%20message)
 The message that gets displayed when a user gets kicked for not having a/all role/s.
-
----
 
 ## Messages:
 ### [`DiscordSRV still starting`](https://config.discordsrv.com/linking/DiscordSRV%20still%20starting)
