@@ -1,3 +1,5 @@
+# Voice Setup
+
 ***
 **Please make sure to go through the [Initial Setup](initial-setup.md) before going through with this setup.**
 **You need to link your Discord and Minecraft accounts so that DiscordSRV knows which accounts belong to which player.**

@@ -1,3 +1,5 @@
+# Link to Join Setup
+
 ***
 **Please make sure to go through the [Initial Setup](initial-setup.md) before going through with this setup.**
 ***

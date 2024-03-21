@@ -1,3 +1,5 @@
+# Commands
+
 | Command                              | Permission                                                      | Description                                                                                                                                                                              |
 |--------------------------------------|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `/discord` <br /> --- <br /> `/discordsrv` | [`discordsrv.discord`](../Permissions#discordsrvdiscord) (true) | Shows whatever is defined for [DiscordCommandFormat](https://config.discordsrv.com/messages/DiscordCommandFormat) in the [`messages.yml`](https://config.discordsrv.com/messages/_) file |

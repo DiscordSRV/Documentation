@@ -1,3 +1,5 @@
+# Initial Setup
+
 ### Prerequisites
 
 - server software based on the Bukkit API (CraftBukkit/Spigot/Paper/etc)
