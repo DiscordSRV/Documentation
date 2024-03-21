@@ -15,66 +15,33 @@ Available contexts:
 
 ##### Examples
 
-/// tab | discordsrv:linked
-+-----------------------------------------------------------------------------------+
-| Command                                                                           |
-+-----------------------------------------------------------------------------------+
-| `/lp group default permission set essentials.fly true discordsrv:linked=true`     |
-+-----------------------------------------------------------------------------------+
-| Explanation                                                                       |
-+-----------------------------------------------------------------------------------+
-| will give all users access to `/fly` if they have their account linked to Discord |
-+-----------------------------------------------------------------------------------+
-///
-
-/// tab | discordsrv:boosting
-+-----------------------------------------------------------------------------------+
-| Command                                                                           |
-+-----------------------------------------------------------------------------------+
-| `/lp group default meta addsuffix 100 &d[Boost] discordsrv:boosting=true`         |
-+-----------------------------------------------------------------------------------+
-| Explanation                                                                       |
-+-----------------------------------------------------------------------------------+
-| will give a pink `[Boost]` suffix to all users boosting the Discord guild         |
-+-----------------------------------------------------------------------------------+
-///
-
-/// tab | discordsrv:role
-+-----------------------------------------------------------------------------------+
-| Command                                                                           |
-+-----------------------------------------------------------------------------------+
-| `/lp group default permission set chat.use false discordsrv:role=muted`           |
-+-----------------------------------------------------------------------------------+
-| Explanation                                                                       |
-+-----------------------------------------------------------------------------------+
-| will negate the `chat.use` permission for anyone with the `muted` role in Discord |
-+-----------------------------------------------------------------------------------+
-///
-
-/// tab | discordsrv:role_id
-+----------------------------------------------------------------------------------------------------------+
-| Command                                                                                                  |
-+----------------------------------------------------------------------------------------------------------+
-| `/lp group default permission set chat.use false discordsrv:role_id=000000000000`                        |
-+----------------------------------------------------------------------------------------------------------+
-| Explanation                                                                                              |
-+----------------------------------------------------------------------------------------------------------+
-| will negate the `chat.use` permission for anyone with the role that has the `000000000000` ID in Discord |
-+----------------------------------------------------------------------------------------------------------+
-///
-
-/// tab | discordsrv:server_id
-+----------------------------------------------------------------------------------------------------------+
-| Command                                                                                                  |
-+----------------------------------------------------------------------------------------------------------+
-| `/lp group default permission set essentials.back true discordsrv:server_id=000000000000`                |
-+----------------------------------------------------------------------------------------------------------+
-| Explanation                                                                                              |
-+----------------------------------------------------------------------------------------------------------+
-| will give all users access to `/back` for anyone in the server that has the `000000000000` ID in Discord |
-+----------------------------------------------------------------------------------------------------------+
-///
-
+<Tabs>
+    <TabItem value='discordsrv-linked' label='discordsrv:linked' default>
+        | Command                                                                       | Explanation                                                                       |
+        |------------------------------------------------------------------------------ |-----------------------------------------------------------------------------------|
+        | `/lp group default permission set essentials.fly true discordsrv:linked=true` | will give all users access to `/fly` if they have their account linked to Discord |
+    </TabItem>
+    <TabItem value='discordsrv-boosting' label='discordsrv:boosting'>
+        | Command                                                                       | Explanation                                                                   |
+        |-------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
+        | `/lp group default meta addsuffix 100 &d[Boost] discordsrv:boosting=true`         | will give a pink `[Boost]` suffix to all users boosting the Discord guild |
+    </TabItem>
+    <TabItem value='discordsrv-role' label='discordsrv:role'>
+        | Command                                                                       | Explanation                                                                       |
+        |-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
+        | `/lp group default permission set chat.use false discordsrv:role=muted`       | will negate the `chat.use` permission for anyone with the `muted` role in Discord |
+    </TabItem>
+    <TabItem value='discordsrv-role_id' label='discordsrv:role_id'>
+        | Command                                                                           | Explanation                                                                                              |
+        |-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------  |
+        | `/lp group default permission set chat.use false discordsrv:role_id=000000000000` | will negate the `chat.use` permission for anyone with the role that has the `000000000000` ID in Discord |
+    </TabItem>
+    <TabItem value='discordsrv-server_id' label='discordsrv:server_id'>
+        | Command                                                                                   | Explanation                                                                                              |
+        |-------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------  |
+        | `/lp group default permission set essentials.back true discordsrv:server_id=000000000000` | will give all users access to `/back` for anyone in the server that has the `000000000000` ID in Discord |
+    </TabItem>
+</Tabs>
 
 These can be disabled using a `LuckPerms-Contexts` entry in the `DisabledPluginHooks` config section.
 
