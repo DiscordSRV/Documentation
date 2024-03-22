@@ -66,3 +66,10 @@ table code {
   padding:.625em 2em;
   transition:color 125ms,background-color 125ms,border-color 125ms
 }
+
+
+@media screen and (max-width: 76.1875em) {
+  table code {
+    white-space: initial;
+  }
+}
