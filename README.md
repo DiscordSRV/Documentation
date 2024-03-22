@@ -4,8 +4,8 @@ This is the documentation for DiscordSRV that uses [Docusaurus](https://docusaur
 
 ## Building
 
-to install dependencies, run `yarn install`|`npm install`|`pnpm install`
+to install dependencies, run `yarn install`
 
-to start a development server, run `yarn run start`|`npm run start`|`pnpm run start`
+to start a development server, run `yarn run start`
 
-to build the static files, run `yarn build`|`npm run build`|`pnpm run build`
+to build the static files, run `yarn build`
