@@ -5,17 +5,15 @@ import TabItem from '@theme/TabItem';
 
 ### Minecraft chat to Discord chat doesn't work
 
-??? info "DiscordSRV Minecraft -> Discord chat flowchart"
-    ![DiscordSRV Minecraft -> Discord chat flowchart](/images/mc_to_discord_debugging_flowchart.png)
-
----
+:::note DiscordSRV Minecraft -> Discord chat flowchart
+![DiscordSRV Minecraft -> Discord chat flowchart](/images/mc_to_discord_debugging_flowchart.png)
+:::
 
 ### I need help with Minecraft group \<-> Discord Role synchronization {#Minecraft-to-Discord-Role-synchronization}
 
-??? info "DiscordSRV Minecraft group \<-> Discord Role synchronization flowchart"
-    ![DiscordSRV Minecraft group \<-> Discord Role synchronization flowchart](/images/group_sync_debugging_flowchart.png)
-
----
+:::note DiscordSRV Minecraft group \<-> Discord Role synchronization flowchart
+![DiscordSRV Minecraft group \<-> Discord Role synchronization flowchart](/images/group_sync_debugging_flowchart.png)
+:::
 
 ### How can I disable a feature/message? {#disable-a-featuremessage}
 
@@ -50,8 +48,6 @@ MinecraftPlayerLeaveMessage:
     . . .
 ```
 
----
-
 ### How can I change a notification message embed back to plain text? {#embed-back-to-plain-text}
 
 By moving the value in `Embed.Author.Name` to `Content` and setting `Embed.Enabled` to `false`
@@ -77,21 +73,15 @@ MinecraftPlayerLeaveMessage:
     ...
 ```
 
----
-
 ### Is DiscordSRV compatible with BungeeCord? {#compatible-bungeecord}
 
 No, but you can install the plugin on every Bukkit server. (Do **not** use the same token for more than 1 server!)
 
 If you would like to have linked accounts shared across servers, you can connect your DiscordSRV instances to a MySQL database ([`Experiment_Jdbc`](../config/#experiment_jdbc) options)
 
----
-
 ### Why won't messages send from Minecraft to Discord? I have TownyChat installed btw. {#messages-wont-send-townychat}
 
 Towny's main channel's name is usually `general`, instead of DiscordSRV's default, `global`.
-
----
 
 ### I reloaded the plugin/server and now it won't work. {#reloaded-the-pluginserver}
 
@@ -101,8 +91,6 @@ If that doesn't work, restart your server. Some changes need this for them to ta
 
 !!! note "Note"
     Plugins made specifically for reloading/stopping/starting plugins (and the built-in server `/reload` command) can make those plugins stop working properly.
-
----
 
 ### When I join/quit my server, a message isn't sent in the chat channel for me. What gives? {#when-i-joinquit-my-server-a-message-isnt-sent}
 
@@ -120,8 +108,6 @@ groups:
 ### How do I fix the error "Unsupported major.minor version 52.0?" {#unsupported-majorminor-version}
 
 Update the server's Java JRE version to `Java 8` or contact your server provider and request an upgrade.
-
----
 
 ### The plugin crashes when the server starts with the error "Caused by: java.lang.IllegalArgumentException: INVOKESPECIAL/STATIC on interfaces require ASM 5" {#the-plugin-crashes-at-serverstart}
 
@@ -152,16 +138,12 @@ Instructions for updating to ASM5:
 4. Copy the jar file to the `bin\net\md-5\SpecialSource\1.7-SNAPSHOT` folder
 5. Rename the jar file you just copied to SpecialSource-1.7-SNAPSHOT.jar
 
----
-
 ### Only show errors in console-channel
 If you want to use your console-channel to only inform you about problems, you can achieve that by modifying the [`DiscordConsoleChannelLevels`](../config/#DiscordConsoleChannelLevels) option:
 ```diff
 - DiscordConsoleChannelLevels: [info, warn, error]
 + DiscordConsoleChannelLevels: [error]
 ```
-
----
 
 ### Block special console-output from appearing in console-channel {#Block-special-console-output}
 
@@ -181,19 +163,20 @@ Here are some examples to visualize how it works:
 DiscordConsoleChannelFilters: {"^Saving\\.\\.\\.$|^Saved the game$": ""}
 ```
 
-/// tab | Before
-```css
->> save-all
-[Mon, 20. Apr 2020 04:20:69 CDT INFO] Saving the game (this may take a moment!)
-[Mon, 20. Apr 2020 04:20:69 CDT INFO] Saved the game
-```
-///
-
-/// tab | After
-```css
->> save-all
-```
-///
+<Tabs>
+    <TabItem value='before' label='Before'>
+    ```css
+    >> save-all
+    [Mon, 20. Apr 2020 04:20:69 CDT INFO] Saving the game (this may take a moment!)
+    [Mon, 20. Apr 2020 04:20:69 CDT INFO] Saved the game
+    ```
+    </TabItem>
+    <TabItem value='after' label='After'>
+    ```css
+    >> save-all
+    ```
+    </TabItem>
+</Tabs>
 
 #### Example 2: Hide lines which contain the string `The updater found an update:`
 
@@ -207,17 +190,19 @@ DiscordConsoleChannelFilters: {"^.*The updater found an update:.*$": ""}
 DiscordConsoleChannelFilters: {"\\[\\/[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+(?::[0-9]+)?\\]": ""}
 ```
 
-/// tab | Before
-```css
-[Mon, 20. Apr 2020 04:20:69 CDT INFO] Scarsz[/192.168.1.2:58076] logged in with entity id 564875 at ([world]0.0, 0.0, 0.0)
-```
-///
+<Tabs>
+    <TabItem value='before' label='Before'>
+    ```css
+    [Mon, 20. Apr 2020 04:20:69 CDT INFO] Scarsz[/192.168.1.2:58076] logged in with entity id 564875 at ([world]0.0, 0.0, 0.0)
+    ```
+    </TabItem>
+    <TabItem value='after' label='After'>
+    ```css
+    [Mon, 20. Apr 2020 04:20:69 CDT INFO] Scarsz logged in with entity id 564875 at ([world]0.0, 0.0, 0.0)
+    ```
+    </TabItem>
+</Tabs>
 
-/// tab | After
-```css
-[Mon, 20. Apr 2020 04:20:69 CDT INFO] Scarsz logged in with entity id 564875 at ([world]0.0, 0.0, 0.0)
-```
-///
 
 ### Can we op players from the discord console? {#op-players-discord-console}  
 
@@ -230,25 +215,17 @@ Remove the `"op"` value to allow the command to be used.
 + DiscordConsoleChannelBlacklistedCommands: ["?", "deop", "execute"]
 ```
 
----
-
 ### Why can't I control my music bot from Minecraft? {#music-bot-from-minecraft}
 
 It's bad practice for a bot to listen to another bot's messages. That's why most if not all public music bots can't be controlled through another bot.
-
----
 
 ### Where is the bot hosted? {#bot-hosted}
 
 On the server that DiscordSRV is used on. The bot is online when the server is online.
 
----
-
 ### Can I modify the bot using javascript? {#modify-bot-javascript}
 
 No. It's programmed in Java, not Javascript.
-
----
 
 ### How can I show the player count in the game status? {#player-count-game-status}
 
@@ -263,15 +240,12 @@ in our [DiscordGameStatus](https://config.discordsrv.com/config/DiscordGameStatu
 5. You can test the output of the placeholder using the `/papi parse me <placeholder>` command
 
 
----
-
 ### Why is the plugin red in the `/plugins` output? {#plugins-output-red}
 
-+----------------------------+---------------------------+
-| if the plugin is **green** | if the plugin is **red**  |
-+----------------------------+---------------------------+
-| the plugin is working      | the plugin is not working |
-+----------------------------+---------------------------+ 
+| if the plugin is: | it means that:            |
+|-------------------|---------------------------|
+| green             | the plugin is working     |
+| red               | the plugin is not working |
 
 First thing you should do is check your *server logs*. If you need further help understanding the errors then join [our discord server](https://discordsrv.com/discord) and create a ticket through the #create-a-ticket channel. Send a copy of what you find or the whole log file.
 
@@ -295,19 +269,13 @@ On Minehut and server.pro:
 - If you got the `latest.log` file or created a `.txt` file with the necessary errors then join [our discord server](https://discordsrv.com/discord) and create a ticket through the #create-a-ticket channel and send it there.
 - If you have trouble downloading the log file, copy/paste the text to a paste service (like [mclo.gs](https://mclo.gs/)). Copy the link that it gives you. Join [our discord server](https://discordsrv.com/discord) and create a ticket through the #create-a-ticket channel, then send that link in your ticket.
 
----
-
 ### Why do I get all the groups instead of just the one I want? {#all-groups-instead-of-one}
 
 Check to make sure you don't have the `*` permission in any of the groups that you're a part of. DiscordSRV has a `discordsrv.sync.<group> permission`, and having the star perm ends up giving you the perm for every group you have synchronized. This is just one of many reasons why you shouldn't ever have the `*` perm, or `OP` for that matter.
 
----
-
 ### The bot can't modify my roles, and I'm the Discord server owner? {#discord-server-owner-modify-roles}
 
 This is a Discord limitation. Although bots can remove / add one role, they cannot use the endpoint that allows adding & removing as many roles as you want, which is how group-synchronisation achieves this. If you are trying to test group-synchronisation, either use an alt, or test it on another player.
-
----
 
 ### What chat formatting codes can I use? {#chat-formatting-codes}
 
@@ -321,8 +289,6 @@ OR
 
 You **cannot** use both at the same time!
 
----
-
 ### Can I synchronize multiple discord roles to one Minecraft group? {#multiple-discord-roles-one-mc-group}
 
 To synchronize multiple discord roles with one Minecraft group you will need to create a "fake" group in the [GroupRoleSynchronizationGroupsAndRolesToSync](https://config.discordsrv.com/synchronization/GroupRoleSynchronizationGroupsAndRolesToSync) option in synchronization.yml and make use of the `discordsrv.sync.<group name>` permission.
@@ -335,13 +301,9 @@ GroupRoleSynchronizationGroupsAndRolesToSync: {"MinecraftAdmin": "38497747556787
 
 The `MinecraftStaff` group in the example above is temporary. It is just used to store the role ID of our `Discord Staff` role. You would then give the `MinecraftAdmin` group the permission `discordsrv.sync.MinecraftStaff` so that the `MinecraftAdmin` group gets both the `Discord Admin` and `Discord Staff` Discord role.
 
----
-
 ### How do I connect two discord channels to one Minecraft chat? {#two-discord-channels-one-mc-chat}
 
 Sadly this feature is not yet possible. It will be a feature in V2 of DiscordSRV.
-
----
 
 ### What is the server room is on fire message? {#server-room-on-fire}
 `%date% @Owner, the server room is on 🔥‼`
@@ -352,16 +314,10 @@ The watchdog constantly monitors the last time your server performed a game tick
 
 To disable these messages configure the following in config.yml: [`ServerWatchDogEnabled`](https://config.discordsrv.com/config/ServerWatchdogEnabled)
 
----
-
 ### Why can't I message the bot? {#why-cant-i-message-the-bot}
 
 Make sure that you have direct messages enabled on the server that you share with the bot. This should allow you to send it a private message. If that doesn't work, [check this article](https://support.discord.com/hc/en-gb/articles/360060145013).
 
----
-
 ### How do I show the avatars of cracked players? {#show-cracked-avatars}
 
 If you run an offline mode server you can switch from using `{uuid-nodashes}` to `{username}` in the `AvatarURL` option. Since [crafatar.com](https://crafatar.com/) does not support usage of player names you have to switch to a less stable alternative like [cravatar.eu](https://cravatar.eu/) (less stable meaning it will return a Steve head if the service is heavily used).
-
----
