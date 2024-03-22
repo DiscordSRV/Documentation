@@ -10,7 +10,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 const config = {
   title: 'DiscordSRV Documentation',
   tagline: 'The most powerful, configurable, open-source Discord bridge plugin out there.',
-  favicon: 'images/favicon.ico',
+  favicon: 'assets/favicon.ico',
 
   // Set the production url of your site here
   url: 'https://docs.discordsrv.com',
@@ -62,12 +62,12 @@ const config = {
           hideable: true
         },
       },
-      image: 'images/logo.png',
+      image: 'assets/logo.png',
       navbar: {
         title: 'DiscordSRV Documentation',
         logo: {
           alt: 'DiscordSRV Logo',
-          src: 'images/logo.png',
+          src: 'assets/logo.png',
         },
         items: [
           {
