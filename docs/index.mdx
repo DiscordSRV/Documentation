@@ -1,22 +1,28 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import variables from '@site/src/components/Variables';
+import CodeBlock from '@theme/CodeBlock';
 
 # Home
 
 ![DiscordSRV](https://lol.scarsz.me/AiKvTS/Logo-filled-stroke.png)
 
-<div markdown="1" id="center">
+<div id="center">
 
 **The most powerful, configurable, open-source Discord bridge plugin out there.**
 
-[:simple-discord: Discord](https://discordsrv.com/discord)
-[:fontawesome-solid-faucet: SpigotMC](https://www.spigotmc.org/resources/discordsrv.18494/)
-[:material-bucket-outline: BukkitDev](https://dev.bukkit.org/projects/discordsrv)
+    <div>
+        <a className='custom-button' target='_blank' rel='noopener noreferrer' href='https://discordsrv.com/discord'>Discord</a>
+        <a className='custom-button' target='_blank' rel='noopener noreferrer' href='https://www.spigotmc.org/resources/discordsrv.18494/'>SpigotMC</a>
+        <a className='custom-button' target='_blank' rel='noopener noreferrer' href='https://dev.bukkit.org/projects/discordsrv'>BukkitDev</a>
+    </div>
 
-[:material-cloud-upload: Latest Release](https://get.discordsrv.com/)
-[:material-cloud-tags: Latest Snapshot](https://snapshot.discordsrv.com/)
+    <div>
+        <a className='custom-button' target='_blank' rel='noopener noreferrer' href='https://get.discordsrv.com/'>Latest Release</a>
+        <a className='custom-button' target='_blank' rel='noopener noreferrer' href='https://snapshot.discordsrv.com/'>Latest Snapshot</a>
+    </div>
 
-**Supports All Minecraft Versions from **
+**Supports All Minecraft Versions from {variables.project.supported_version.min} to {variables.project.supported_version.max}**
 
 _**We only give support for the latest release/dev builds; please update before asking for help**_
 
@@ -56,11 +62,11 @@ _**We only give support for the latest release/dev builds; please update before 
 * [LiteBansBridge]
 * [MCSF (My Christian Swear Filter)]
 * [MZP-VoteParty]
-* [InteractiveChat DiscordSRV Addon] ^(Not^ ^associated^ ^with^ ^DiscordSRV)^
-* [DiscordSRVUtils] ^(Not^ ^associated^ ^with^ ^DiscordSRV)^
+* [InteractiveChat DiscordSRV Addon] (Not associated with DiscordSRV)
+* [DiscordSRVUtils] (Not associated with DiscordSRV)
 * [ActivityRoles]
 * [EconomyShopGUI]
-* [DiscordSchematicUploader] ^(Not^ ^associated^ ^with^ ^DiscordSRV)^
+* [DiscordSchematicUploader] (Not associated with DiscordSRV)
 * If you would like your plugin listed here, please bring it to `granny`'s attention in our [Discord](https://discordsrv.com/discord) server.
 ## Intended usage
 By using this plugin, you are able to give players the ability to chat in-game with players on your Discord server, as well as having people on the Discord server be able to chat with people in the minecraft server - This can be useful for players that still want to communicate with players in-game, but can't access the Minecraft server for whatever reason.
@@ -82,41 +88,37 @@ If you want to interface DiscordSRV with your plugin, you can do so by adding th
 
 
 <Tabs>
-    <TabItem value={"maven"} label={"Maven"}>
-        ```xml
-        <repository>
-            <id>dv8tion</id>
-            <name>m2-dv8tion</name>
-            <url>https://m2.dv8tion.net/releases</url>
-        </repository>
-        ...
-        <repository>
-            <id>Scarsz-Nexus</id>
-            <url>https://nexus.scarsz.me/content/groups/public/</url>
-        </repository>
-        ...
-        <dependency>
-            <groupId>com.discordsrv</groupId>
-            <artifactId>discordsrv</artifactId>
-            <version></version>
-            <scope>provided</scope>
-        </dependency>
-        ```
-    </TabItem>
-    <TabItem value={"gradle"} label={"Gradle"}>
-        ```groovy
-        maven {
-            name 'm2-dv8tion'
-            url 'https://m2.dv8tion.net/releases'
-        }
-        repositories {
-            maven { url 'https://nexus.scarsz.me/content/groups/public/' }
-        }
-        dependencies {
-            compileOnly 'com.discordsrv:discordsrv:'
-        }
-        ```
-    </TabItem>
+<TabItem value={"maven"} label={"Maven"}>
+```xml
+<repository>
+    <id>dv8tion</id>
+    <name>m2-dv8tion</name>
+    <url>https://m2.dv8tion.net/releases</url>
+</repository>
+...
+<repository>
+    <id>Scarsz-Nexus</id>
+    <url>https://nexus.scarsz.me/content/groups/public/</url>
+</repository>
+...
+<dependency>
+    <groupId>com.discordsrv</groupId>
+    <artifactId>discordsrv</artifactId>
+    <version></version>
+    <scope>provided</scope>
+</dependency>
+```
+</TabItem>
+<TabItem value={"gradle"} label={"Gradle"}>
+<CodeBlock language='groovy'>
+{`repositories {
+    maven { url 'https://nexus.scarsz.me/content/groups/public/' }
+}
+dependencies {
+    compileOnly 'com.discordsrv:discordsrv:${variables.project.version}'
+}`}
+</CodeBlock>
+</TabItem>
 </Tabs>
 
 ## Data usage

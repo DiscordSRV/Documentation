@@ -44,8 +44,7 @@ const config = {
           sidebarPath: './config/sidebars.js',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com//',
+          editUrl: 'https://github.com/DiscordSRV/DiscordSRV',
         },
         blog: false,
         theme: {

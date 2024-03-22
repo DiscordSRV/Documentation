@@ -1,7 +1,7 @@
 # Sync Setup
 
 :::warning
-**Please make sure to go through the [Initial Setup](initial-setup.md) before going through with this setup.**
+**Please make sure to go through the [Initial Setup](initial-setup.mdx) before going through with this setup.**
 :::
  
 ### Get the name(s) of the Minecraft group(s) you want to sync
@@ -30,7 +30,7 @@ vault groups: [default, MinecraftGroup1, MinecraftGroup2]
 
 ### Get Role ID(s) for the role(s) you want to sync  
 
-If you have `Developer Mode` enabled (see [Initial Setup](initial-setup.md)), you can get the IDs from `Server Settings > Roles` by right-clicking the role(s)  
+If you have `Developer Mode` enabled (see [Initial Setup](initial-setup.mdx)), you can get the IDs from `Server Settings > Roles` by right-clicking the role(s)  
 
 Role IDs are also in the `discordsrv-info.txt` file of debug reports, which can be accessed through the link generated from `/discordsrv debug`  
 
