@@ -1,6 +1,8 @@
-***
-**Please make sure to go through the [Initial Setup](initial-setup.md) before going through with this setup.**
-***
+# Link to Join Setup
+
+:::warning
+**Please make sure to go through the [Initial Setup](initial-setup.mdx) before going through with this setup.**
+:::
 
 This allows you to require the player have their discord account linked to their minecraft account before they can play on the server. When a player attempts to join, they get automatically kicked with a message saying that they need to message your DiscordSRV bot a code for them to be able to join.
 

@@ -1,11 +1,16 @@
+---
+title: voice.yml
+---
+
+import ReactPlayer from "react-player";
+
 # [voice.yml](https://config.discordsrv.com/voice/_)
 
 This is the configuration file for the Voice module. You gain the ability to connect your Discord Voice channels directly to Minecraft, and updates communicative access in real time.
 
-!!! note "Video of it in action"
-		<iframe width="640" height="360" src="https://www.youtube-nocookie.com/embed/R3GRFPUIqGE?mute=1" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
----
+:::note Video of it in action
+<ReactPlayer muted url='https://www.youtube-nocookie.com/embed/R3GRFPUIqGE' />
+:::
 
 ### [`Voice enabled`](https://config.discordsrv.com/voice/Voice%20enabled)[^1]
 Enables/disables the voice module.
@@ -17,8 +22,6 @@ The category that the plugin will handle voice channels in
 The voice channel (inside the voice category) that people will join to connect to the voice system
 ### [`Mute users who bypass speak permissions in the lobby`](https://config.discordsrv.com/voice/Mute%20users%20who%20bypass%20speak%20permissions%20in%20the%20lobby)
 If the plugin should server mute people who bypass speaking permission overrides in the lobby channel (the server owner, for example)
-
----
 
 ### [`Network`](https://config.discordsrv.com/voice/Network)
 #### [`Vertical Strength`](https://config.discordsrv.com/voice/Vertical%20Strength)

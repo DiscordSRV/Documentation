@@ -2,3 +2,7 @@ site/
 env/
 .vscode/
 .idea/
+
+.docusaurus
+node_modules
+build/
