@@ -130,8 +130,16 @@ const config = {
       },
       markdown: {
         format: "detect"
+      },
+      imageZoom: {
+        options: {
+          background: 'rgba(0,0,0,0.6)'
+        }
       }
     }),
+  plugins: [
+      'plugin-image-zoom'
+  ]
 };
 
 export default config;
