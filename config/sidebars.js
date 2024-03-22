@@ -13,7 +13,6 @@
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
-  // By default, Docusaurus generates a sidebar from the docs folder structure
   mainSidebar: [
     {
       type: 'doc',
@@ -120,6 +119,35 @@ const sidebars = {
         },
       ],
     },
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Troubleshooting',
+      items: [
+        {
+          type: 'link',
+          href: 'https://github.com/DiscordSRV/DiscordSRV/issues',
+          label: 'Report a bug'
+        },
+        {
+          type: 'link',
+          href: 'https://github.com/DiscordSRV/DiscordSRV/issues',
+          label: 'Request a feature'
+        },
+        {
+          type: 'link',
+          href: 'https://discordsrv.com/discord',
+          label: 'Ask for support'
+        },
+      ],
+    },
+  ],
+  ascensionSidebar: [
+    'ascension/index',
+    'ascension/compatibility',
+    'ascension/performance',
+    'ascension/security',
+    'ascension/placeholders',
     {
       type: 'category',
       collapsed: false,

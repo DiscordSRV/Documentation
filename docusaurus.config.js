@@ -72,7 +72,14 @@ const config = {
         items: [
           {
             type: 'docSidebar',
+            label: 'Home',
             sidebarId: 'mainSidebar',
+            position: 'left'
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'ascensionSidebar',
+            label: 'Ascension',
             position: 'left'
           },
           {
