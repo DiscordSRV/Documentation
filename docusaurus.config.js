@@ -138,7 +138,8 @@ const config = {
       }
     }),
   plugins: [
-      'plugin-image-zoom'
+      'plugin-image-zoom',
+      '@cmfcmf/docusaurus-search-local'
   ]
 };
 
