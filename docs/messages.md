@@ -6,16 +6,16 @@ title: messages.yml
 
 ### DiscordToMinecraft...
 
-| Placeholders       | Example                        | Description                                                                                                                        |
-|--------------------|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| `%allroles%`       | `Owner | Developer | Boss man` | All the user's roles separated by [`DiscordToMinecraftAllRolesSeparator`](/config#DiscordToMinecraftAllRolesSeparator)          |
-| `%message%`        | `Hello!`                       | The message content                                                                                                                |
-| `%toprole%`        | `Owner`                        | The user's highest ranking role                                                                                                    |
-| `%toprolealias%`   | `Owner`                        | The alias for the role from [`DiscordChatChannelRoleAliases`](/config#DiscordChatChannelRoleAliases), otherwise the role's name |
-| `%toproleinitial%` | `O`                            | The first initial of the user's highest ranking role                                                                               |
-| `%toprolecolor%`   | `<dark_red>`                   | The approximate color of the highest ranking role                                                                                  |
-| `%username%`       | `scarsz`                       | The user's username/nickname if set                                                                                                |
-| `%channelname%`    | `global`                       | The name of the Discord channel the message is coming from                                                                         |
+| Placeholders       | Example                          | Description                                                                                                                        |
+|--------------------|----------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| `%allroles%`       | `Owner \| Developer \| Boss man` | All the user's roles separated by [`DiscordToMinecraftAllRolesSeparator`](/config#DiscordToMinecraftAllRolesSeparator)          |
+| `%message%`        | `Hello!`                         | The message content                                                                                                                |
+| `%toprole%`        | `Owner`                          | The user's highest ranking role                                                                                                    |
+| `%toprolealias%`   | `Owner`                          | The alias for the role from [`DiscordChatChannelRoleAliases`](/config#DiscordChatChannelRoleAliases), otherwise the role's name |
+| `%toproleinitial%` | `O`                              | The first initial of the user's highest ranking role                                                                               |
+| `%toprolecolor%`   | `<dark_red>`                     | The approximate color of the highest ranking role                                                                                  |
+| `%username%`       | `scarsz`                         | The user's username/nickname if set                                                                                                |
+| `%channelname%`    | `global`                         | The name of the Discord channel the message is coming from                                                                         |
 
 :::note
 [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI) placeholders are also supported
