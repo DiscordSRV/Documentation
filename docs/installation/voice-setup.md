@@ -14,12 +14,12 @@ Voice enabled: true
 
 :::info
 Create a category (name doesn't matter) where the voice module will create/delete/move voice channels
-![create a voice category](/images/create_voice_category.png)
+![create a voice category](/assets/create_voice_category.png)
 :::
 
 :::info
 Right click on the Category and select `Copy ID`
-![copy category id](/images/copy_category_id.png)
+![copy category id](/assets/copy_category_id.png)
 :::
 
 In the `voice.yml` config search for the `Voice category` option and replace `000000000000000000` with the copied Category ID.
@@ -32,7 +32,7 @@ Create a channel (name doesn't matter) underneath the voice category you just ma
 
 :::info
 Right click on the Channel after moving it and select `Copy ID`
-![copy voice channel id](/images/copy_voice_channel_id.png)
+![copy voice channel id](/assets/copy_voice_channel_id.png)
 :::
 
 In the `voice.yml` config search for the `Lobby channel` option and replace `000000000000000000` with the copied Channel ID.

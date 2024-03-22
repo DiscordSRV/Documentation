@@ -1,6 +1,6 @@
 # Home
 
-![DiscordSRV](/images/discordsrv_logo_stroke.png)
+![DiscordSRV](/assets/discordsrv_logo_stroke.png)
 
 <div id="center">
 
