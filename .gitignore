@@ -5,3 +5,4 @@ env/
 
 .docusaurus
 node_modules
+build/

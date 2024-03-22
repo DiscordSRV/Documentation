@@ -93,28 +93,11 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://discordsrv.com/discord',
               },
             ],
           },
@@ -122,12 +105,8 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/DiscordSRV/DiscordSRV',
               },
             ],
           },
@@ -149,8 +128,50 @@ const config = {
       }
     }),
   plugins: [
-      'plugin-image-zoom',
-      '@cmfcmf/docusaurus-search-local'
+    'plugin-image-zoom',
+    ['@cmfcmf/docusaurus-search-local',
+      {
+        indexBlog: false
+      }
+    ],
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            to: 'installation/index.md',
+            from: '/Installation.md'
+          },
+          {
+            to: 'papi-placeholders.md',
+            from: '/PAPI-Placeholders.md'
+          },
+          {
+            to: 'lp-contexts.md',
+            from: '/LPContext.md'
+          },
+          {
+            to: 'faq.md',
+            from: '/FAQ.md'
+          },
+          {
+            to: 'commands.md',
+            from: '/Commands.md'
+          },
+          {
+            to: 'permissions.md',
+            from: '/Permissions.md'
+          },
+          {
+            to: 'installation/initial-setup.md',
+            from: '/installation/basic-setup.md'
+          },
+        ],
+        createRedirects: (existingPath) => {
+          return ['/master/' + existingPath, '/develop/' + existingPath];
+        },
+      }
+    ]
   ]
 };
 
