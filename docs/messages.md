@@ -8,10 +8,10 @@ title: messages.yml
 
 | Placeholders       | Example                        | Description                                                                                                                        |
 |--------------------|--------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| `%allroles%`       | `Owner | Developer | Boss man` | All the user's roles separated by [`DiscordToMinecraftAllRolesSeparator`](../config/#DiscordToMinecraftAllRolesSeparator)          |
+| `%allroles%`       | `Owner | Developer | Boss man` | All the user's roles separated by [`DiscordToMinecraftAllRolesSeparator`](/config#DiscordToMinecraftAllRolesSeparator)          |
 | `%message%`        | `Hello!`                       | The message content                                                                                                                |
 | `%toprole%`        | `Owner`                        | The user's highest ranking role                                                                                                    |
-| `%toprolealias%`   | `Owner`                        | The alias for the role from [`DiscordChatChannelRoleAliases`](../config/#DiscordChatChannelRoleAliases), otherwise the role's name |
+| `%toprolealias%`   | `Owner`                        | The alias for the role from [`DiscordChatChannelRoleAliases`](/config#DiscordChatChannelRoleAliases), otherwise the role's name |
 | `%toproleinitial%` | `O`                            | The first initial of the user's highest ranking role                                                                               |
 | `%toprolecolor%`   | `<dark_red>`                   | The approximate color of the highest ranking role                                                                                  |
 | `%username%`       | `scarsz`                       | The user's username/nickname if set                                                                                                |
@@ -182,7 +182,7 @@ the separator used in between players
 | `%displaynamenoescapes%` | `BigBossManJeb`                                      | display name from things like nicknames without escaping discord format (for use in inline code & code block markdown) |
 | `%usernamenoescapes%`    | `jeb_`                                               | raw player username without escaping discord format (for use in inline code & code block markdown)                     |
 | `%date%`                 | `Sun Jan 1 15:30:45 PDT 2017`                        | current date & time                                                                                                    |
-| `%embedavatarurl%`       | [`<AvatarUrl>`](../config/#AvatarUrl)                | the user's avatar                                                                                                      |
+| `%embedavatarurl%`       | [`<AvatarUrl>`](/config#AvatarUrl)                | the user's avatar                                                                                                      |
 | `%botavatarurl%`         | `<Bot Avatar Url>`                                   | the bot's avatar                                                                                                       |
 | `%botname%`              | `DiscordSRV bot`                                     | the bot's name                                                                                                         |
 

@@ -77,7 +77,7 @@ MinecraftPlayerLeaveMessage:
 
 No, but you can install the plugin on every Bukkit server. (Do **not** use the same token for more than 1 server!)
 
-If you would like to have linked accounts shared across servers, you can connect your DiscordSRV instances to a MySQL database ([`Experiment_Jdbc`](../config/#experiment_jdbc) options)
+If you would like to have linked accounts shared across servers, you can connect your DiscordSRV instances to a MySQL database ([`Experiment_Jdbc`](/config#experiment_jdbc) options)
 
 ### Why won't messages send from Minecraft to Discord? I have TownyChat installed btw. {#messages-wont-send-townychat}
 
@@ -141,7 +141,7 @@ Instructions for updating to ASM5:
 5. Rename the jar file you just copied to SpecialSource-1.7-SNAPSHOT.jar
 
 ### Only show errors in console-channel
-If you want to use your console-channel to only inform you about problems, you can achieve that by modifying the [`DiscordConsoleChannelLevels`](../config/#DiscordConsoleChannelLevels) option:
+If you want to use your console-channel to only inform you about problems, you can achieve that by modifying the [`DiscordConsoleChannelLevels`](/config#DiscordConsoleChannelLevels) option:
 ```diff
 - DiscordConsoleChannelLevels: [info, warn, error]
 + DiscordConsoleChannelLevels: [error]
@@ -208,7 +208,7 @@ DiscordConsoleChannelFilters: {"\\[\\/[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+(?::[0-9]
 
 ### Can we op players from the discord console? {#op-players-discord-console}  
 
-DiscordSRV by default blacklists the use of a handful of commands through the console channel through the [`DiscordConsoleChannelBlacklistedCommands`](../config/#DiscordConsoleChannelBlacklistedCommands) option.
+DiscordSRV by default blacklists the use of a handful of commands through the console channel through the [`DiscordConsoleChannelBlacklistedCommands`](/config#DiscordConsoleChannelBlacklistedCommands) option.
 
 Remove the `"op"` value to allow the command to be used.
 
