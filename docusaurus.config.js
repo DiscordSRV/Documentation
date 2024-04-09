@@ -26,10 +26,6 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // display the last time a page was updated
-  showLastUpdateAuthor: true,
-  showLastUpdateTime: true,
-
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
@@ -46,9 +42,9 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: './config/sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/DiscordSRV/DiscordSRV',
+          editUrl: 'https://github.com/DiscordSRV/DiscordSRV/blob/master',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
         },
         blog: false,
         theme: {
