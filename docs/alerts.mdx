@@ -119,7 +119,7 @@ Helpful resources for learning how to use SpEL:
             Embed:
               Color: "#869600"
               Author:
-                ImageUrl: "https://crafatar.com/avatars/${player.getUniqueId()}?overlay"
+                ImageUrl: "https://crafthead.net/helm/${player.getUniqueId()}"
                 Name: '${player.displayName + " is now AFK"}'
         ```
     </TabItem>
@@ -132,7 +132,7 @@ Helpful resources for learning how to use SpEL:
             Embed:
               Color: "#869600"
               Author:
-                ImageUrl: "https://crafatar.com/avatars/${player.getUniqueId()}?overlay"
+                ImageUrl: "https://crafthead.net/helm/${player.getUniqueId()}"
                 Name: '${player.displayName + " is no longer AFK"}'
         ```
     </TabItem>
@@ -184,7 +184,7 @@ Helpful resources for learning how to use SpEL:
             Embed:
               Color: "#869600"
               Author:
-                ImageUrl: "https://crafatar.com/avatars/${#event.getAffected().getUUID()}?overlay"
+                ImageUrl: "https://crafthead.net/helm/${#event.getAffected().getUUID()}"
                 Name: '${#event.getAffected().getName() + " is " + (#event.value ? "now" : "no longer") + " AFK"}'
         ```
     </TabItem>
@@ -242,7 +242,7 @@ Helpful resources for learning how to use SpEL:
             Embed:
               Color: "#48f542" #Green
               Author:
-                ImageUrl: "https://crafatar.com/avatars/${buyer.getUniqueId()}/"
+                ImageUrl: "https://crafthead.net/helm/${buyer.getUniqueId()}"
                 Name: "${buyer.getName()} bought ${playerAuction.getItem().getType()} for $${price}"
               Title:
                 Text: "Auction Information:"
@@ -266,7 +266,7 @@ Helpful resources for learning how to use SpEL:
             Embed:
               Color: "#4287f5" #Blue
               Author:
-                ImageUrl: "https://crafatar.com/avatars/${getSeller().getUniqueId()}/"
+                ImageUrl: "https://crafthead.net/helm/${getSeller().getUniqueId()}"
                 Name: "${seller.getName()} is selling ${playerAuction.getItem().getType()} for $${playerAuction.getPrice()}"
               Title:
                 Text: "Auction Information:"
@@ -291,7 +291,7 @@ Helpful resources for learning how to use SpEL:
             Embed:
               Color: "#bf2a2a" #Red
               Author:
-                ImageUrl: "https://crafatar.com/avatars/${getPlayerAuction().getAuctionPlayer().getUUID()}/"
+                ImageUrl: "https://crafthead.net/helm/${getPlayerAuction().getAuctionPlayer().getUUID()}"
                 Name: "${playerAuction.getAuctionPlayer().getName()} removed ${getPlayerAuction().getItem().getType()} from the Auction House."
               Title:
                 Text: "Auction Information:"
@@ -427,7 +427,7 @@ Helpful resources for learning how to use SpEL:
             Embed:
               Color: "#000001"
               Author:
-                ImageUrl: "https://crafatar.com/avatars/${#event.getPlayer().getUniqueId()}?overlay"
+                ImageUrl: "https://crafthead.net/helm/${#event.getPlayer().getUniqueId()}"
                 Name: '${#event.getPlayer().getName()}'
               Description: |-
                 Coords: `[${block.getLocation().getBlockX() + ", " + block.getLocation().getBlockY() + ", " + block.getLocation().getBlockZ()}]`
