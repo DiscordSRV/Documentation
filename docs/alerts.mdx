@@ -138,6 +138,41 @@ Helpful resources for learning how to use SpEL:
     </TabItem>
 </Tabs>
 
+
+### Discord
+
+<Tabs>
+    <TabItem value='discord-guildmemberupdateboosttimeevent-1' label='GuildMemberUpdateBoostTimeEvent (Boosting)'>
+        [GuildMemberUpdateBoostTimeEvent.java](https://ci.dv8tion.net/job/JDA/javadoc/net/dv8tion/jda/api/events/guild/member/update/GuildMemberUpdateBoostTimeEvent.html)
+        ```yaml
+        - Trigger: GuildMemberUpdateBoostTimeEvent
+        Channel: boosters
+        Conditions:
+        - '#event.getOldTimeBoosted == null || jdaEvent.getOldTimeBoosted().isBefore(jdaEvent.getNewTimeBoosted());'
+        Embed:
+        Color: "#00ff00"
+        Author:
+        ImageUrl: "{embedavatarurl}"
+        Name: "{username} boosted the server :)"
+        ```
+    </TabItem>
+    <TabItem value='discord-guildmemberupdateboosttimeevent-2' label='GuildMemberUpdateBoostTimeEvent (Not Boosting)'>
+        [GuildMemberUpdateBoostTimeEvent.java](https://ci.dv8tion.net/job/JDA/javadoc/net/dv8tion/jda/api/events/guild/member/update/GuildMemberUpdateBoostTimeEvent.html)
+        ```yaml
+        - Trigger: GuildMemberUpdateBoostTimeEvent
+        Channel: boosters
+        Conditions:
+        - '#event.getNewTimeBoosted == null || !jdaEvent.getOldTimeBoosted().isBefore(jdaEvent.getNewTimeBoosted());'
+        Embed:
+        Color: "#00ff00"
+        Author:
+        ImageUrl: "{embedavatarurl}"
+        Name: "{username} is no longer boosting the server :("
+        ```
+    </TabItem>
+
+</Tabs>
+
 ### DiscordSRV
 
 <Tabs>
