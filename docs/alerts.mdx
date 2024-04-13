@@ -148,12 +148,13 @@ Helpful resources for learning how to use SpEL:
         - Trigger: GuildMemberUpdateBoostTimeEvent
         Channel: boosters
         Conditions:
-        - '#event.getOldTimeBoosted == null || jdaEvent.getOldTimeBoosted().isBefore(jdaEvent.getNewTimeBoosted());'
+        - '#event.getOldTimeBoosted() == null'
+        - '#event.getNewTimeBoosted() != null'
         Embed:
         Color: "#00ff00"
         Author:
         ImageUrl: "{embedavatarurl}"
-        Name: "{username} boosted the server :)"
+        Name: "{member.getEffectiveName()} started boosting the server :)"
         ```
     </TabItem>
     <TabItem value='discord-guildmemberupdateboosttimeevent-2' label='GuildMemberUpdateBoostTimeEvent (Not Boosting)'>
@@ -162,12 +163,13 @@ Helpful resources for learning how to use SpEL:
         - Trigger: GuildMemberUpdateBoostTimeEvent
         Channel: boosters
         Conditions:
-        - '#event.getNewTimeBoosted == null || !jdaEvent.getOldTimeBoosted().isBefore(jdaEvent.getNewTimeBoosted());'
+        - '#event.getOldTimeBoosted() != null'
+        - '#event.getNewTimeBoosted() == null'
         Embed:
         Color: "#00ff00"
         Author:
         ImageUrl: "{embedavatarurl}"
-        Name: "{username} is no longer boosting the server :("
+        Name: "${member.getEffectiveName()} is no longer boosting the server :("
         ```
     </TabItem>
 
