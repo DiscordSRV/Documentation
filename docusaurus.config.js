@@ -42,7 +42,7 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: './config/sidebars.js',
-          editUrl: 'https://github.com/DiscordSRV/DiscordSRV/blob/master',
+          editUrl: 'https://github.com/DiscordSRV/Documentation/edit/master',
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
         },
