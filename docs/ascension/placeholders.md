@@ -34,88 +34,174 @@ This same premise is used for all the re lookup placeholders.
 ---
 # Discord
 ## User
-`%user_name%` - The username of the Discord user
+#### `%user_name%`
+The username of the Discord user  
+Example value: `myusername1`
 
-`%user_effective_name%` -The effective display name of the Discord user
+#### `%user_tag%`
+The Discord user's username, including discriminator if they have one  
+Example value: `myusername1#1234`
 
-`%user_discriminator%` - The user's discriminator
+#### `%user_effective_name%`
+The effective display name of the Discord user  
+Example value: `My Display Name`
 
-`%user_avatar_url%` - The Discord user's avatar (if they do not have one set, this will be empty)
+#### `%user_discriminator%`
+The user's discriminator (This is being phased out and is only truly useful for bots)  
+Example value: `0000`
 
-`%user_effective_avatar_url%` - The Discord user's avatar that is currently active (if they do not have one set, this will provide the default Discord avatar)
+#### `%user_avatar_url%`
+The Discord user's avatar (if they do not have one set, this will be empty)  
+Example value: `https://cdn.discordapp.com/avatars/827880927199494164/bdde9008a644ecc62d97c6f9153462c7.webp?size=64`
 
-`%user_tag%` - The Discord user's username, including discriminator if they have one
+#### `%user_effective_avatar_url%`
+The Discord user's avatar that is currently active (if they do not have one set, this will provide the default Discord avatar)  
+Example value: `https://cdn.discordapp.com/avatars/827880927199494164/bdde9008a644ecc62d97c6f9153462c7.webp?size=64`
 
 ## Member
-`%user_effective_server_name%` - The nickname name of this Discord server member
+#### `%user_effective_server_name%` 
+The nickname name of this Discord server member  
+Example value: `My cool nickname`
 
-`%user_effective_server_avatar_url%` - The avatar url that that is active for this server member
+#### `%user_effective_server_avatar_url%`
+The avatar url that that is active for this server member  
+Example value: `https://cdn.discordapp.com/avatars/827880927199494164/bdde9008a644ecc62d97c6f9153462c7.webp?size=64`
 
-`%user_color%` - The color of the user's highest role that has a color
+#### `%user_color%`
+The color of the user's highest role that has a color. May be used with [color](#color) subplaceholders.
+Example usages: `%user_color%`, `%user_color_hex%`
 
-`%user_isboosting%` - Whether this member is currently boosting the server
+#### `%user_isboosting%`
+Whether this member is currently boosting the server  
+Example values: `false`, `true`
 
-`%user_highest_role_<role>%` - The highest role of the member. Replace `<role>` with any of the [role](#role) placeholders. More information about recursive placeholders [here](#recursive-placeholders)
+#### `%user_highest_role_<subplaceholder>%`
+The highest role of the member. Replace `<subplaceholder>` with any of the [role](#role) placeholders. More information about recursive placeholders [here](#recursive-placeholders)  
+Example usages: `%user_highest_role_name%`, `%user_highest_role_color%`
 
-`%user_hoisted_role_<role>%` - The highest hoisted role of the member. Replace `<role>` with any of the [role](#role). More information about recursive placeholders [here](#recursive-placeholders)
+#### `%user_hoisted_role_<subplaceholder>%`
+The highest hoisted role of the member. Replace `<subplaceholder>` with any of the [role](#role). More information about recursive placeholders [here](#recursive-placeholders)  
+Example usages: `%user_hoisted_role_name%`, `%user_hoisted_role_color%`
 
-`%user_roles%` - The roles of the member. This placeholder supports a suffix to be set, more information can be found [here](#placeholder-suffixes)
+#### `%user_roles%`
+The roles of the member. You can specify the separator for multiple roles as a suffix, more information can be found [here](#placeholder-suffixes)  
+Example usages: `%user_roles%`, `%user_roles:', '%`
 
 ## Message
-`%message_jump_url%` - The URL to jump to this message
+#### `%message_jump_url%`
+The URL to jump to this message  
+Example value: `https://discord.com/channels/135634590575493120/137421286501646336/1228806460172140616`
 
-`%message_reply%` - The format for messages which contain a reply. This can be edited in the config
+#### `%message_reply%`
+The format for messages which contain a reply. The format for the content of this placeholder can be edited in the config (`channels.*.discord-to-minecraft.reply-format`)
 
-`%message_attachments%` - The attachments in the message sent. This placeholder supports a suffix to be set, more information can be found [here](#placeholder-suffixes)
+#### `%message_attachments%`
+The attachments in the message sent. The format for the content of this placeholder can be edited in the config (`channels.*.discord-to-minecraft.attachment-format`). You can specify the separator for multiple attachments as a suffix, more information can be found [here](#placeholder-suffixes)  
+Example usages: `%message_attachments%`, `%message_attachments:', '%`
 
 ## Role
-`%role_name%` - The name of the Discord role
+#### `%role_name%`
+The name of the Discord role  
+Example value: `Moderator`
 
-`%role_color%` - The color of the Discord role
+#### `%role_color%`
+The color of the Discord role. May be used with [color](#color) subplaceholders.  
+Example usages: `%role_color%`, `%role_color_hex%`
 
 ## Channel
-`%channel_name%` - The name of the channel
+#### `%channel_name%`
+The name of the channel  
+Example value: `discordsrv-test-chat`
 
-`%channel_jump_url%` - The jump url of the channel
+#### `%channel_jump_url%`
+The jump url of the channel  
+Example value: `https://discord.com/channels/135634590575493120/137421286501646336`
 
-## Guild
-`%server_name%` - The name of the Discord guild
+## Server
+#### `%server_name%`
+The name of the Discord guild  
+Example value: `My Awesome Server`
 
-`%server_member_count%` - The member count of the guild
+#### `%server_member_count%`
+The member count of the guild  
+Example value: `107`
 
 ## Global
-`%discord_invite%` - The invite of your Discord server (this is either provided by you in the config, or DiscordSRV auto generates it for you)
+#### `%discord_invite%`
+The invite of your Discord server (this is either provided by you in the config, or DiscordSRV auto generates it for you)  
+Example value: `https://discord.gg/HGAdJEumxC`
 
 ---
 # Minecraft
 ## Player
-`%player_name%` - The username of the Minecraft player
+#### `%player_name%`
+The username of the Minecraft player  
+Example value: `Notch`
 
-`%player_uuid%` - The UUID of the Minecraft player
+#### `%player_uuid%`
+The UUID of the Minecraft player  
+Example value: `069a79f4-44e9-4726-a5be-fca90e38aaf5`
 
-`%player_uuid_nodashes%` - The UUID of the Minecraft player without any dashes
+#### `%player_uuid_nodashes%`
+The UUID of the Minecraft player without any dashes  
+Example value: `069a79f444e94726a5befca90e38aaf5`
 
-`%player_texture%` - The texture of the Minecraft player (not implemented yet)
+#### `%player_texture%`
+The texture of the Minecraft player (not implemented yet)
 
-`%player_avatar_url%` - The avatar url of the Minecraft player (the API used for this can be changed in the config)
+#### `%player_avatar_url%`
+The avatar url of the Minecraft player (the API used for this can be changed in the config (`avatar-provider.avatar-url-template`))
 
-`%player_meta_prefix%` - The meta prefix of the Minecraft player (set using the meta key `discordsrv_prefix`)
+#### `%player_meta_prefix%`
+The meta prefix of the Minecraft player (set using the [LuckPerms meta] key `discordsrv_prefix`)  
+Example value: `Mod `
 
-`%player_meta_suffix%` - The meta suffix of the Minecraft player (set using the meta key `discordsrv_suffix`)
+#### `%player_meta_suffix%`
+The meta suffix of the Minecraft player (set using the [LuckPerms meta] key `discordsrv_suffix`)
+Example value: ` Staff Member`
 
-`%player_prefix%` - The prefix of the Minecraft player
+#### `%player_prefix%`
+The prefix of the Minecraft player  
+Example value: `[Mod] `
 
-`%player_suffix%` - The suffix of the Minecraft player
+#### `%player_suffix%`
+The suffix of the Minecraft player  
+Example value: ` (Staff Member)`
+
+---
+
+## Color
+#### `%color_rgb%`
+The rgb decimal value for the color  
+Example value: `16738740`
+
+#### `%color_hex%`  
+The hex value for the color  
+Example value: `ff69b4`
+
+#### `%color_red%`
+The red value for the color  
+Example value: `255`
+
+#### `%color_green%`
+The green value for the color  
+Example value: `105`
+
+#### `%color_blue%`
+The blue value for the color  
+Example value: `180`
 
 ---
 
 # Global placeholders
-`%text:'<text>'"` - Returns arbitrary text. An example of a use case would be changing the placeholder to custom text if it is empty. For example `%player_prefix|text:'No Prefix'%`
+#### `%text:'<text>'"` - Returns arbitrary text. An example of a use case would be changing the placeholder to custom text if it is empty. For example `%player_prefix|text:'No Prefix'%`
 
 # Date formatting
 Some placeholders such as `log_time` for console lines take a time formatting string, for example: `ccc HH:mm:ss zzz` in `%log_time:'ccc HH:mm:ss zzz'%`
 
 ### (Useful) Formatting characters
+Use multiple of the same character back-to-back for a longer output, for example `uu` -> `04`, `uuuu` -> `2004`
+
 | Symbol | Meaning                    | Examples                                       |
 |--------|----------------------------|------------------------------------------------|
 | u      | year                       | 2004; 04                                       |
@@ -141,10 +227,11 @@ Some placeholders such as `log_time` for console lines take a time formatting st
 | X      | zone-offset 'Z' for zero   | Z; -08; -0830; -08:30; -083015; -08:30:15;     |
 | x      | zone-offset                | +0000; -08; -0830; -08:30; -083015; -08:30:15; |
 | Z      | zone-offset                | +0000; -0800; -08:00;                          |
+
 [Source](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
 
 ## Discord timestamp formatting
-Example: `%log_time:'timestamp'%` or `%log_time:'timestamp:t'%`
+Example usages: `%log_time:'timestamp'%` or `%log_time:'timestamp:t'%`
 
 ### Styles
 | Style       | Meaning         | Example                      |
@@ -156,4 +243,7 @@ Example: `%log_time:'timestamp'%` or `%log_time:'timestamp:t'%`
 | f (default) | Short Date/Time | 20 April 2021 16:20          |
 | F           | Long Date/Time  | Tuesday, 20 April 2021 16:20 |
 | R           | Relative Time   | 2 months ago                 | 
+
 [Source](https://discord.com/developers/docs/reference#message-formatting-timestamp-styles)
+
+[LuckPerms meta]: https://luckperms.net/wiki/Prefixes,-Suffixes-&-Meta#meta/
