@@ -1,3 +1,7 @@
+:::danger
+This is documentation for **a future version of DiscordSRV** and information on this page does not apply to DiscordSRV version 1 and may be **inaccurate** in general
+:::
+
 # Security
 
 We take security seriously, and so should you.
