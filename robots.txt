@@ -1,0 +1,4 @@
+User-agent: *
+Allow:
+Disallow: /ascension/
+Sitemap: https://docs.discordsrv.com/sitemap.xml
