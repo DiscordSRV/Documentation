@@ -231,9 +231,8 @@ No. It's programmed in Java, not Javascript.
 
 ### How can I show the player count in the game status? {#player-count-game-status}
 
-This can be done by using [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/)'s  
-`%playerlist_<type>,<subtype>,<include>,<output>,<subtype_value>%` placeholder  
-in our [DiscordGameStatus](https://config.discordsrv.com/config/DiscordGameStatus) option.
+This can be done by using [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/)'s `%playerlist_<listName>_<list|amount|#>%` placeholder
+in our [DiscordGameStatus](https://config.discordsrv.com/config/DiscordGameStatus) option. More info on this placeholder's syntax can be found [here](https://github.com/Tanguygab/PlayerList-PlaceholderAPI-Expansion/wiki).
 
 1. Make sure you have [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) installed
 2. Once the PlaceholderAPI plugin is loaded, run `/papi ecloud download PlayerList` to install the [PlayerList](https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders#playerlist) expansion
