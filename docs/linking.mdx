@@ -1,21 +1,31 @@
+---
+title: linking.yml
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # [linking.yml](https://config.discordsrv.com/linking/_)
 
 Require players to link their account to Discord before letting them play and optionally require a subscriber role.
 
 ## Screenshots
 
-=== "Kick Message :camera:"
-    ![Must link account to play](./images/javaw_12rAo3Y4RJ.png)
-=== "Failed to find subscriber role Message :camera:"
-    ![Must be subscribed to play](./images/javaw_uJSdOF2OAa.png)
+<Tabs>
+<TabItem value='kick-message' label='📷 Kick Message'>
+![Must link account to play](/assets/javaw_12rAo3Y4RJ.png)
+</TabItem>
 
----
+<TabItem value='failed-role-message' label='📷 Failed to find subscriber role Message'>
+![Must be subscribed to play](/assets/javaw_uJSdOF2OAa.png)
+</TabItem>
+</Tabs>
 
 ## [`Enabled`](https://config.discordsrv.com/linking/Enabled)
 Enable/Disable the `RequireLink4Gameplay` module.
 ## [`Listener priority`](https://config.discordsrv.com/linking/Listener%20priority)
 Control the priority `RequireLink4Gameplay`'s join listener is on.
-If 
+If
 Available values are [`LOWEST`, `LOW`, `NORMAL`, `HIGH`, `HIGHEST`]
 ## [`Listener event`](https://config.discordsrv.com/linking/Listener%20event)
 The event that the link module should listen and disallow logins on.
@@ -39,18 +49,16 @@ Placeholders:
 If enabled, players will not only need to have their accounts linked but will also be required to be a member of a Discord server that the bot is also in.
 Acceptable formats:
 
-* `true`/`false`: linked account must be in at least one Discord server that the bot is also in  
+* `true`/`false`: linked account must be in at least one Discord server that the bot is also in
   example: `true`
 
-* `<server id>`: linked account must be in the given Discord server  
+* `<server id>`: linked account must be in the given Discord server
   example: `135634590575493120`
 
-* `[<server id>, <server id>, ...]`: linked account must be in ALL of the given Discord servers  
+* `[<server id>, <server id>, ...]`: linked account must be in ALL of the given Discord servers
   example: `[135634590575493120, 690411863766466590]`
 
 This option's value is superseded when you have subscriber roles enforced below.
-
----
 
 ## Subscriber role:
 Optionally require people to not only be linked but to have one/all specified role[s].
@@ -63,8 +71,6 @@ Enable/Disable requiring all listed roles. When false, only one of the roles lis
 ### [`Kick message`](https://config.discordsrv.com/linking/Kick%20message)
 The message that gets displayed when a user gets kicked for not having a/all role/s.
 
----
-
 ## Messages:
 ### [`DiscordSRV still starting`](https://config.discordsrv.com/linking/DiscordSRV%20still%20starting)
 What gets displayed as the kick reason if someone attempts to join before DiscordSRV loads up.
@@ -73,4 +79,4 @@ What gets displayed as the kick reason if the required role[s] were not found on
 ### [`Failed for unknown reason`](https://config.discordsrv.com/linking/Failed%20for%20unknown%20reason)
 What gets displayed as the kick reason if an error occurs.
 ### [`Kicked for unlinking`](https://config.discordsrv.com/linking/Kicked%20for%20unlinking)
-What gets displayed as the kick reason if the player unlinks in-game.  
+What gets displayed as the kick reason if the player unlinks in-game.
