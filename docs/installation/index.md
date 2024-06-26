@@ -1,8 +1,8 @@
 # Installation
 
-This installation page has been split up into mulltiple pages.
+This installation page has been split up into multiple pages.
 
-* [Initial Setup](initial-setup)
-* [Group \<\-\> Role Sync](sync-setup)
-* [Voice Setup](voice-setup)
-* [Require Linking to Join Setup](link-to-join-setup)
+* [Initial Setup](initial-setup.mdx)
+* [Group \<\-\> Role Sync](sync-setup.md)
+* [Voice Setup](voice-setup.md)
+* [Require Linking to Join Setup](link-to-join-setup.md)
