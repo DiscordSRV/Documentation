@@ -15,6 +15,12 @@ Available contexts:
 * `discordsrv:role_id` - the role id the user has in Discord
 * `discordsrv:server_id` - whether the user is a member of the server with the given id (which the bot is also a part of)
 
+<details>
+<summary>Is a user fulfilling the LP context in `/lp user <user> info` but not actually receiving the group?</summary>
+
+If a user seems to be fulfilling the LuckPerms context in `/lp user <user> info` but they don't get their primary group set when adding a higher weighted parent with the relevant context then set `primary-group-calculation` to `all-parents-by-weight` in the LuckPerms config.
+</details>
+
 ##### Examples
 
 <Tabs>
