@@ -24,7 +24,7 @@ Right click on the Category and select `Copy ID`
 
 In the `voice.yml` config search for the `Voice category` option and replace `000000000000000000` with the copied Category ID.
 ```yaml
-# voice.yml Line 13
+# voice.yml Line 14
 Voice category: 000000000000000000
 ```
 
@@ -37,7 +37,7 @@ Right click on the Channel after moving it and select `Copy ID`
 
 In the `voice.yml` config search for the `Lobby channel` option and replace `000000000000000000` with the copied Channel ID.
 ```yaml
-# voice.yml Line 17
+# voice.yml Line 18
 Lobby channel: 000000000000000000
 ```
 
