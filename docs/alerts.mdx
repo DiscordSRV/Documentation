@@ -17,6 +17,10 @@ Refer to the Bukkit API javadoc to find events & properties to use:
 
 * https://hub.spigotmc.org/javadocs/bukkit  
 
+If you are looking to create alerts for LuckPerms related events, an addon is required for it:
+
+* https://github.com/ANutley/LuckPermsAlerts
+
 Helpful resources for learning how to use SpEL:
 
 * [https://docs.spring.io/](https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/expressions.html)
@@ -104,6 +108,39 @@ Helpful resources for learning how to use SpEL:
                 ImageUrl: "https://www.spigotmc.org/data/resource_icons/8/8695.jpg"
                 Name: "${punishment.name} was punished with reason: ${punishment.reason}"
         ```
+    </TabItem>
+</Tabs>
+
+### LuckPerms
+
+<Tabs>
+    <TabItem value="luckperms-nodeaddevent" label="NodeAddEvent (Permission)" default>
+        [NodeAddEvent.java](https://github.com/LuckPerms/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeAddEvent.java)      
+        ```yaml
+        - Trigger: LPNodeAddEvent
+          Channel: global
+          Conditions:
+          - "#event.getEvent().getNode().getType() == 'PERMISSION'"
+          - "#event.getEvent().isUser()"
+          Embed:
+            Title: "Player's permissions changed"
+            Color: "#00ff00"
+            Description: "`${#event.getEvent().getTarget().getFriendlyName()}` has had the permission `${#event.getEvent().getNode().getPermission()}` set to `${#event.getEvent().getNode().getValue()}`"
+        ```
+    </TabItem>
+    <TabItem value="luckperms-nodeaddevent-1" label="NodeAddEvent (Group)" default>
+        [NodeAddEvent.java](https://github.com/LuckPerms/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeAddEvent.java)      
+          ```yaml
+          - Trigger: LPNodeAddEvent
+            Channel: global
+            Conditions:
+            - "#event.getEvent().getNode().getType() == 'INHERITANCE'"
+            - "#event.getEvent().isUser()"
+            Embed:
+              Title: "Player's groups changed"
+              Color: "#00ff00"
+              Description: "`${#event.getEvent().getTarget().getFriendlyName()}` has had the group `${#event.getEvent().getNode().getGroupName()}` set to `${#event.getEvent().getNode().getValue()}`"
+          ```
     </TabItem>
 </Tabs>
 
