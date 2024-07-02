@@ -266,6 +266,24 @@ Helpful resources for learning how to use SpEL:
     </TabItem>
 </Tabs>
 
+### NuVotifier (Votifier)
+
+<Tabs>
+    <TabItem value="nuvotifier-votifierevent" label="VotifierEvent" default>
+        [VotifierEvent.java](http://vexsoftware.github.io/votifier/docs/com/vexsoftware/votifier/model/VotifierEvent.html)
+        ```yaml
+        # Example alert to send a message when a player has voted
+        - Trigger: VotifierEvent
+        Channel: votes
+        Embed:
+        Color: "#00ff00"
+        Author:
+        ImageUrl: "{embedavatarurl}"
+        Name: "${vote.username} voted on ${vote.serviceName}!"
+        ```
+    </TabItem>
+</Tabs>
+
 ### PlayerAuctions
 
 <Tabs>
