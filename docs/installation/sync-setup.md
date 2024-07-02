@@ -21,7 +21,7 @@ groups:
     ...
 ```
 
-You can see what groups DiscordSRV can see in the `discordsrv-info.txt` file of debug reports, which can be accessed through the link generated from `/discordsrv debug`  
+You can see what groups DiscordSRV can see in the `discordsrv-info.txt` file of debug reports, which can be accessed through the link generated from `/discordsrv debugger upload`  
 
 ```yaml
 # discordsrv-info.txt from debug report
@@ -32,7 +32,7 @@ vault groups: [default, MinecraftGroup1, MinecraftGroup2]
 
 If you have `Developer Mode` enabled (see [Initial Setup](initial-setup.mdx)), you can get the IDs from `Server Settings > Roles` by right-clicking the role(s)  
 
-Role IDs are also in the `discordsrv-info.txt` file of debug reports, which can be accessed through the link generated from `/discordsrv debug`  
+Role IDs are also in the `discordsrv-info.txt` file of debug reports, which can be accessed through the link generated from `/discordsrv debugger upload`  
 
 ```C++
 //discordsrv-info.txt from debug report
