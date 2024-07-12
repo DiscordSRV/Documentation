@@ -107,6 +107,44 @@ Helpful resources for learning how to use SpEL:
     </TabItem>
 </Tabs>
 
+### LuckPerms
+:::warning
+Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugin
+:::
+
+<Tabs>
+    <TabItem value="luckperms-nodeaddevent" label="NodeAddEvent (Permission)" default>
+        [NodeAddEvent.java](https://github.com/LuckPerms/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeAddEvent.java)      
+        ```yaml
+        # Example alert to send a message when a permission has been added or removed from a player
+          - Trigger: LPNodeAddEvent
+            Channel: global
+            Conditions:
+            - "#event.getEvent().getNode().getType() == 'PERMISSION'"
+            - "#event.getEvent().isUser()"
+            Embed:
+              Title: "Player's permissions changed"
+              Color: "#00ff00"
+              Description: "`${#event.getEvent().getTarget().getFriendlyName()}` has had the permission `${#event.getEvent().getNode().getPermission()}` set to `${#event.getEvent().getNode().getValue()}`"
+        ```
+    </TabItem>
+    <TabItem value="luckperms-nodeaddevent-1" label="NodeAddEvent (Group)" default>
+        [NodeAddEvent.java](https://github.com/LuckPerms/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeAddEvent.java)      
+        ```yaml
+        # Example alert to send a message when a rank has been added or removed from a player
+          - Trigger: LPNodeAddEvent
+            Channel: global
+            Conditions:
+            - "#event.getEvent().getNode().getType() == 'INHERITANCE'"
+            - "#event.getEvent().isUser()"
+            Embed:
+              Title: "Player's groups changed"
+              Color: "#00ff00"
+              Description: "`${#event.getEvent().getTarget().getFriendlyName()}` has had the group `${#event.getEvent().getNode().getGroupName()}` set to `${#event.getEvent().getNode().getValue()}`"
+        ```
+    </TabItem>
+</Tabs>
+
 ### Content Management Interface (CMI)
 
 <Tabs>
