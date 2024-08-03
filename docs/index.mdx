@@ -125,8 +125,8 @@ If you want to interface DiscordSRV with your plugin, you can do so by adding th
 
 <Tabs>
 <TabItem value={"maven"} label={"Maven"}>
-```xml
-<repository>
+<CodeBlock language='xml'>
+{`<repository>
     <id>Scarsz-Nexus</id>
     <url>https://nexus.scarsz.me/content/groups/public/</url>
 </repository>
@@ -137,7 +137,8 @@ If you want to interface DiscordSRV with your plugin, you can do so by adding th
     <version>${variables.project.version}</version>
     <scope>provided</scope>
 </dependency>
-```
+`}
+</CodeBlock>
 </TabItem>
 <TabItem value={"gradle"} label={"Gradle"}>
 <CodeBlock language='groovy'>
