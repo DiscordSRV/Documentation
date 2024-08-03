@@ -13,6 +13,17 @@ This is for the plugin to handle config updates. This is not something you shoul
 ### [`BotToken`](https://config.discordsrv.com/config/BotToken)[^1] {#BotToken}
 This is the token that your bot will use to connect to DiscordSRV. You can find it at the developer page for your bot. https://discord.com/developers/applications/me
 
+### Proxy...
+This allows the ability to set up a proxy for the underlying Discord Library to use.
+#### [`...Host`](https://config.discordsrv.com/config/ProxyHost) {#ProxyHost}
+The url of the proxy
+#### [`...Port`](https://config.discordsrv.com/config/ProxyPort) {#ProxyPort}
+The port where the proxy is hosted
+#### [`...User`](https://config.discordsrv.com/config/ProxyUser) {#ProxyUser}
+The username for the proxy
+#### [`...Password`](https://config.discordsrv.com/config/ProxyPassword) {#ProxyPassword}
+The password for the proxy
+
 ### [`Channels`](https://config.discordsrv.com/config/Channels) {#Channels}
 This is a list of Minecraft text channels and their discord equivalent. The first channel in the list is used as the main channel. All additional messages like start/stop/join/quit/death/etc go to it.
 
@@ -81,13 +92,6 @@ Invitation link shown:
 | `CALLSTACKS`             | Displays the stack trace for DiscordSRV debug calls                                                                                           |
 :::
 
-### [`DebugLevel`](https://config.discordsrv.com/config/DebugLevel) {#DebugLevel}
-- `0` - Disables debug messages
-- `1` - Enables debug messages
-- `2` - Enables debug messages w/ Stack Trace
-
-Note: DebugLevel is now deprecated
-
 ### Experiment_Jdbc...
 This allows the ability to connect to SQL databases.
 #### [`...AccountLinkBackend`](https://config.discordsrv.com/config/Experiment_JdbcAccountLinkBackend) {#Experiment_JdbcAccountLinkBackend}
@@ -154,7 +158,7 @@ Set of regex replacements to filter webhook usernames. Format is `{"regexFilter"
 [PlaceholderAPI](https://github.com/PlaceholderAPI/PlaceholderAPI) placeholders are also supported
 :::
 
-The link to pull the player's skin from.
+The link to pull the player's skin from. Leave blank to use a default value.
 
 ### Experiment_MCDiscordReserializer_...
 Converts formatting between Discord and Minecraft (bold, italics, strikethrough, underline)
@@ -175,10 +179,7 @@ This option disables running a console command through discord if logging is uns
 
 ### [`ForcedLanguage`](https://config.discordsrv.com/config/ForcedLanguage)[^1] {#ForcedLanguage}
 This option forcefully changes the language to the specified type.
-Currently Supported Languages: `[EN,FR,DE,JA,KO,NL,ES,RU,ET,ZH]`
-
-### [`PrintGuildsAndChannels`](https://config.discordsrv.com/config/PrintGuildsAndChannels) {#PrintGuildsAndChannels}
-Prints Guilds and Channels in the console on startup
+Currently Supported Languages: `[DA,DE,EN,ES,ET,FR,JA,KO,NL,PL,RU,UK,ZH]`
 
 ### [`ForceTLSv12`](https://config.discordsrv.com/config/ForceTLSv12) {#ForceTLSv12}
 Force SSL to TLSv1.2
