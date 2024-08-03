@@ -1,9 +1,9 @@
 const variables = {
     "project": {
-        "version": "1.27.0",
+        "version": "1.28.0",
         "supported_version": {
             "min": "1.7.9",
-            "max": "1.20.4"
+            "max": "1.21.0"
         }
     }
 };
