@@ -102,6 +102,7 @@ const config = {
               {
                 label: 'Appeal a ban from the Discord server',
                 href: 'https://discordsrv.com/discord/ban-appeal'
+              }
             ],
           },
           {
