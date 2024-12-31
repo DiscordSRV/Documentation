@@ -201,6 +201,12 @@ Example usages: `%player_skin_texture_id%`, `%player_skin_model%`
 #### `%player_avatar_url%`
 The avatar url of the Minecraft player (the API used for this can be changed in the config (`avatar-provider.avatar-url-template`))
 
+### `%player_prefix%`
+Equivalent of `%player_meta_prefix|player_permission_prefix%`
+
+### `%player_suffix%`
+Equivalent of `%player_meta_suffix|player_permission_suffix%`
+
 #### `%player_meta_prefix%`
 The meta prefix of the Minecraft player (set using the [LuckPerms meta] key `discordsrv_prefix`)  
 Example value: `Mod `
@@ -209,11 +215,11 @@ Example value: `Mod `
 The meta suffix of the Minecraft player (set using the [LuckPerms meta] key `discordsrv_suffix`)  
 Example value: ` Staff Member`
 
-#### `%player_prefix%`
+#### `%player_permission_prefix%`
 The prefix of the Minecraft player  
 Example value: `[Mod] `
 
-#### `%player_suffix%`
+#### `%player_permission_suffix%`
 The suffix of the Minecraft player  
 Example value: ` (Staff Member)`
 
