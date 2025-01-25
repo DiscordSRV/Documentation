@@ -11,13 +11,15 @@ DiscordSRV requires Java 8 or newer
 
 ## Server Software compatibility
 
-| Server software       | Supported versions                                   |
-|-----------------------|------------------------------------------------------|
-| [Bukkit], [Spigot], [Paper] | ✅ Minecraft 1.8.8 and up<br/>⚠️ Minecraft 1.7.10[^1] |
-| [BungeeCord], [Waterfall] | ✅ Minecraft 1.7.10 and up                            |
-| [Velocity]              | ✅ 3.0.0 and up<br/>❌ 2.0.0 and below                 |
+| Server software       | Supported versions                                   | Available For Testing? |
+|-----------------------|------------------------------------------------------|------------------------|
+| [Bukkit], [Spigot], [Paper] | ✅ Minecraft 1.8.8 and up<br/>⚠️ Minecraft 1.7.10[^1] | Yes |
+| [BungeeCord], [Waterfall] | ✅ Minecraft 1.7.10 and up                            | No |
+| [Velocity]              | ✅ 3.0.0 and up<br/>❌ 2.0.0 and below                 | No |
+| [Fabric]                | ✅ 1.21.4<br/>⚠️1.21 - 1.21.3[^2]<br/>❌ 1.20.4 and below[^2] | Yes |
 
 [^1]: Requires [updating ASM](#) <!-- TODO: fix anchor (faq#asm-update) -->
+[^2]: These versions have not been extensively tested. Please report in #ascension-testing if you can use the plugin on them without issue.
 
 ## Plugin integrations and compatibility
 
@@ -74,6 +76,7 @@ DiscordSRV requires Java 8 or newer
 [BungeeCord]: https://github.com/SpigotMC/BungeeCord/
 [Waterfall]: https://github.com/PaperMC/Waterfall/
 [Velocity]: https://github.com/PaperMC/Velocity/
+[Fabric]: https://fabricmc.net/
 
 [LuckPerms]: https://luckperms.net/
 [PlaceholderAPI]: https://placeholderapi.com/
