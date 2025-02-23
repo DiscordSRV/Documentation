@@ -201,10 +201,10 @@ Example usages: `%player_skin_texture_id%`, `%player_skin_model%`
 #### `%player_avatar_url%`
 The avatar url of the Minecraft player (the API used for this can be changed in the config (`avatar-provider.avatar-url-template`))
 
-### `%player_prefix%`
+#### `%player_prefix%`
 Equivalent of `%player_meta_prefix|player_permission_prefix%`
 
-### `%player_suffix%`
+#### `%player_suffix%`
 Equivalent of `%player_meta_suffix|player_permission_suffix%`
 
 #### `%player_meta_prefix%`
@@ -334,4 +334,29 @@ Example usages: `%log_time:'timestamp'%` or `%log_time:'timestamp:t'%`
 
 [Source](https://discord.com/developers/docs/reference#message-formatting-timestamp-styles)
 
+## Integrations
+
+### Bukkit: PlaceholderAPI
+
+#### Using DiscordSRV placeholders in other plugins
+
+You can use DiscordSRV's global and Player related placeholders (when a Player is provided) by prefixing the placeholder with `discordsrv_`, for example `%discordsrv_discord_invite%`
+
+#### Using placeholders in DiscordSRV
+
+List of [PlaceholderAPI placeholders], please note many of these require the respective [expansion to be installed before they can be used](https://wiki.placeholderapi.com/users/using-placeholders/#downloadget-expansion).
+
+You can use PlaceholderAPI placeholders directly in DiscordSRV or by explicitly prefixing the placeholder with `placeholderapi_`, for example:
+```
+%server_online%
+%placeholderapi_server_online%
+```
+
+### Fabric: Text Placeholder API
+
+#### Using placeholders in DiscordSRV
+
+You can use Text Placeholder API placeholders directly in DiscordSRV or by explicitly prefixing the placeholder with `textplaceholders_`
+
 [LuckPerms meta]: https://luckperms.net/wiki/Prefixes,-Suffixes-&-Meta#meta/
+[PlaceholderAPI placeholders]: https://wiki.placeholderapi.com/users/placeholder-list/

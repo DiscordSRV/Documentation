@@ -148,7 +148,7 @@ const sidebars = {
     'ascension/performance',
     'ascension/security',
     'ascension/placeholders',
-    {
+    /*{
       type: 'category',
       collapsed: false,
       label: 'Troubleshooting',
@@ -169,7 +169,7 @@ const sidebars = {
           label: 'Ask for support'
         },
       ],
-    },
+    },*/
   ],
 
   // But you can create a sidebar manually

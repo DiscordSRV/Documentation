@@ -11,25 +11,30 @@ DiscordSRV requires Java 8 or newer
 
 ## Server Software compatibility
 
-| Server software       | Supported versions                                   |
-|-----------------------|------------------------------------------------------|
+| Server software             | Supported versions                                   |
+|-----------------------------|------------------------------------------------------|
 | [Bukkit], [Spigot], [Paper] | ✅ Minecraft 1.8.8 and up<br/>⚠️ Minecraft 1.7.10[^1] |
-| [BungeeCord], [Waterfall] | ✅ Minecraft 1.7.10 and up                            |
-| [Velocity]              | ✅ 3.0.0 and up<br/>❌ 2.0.0 and below                 |
+| [Fabric]                    | ✅ Minecraft 1.21.4 and up                            |
+
+Only testable software listed. BungeeCord & Velocity are planned, but not yet testable.
+{/*
+| [BungeeCord], [Waterfall]   | ✅ Minecraft 1.7.10 and up                            |
+| [Velocity]                  | ✅ 3.0.0 and up                                       |
+*/}
 
 [^1]: Requires [updating ASM](#) <!-- TODO: fix anchor (faq#asm-update) -->
 
-## Plugin integrations and compatibility
+## Plugin/mod integrations and compatibility
 
 <Tabs>
 
-<TabItem value='server' label='Bukkit, Spigot, Paper'>
+<TabItem value='bukkit' label='Bukkit, Spigot, Paper'>
 **Plugin integrations**
 
 | Plugin | Version | Support added by |                                  Note                                  |
 | --- | --- | --- |:----------------------------------------------------------------------:|
 | [LuckPerms] | `5.0+` | DiscordSRV |                                                                        |
-| [PlaceholderAPI] | `2.11.1+` | DiscordSRV |                                                                        |
+| [PlaceholderAPI] | `2.11.1+` | DiscordSRV | [See Placeholders page](placeholders#bukkit-placeholderapi)                                                                       |
 | [Vault] | `1.7+` | DiscordSRV |                                                                        |
 | [Chatty] | `2.19.13+` | DiscordSRV |                                                                        |
 | [GriefPrevention] | `16.18.1+` | DiscordSRV |                    For blocking soft-muted players                     |
@@ -50,6 +55,16 @@ DiscordSRV requires Java 8 or newer
 | ❌ | [NoChatReports]                   | Cancels all chat events |
 </TabItem>
 
+<TabItem value='fabric' label='Fabric'>
+**Mod integrations**
+
+| Plugin | Support added by | Version | Note |
+|---|---|---|---|
+| [LuckPerms] | DiscordSRV | `5.0+` | |
+| [Text Placeholder API] | DiscordSRV | `2.5.0+` | [See Placeholder page](placeholders#fabric-text-placeholder-api) |
+</TabItem>
+
+{/*
 <TabItem value='bungee' label='BungeeCord, Waterfall'>
 **Plugin integrations**
 
@@ -65,12 +80,14 @@ DiscordSRV requires Java 8 or newer
 |---|---|---|
 | [LuckPerms] | DiscordSRV | `5.0+` |
 </TabItem>
+*/}
 
 </Tabs>
 
 [Bukkit]: https://dev.bukkit.org/
 [Spigot]: https://www.spigotmc.org/
 [Paper]: https://papermc.io/
+[Fabric]: https://fabricmc.net/
 [BungeeCord]: https://github.com/SpigotMC/BungeeCord/
 [Waterfall]: https://github.com/PaperMC/Waterfall/
 [Velocity]: https://github.com/PaperMC/Velocity/
@@ -90,3 +107,4 @@ DiscordSRV requires Java 8 or newer
 [FreedomChat]: https://modrinth.com/plugin/freedomchat/
 [AntiPopup]: https://modrinth.com/plugin/antipopup/
 [NoChatReports]: https://www.spigotmc.org/resources/102931/
+[Text Placeholder API]: https://modrinth.com/mod/placeholder-api
