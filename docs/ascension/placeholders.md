@@ -21,10 +21,25 @@ You can take empty placeholders into account and use an alternate placeholder in
 
 For example `%player_meta_prefix|player_prefix%`. This first looks for `%player_meta_prefix%` if that is empty, than `%player_prefix%` is used instead.
 
-### Placeholder Suffixes
-Placeholders which provide a list of items can have a suffix set between each item to separate them.
+### Placeholder Parameters
+Some placeholders may be given an additional parameter for formatting
 
-For example `%user_roles:', '%`, lists the users roles seperated by a comma and a space (`', '`).
+Placeholders which provide a list of items can have a parameter set between each item to separate them.
+For example `%user_roles:', '%`, lists the users roles seperated by a comma and a space (`, `).
+
+### Boolean formatting
+Placeholders which return a boolean, can have values specified via a parameter. Otherwise `true`/`false` will be returned.
+
+```
+%boolean:'value when true'%
+%boolean:'value when true;value when false'%
+```
+
+For example: 
+```
+%user_isboosting:'Boosting'%
+%user_isboosting:'Boosting;Not Boosting'%
+```
 
 ### Recursive Placeholders
 Recursive placeholders are a special type of placeholder which allow you to specify what information you want from it.
@@ -81,7 +96,7 @@ Example usages: `%user_color%`, `%user_color_hex%`
 
 #### `%user_isboosting%`
 Whether this member is currently boosting the server  
-Example values: `false`, `true`
+See [Boolean formatting](#boolean-formatting)
 
 #### `%user_time_boosted%`
 The time the user started boosting, use with [date formatting](#date-formatting)  
@@ -100,7 +115,7 @@ The highest hoisted role of the member. Replace `<subplaceholder>` with any of t
 Example usages: `%user_hoisted_role_name%`, `%user_hoisted_role_color%`
 
 #### `%user_roles%`
-The roles of the member. You can specify the separator for multiple roles as a suffix, more information can be found [here](#placeholder-suffixes)  
+The roles of the member. You can specify the separator for multiple roles as a suffix, more information can be found [here](#placeholder-parameters)  
 Example usages: `%user_roles%`, `%user_roles:', '%`
 
 #### `%user_server%`
@@ -124,18 +139,18 @@ Example value: `https://discord.com/channels/135634590575493120/1374212865016463
 The format for messages which contain a reply. The format for the content of this placeholder can be edited in the config (`channels.*.discord-to-minecraft.reply-format`)
 
 #### `%message_attachments%`
-The attachments in the message sent. The format for the content of this placeholder can be edited in the config (`channels.*.discord-to-minecraft.attachment-format`). You can specify the separator for multiple attachments as a suffix, more information can be found [here](#placeholder-suffixes)  
+The attachments in the message sent. The format for the content of this placeholder can be edited in the config (`channels.*.discord-to-minecraft.attachment-format`). You can specify the separator for multiple attachments as a suffix, more information can be found [here](#placeholder-parameters)  
 Example usages: `%message_attachments%`, `%message_attachments:', '%`
 
-#### `%message_server%`
+#### `%message_server_<subplaceholder>%`
 The server this message was sent in, if any, for using [Server](#server) placeholders  
 Example usage: `%message_server_name%`
 
-#### `%message_user%`
+#### `%message_user_<subplaceholder>%`
 The user that sent this message, for using [User](#user) placeholders  
 Example usage: `%message_user_name%`
 
-#### `%message_channel%`
+#### `%message_channel_<subplaceholder>%`
 The channel this message was sent in, for using [Channel](#channel) placeholders  
 Example usage: `%message_channel_name%`
 
@@ -168,6 +183,10 @@ Example value: `discordsrv-test-chat`
 #### `%channel_jump_url%`
 The jump url of the channel  
 Example value: `https://discord.com/channels/135634590575493120/137421286501646336`
+
+#### `%channel_server_<subplaceholder>%`
+The server of the channel, for using [Server](#server) placeholders  
+Example usage: `%channel_server_name%`
 
 ### Server
 #### `%server_id%`
@@ -232,6 +251,64 @@ Example value: `5183d47698a28e20b6c3c6d9b8a8a33449c866cff50d725a53260bd6a5ae0b64
 The model of the skin  
 Example value: `slim`
 
+### Skin (Parts)
+
+#### `%skin_parts_cape%`
+#### `%skin_parts_jacket%`
+#### `%skin_parts_left_sleeve%`
+#### `%skin_parts_right_sleeve%`
+#### `%skin_parts_left_pants%`
+#### `%skin_parts_right_pants%`
+#### `%skin_parts_hat%`
+If the given part of the skin is enabled in the player's settings  
+See [Boolean formatting](#boolean-formatting)
+
+---
+
+## GameChannel
+#### `%gamechannel_name%`
+The name of the game channel
+
+#### `%gamechannel_color%`
+Only with LunaChat, VentureChat channels. May be used with [color](#color) subplaceholders.
+
+#### `%gamechannel_alias%`
+Only with LunaChat, VentureChat channels
+
+#### `%gamechannel_description%`
+Only with LunaChat channels
+
+#### `%gamechannel_online_members%`
+Only with LunaChat channels
+
+#### `%gamechannel_total_members%`
+Only with LunaChat channels
+
+#### `%gamechannel_tag%`
+Only with TownyChat channels
+
+#### `%gamechannel_message_color%`
+Only with TownyChat channels. May be used with [color](#color) subplaceholders.
+
+#### `%gamechannel_chat_color%`
+Only with VentureChat channels. May be used with [color](#color) subplaceholders.
+
+#### `%gamechannel_prefix%`
+Only with VentureChat channels
+
+---
+
+## Punishment
+#### `%punishment_until%`
+The time when the punishment ends, empty for no expiry  
+See [Date formatting](#date-formatting)
+
+#### `%punishment_reason%`
+The reason provided for the punishment
+
+#### `%punishment_punisher%`
+The name of the punisher
+
 ---
 
 ## Color
@@ -266,11 +343,11 @@ Example value: `4`
 
 #### `%uuid_isgeyser%`
 If the UUID is from a [Geyser](https://geysermc.org/wiki/geyser/) player using [Floodgate authentication](https://geysermc.org/wiki/floodgate/setup/)  
-Values: `true`, `false`
+See [Boolean formatting](#boolean-formatting)
 
 #### `%uuid_isoffline%`
 If this UUID is for a cracked Minecraft player based on its version  
-Values: `true`, `false`
+See [Boolean formatting](#boolean-formatting)
 
 ---
 
@@ -283,6 +360,18 @@ Example value: `https://discord.gg/HGAdJEumxC`
 #### `%text:'<text>'"`
 Returns arbitrary text. An example of a use case would be changing the placeholder to custom text if it is empty.  
 Example usage: `%player_prefix|text:'No Prefix'%`
+
+#### `%bot_user_<subplaceholder>%`
+The bot user, see [User placeholders](#user)  
+Example usage: `%bot_user_name%`
+
+#### `%start_date:'format'%`
+The time the server started
+See [Date formatting](#date-formatting)
+
+#### `%now_date:'format'%`
+The time now
+See [Date formatting](#date-formatting)
 
 ## Date formatting
 Some placeholders such as `log_time` for console lines take a time formatting string, for example: `ccc HH:mm:ss zzz` in `%log_time:'ccc HH:mm:ss zzz'%`
