@@ -50,6 +50,10 @@ You can then use any [role](#role) related placeholders. For example `%user_high
 
 This same premise is used for all the re lookup placeholders.
 
+### I/O and Server Threads
+Any placeholder that requires a I/O operation to be fulfilled, will **not** wait for that request to be completed, if the placeholder is requested on a server thread.
+Instead, that placeholder will be replaced with the text `Unavailable`
+
 ---
 ## Discord
 ### User
@@ -80,6 +84,15 @@ Example value: `https://cdn.discordapp.com/avatars/827880927199494164/bdde9008a6
 #### `%user_effective_avatar_url%`
 The Discord user's avatar that is currently active (if they do not have one set, this will provide the default Discord avatar)  
 Example value: `https://cdn.discordapp.com/avatars/827880927199494164/bdde9008a644ecc62d97c6f9153462c7.webp?size=64`
+
+#### `%user_profile_<subplaceholder>%`
+For use with [Profile](#profile) placeholders
+
+#### `%user_linked_player_<subplaceholder>%`
+For use with [Player](#player) placeholders
+
+#### `%user_linked_offline_player_<subplaceholder>%`
+For use with [Player](#player) placeholders (other than placeholders that require the player to be online)
 
 ### User (Server Member)
 #### `%user_effective_server_name%` 
@@ -143,15 +156,15 @@ The attachments in the message sent. The format for the content of this placehol
 Example usages: `%message_attachments%`, `%message_attachments:', '%`
 
 #### `%message_server_<subplaceholder>%`
-The server this message was sent in, if any, for using [Server](#server) placeholders  
+The server this message was sent in, if any, for use with [Server](#server) placeholders  
 Example usage: `%message_server_name%`
 
 #### `%message_user_<subplaceholder>%`
-The user that sent this message, for using [User](#user) placeholders  
+The user that sent this message, for use with [User](#user) placeholders  
 Example usage: `%message_user_name%`
 
 #### `%message_channel_<subplaceholder>%`
-The channel this message was sent in, for using [Channel](#channel) placeholders  
+The channel this message was sent in, for use with [Channel](#channel) placeholders  
 Example usage: `%message_channel_name%`
 
 ### Role
@@ -185,7 +198,7 @@ The jump url of the channel
 Example value: `https://discord.com/channels/135634590575493120/137421286501646336`
 
 #### `%channel_server_<subplaceholder>%`
-The server of the channel, for using [Server](#server) placeholders  
+The Discord server the channel is in, for use with [Server](#server) placeholders  
 Example usage: `%channel_server_name%`
 
 ### Server
@@ -209,11 +222,11 @@ The username of the Minecraft player
 Example value: `Notch`
 
 #### `%player_uuid%`
-The UUID of the Minecraft player, may also use [UUID](#uuid) placeholders  
+The UUID of the Minecraft player. May be used with [UUID](#uuid) placeholders  
 Example usages: `%player_uuid%`, `%player_uuid_short%`
 Example value: `069a79f4-44e9-4726-a5be-fca90e38aaf5`
 
-#### `%player_skin%`
+#### `%player_skin_<subplaceholder>%`
 The skin information of the Minecraft player for use with [Skin](#skin)  
 Example usages: `%player_skin_texture_id%`, `%player_skin_model%`
 
@@ -242,6 +255,16 @@ Example value: `[Mod] `
 The suffix of the Minecraft player  
 Example value: ` (Staff Member)`
 
+#### `%player_profile_<subplaceholder>%`
+For use with [Profile](#profile) placeholders
+
+#### `%player_linked_user_<subplaceholder>%`
+For use with [User](#user) placeholders
+
+#### `%player_linked_server_member_<subplaceholder>%`
+**Note** Only available if a Discord server is in context.
+For use with [Server Member](#user-server-member) placeholders.
+
 ### Skin
 #### `%skin_texture_id%`
 The texture id for the skin  
@@ -264,6 +287,22 @@ If the given part of the skin is enabled in the player's settings
 See [Boolean formatting](#boolean-formatting)
 
 ---
+
+## Profile
+#### `%profile_player_uuid%`
+The Minecraft Player UUID linked to the profile, empty if this is a profile of an unlinked Discord user. May be used with [UUID](#uuid) placeholders
+
+#### `%profile_user_id%`
+The Discord User ID linked to the profile, empty if this is a profile of an unlinked Minecraft player.
+
+#### `%profile_player_<subplaceholder>%`
+For use with [Player](#player) placeholders
+
+#### `%profile_offline_player_<subplaceholder>%`
+For use with [Player](#player) placeholders (other than placeholders that require the player to be online)
+
+#### `%profile_user_<subplaceholder>%`
+For use with [User](#user) placeholders
 
 ## GameChannel
 #### `%gamechannel_name%`
