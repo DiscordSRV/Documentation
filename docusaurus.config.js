@@ -133,12 +133,6 @@ const config = {
     }),
   plugins: [
     'plugin-image-zoom',
-    ['@easyops-cn/docusaurus-search-local',
-      {
-        indexBlog: false,
-        hashed: true
-      }
-    ],
     [
       '@docusaurus/plugin-client-redirects',
       {
@@ -177,6 +171,16 @@ const config = {
         },
       }
     ]
+  ],
+  themes: [
+    [
+        require.resolve('@easyops-cn/docusaurus-search-local'),
+      ({
+        indexBlog: false,
+        hashed: true,
+        docsRouteBasePath: "/"
+      })
+    ],
   ]
 };
 

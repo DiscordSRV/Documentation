@@ -8,7 +8,7 @@ title: messages.yml
 
 | Placeholders       | Example                          | Description                                                                                                                        |
 |--------------------|----------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| `%allroles%`       | `Owner \| Developer \| Boss man` | All the user's roles separated by [`DiscordToMinecraftAllRolesSeparator`](/config#DiscordToMinecraftAllRolesSeparator)          |
+| `%allroles%`       | `Owner \| Developer \| Boss man` | All the user's roles separated by [`DiscordToMinecraftAllRolesSeparator`](#DiscordToMinecraftAllRolesSeparator)          |
 | `%message%`        | `Hello!`                         | The message content                                                                                                                |
 | `%toprole%`        | `Owner`                          | The user's highest ranking role                                                                                                    |
 | `%toprolealias%`   | `Owner`                          | The alias for the role from [`DiscordChatChannelRoleAliases`](/config#DiscordChatChannelRoleAliases), otherwise the role's name |
