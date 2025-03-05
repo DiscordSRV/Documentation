@@ -133,9 +133,10 @@ const config = {
     }),
   plugins: [
     'plugin-image-zoom',
-    ['@cmfcmf/docusaurus-search-local',
+    ['@easyops-cn/docusaurus-search-local',
       {
-        indexBlog: false
+        indexBlog: false,
+        hashed: true
       }
     ],
     [
