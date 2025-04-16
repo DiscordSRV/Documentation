@@ -120,10 +120,11 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
           - Trigger: LPNodeAddEvent
             Channel: global
             Conditions:
-            - "#event.getEvent().getNode().getType() == 'PERMISSION'"
+            - "#event.getEvent().getNode().getType().name() == 'PERMISSION'"
             - "#event.getEvent().isUser()"
             Embed:
-              Title: "Player's permissions changed"
+              Title:
+                Text: "Player's permissions changed"
               Color: "#00ff00"
               Description: "`${#event.getEvent().getTarget().getFriendlyName()}` has had the permission `${#event.getEvent().getNode().getPermission()}` set to `${#event.getEvent().getNode().getValue()}`"
         ```
@@ -135,10 +136,11 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
           - Trigger: LPNodeAddEvent
             Channel: global
             Conditions:
-            - "#event.getEvent().getNode().getType() == 'INHERITANCE'"
+            - "#event.getEvent().getNode().getType().name() == 'INHERITANCE'"
             - "#event.getEvent().isUser()"
             Embed:
-              Title: "Player's groups changed"
+              Title:
+                Text: "Player's groups changed"
               Color: "#00ff00"
               Description: "`${#event.getEvent().getTarget().getFriendlyName()}` has had the group `${#event.getEvent().getNode().getGroupName()}` set to `${#event.getEvent().getNode().getValue()}`"
         ```
