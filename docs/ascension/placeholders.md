@@ -418,33 +418,38 @@ Some placeholders such as `log_time` for console lines take a time formatting st
 #### (Useful) Formatting characters
 Use multiple of the same character back-to-back for a longer output, for example `uu` -> `04`, `uuuu` -> `2004`
 
-| Symbol | Meaning                    | Examples                                       |
-|--------|----------------------------|------------------------------------------------|
-| u      | year                       | 2004; 04                                       |
-| D      | day-of-year                | 189                                            |
-| M/L    | month-of-year              | 7; 07; Jul; July; J                            |
-| d      | day-of-month               | 10                                             |
-| Q/q    | quarter-of-year            | 3; 03; Q3; 3rd quarter                         |
-| Y      | week-based-year            | 1996; 96                                       |
-| w      | week-of-week-based-year    | 27                                             |
-| W      | week-of-month              | 4                                              |
-| E      | day-of-week                | Tue; Tuesday; T                                |
-| e/c    | localized day-of-week      | 2; 02; Tue; Tuesday; T                         |
-| F      | week-of-month              | 3                                              |
-| a      | am-pm-of-day               | PM                                             |
-| K      | hour-of-am-pm (0-11)       | 0                                              |
-| H      | hour-of-day                | 0                                              |
-| m      | minute-of-hour             | 30                                             |
-| s      | second-of-minute           | 55                                             |
-| S      | fraction-of-second         | 978                                            |
-| V      | time-zone ID               | America/Los_Angeles; Z; -08:30                 |
-| z      | time-zone name             | Pacific Standard Time; PST                     |
-| O      | localized zone-offset      | GMT+8; GMT+08:00; UTC-08:00;                   |
-| X      | zone-offset 'Z' for zero   | Z; -08; -0830; -08:30; -083015; -08:30:15;     |
-| x      | zone-offset                | +0000; -08; -0830; -08:30; -083015; -08:30:15; |
-| Z      | zone-offset                | +0000; -0800; -08:00;                          |
+| Symbol | Meaning                  | Examples                                       |
+|--------|--------------------------|------------------------------------------------|
+| y      | year-of-era              | 2004; 04                                       |
+| D      | day-of-year              | 189                                            |
+| M/L    | month-of-year            | 7; 07; Jul; July; J                            |
+| d      | day-of-month             | 10                                             |
+| Q/q    | quarter-of-year          | 3; 03; Q3; 3rd quarter                         |
+| W      | week-of-month            | 4                                              |
+| E      | day-of-week              | Tue; Tuesday; T                                |
+| e/c    | localized day-of-week    | 2; 02; Tue; Tuesday; T                         |
+| F      | week-of-month            | 3                                              |
+| a      | am-pm-of-day             | PM                                             |
+| K      | hour-of-am-pm (0-11)     | 0                                              |
+| H      | hour-of-day              | 0                                              |
+| m      | minute-of-hour           | 30                                             |
+| s      | second-of-minute         | 55                                             |
+| S      | fraction-of-second       | 978                                            |
+| V      | time-zone ID             | America/Los_Angeles; Z; -08:30                 |
+| z      | time-zone name           | Pacific Standard Time; PST                     |
+| O      | localized zone-offset    | GMT+8; GMT+08:00; UTC-08:00;                   |
+| X      | zone-offset 'Z' for zero | Z; -08; -0830; -08:30; -083015; -08:30:15;     |
+| x      | zone-offset              | +0000; -08; -0830; -08:30; -083015; -08:30:15; |
+| Z      | zone-offset              | +0000; -0800; -08:00;                          |
 
 [Source](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+
+#### Examples
+
+```
+%start_date:'yyyy-MM-dd HH:mm:ss'%
+%start_date:'yyyy-MM-dd KK:mm:ss aa'%
+```
 
 ### Discord timestamp formatting
 Example usages: `%log_time:'timestamp'%` or `%log_time:'timestamp:t'%`
@@ -462,6 +467,42 @@ Example usages: `%log_time:'timestamp'%` or `%log_time:'timestamp:t'%`
 
 [Source](https://discord.com/developers/docs/reference#message-formatting-timestamp-styles)
 
+#### Examples
+
+```
+%start_date:'timestamp'%
+%start_date:'timestamp:R'%
+```
+
+### Duration formatting
+
+You can use the `%date_relative_to_now%` placeholder to get the relative duration of a date to the current time.
+
+#### Formatting characters
+| Character | Meaning        | Example   |
+|-----------|----------------|-----------|
+| y         | Year           | 2021      |
+| M         | Months         | 4         |
+| d         | Days           | 20        |
+| H         | Hours          | 16        |
+| m         | Minutes        | 20        |
+| s         | Seconds        | 30        |
+| S         | Milliseconds   | 0         | 
+| 'text'    | Arbitrary text | 'seconds' | 
+
+[Source](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/time/DurationFormatUtils.html)
+
+Square brackets (`[]`) can be used to hide formatting that is unused (has a 0 for the value).
+Use multiple of the same character back-to-back adds 0 padding, for example `M` -> `4`, `MM` -> `04`
+
+#### Examples
+```
+%start_date_relative_to_now:'s 'seconds''%
+%start_date_relative_to_now:'H 'hours' M 'minutes' s 'seconds''%
+%start_date_relative_to_now:'[H 'hours' ][M 'minutes' ]s 'seconds''% 
+```
+
+---
 ## Integrations
 
 ### Bukkit: PlaceholderAPI
