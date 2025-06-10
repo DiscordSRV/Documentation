@@ -19,7 +19,7 @@ Information on Discord markdown can be found [here](https://support.discord.com/
 ### Checking for empty placeholders
 You can take empty placeholders into account and use an alternate placeholder instead.
 
-For example `%player_meta_prefix|player_prefix%`. This first looks for `%player_meta_prefix%` if that is empty, than `%player_prefix%` is used instead.
+For example `%player_meta_prefix|player_permission_prefix%`. This first looks for `%player_meta_prefix%` if that is empty, than `%player_permission_prefix%` is used instead.
 
 ### Placeholder Parameters
 Some placeholders may be given an additional parameter for formatting
@@ -221,6 +221,14 @@ Example value: `107`
 The username of the Minecraft player  
 Example value: `Notch`
 
+#### `%player_display_name%`
+The display name of the Minecraft player (this may contain the player's prefix and suffix, usually depending on your chat plugin's configuration)  
+Example value: `*Notch`
+
+#### `%team_display_name%`
+The formatted display name of the Minecraft player containing their [Team](https://minecraft.wiki/w/Scoreboard#Teams)'s prefix, suffix and color   
+Example value: `[Mojang] Notch`
+
 #### `%player_uuid%`
 The UUID of the Minecraft player. May be used with [UUID](#uuid) placeholders  
 Example usages: `%player_uuid%`, `%player_uuid_short%`
@@ -309,7 +317,7 @@ For use with [User](#user) placeholders
 The name of the game channel
 
 #### `%gamechannel_color%`
-Only with LunaChat, VentureChat channels. May be used with [color](#color) subplaceholders.
+Only with LunaChat, VentureChat channels. May be used with [color](#color) placeholders.
 
 #### `%gamechannel_alias%`
 Only with LunaChat, VentureChat channels
@@ -327,10 +335,10 @@ Only with LunaChat channels
 Only with TownyChat channels
 
 #### `%gamechannel_message_color%`
-Only with TownyChat channels. May be used with [color](#color) subplaceholders.
+Only with TownyChat channels. May be used with [color](#color) placeholders.
 
 #### `%gamechannel_chat_color%`
-Only with VentureChat channels. May be used with [color](#color) subplaceholders.
+Only with VentureChat channels. May be used with [color](#color) placeholders.
 
 #### `%gamechannel_prefix%`
 Only with VentureChat channels
@@ -405,11 +413,11 @@ The bot user, see [User placeholders](#user)
 Example usage: `%bot_user_name%`
 
 #### `%start_date:'format'%`
-The time the server started
+The time the server started  
 See [Date formatting](#date-formatting)
 
 #### `%now_date:'format'%`
-The time now
+The time now  
 See [Date formatting](#date-formatting)
 
 ## Date formatting
