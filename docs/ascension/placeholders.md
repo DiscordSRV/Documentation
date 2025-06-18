@@ -95,14 +95,6 @@ For use with [Player](#player) placeholders
 For use with [Player](#player) placeholders (other than placeholders that require the player to be online)
 
 ### User (Server Member)
-#### `%user_effective_server_name%` 
-The nickname name of this Discord server member  
-Example value: `My cool nickname`
-
-#### `%user_effective_server_avatar_url%`
-The avatar url that that is active for this server member  
-Example value: `https://cdn.discordapp.com/avatars/827880927199494164/bdde9008a644ecc62d97c6f9153462c7.webp?size=64`
-
 #### `%user_color%`
 The color of the user's highest role that has a color. May be used with [color](#color) subplaceholders.  
 Example usages: `%user_color%`, `%user_color_hex%`
@@ -118,6 +110,18 @@ Example usage: `%user_time_boosted:'dd-MM-yyyy'%`
 #### `%user_time_joined%`
 The time the user started joined, use with [date formatting](#date-formatting)  
 Example usage: `%user_time_joined:'dd-MM-yyyy%`
+
+#### `%user_selected_highest_role_<subplaceholder>%`
+The highest role of the member (filtered based on the configuration). Replace `<subplaceholder>` with any of the [role](#role) placeholders. More information about recursive placeholders [here](#recursive-placeholders)  
+Example usages: `%user_highest_role_name%`, `%user_highest_role_color%`
+
+#### `%user_selected_hoisted_role_<subplaceholder>%`
+The highest hoisted role of the member (filtered based on the configuration). Replace `<subplaceholder>` with any of the [role](#role). More information about recursive placeholders [here](#recursive-placeholders)  
+Example usages: `%user_hoisted_role_name%`, `%user_hoisted_role_color%`
+
+#### `%user_selected_roles%`
+The roles of the member (filtered based on the configuration). You can specify the separator for multiple roles as a suffix, more information can be found [here](#placeholder-parameters)  
+Example usages: `%user_roles%`, `%user_roles:', '%`
 
 #### `%user_highest_role_<subplaceholder>%`
 The highest role of the member. Replace `<subplaceholder>` with any of the [role](#role) placeholders. More information about recursive placeholders [here](#recursive-placeholders)  
