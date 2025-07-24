@@ -19,7 +19,7 @@ Information on Discord markdown can be found [here](https://support.discord.com/
 ### Checking for empty placeholders
 You can take empty placeholders into account and use an alternate placeholder instead.
 
-For example `%player_meta_prefix|player_prefix%`. This first looks for `%player_meta_prefix%` if that is empty, than `%player_prefix%` is used instead.
+For example `%player_meta_prefix|player_permission_prefix%`. This first looks for `%player_meta_prefix%` if that is empty, than `%player_permission_prefix%` is used instead.
 
 ### Placeholder Parameters
 Some placeholders may be given an additional parameter for formatting
@@ -95,14 +95,6 @@ For use with [Player](#player) placeholders
 For use with [Player](#player) placeholders (other than placeholders that require the player to be online)
 
 ### User (Server Member)
-#### `%user_effective_server_name%` 
-The nickname name of this Discord server member  
-Example value: `My cool nickname`
-
-#### `%user_effective_server_avatar_url%`
-The avatar url that that is active for this server member  
-Example value: `https://cdn.discordapp.com/avatars/827880927199494164/bdde9008a644ecc62d97c6f9153462c7.webp?size=64`
-
 #### `%user_color%`
 The color of the user's highest role that has a color. May be used with [color](#color) subplaceholders.  
 Example usages: `%user_color%`, `%user_color_hex%`
@@ -118,6 +110,18 @@ Example usage: `%user_time_boosted:'dd-MM-yyyy'%`
 #### `%user_time_joined%`
 The time the user started joined, use with [date formatting](#date-formatting)  
 Example usage: `%user_time_joined:'dd-MM-yyyy%`
+
+#### `%user_selected_highest_role_<subplaceholder>%`
+The highest role of the member (filtered based on the configuration). Replace `<subplaceholder>` with any of the [role](#role) placeholders. More information about recursive placeholders [here](#recursive-placeholders)  
+Example usages: `%user_highest_role_name%`, `%user_highest_role_color%`
+
+#### `%user_selected_hoisted_role_<subplaceholder>%`
+The highest hoisted role of the member (filtered based on the configuration). Replace `<subplaceholder>` with any of the [role](#role). More information about recursive placeholders [here](#recursive-placeholders)  
+Example usages: `%user_hoisted_role_name%`, `%user_hoisted_role_color%`
+
+#### `%user_selected_roles%`
+The roles of the member (filtered based on the configuration). You can specify the separator for multiple roles as a suffix, more information can be found [here](#placeholder-parameters)  
+Example usages: `%user_roles%`, `%user_roles:', '%`
 
 #### `%user_highest_role_<subplaceholder>%`
 The highest role of the member. Replace `<subplaceholder>` with any of the [role](#role) placeholders. More information about recursive placeholders [here](#recursive-placeholders)  
@@ -221,6 +225,14 @@ Example value: `107`
 The username of the Minecraft player  
 Example value: `Notch`
 
+#### `%player_display_name%`
+The display name of the Minecraft player (this may contain the player's prefix and suffix, usually depending on your chat plugin's configuration)  
+Example value: `*Notch`
+
+#### `%team_display_name%`
+The formatted display name of the Minecraft player containing their [Team](https://minecraft.wiki/w/Scoreboard#Teams)'s prefix, suffix and color   
+Example value: `[Mojang] Notch`
+
 #### `%player_uuid%`
 The UUID of the Minecraft player. May be used with [UUID](#uuid) placeholders  
 Example usages: `%player_uuid%`, `%player_uuid_short%`
@@ -309,7 +321,7 @@ For use with [User](#user) placeholders
 The name of the game channel
 
 #### `%gamechannel_color%`
-Only with LunaChat, VentureChat channels. May be used with [color](#color) subplaceholders.
+Only with LunaChat, VentureChat channels. May be used with [color](#color) placeholders.
 
 #### `%gamechannel_alias%`
 Only with LunaChat, VentureChat channels
@@ -327,10 +339,10 @@ Only with LunaChat channels
 Only with TownyChat channels
 
 #### `%gamechannel_message_color%`
-Only with TownyChat channels. May be used with [color](#color) subplaceholders.
+Only with TownyChat channels. May be used with [color](#color) placeholders.
 
 #### `%gamechannel_chat_color%`
-Only with VentureChat channels. May be used with [color](#color) subplaceholders.
+Only with VentureChat channels. May be used with [color](#color) placeholders.
 
 #### `%gamechannel_prefix%`
 Only with VentureChat channels
@@ -405,11 +417,11 @@ The bot user, see [User placeholders](#user)
 Example usage: `%bot_user_name%`
 
 #### `%start_date:'format'%`
-The time the server started
+The time the server started  
 See [Date formatting](#date-formatting)
 
 #### `%now_date:'format'%`
-The time now
+The time now  
 See [Date formatting](#date-formatting)
 
 ## Date formatting
