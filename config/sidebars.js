@@ -62,7 +62,7 @@ const sidebars = {
       items: [
         {
           label: 'alerts.yml',
-          id: 'alerts',
+          id: 'alerts/index',
           type: 'doc'
         },
         {
