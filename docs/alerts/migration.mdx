@@ -1,0 +1,21 @@
+---
+title: Alerts migration for fully qualified class names
+---
+
+## Background
+
+In v1.29.0 and below, DiscordSRV listened to every single Bukkit event by hackily registering to every HandlerList.
+This causes various performance issues as well as some unexpected side effects with special events.
+Paper 1.21.5 has blocked the ability to change the handlerlist collection, preventing this approach from working entirely.
+
+## Solution
+
+Starting with v1.30.0, DiscordSRV now requires that all event names be defined using their fully-qualified names (that is, including their package name).
+For example instead of `PlayerTeleportEvent` you need to use `org.bukkit.event.player.PlayerTeleportEvent`.
+
+## Upgrading
+
+Look for the fully-qualified class names from [Paper's javadocs](https://jd.papermc.io/paper/) or from the documentation of plugin's that your alerts are from.
+Below is an image for how to identify the fully-qualified class name for an event on javadocs. Javadocs usually have search at the top right
+
+![DiscordSRV](/assets/playerteleportevent-class-name-example.png)

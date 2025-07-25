@@ -7,15 +7,20 @@ import TabItem from '@theme/TabItem';
 
 # [alerts.yml](https://config.discordsrv.com/alerts/_)
 
+:::info
+Running Paper 1.21.5+ and alerts not working? Please read [our fully qualified class name migration guide](migration.mdx).
+:::
+
 This is an *advanced* feature of DiscordSRV that allows you to send messages to Discord when a game event happens or when a command is run.
 
 You will need a working knowledge of how Bukkit events work and their properties.
 
 If you aren't sure about what you're doing here, maybe ask a developer or [join our discord support server](https://discordsrv.com/discord/)  
 
-Refer to the Bukkit API javadoc to find events & properties to use:
+Refer to the Bukkit/Paper API javadoc to find events & properties to use:
 
-* https://hub.spigotmc.org/javadocs/bukkit  
+* https://hub.spigotmc.org/javadocs/bukkit
+* https://jd.papermc.io/paper/
 
 Helpful resources for learning how to use SpEL:
 
@@ -96,7 +101,7 @@ Helpful resources for learning how to use SpEL:
     <TabItem value="advancedban-punishmentevent" label="PunishmentEvent" default>
         [PunishmentEvent.java](https://github.com/DevLeoko/AdvancedBan/blob/master/bukkit/src/main/java/me/leoko/advancedban/bukkit/event/PunishmentEvent.java)
         ```yaml
-          - Trigger: PunishmentEvent
+          - Trigger: me.leoko.advancedban.bukkit.event.PunishmentEvent
             Channel: punishments
             Embed:
               Color: "#4287f5"
@@ -117,7 +122,7 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
         [NodeAddEvent.java](https://github.com/LuckPerms/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeAddEvent.java)      
         ```yaml
         # Example alert to send a message when a permission has been added or removed from a player
-          - Trigger: LPNodeAddEvent
+          - Trigger: me.anutley.luckpermsalerts.events.node.LPNodeAddEvent
             Channel: global
             Conditions:
             - "#event.getEvent().getNode().getType().name() == 'PERMISSION'"
@@ -133,7 +138,7 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
         [NodeAddEvent.java](https://github.com/LuckPerms/LuckPerms/blob/master/api/src/main/java/net/luckperms/api/event/node/NodeAddEvent.java)      
         ```yaml
         # Example alert to send a message when a rank has been added or removed from a player
-          - Trigger: LPNodeAddEvent
+          - Trigger: me.anutley.luckpermsalerts.events.node.LPNodeAddEvent
             Channel: global
             Conditions:
             - "#event.getEvent().getNode().getType().name() == 'INHERITANCE'"
@@ -154,7 +159,7 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
         [CMIAfkEnterEvent.java](https://github.com/Zrips/CMI-API/blob/master/src/com/Zrips/CMI/events/CMIAfkEnterEvent.java)
         ```yaml
         # Send an AFK alert when someone is AFK
-          - Trigger: CMIAfkEnterEvent
+          - Trigger: com.Zrips.CMI.events.CMIAfkEnterEvent
             Channel: afk
             Embed:
               Color: "#869600"
@@ -167,7 +172,7 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
         [CMIAfkLeaveEvent.java](https://github.com/Zrips/CMI-API/blob/master/src/com/Zrips/CMI/events/CMIAfkLeaveEvent.java)
         ```yaml
         # Send an AFK alert when someone is no longer AFK
-          - Trigger: CMIAfkLeaveEvent
+          - Trigger: com.Zrips.CMI.events.CMIAfkLeaveEvent
             Channel: afk
             Embed:
               Color: "#869600"
@@ -185,7 +190,7 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
     <TabItem value='discord-guildmemberupdateboosttimeevent-1' label='GuildMemberUpdateBoostTimeEvent (Boosting)'>
         [GuildMemberUpdateBoostTimeEvent.java](https://ci.dv8tion.net/job/JDA/javadoc/net/dv8tion/jda/api/events/guild/member/update/GuildMemberUpdateBoostTimeEvent.html)
         ```yaml
-          - Trigger: GuildMemberUpdateBoostTimeEvent
+          - Trigger: net.dv8tion.jda.api.events.guild.member.update.GuildMemberUpdateBoostTimeEvent
             Channel: boosters
             Conditions:
             - '#event.getOldTimeBoosted() == null'
@@ -200,7 +205,7 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
     <TabItem value='discord-guildmemberupdateboosttimeevent-2' label='GuildMemberUpdateBoostTimeEvent (Not Boosting)'>
         [GuildMemberUpdateBoostTimeEvent.java](https://ci.dv8tion.net/job/JDA/javadoc/net/dv8tion/jda/api/events/guild/member/update/GuildMemberUpdateBoostTimeEvent.html)
         ```yaml
-          - Trigger: GuildMemberUpdateBoostTimeEvent
+          - Trigger: net.dv8tion.jda.api.events.guild.member.update.GuildMemberUpdateBoostTimeEvent
             Channel: boosters
             Conditions:
             - '#event.getOldTimeBoosted() != null'
@@ -221,7 +226,7 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
     <TabItem value='discordsrv-accountlinkedevent' label='AccountLinkedEvent'>
     [AccountLinkedEvent.java](https://github.com/DiscordSRV/DiscordSRV/blob/master/src/main/java/github/scarsz/discordsrv/api/events/AccountLinkedEvent.java)
     ```yaml
-      - Trigger: AccountLinkedEvent
+      - Trigger: github.scarsz.discordsrv.api.events.AccountLinkedEvent
         Channel: linked
         Embed:
           Enabled: true
@@ -235,7 +240,7 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
     <TabItem value='discordsrv-accountunlinkedevent' label='AccountUnlinkedEvent'>
     [AccountLinkedEvent.java](https://github.com/DiscordSRV/DiscordSRV/blob/master/src/main/java/github/scarsz/discordsrv/api/events/AccountUnlinkedEvent.java)
     ```yaml
-      - Trigger: AccountUnlinkedEvent
+      - Trigger: github.scarsz.discordsrv.api.events.AccountUnlinkedEvent
         Channel: linked
         Embed:
           Enabled: true
@@ -256,7 +261,7 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
         [AfkStatusChangeEvent.java](https://github.com/EssentialsX/Essentials/blob/master/Essentials/src/main/java/net/ess3/api/events/AfkStatusChangeEvent.java)
         ```yaml
         # Send an AFK alert when someone is AFK / is no longer AFK
-          - Trigger: AfkStatusChangeEvent
+          - Trigger: net.ess3.api.events.AfkStatusChangeEvent
             Channel: afk
             Embed:
               Color: "#869600"
@@ -273,7 +278,7 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
     <TabItem value="matrix-playerviolationevent" label="PlayerViolationEvent" default>
         [PlayerViolationEvent.java](https://github.com/jiangdashao/matrix-api-repo/blob/master/matrix-api/src/main/java/me/rerere/matrix/api/events/PlayerViolationEvent.java)
         ```yaml
-          - Trigger: PlayerViolationEvent
+          - Trigger: me.rerere.matrix.api.events.PlayerViolationEvent
             Channel: matrix
             Conditions:
             - violations >= 5 # don't send events for players with < 5 violations
@@ -293,7 +298,7 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
         [MythicMobSpawnEvent.java](https://mythicmobs.net/javadocs/io/lumine/xikage/mythicmobs/api/bukkit/events/MythicMobSpawnEvent.html)
         ```yaml
         # Example alert to send a message when a MythicMobs ender dragon spawns
-          - Trigger: MythicMobSpawnEvent
+          - Trigger: io.lumine.xikage.mythicmobs.api.bukkit.events.MythicMobSpawnEvent
             Channel: mobs
             Conditions:
             - 'entity.type.name() == "ENDER_DRAGON"'
@@ -313,7 +318,7 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
         [VotifierEvent.java](http://vexsoftware.github.io/votifier/docs/com/vexsoftware/votifier/model/VotifierEvent.html)
         ```yaml
         # Example alert to send a message when a player has voted
-          - Trigger: VotifierEvent
+          - Trigger: com.vexsoftware.votifier.model.VotifierEvent
             Channel: votes
             Embed:
               Color: "#00ff00"
@@ -331,7 +336,7 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
         [PlayerAuctionBuyEvent.java](https://javadocs.olziedev.com/playerauctions/com/olziedev/playerauctions/api/events/PlayerAuctionBuyEvent.html)
         ```yaml
         # Example alert to send a message when a player buys something from the auction
-          - Trigger: PlayerAuctionBuyEvent
+          - Trigger: com.olziedev.playerauctions.api.events.PlayerAuctionBuyEvent
             Async: false
             Channel: auctions
             Embed:
@@ -356,7 +361,7 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
         [PlayerAuctionSellEvent.java](https://javadocs.olziedev.com/playerauctions/com/olziedev/playerauctions/api/events/PlayerAuctionSellEvent.html)
         ```yaml
         # Example alert to send a message when a player starts selling something from the auction
-          - Trigger: PlayerAuctionSellEvent
+          - Trigger: com.olziedev.playerauctions.api.events.PlayerAuctionSellEvent
             Channel: auctions
             Embed:
               Color: "#4287f5" #Blue
@@ -379,7 +384,7 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
         [PlayerAuctionExpireEvent.java](https://javadocs.olziedev.com/playerauctions/com/olziedev/playerauctions/api/events/PlayerAuctionExpireEvent.html)
         ```yaml
         # Example alert to send a message when a player's item gets removed from the auction
-          - Trigger: PlayerAuctionExpireEvent
+          - Trigger: com.olziedev.playerauctions.api.events.PlayerAuctionExpireEvent
             Channel: auctions
             Conditions:
             - 'playerAuction.getExpireTime() == null'
@@ -408,7 +413,7 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
     <TabItem value="purpur-playerafkevent" label="PlayerAFKEvent" default>
         [PlayerAFKEvent](https://purpurmc.org/javadoc/org/purpurmc/purpur/event/PlayerAFKEvent.html)
         ```yaml
-          - Trigger: PlayerAFKEvent
+          - Trigger: org.purpurmc.purpur.event.PlayerAFKEvent
             Channel: afk
             Embed:
               Color: "#fbfb54"
@@ -423,9 +428,9 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
 
 <Tabs>
     <TabItem value="spartan-playerviolationevent" label="PlayerViolationEvent" default>
-        [PlayerViolationEvent.java](https://docs.google.com/document/d/e/2PACX-1vTzeCDiD2goCFO3oWIs3ANwmOvOqI2TLYVkjHO4Z-2q3yTDZPyYZ9bFX4OCwlBamWA_SOP7Ib5uARc8/pub)
+        [PlayerViolationEvent.java](https://github.com/CheatSolutions/Spartan-AntiCheat/blob/302d29982ffd495193cb89659e84255b2ee94091/src/main/java/ai/idealistic/spartan/api/PlayerViolationEvent.java)
         ```yaml
-          - Trigger: PlayerViolationEvent
+          - Trigger: ai.idealistic.spartan.api.PlayerViolationEvent
             Channel: spartan
             Conditions:
               - violation >= 5 # don't send events for players with < 5 violations
@@ -487,7 +492,7 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
 
     <TabItem value="commands-socialspy" label="Commands">
         ```yaml
-          - Trigger: PlayerCommandPreprocessEvent
+          - Trigger: org.bukkit.event.player.PlayerCommandPreprocessEvent
             Channel: SocialSpy
             Conditions:
               - "!(#command.split(\"\\s+|$\")[0].equals(\"msg\"))"      #ignores the /msg command
@@ -515,7 +520,7 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
 
     <TabItem value="commands-sign" label="Sign placement">
         ````yaml
-          - Trigger: SignChangeEvent
+          - Trigger: org.bukkit.event.block.SignChangeEvent
             Channel: SocialSpy
             Conditions:
               - 'getLine(0) + getLine(1) + getLine(2) + getLine(3) != ""'
