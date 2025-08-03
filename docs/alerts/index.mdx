@@ -530,6 +530,7 @@ Requires the [LuckPermsAlerts](https://github.com/ANutley/LuckPermsAlerts) plugi
                 ImageUrl: "https://crafthead.net/helm/${#event.getPlayer().getUniqueId()}"
                 Name: '${#event.getPlayer().getName()}'
               Description: |-
+                Side: ${getSide()}
                 Coords: `[${block.getLocation().getBlockX() + ", " + block.getLocation().getBlockY() + ", " + block.getLocation().getBlockZ()}]`
                 ```
                 ${getLine(0)}
