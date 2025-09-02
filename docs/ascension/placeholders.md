@@ -16,7 +16,12 @@ Information on formatting Minecraft messages can be found [here](https://github.
 Information on Discord markdown can be found [here](https://support.discord.com/hc/en-us/articles/210298617)
 :::
 
-### Checking for empty placeholders
+### Additional context
+You can "inject" additional context to lookups by including a placeholder that gives the desired context inside the paratheses. 
+
+For example `%[server:'1234567890']player_linked_server_member_highest_role_color%` will add `%server:'1234567890'%` as a context for the lookup of `%player_linked_server_member_highest_role_color%`
+
+### Checking for empty placeholders (Coalesce)
 You can take empty placeholders into account and use an alternate placeholder instead.
 
 For example `%player_meta_prefix|player_permission_prefix%`. This first looks for `%player_meta_prefix%` if that is empty, than `%player_permission_prefix%` is used instead.
@@ -41,14 +46,12 @@ For example:
 %user_isboosting:'Boosting;Not Boosting'%
 ```
 
-### Recursive Placeholders
-Recursive placeholders are a special type of placeholder which allow you to specify what information you want from it.
+### Placeholder Drill-Down
+Some placeholders provide a context that has placeholders of its own.
 
 In this example we will be using `%user_highest_role_<role>%`. The `%user_highest_role_` part returns the highest role of the user and turns it into a [role placeholder](#role).
 
 You can then use any [role](#role) related placeholders. For example `%user_highest_role_name%` will return the highest roles name, or `%user_highest_role_color%` returns the color of the highest role.
-
-This same premise is used for all the re lookup placeholders.
 
 ### I/O and Server Threads
 Any placeholder that requires a I/O operation to be fulfilled, will **not** wait for that request to be completed, if the placeholder is requested on a server thread.
@@ -85,13 +88,13 @@ Example value: `https://cdn.discordapp.com/avatars/827880927199494164/bdde9008a6
 The Discord user's avatar that is currently active (if they do not have one set, this will provide the default Discord avatar)  
 Example value: `https://cdn.discordapp.com/avatars/827880927199494164/bdde9008a644ecc62d97c6f9153462c7.webp?size=64`
 
-#### `%user_profile_<subplaceholder>%`
+#### `%user_profile%`
 For use with [Profile](#profile) placeholders
 
-#### `%user_linked_player_<subplaceholder>%`
+#### `%user_linked_player%`
 For use with [Player](#player) placeholders
 
-#### `%user_linked_offline_player_<subplaceholder>%`
+#### `%user_linked_offline_player%`
 For use with [Player](#player) placeholders (other than placeholders that require the player to be online)
 
 ### User (Server Member)
@@ -111,24 +114,24 @@ Example usage: `%user_time_boosted:'dd-MM-yyyy'%`
 The time the user started joined, use with [date formatting](#date-formatting)  
 Example usage: `%user_time_joined:'dd-MM-yyyy%`
 
-#### `%user_selected_highest_role_<subplaceholder>%`
-The highest role of the member (filtered based on the configuration). Replace `<subplaceholder>` with any of the [role](#role) placeholders. More information about recursive placeholders [here](#recursive-placeholders)  
+#### `%user_selected_highest_role%`
+The highest role of the member (filtered based on the configuration). Replace `<subplaceholder>` with any of the [role](#role) placeholders.  
 Example usages: `%user_highest_role_name%`, `%user_highest_role_color%`
 
-#### `%user_selected_hoisted_role_<subplaceholder>%`
-The highest hoisted role of the member (filtered based on the configuration). Replace `<subplaceholder>` with any of the [role](#role). More information about recursive placeholders [here](#recursive-placeholders)  
+#### `%user_selected_hoisted_role%`
+The highest hoisted role of the member (filtered based on the configuration). Replace `<subplaceholder>` with any of the [role](#role).  
 Example usages: `%user_hoisted_role_name%`, `%user_hoisted_role_color%`
 
 #### `%user_selected_roles%`
 The roles of the member (filtered based on the configuration). You can specify the separator for multiple roles as a suffix, more information can be found [here](#placeholder-parameters)  
-Example usages: `%user_roles%`, `%user_roles:', '%`
+Example usages: `%user_selected_roles%`, `%user_selected_roles:', '%`
 
-#### `%user_highest_role_<subplaceholder>%`
-The highest role of the member. Replace `<subplaceholder>` with any of the [role](#role) placeholders. More information about recursive placeholders [here](#recursive-placeholders)  
+#### `%user_highest_role%`
+The highest role of the member. Replace `<subplaceholder>` with any of the [role](#role) placeholders.  
 Example usages: `%user_highest_role_name%`, `%user_highest_role_color%`
 
-#### `%user_hoisted_role_<subplaceholder>%`
-The highest hoisted role of the member. Replace `<subplaceholder>` with any of the [role](#role). More information about recursive placeholders [here](#recursive-placeholders)  
+#### `%user_hoisted_role%`
+The highest hoisted role of the member. Replace `<subplaceholder>` with any of the [role](#role).  
 Example usages: `%user_hoisted_role_name%`, `%user_hoisted_role_color%`
 
 #### `%user_roles%`
@@ -159,15 +162,15 @@ The format for messages which contain a reply. The format for the content of thi
 The attachments in the message sent. The format for the content of this placeholder can be edited in the config (`channels.*.discord-to-minecraft.attachment-format`). You can specify the separator for multiple attachments as a suffix, more information can be found [here](#placeholder-parameters)  
 Example usages: `%message_attachments%`, `%message_attachments:', '%`
 
-#### `%message_server_<subplaceholder>%`
+#### `%message_server%`
 The server this message was sent in, if any, for use with [Server](#server) placeholders  
 Example usage: `%message_server_name%`
 
-#### `%message_user_<subplaceholder>%`
+#### `%message_user%`
 The user that sent this message, for use with [User](#user) placeholders  
 Example usage: `%message_user_name%`
 
-#### `%message_channel_<subplaceholder>%`
+#### `%message_channel%`
 The channel this message was sent in, for use with [Channel](#channel) placeholders  
 Example usage: `%message_channel_name%`
 
@@ -201,7 +204,7 @@ Example value: `discordsrv-test-chat`
 The jump url of the channel  
 Example value: `https://discord.com/channels/135634590575493120/137421286501646336`
 
-#### `%channel_server_<subplaceholder>%`
+#### `%channel_server%`
 The Discord server the channel is in, for use with [Server](#server) placeholders  
 Example usage: `%channel_server_name%`
 
@@ -238,7 +241,7 @@ The UUID of the Minecraft player. May be used with [UUID](#uuid) placeholders
 Example usages: `%player_uuid%`, `%player_uuid_short%`
 Example value: `069a79f4-44e9-4726-a5be-fca90e38aaf5`
 
-#### `%player_skin_<subplaceholder>%`
+#### `%player_skin%`
 The skin information of the Minecraft player for use with [Skin](#skin)  
 Example usages: `%player_skin_texture_id%`, `%player_skin_model%`
 
@@ -267,13 +270,13 @@ Example value: `[Mod] `
 The suffix of the Minecraft player  
 Example value: ` (Staff Member)`
 
-#### `%player_profile_<subplaceholder>%`
+#### `%player_profile%`
 For use with [Profile](#profile) placeholders
 
-#### `%player_linked_user_<subplaceholder>%`
+#### `%player_linked_user%`
 For use with [User](#user) placeholders
 
-#### `%player_linked_server_member_<subplaceholder>%`
+#### `%player_linked_server_member%`
 **Note** Only available if a Discord server is in context.
 For use with [Server Member](#user-server-member) placeholders.
 
@@ -307,13 +310,13 @@ The Minecraft Player UUID linked to the profile, empty if this is a profile of a
 #### `%profile_user_id%`
 The Discord User ID linked to the profile, empty if this is a profile of an unlinked Minecraft player.
 
-#### `%profile_player_<subplaceholder>%`
+#### `%profile_player%`
 For use with [Player](#player) placeholders
 
-#### `%profile_offline_player_<subplaceholder>%`
+#### `%profile_offline_player%`
 For use with [Player](#player) placeholders (other than placeholders that require the player to be online)
 
-#### `%profile_user_<subplaceholder>%`
+#### `%profile_user%`
 For use with [User](#user) placeholders
 
 ## GameChannel
@@ -412,9 +415,34 @@ Example value: `https://discord.gg/HGAdJEumxC`
 Returns arbitrary text. An example of a use case would be changing the placeholder to custom text if it is empty.  
 Example usage: `%player_prefix|text:'No Prefix'%`
 
-#### `%bot_user_<subplaceholder>%`
+### PlayerList
+
+#### `%playerlist%`
+List of players, further configurable in the `config.yaml` under the `player-list` section.
+
+#### `%playerlist_count%`
+The current amount of online players excluding vanished players.
+
+### Discord entities
+
+#### `%bot_user%`
 The bot user, see [User placeholders](#user)  
 Example usage: `%bot_user_name%`
+
+#### `%channel:'id'%`
+#### `%user:'id'%`
+#### `%server:'id'%`
+#### `%role:'id'%`
+#### `%emoji:'id'%`
+Get a Discord entity by ID  
+Example usage: `%user:'185828288466255874'%`, `%server:'135634590575493120'%`
+
+##### `%member:'id'%`
+Gets a Discord server member by ID.  
+Requires `Discord Server` context.  
+Example: usage: `%[server:'135634590575493120']member:'185828288466255874'%`
+
+### Current time
 
 #### `%start_date:'format'%`
 The time the server started  
