@@ -3,21 +3,17 @@ This is documentation for **a future version of DiscordSRV** and information on 
 :::
 
 # Placeholders
-DiscordSRV contains many placeholders which allows you to customise messages entirely to your liking.
+DiscordSRV contains many placeholders which allows you to customize messages entirely to your liking.
 
 Information about which placeholders can be used where can be found in the config.
 
 ---
-## Formatting
-
-:::info General Formatting Help
-Information on formatting Minecraft messages can be found [here](https://github.com/Vankka/EnhancedLegacyText/wiki/Format).
-
-Information on Discord markdown can be found [here](https://support.discord.com/hc/en-us/articles/210298617)
-:::
+## Syntax
 
 ### Additional context
-You can "inject" additional context to lookups by including a placeholder that gives the desired context inside the paratheses. 
+You can "inject" additional context to lookups by including a placeholder that gives the desired context inside the paratheses. Adding a context will take priority over every context that was in the original request (so an added context will take precedence over one that was supplied to the request).
+
+This is most useful with [Discord Entity](#discord-entities) global placeholders, for example when you want to get a Discord user's membership in a specific Discord server, you can specify the server you want as an additional context.
 
 For example `%[server:'1234567890']player_linked_server_member_highest_role_color%` will add `%server:'1234567890'%` as a context for the lookup of `%player_linked_server_member_highest_role_color%`
 
@@ -27,35 +23,29 @@ You can take empty placeholders into account and use an alternate placeholder in
 For example `%player_meta_prefix|player_permission_prefix%`. This first looks for `%player_meta_prefix%` if that is empty, than `%player_permission_prefix%` is used instead.
 
 ### Placeholder Parameters
-Some placeholders may be given an additional parameter for formatting
+Placeholders may require **or** allow giving a parameter
 
-Placeholders which provide a list of items can have a parameter set between each item to separate them.
-For example `%user_roles:', '%`, lists the users roles seperated by a comma and a space (`, `).
+For example on placeholders which provide a list of items may have a parameter set between each item to separate them.
+Example: `%user_roles:', '%`, lists the users roles separated by a comma and a space (`, `).
 
-### Boolean formatting
-Placeholders which return a boolean, can have values specified via a parameter. Otherwise `true`/`false` will be returned.
+### Placeholders that don't result in text
+Placeholders can provide an output directly e.g. `%player_name%` would give the name of the Player, but some placeholders provide another context, which has further placeholders.  
 
-```
-%boolean:'value when true'%
-%boolean:'value when true;value when false'%
-```
+For example `%user_highest_role%` returns the highest role of the user and turns it into a [role placeholder](#role). 
+You can then use any [role](#role) related placeholders, for example `%user_highest_role_name%` will return the highest roles name, or `%user_highest_role_color%` returns the color of the highest role.
 
-For example: 
-```
-%user_isboosting:'Boosting'%
-%user_isboosting:'Boosting;Not Boosting'%
-```
+Some placeholders for example those that return a [Color](#color) may be applied as formatting (e.g. in formatting a Discord message to Minecraft) or convert directly to text, but are **also** a context which has placeholders. 
+So a placeholder returning a context doesn't always mean you need to use placeholders behind that context.
 
-### Placeholder Drill-Down
-Some placeholders provide a context that has placeholders of its own.
-
-In this example we will be using `%user_highest_role_<role>%`. The `%user_highest_role_` part returns the highest role of the user and turns it into a [role placeholder](#role).
-
-You can then use any [role](#role) related placeholders. For example `%user_highest_role_name%` will return the highest roles name, or `%user_highest_role_color%` returns the color of the highest role.
-
-### I/O and Server Threads
+## I/O and Server Threads
 Any placeholder that requires a I/O operation to be fulfilled, will **not** wait for that request to be completed, if the placeholder is requested on a server thread.
 Instead, that placeholder will be replaced with the text `Unavailable`
+
+:::warning
+The above does not apply to placeholders provided by 3rd party plugins/mods.
+:::
+
+Most of DiscordSRV's own usage is resolved off-thread, if some 3rd party placeholder requires that it be resolved on the main thread, you may not be able to use it.
 
 ---
 ## Discord
@@ -64,19 +54,24 @@ Instead, that placeholder will be replaced with the text `Unavailable`
 The ID for the Discord user  
 Example value: `185828288466255874`
 
+#### `%user_mention%`
+<!-- TODO: link to Discord message documentation once written -->
+
 #### `%user_name%`
 The username of the Discord user  
 Example value: `myusername1`
 
 #### `%user_tag%`
 The Discord user's username, including discriminator if they have one  
-Example value: `myusername1#1234`
+Example value: `myusername1`, `Discord Bot#3201`
 
 #### `%user_effective_name%`
 The effective display name of the Discord user  
 Example value: `My Display Name`
 
 #### `%user_discriminator%`
+**Deprecated:** only bots use discriminators
+
 The user's discriminator (This is being phased out and is only truly useful for bots)  
 Example value: `0000`
 
@@ -97,7 +92,14 @@ For use with [Player](#player) placeholders
 #### `%user_linked_offline_player%`
 For use with [Player](#player) placeholders (other than placeholders that require the player to be online)
 
+#### `%user_server_member%`
+**Note** Only available if a Discord server is in context. You can use the [Server](#server) global placeholder as an [Additional context](#additional-context) to specify the Discord server.
+
+For user with [User (Server Member)](#user-server-member) placeholders. This placeholder is useful when only a [User](#user) is provided in context, or you want to get the User's membership in a specific Discord server (which you can do by using [Additional context](#additional-context) to overwrite the [Discord server](#server) in context).
+
 ### User (Server Member)
+A Discord user's membership in a specific Discord server. These placeholders provide additional information that is related to the user in a specified Discord server.
+
 #### `%user_color%`
 The color of the user's highest role that has a color. May be used with [color](#color) subplaceholders.  
 Example usages: `%user_color%`, `%user_color_hex%`
@@ -142,6 +144,19 @@ Example usages: `%user_roles%`, `%user_roles:', '%`
 The server for user membership, for using [Server](#server) placeholders  
 Example usage: `%user_server_name%`
 
+#### `%user_primary_server%`
+See [Primary Server](#user-primary-server) placeholders.
+
+### User Primary Server
+<!-- TODO: add descriptions, example values -->
+
+#### `%primary_server_user%`
+#### `%primary_server_identity_enabled%`
+See [Boolean formatting](#boolean-formatting)
+
+#### `%primary_server_tag%`
+#### `%primary_server_badge_url%`
+
 ### Message
 #### `%message_id%`
 The id of message  
@@ -174,10 +189,21 @@ Example usage: `%message_user_name%`
 The channel this message was sent in, for use with [Channel](#channel) placeholders  
 Example usage: `%message_channel_name%`
 
+#### `%message_created%`
+The time the message was sent   
+See [Date formatting](#date-formatting)
+
+#### `%message_edited%`
+The time the message was edited, will be empty if the message isn't edited   
+See [Date formatting](#date-formatting)
+
 ### Role
 #### `%role_id%`
 The id of the role  
 Example value: `135634730535092224`
+
+#### `%role_mention%`
+<!-- TODO: link to Discord message documentation once written -->
 
 #### `%role_name%`
 The name of the Discord role  
@@ -195,6 +221,9 @@ Example usage: `%role_server_name%`
 #### `%channel_id%`
 The id of the channel  
 Example value: `137421286501646336`
+
+#### `%channel_mention%`
+<!-- TODO: link to Discord message documentation once written -->
 
 #### `%channel_name%`
 The name of the channel  
@@ -221,6 +250,10 @@ Example value: `My Awesome Server`
 The member count of the Discord server  
 Example value: `107`
 
+#### `%server_self_member%`
+The Discord bot's (of the bot that DiscordSRV uses) membership in the Discord server
+For use with [Server Member](#user-server-member) placeholders.
+
 ---
 ## Minecraft
 ### Player
@@ -231,10 +264,17 @@ Example value: `Notch`
 #### `%player_display_name%`
 The display name of the Minecraft player (this may contain the player's prefix and suffix, usually depending on your chat plugin's configuration)  
 Example value: `*Notch`
+<!-- TODO: only some platforms -->
 
-#### `%team_display_name%`
+#### `%player_team_display_name%`
 The formatted display name of the Minecraft player containing their [Team](https://minecraft.wiki/w/Scoreboard#Teams)'s prefix, suffix and color   
 Example value: `[Mojang] Notch`
+<!-- TODO: not for proxies -->
+
+#### `%player_world_name%`
+The name of the world that the player is in   
+Example value: `overworld`
+<!-- TODO: not for proxies -->
 
 #### `%player_uuid%`
 The UUID of the Minecraft player. May be used with [UUID](#uuid) placeholders  
@@ -246,7 +286,7 @@ The skin information of the Minecraft player for use with [Skin](#skin)
 Example usages: `%player_skin_texture_id%`, `%player_skin_model%`
 
 #### `%player_avatar_url%`
-The avatar url of the Minecraft player (the API used for this can be changed in the config (`avatar-provider.avatar-url-template`))
+The avatar url of the Minecraft player, generated as configured in config's `avatar-provider` section
 
 #### `%player_prefix%`
 Equivalent of `%player_meta_prefix|player_permission_prefix%`
@@ -270,6 +310,10 @@ Example value: `[Mod] `
 The suffix of the Minecraft player  
 Example value: ` (Staff Member)`
 
+#### `%player_primary_group%`
+The primary group of the Minecraft player
+Example value: `default`
+
 #### `%player_profile%`
 For use with [Profile](#profile) placeholders
 
@@ -277,7 +321,8 @@ For use with [Profile](#profile) placeholders
 For use with [User](#user) placeholders
 
 #### `%player_linked_server_member%`
-**Note** Only available if a Discord server is in context.
+**Note** Only available if a Discord server is in context. You can use the [Server](#server) global placeholder as an [Additional context](#additional-context) to specify the Discord server.
+
 For use with [Server Member](#user-server-member) placeholders.
 
 ### Skin
@@ -289,7 +334,7 @@ Example value: `5183d47698a28e20b6c3c6d9b8a8a33449c866cff50d725a53260bd6a5ae0b64
 The model of the skin  
 Example value: `slim`
 
-### Skin (Parts)
+## Skin (Parts)
 
 #### `%skin_parts_cape%`
 #### `%skin_parts_jacket%`
@@ -309,6 +354,10 @@ The Minecraft Player UUID linked to the profile, empty if this is a profile of a
 
 #### `%profile_user_id%`
 The Discord User ID linked to the profile, empty if this is a profile of an unlinked Minecraft player.
+
+#### `%profile_is_online%`
+If the player is online.  
+See [Boolean formatting](#boolean-formatting)
 
 #### `%profile_player%`
 For use with [Player](#player) placeholders
@@ -350,6 +399,12 @@ Only with VentureChat channels. May be used with [color](#color) placeholders.
 #### `%gamechannel_prefix%`
 Only with VentureChat channels
 
+#### `%gamechannel_command_name%`
+Only with CarbonChat channels
+
+#### `%gamechannel_quick_prefix%`
+Only with CarbonChat channels
+
 ---
 
 ## Punishment
@@ -362,6 +417,18 @@ The reason provided for the punishment
 
 #### `%punishment_punisher%`
 The name of the punisher
+
+---
+
+## Console Log Entry
+<!-- TODO: link to string formatting for padding etc. -->
+<!-- TODO: add descriptions, example values -->
+
+#### `%logger_name%`
+#### `%log_level%`
+
+#### `%log_time%`
+See [Date formatting](#date-formatting)
 
 ---
 
@@ -408,8 +475,20 @@ See [Boolean formatting](#boolean-formatting)
 ## Global placeholders
 
 #### `%discord_invite%`
-The invite of your Discord server (this is either provided by you in the config, or DiscordSRV auto generates it for you)  
+The invite of your Discord server, as configured in the config's `invite` section (and possibly automatically generated)  
 Example value: `https://discord.gg/HGAdJEumxC`
+
+#### `%discord_invite_simple%`
+The invite of your Discord server without the protocol, as configured in the config's `invite` section (and possibly automatically generated)  
+Example value: `discord.gg/HGAdJEumxC`
+
+#### `%discordcommand_minecraft_alias%`
+The command alias for the Discord command for users, configured in the config's `discord-command.user-command-alias` option  
+Example value: `minecraft`
+
+#### `%gamecommand_discord_link_alias%`
+The in-game command alias used for linking Discord accounts, configured under the config's `game-command` section  
+Possible values: `link`, `discord link`, `discordsrv link`
 
 #### `%text:'<text>'"`
 Returns arbitrary text. An example of a use case would be changing the placeholder to custom text if it is empty.  
@@ -442,7 +521,11 @@ Gets a Discord server member by ID.
 Requires `Discord Server` context.  
 Example: usage: `%[server:'135634590575493120']member:'185828288466255874'%`
 
-### Current time
+### Current & server start time
+
+#### `%initialize_date:'format'%`
+The time the plugin was initialized  
+See [Date formatting](#date-formatting)
 
 #### `%start_date:'format'%`
 The time the server started  
@@ -452,8 +535,82 @@ See [Date formatting](#date-formatting)
 The time now  
 See [Date formatting](#date-formatting)
 
-## Date formatting
-Some placeholders such as `log_time` for console lines take a time formatting string, for example: `ccc HH:mm:ss zzz` in `%log_time:'ccc HH:mm:ss zzz'%`
+### Memory & Disk
+
+#### `%memory_free%`
+Free memory, this only includes memory that has been allocated by the JVM
+#### `%memory_total%`
+Total memory available on the system
+#### `%memory_max%`
+The maximum memory the server can use
+#### `%memory_used%`
+The amount of memory the server is currently using
+#### `%memory_available%`
+The amount of memory the server has available to use excluding the already used memory
+
+#### `%disk_usable%`
+The amount of disk that the server can use (where the DiscordSRV data folder is)
+#### `%disk_total%`
+The total size of the disk (where the DiscordSRV data folder is)
+#### `%disk_unallocated%`
+Unallocated space on the disk (where the DiscordSRV data folder is)
+#### `%disk_allocated%`
+Allocated space on the disk (where the DiscordSRV data folder is)
+
+You can get memory and disk usage in a specific numeric unit by adding a suffix to the placeholder:
+```
+_bytes
+_kilobytes
+_megabytes
+_gigabytes
+_terabytes
+_petabytes
+_exabytes
+_zettabytes
+_yottabytes
+_ronnabytes
+_quettabytes
+```
+Unless a specific unit is specified, the amount of bytes will be summarized in the highest factor there is at least one of, with one decimal place of accuracy
+
+## Formatting
+
+<!-- TODO: once these have their own docs pages, link to those instead -->
+:::info General Formatting Help
+Information on formatting Minecraft messages can be found [here](https://github.com/Vankka/EnhancedLegacyText/wiki/Format).
+
+Information on Discord Markdown can be found [here](https://support.discord.com/hc/en-us/articles/210298617)
+:::
+
+### Boolean formatting
+Placeholders which return a boolean, can have values specified via a parameter. Otherwise `true`/`false` will be returned.
+
+```
+%boolean:'value when true'%
+%boolean:'value when true;value when false'%
+```
+
+For example:
+```
+%user_isboosting:'Boosting'%
+%user_isboosting:'Boosting;Not Boosting'%
+```
+
+<!-- TODO: section for number formatting -->
+<!-- TODO: section for string formatting -->
+
+### Date formatting
+Placeholders that return a date such as `now_date` can be formatted using a datetime formatting string, for example: `ccc HH:mm:ss zzz` in `%now_date:'ccc HH:mm:ss zzz'%`
+
+#### `%date_at_zone:'timezone'%`
+Converts the date to the specified timezone, useful when you wish to display timezone different than the server's
+<!-- TODO: list timezones -->
+
+#### `%date_to_epoch_seconds%`
+Gets the time since January 1st 1970 ([Epoch time](https://en.wikipedia.org/wiki/Epoch_(computing))) in seconds
+
+#### `%date_to_epoch_milliseconds%`
+Gets the time since January 1st 1970 ([Epoch time](https://en.wikipedia.org/wiki/Epoch_(computing))) in milliseconds
 
 #### (Useful) Formatting characters
 Use multiple of the same character back-to-back for a longer output, for example `uu` -> `04`, `uuuu` -> `2004`
@@ -493,6 +650,7 @@ Use multiple of the same character back-to-back for a longer output, for example
 
 ### Discord timestamp formatting
 Example usages: `%log_time:'timestamp'%` or `%log_time:'timestamp:t'%`
+<!-- TODO: link to Discord message documentation once written -->
 
 #### Styles
 | Style       | Meaning         | Example                      |
