@@ -7,41 +7,42 @@ This is documentation for **a future version of DiscordSRV** and information on 
 
 # Compatibility
 
-DiscordSRV requires Java 8 or newer
+DiscordSRV requires Java 21 or newer
 
 ## Server Software compatibility
 
-| Server software             | Supported versions                                   |
-|-----------------------------|------------------------------------------------------|
-| [Bukkit], [Spigot], [Paper] | ✅ Minecraft 1.8.8 and up<br/>⚠️ Minecraft 1.7.10[^1] |
-| [Fabric]                    | ✅ Minecraft 1.21.4                                   |
+| Server software    | Supported versions                                                                |
+|--------------------|-----------------------------------------------------------------------------------|
+| [Paper] and forks  | ✅ Minecraft 26.2 (Paper build)<br/> ⚠️ Minecraft 1.7.10-26.1.2 (Bukkit build)[^1]  |
+| [Bukkit], [Spigot] | ⚠️ Minecraft 1.7.10-26.1.2[^1]                                                     |
+| [Fabric]           | ✅ Minecraft 1.19 and above                                                        |
+| [NeoForge]         | ✅ Minecraft 1.21.1 and above                                                      |
+| [BungeeCord][^2]   | ✅ Latest build                                                                    |
+| [Velocity][^2]     | ✅ 3.4.0+                                                                          |
 
-Only testable software listed. BungeeCord & Velocity are planned, but not yet testable.
-{/*
-| [BungeeCord], [Waterfall]   | ✅ Minecraft 1.7.10 and up                            |
-| [Velocity]                  | ✅ 3.0.0 and up                                       |
-*/}
-
-[^1]: Requires [updating ASM](#) <!-- TODO: fix anchor (faq#asm-update) -->
+[^1]: We recommend using Paper using the latest Minecraft version. Spigot, Bukkit and old versions of Minecraft don't support all features.
+[^2]: Proxy support is limited
 
 ## Plugin/mod integrations and compatibility
 
 <Tabs>
 
-<TabItem value='bukkit' label='Bukkit, Spigot, Paper'>
+<TabItem value='bukkit' label='Bukkit, Spigot, Paper and forks'>
 **Plugin integrations**
 
-| Plugin | Version | Support added by |                                  Note                                  |
-| --- | --- | --- |:----------------------------------------------------------------------:|
-| [LuckPerms] | `5.0+` | DiscordSRV |                                                                        |
-| [PlaceholderAPI] | `2.11.1+` | DiscordSRV | [See Placeholders page](placeholders#bukkit-placeholderapi)                                                                       |
-| [Vault] | `1.7+` | DiscordSRV |                                                                        |
-| [Chatty] | `2.19.13+` | DiscordSRV |                                                                        |
-| [GriefPrevention] | `16.18.1+` | DiscordSRV |                    For blocking soft-muted players                     |
-| [LunaChat] | `3.0.16+` | DiscordSRV |                                                                        |
+| Plugin | Version | Support added by | Note  |
+| --- | --- | --- |:-------------------------:|
+| [LuckPerms] | `5.0+` | DiscordSRV | |
+| [PlaceholderAPI] | `2.11.1+` | DiscordSRV | [See Placeholders page](placeholders#bukkit-placeholderapi) |
+| [Vault] | `1.7+` | DiscordSRV | |
+| [Chatty] | `2.19.13+` | DiscordSRV | |
+| [GriefPrevention] | `16.18.1+` | DiscordSRV | For blocking soft-muted players |
+| [LunaChat] | `3.0.16+` | DiscordSRV | |
 | [McMMO] | `2.1.220+` | DiscordSRV | Only supports admin chat<br/>⚠️ No support for hover, click components |
-| [TownyChat] | `0.45+` | DiscordSRV |                                                                        |
-| [VentureChat] | `3.5.0+` | DiscordSRV |                                                                        |
+| [TownyChat] | `0.45+` | DiscordSRV | |
+| [VentureChat] | `3.5.0+` | DiscordSRV | |
+| [CarbonChat] | `3.0.0+` | DiscordSRV | Only supported on the Paper build |
+| [SkinsRestorer] | `15.12.2+` | DiscordSRV | |
 
 **Compatibility notes**
 
@@ -62,15 +63,25 @@ Only testable software listed. BungeeCord & Velocity are planned, but not yet te
 |---|---|---|---|
 | [LuckPerms] | DiscordSRV | `5.0+` | |
 | [Text Placeholder API] | DiscordSRV | `2.5.0+` | [See Placeholder page](placeholders#fabric-text-placeholder-api) |
+| [SkinsRestorer] | `15.12.2+` | DiscordSRV | |
 </TabItem>
 
-{/*
+<TabItem value='neoforge' label='NeoForge'>
+**Mod integrations**
+
+| Plugin | Support added by | Version | Note |
+|---|---|---|---|
+| [LuckPerms] | DiscordSRV | `5.0+` | |
+| [SkinsRestorer] | `15.12.2+` | DiscordSRV | |
+</TabItem>
+
 <TabItem value='bungee' label='BungeeCord, Waterfall'>
 **Plugin integrations**
 
 | Plugin | Support added by | Version |
 |---|---|---|
 | [LuckPerms] | DiscordSRV | `5.0+` |
+| [SkinsRestorer] | `15.12.2+` | DiscordSRV | |
 </TabItem>
 
 <TabItem value='velocity' label='Velocity'>
@@ -79,8 +90,8 @@ Only testable software listed. BungeeCord & Velocity are planned, but not yet te
 | Plugin | Support added by | Version |
 |---|---|---|
 | [LuckPerms] | DiscordSRV | `5.0+` |
+| [SkinsRestorer] | `15.12.2+` | DiscordSRV | |
 </TabItem>
-*/}
 
 </Tabs>
 
@@ -88,6 +99,7 @@ Only testable software listed. BungeeCord & Velocity are planned, but not yet te
 [Spigot]: https://www.spigotmc.org/
 [Paper]: https://papermc.io/
 [Fabric]: https://fabricmc.net/
+[NeoForge]: https://neoforged.net/
 [BungeeCord]: https://github.com/SpigotMC/BungeeCord/
 [Waterfall]: https://github.com/PaperMC/Waterfall/
 [Velocity]: https://github.com/PaperMC/Velocity/
@@ -108,3 +120,5 @@ Only testable software listed. BungeeCord & Velocity are planned, but not yet te
 [AntiPopup]: https://modrinth.com/plugin/antipopup/
 [NoChatReports]: https://www.spigotmc.org/resources/102931/
 [Text Placeholder API]: https://modrinth.com/mod/placeholder-api
+[CarbonChat]: https://modrinth.com/plugin/carbon/
+[SkinsRestorer]: https://modrinth.com/plugin/skinsrestorer/
