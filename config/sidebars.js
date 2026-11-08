@@ -173,6 +173,11 @@ const sidebars = {
       id: 'ascension/placeholders',
       label: 'Placeholders'
     },
+      {
+      type: 'doc',
+      id: 'ascension/commands',
+      label: 'Commands',
+    },
     {
       type: 'doc',
       id: 'ascension/permissions',
