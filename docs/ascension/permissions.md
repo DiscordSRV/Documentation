@@ -1,3 +1,5 @@
+import ConfigLink from '@site/src/components/ConfigLink';
+
 # Permissions
 
 A permissions plugin (preferably [LuckPerms](https://luckperms.net)) is highly recommended to use these permissions effectively. If this is your first time setting up permissions and you're planning on using LuckPerms, [read this section of LuckPerms' wiki](https://luckperms.net/wiki/Usage).
@@ -37,6 +39,7 @@ The permission `discordsrv.mention.role.<id>` below is granted differently on Ne
 
 These control what a player is able to mention in messages sent from Minecraft to Discord.
 
+All of these permissions can be further configured in each channel's <ConfigLink file="config" path="channels.default.minecraft-to-discord.mentions" />
 | Permission                          | Default | Description                                                              |
 |-------------------------------------|---------|--------------------------------------------------------------------------|
 | `discordsrv.mention.user.all`       | OP      | allows mentioning all Discord users                                      |
@@ -48,11 +51,11 @@ These control what a player is able to mention in messages sent from Minecraft t
 
 ## Miscellaneous permissions
 
-| Permission                       | Default | Description                                                                              |
-|----------------------------------|---------|------------------------------------------------------------------------------------------|
-| `discordsrv.updatenotification`  | OP      | whether or not the player is told if there's an update to DiscordSRV upon joining        |
-| `discordsrv.silentjoin`          | OP      | whether or not join messages are silenced for players with this permission               |
-| `discordsrv.silentquit`          | OP      | whether or not quit messages are silenced for players with this permission               |
+| Permission                       | Default | Description                                                                                                                                                                                                      |
+|----------------------------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `discordsrv.updatenotification`  | OP      | whether or not the player is told if there's an update to DiscordSRV upon joining (can be configured in <ConfigLink file="connections" path="update.notification-ingame" />)                                     |
+| `discordsrv.silentjoin`          | OP      | whether or not join messages are silenced for players with this permission (can be configured for each channel via <ConfigLink file="config" path="channels.default.join-messages.enable-silent-permission" />)  |
+| `discordsrv.silentquit`          | OP      | whether or not quit messages are silenced for players with this permission (can be configured for each channel via <ConfigLink file="config" path="channels.default.leave-messages.enable-silent-permission" />) |
 
 ## NeoForge
 
