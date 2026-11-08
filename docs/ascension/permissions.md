@@ -6,30 +6,32 @@ A permissions plugin (preferably [LuckPerms](https://luckperms.net)) is highly r
 
 ## Command permissions
 
+Each permission lets the player use the linked command. Permissions ending in `.self` apply to the player's own account, and permissions ending in `.other` apply to other accounts.
+
 ### Player commands
 
-| Permission                       | Default | Description                                                                               |
-|----------------------------------|---------|-------------------------------------------------------------------------------------------|
-| `discordsrv.command.root`        | true    | allows access to the base `/discordsrv` command                                           |
-| `discordsrv.command.help`        | true    | allows the player to run `/discordsrv help` to view command help                          |
-| `discordsrv.command.link.self`   | true    | allows the player to link their own Minecraft account to a Discord account                |
-| `discordsrv.command.linked.self` | true    | allows the player to check which Discord account their own Minecraft account is linked to |
-| `discordsrv.command.unlink.self` | true    | allows the player to unlink their own Minecraft account from their Discord account        |
+| Permission                       | Default | Description                                                                                                       |
+|----------------------------------|---------|-------------------------------------------------------------------------------------------------------------------|
+| `discordsrv.command.root`        | true    | Can use the [`/discordsrv`](/ascension/commands#discordsrv) command. Its subcommands need their own permissions  |
+| `discordsrv.command.help`        | true    | Can use [`/discordsrv help`](/ascension/commands#help)                                                            |
+| `discordsrv.command.link.self`   | true    | Can use [`/discordsrv link`](/ascension/commands#link) to link **their own** account                              |
+| `discordsrv.command.linked.self` | true    | Can use [`/discordsrv linked`](/ascension/commands#linked) to check **their own** account                         |
+| `discordsrv.command.unlink.self` | true    | Can use [`/discordsrv unlink`](/ascension/commands#unlink) to unlink **their own** account                        |
 
 ### Admin commands
 
-| Permission                       | Default | Description                                                                                                 |
-|----------------------------------|---------|-------------------------------------------------------------------------------------------------------------|
-| `discordsrv.command.bypass`      | OP      | allows the player to run `/discordsrv bypass` to manage players who bypass required linking requirements    |
-| `discordsrv.command.debug`       | OP      | allows the player to run `/discordsrv debug` and its diagnostic reporting subcommands                       |
-| `discordsrv.command.parse`       | OP      | allows the player to run `/discordsrv parse` to parse placeholders through DiscordSRV's placeholder service |
-| `discordsrv.command.reload`      | OP      | allows the player to run `/discordsrv reload` to reload specific DiscordSRV functions                       |
-| `discordsrv.command.broadcast`   | OP      | allows the player to run the `/discordsrv broadcast` commands to send messages to Discord channels          |
-| `discordsrv.command.resync`      | OP      | allows the player to run `/discordsrv resync` to resync online players                                      |
-| `discordsrv.command.version`     | OP      | allows the player to view the installed DiscordSRV version                                                  |
-| `discordsrv.command.link.other`  | OP      | allows the player to link other people's Minecraft accounts to Discord accounts                             |
-| `discordsrv.command.linked.other`| OP      | allows the player to check which Discord account other Minecraft accounts are linked to                     |
-| `discordsrv.command.unlink.other`| OP      | allows the player to unlink other people's Minecraft accounts from their Discord accounts                   |
+| Permission                        | Default | Description                                                                                                                                                                                                                         |
+|-----------------------------------|---------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `discordsrv.command.version`      | OP      | Can use [`/discordsrv version`](/ascension/commands#version)                                                                                                                                                                        |
+| `discordsrv.command.parse`        | OP      | Can use [`/discordsrv parse`](/ascension/commands#parse)                                                                                                                                                                            |
+| `discordsrv.command.resync`       | OP      | Can use [`/discordsrv resync`](/ascension/commands#resync)                                                                                                                                                                          |
+| `discordsrv.command.reload`       | OP      | Can use [`/discordsrv reload`](/ascension/commands#reload)                                                                                                                                                                          |
+| `discordsrv.command.debug`        | OP      | Can use [`/discordsrv debug`](/ascension/commands#debug) and its subcommands                                                                                                                                                        |
+| `discordsrv.command.bypass`       | OP      | Can use [`/discordsrv bypass`](/ascension/commands#bypass) and its subcommands                                                                                                                                                      |
+| `discordsrv.command.broadcast`    | OP      | Can use [`broadcast`](/ascension/commands#broadcast), [`broadcastd`](/ascension/commands#broadcastd), [`broadcastraw`](/ascension/commands#broadcastraw) and [`broadcastdraw`](/ascension/commands#broadcastdraw)                    |
+| `discordsrv.command.link.other`   | OP      | Can use [`/discordsrv link`](/ascension/commands#link) to link **other players'** accounts                                                                                                                                          |
+| `discordsrv.command.linked.other` | OP      | Can use [`/discordsrv linked`](/ascension/commands#linked) to check **other** accounts (a Minecraft player or a Discord user)                                                                                                       |
+| `discordsrv.command.unlink.other` | OP      | Can use [`/discordsrv unlink`](/ascension/commands#unlink) to unlink **other** accounts                                                                                                                                             |
 
 ## Mention permissions
 :::caution NeoForge Dynamic Permissions
