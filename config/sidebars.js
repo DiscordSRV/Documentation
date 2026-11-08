@@ -174,6 +174,11 @@ const sidebars = {
       label: 'Placeholders'
     },
     {
+      type: 'doc',
+      id: 'ascension/permissions',
+      label: 'Permissions'
+    },
+    {
       type: 'category',
       collapsed: false,
       label: 'Configuration',
