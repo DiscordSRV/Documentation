@@ -4,11 +4,9 @@ title: connections.yaml
 
 # connections.yaml
 
-import CodeBlock from '@theme/CodeBlock';
+import ConfigViewer from '@site/src/components/ConfigViewer';
 import connections from '!!raw-loader!@site/static/config/connections.yaml';
 
 Generated connection settings, with the original configuration comments retained.
 
-[Download connections.yaml](/config/connections.yaml)
-
-<CodeBlock language="yaml" title="connections.yaml">{connections}</CodeBlock>
+<ConfigViewer title="connections.yaml" code={connections}/>

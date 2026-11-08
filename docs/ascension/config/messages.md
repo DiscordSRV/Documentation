@@ -4,11 +4,9 @@ title: messages.yaml
 
 # messages.yaml
 
-import CodeBlock from '@theme/CodeBlock';
+import ConfigViewer from '@site/src/components/ConfigViewer';
 import messages from '!!raw-loader!@site/static/config/messages.yaml';
 
 Generated message settings, with the original configuration comments retained.
 
-[Download messages.yaml](/config/messages.yaml)
-
-<CodeBlock language="yaml" title="messages.yaml">{messages}</CodeBlock>
+<ConfigViewer title="messages.yaml" code={messages}/>

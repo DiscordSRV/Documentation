@@ -1,0 +1,186 @@
+.container {
+  /* Soft highlight that stays on a linked line, also where the flash fades out to */
+  --config-selected-bg: rgba(255, 200, 0, 0.14);
+  --config-selected-bar: var(--ifm-color-primary);
+
+  margin-bottom: var(--ifm-leading);
+  border-radius: var(--ifm-code-border-radius);
+  box-shadow: var(--ifm-global-shadow-lw);
+  overflow: hidden;
+}
+
+/* Title and download button */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.35rem 0.5rem 0.35rem var(--ifm-pre-padding);
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-color-emphasis-100);
+}
+
+.title {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: auto;
+  padding: 0.25rem 0.6rem;
+  font: inherit;
+  font-size: 0.8rem;
+  color: var(--ifm-font-color-base);
+  background: transparent;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.download:hover {
+  background: var(--ifm-color-emphasis-200);
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+@media (max-width: 480px) {
+  .downloadLabel {
+    display: none;
+  }
+}
+
+.pre {
+  margin: 0;
+  padding: var(--ifm-pre-padding) 0;
+  max-height: 70vh;
+  overflow: auto;
+  border-radius: 0;
+}
+
+/* Lets every line be as wide as the longest one, so the right-aligned docs link has room */
+.code {
+  display: block;
+  min-width: fit-content;
+}
+
+.line {
+  display: flex;
+  align-items: flex-start;
+  padding-right: var(--ifm-pre-padding);
+  white-space: pre;
+}
+
+.line:hover {
+  background: rgba(127, 127, 127, 0.12);
+}
+
+/* Line that was linked to, stays until the reader clicks somewhere else */
+.line.selected {
+  background: var(--config-selected-bg);
+  box-shadow: inset 3px 0 0 var(--config-selected-bar);
+}
+
+/* Yellow flash that fades into the soft highlight */
+.flash {
+  animation: flash 2s ease-out;
+}
+
+@keyframes flash {
+  0%,
+  60% {
+    background: rgba(255, 200, 0, 0.45);
+  }
+  100% {
+    background: var(--config-selected-bg);
+  }
+}
+
+.content {
+  flex: 0 0 auto;
+}
+
+/* Room on the left for the share button */
+.gutter {
+  flex: 0 0 auto;
+  width: 2rem;
+  padding-left: 0.5rem;
+  user-select: none;
+}
+
+.share {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.15s, background 0.15s;
+}
+
+.share:hover {
+  background: rgba(127, 127, 127, 0.25);
+}
+
+.line:hover .share,
+.line.selected .share,
+.share:focus-visible {
+  opacity: 0.7;
+}
+
+.line:hover .share:hover,
+.share:focus-visible {
+  opacity: 1;
+}
+
+.copied {
+  flex: none;
+  align-self: center;
+  margin-left: 1rem;
+  padding: 0 0.4rem;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.7rem;
+  line-height: 1.4;
+  border-radius: 4px;
+  background: var(--ifm-color-emphasis-700);
+  color: var(--ifm-color-emphasis-100);
+  user-select: none;
+}
+
+/* Link to the docs, right aligned and kept in view when the code is scrolled sideways */
+.ref {
+  position: sticky;
+  right: 0.75rem;
+  flex: none;
+  align-self: center;
+  margin-left: auto;
+  padding: 0 0.4rem;
+  font-family: var(--ifm-font-family-base);
+  font-size: 0.7rem;
+  line-height: 1.4;
+  border-radius: 4px;
+  background: var(--ifm-color-primary);
+  color: #fff;
+  opacity: 0;
+  user-select: none;
+  transition: opacity 0.15s;
+}
+
+.ref:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.line:hover .ref,
+.line.selected .ref,
+.ref:focus-visible {
+  opacity: 1;
+}
