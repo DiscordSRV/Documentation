@@ -154,33 +154,3 @@
   color: var(--ifm-color-emphasis-100);
   user-select: none;
 }
-
-/* Link to the docs, right aligned and kept in view when the code is scrolled sideways */
-.ref {
-  position: sticky;
-  right: 0.75rem;
-  flex: none;
-  align-self: center;
-  margin-left: auto;
-  padding: 0 0.4rem;
-  font-family: var(--ifm-font-family-base);
-  font-size: 0.7rem;
-  line-height: 1.4;
-  border-radius: 4px;
-  background: var(--ifm-color-primary);
-  color: #fff;
-  opacity: 0;
-  user-select: none;
-  transition: opacity 0.15s;
-}
-
-.ref:hover {
-  color: #fff;
-  text-decoration: none;
-}
-
-.line:hover .ref,
-.line.selected .ref,
-.ref:focus-visible {
-  opacity: 1;
-}
