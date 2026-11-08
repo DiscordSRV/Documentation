@@ -79,12 +79,12 @@ Linking other accounts needs local linking.
 
 **The following tables are arguments to the above command.**
 
-| Command  | Description                            |
-|----------|----------------------------------------|
-| `start`  | Starts debug observation               |
-| `stop`   | Stop debug observation                 |
-| `upload` | Upload a debug report for easy sharing |
-| `zip`    | Create a debug report into a local zip |
+| Command  | Description                                                                                       |
+|----------|---------------------------------------------------------------------------------------------------|
+| `start`  | Starts debug observation                                                                          |
+| `stop`   | Stop debug observation                                                                            |
+| `upload` | Uploads a debug report for easy sharing into `https://bytebin.lucko.me` with AES 128 encryption   |
+| `zip`    | Creates a debug report into an uncrypted local zip (stored inside DiscordSRV configuration files) |
 
 ### Bypass Commands
 
