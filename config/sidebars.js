@@ -186,6 +186,48 @@ const sidebars = {
     {
       type: 'category',
       collapsed: false,
+      label: 'Synchronization',
+      items: [
+        {
+          type: 'doc',
+          id: 'ascension/synchronization/index',
+          label: 'Home'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/synchronization/group-sync',
+          label: 'Group (Permission) Synchronization'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/synchronization/ban-sync',
+          label: 'Ban Synchronization'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/synchronization/mute-sync',
+          label: 'Mute Synchronization'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/synchronization/nickname-sync',
+          label: 'Nickname Synchronization'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/synchronization/linked-role',
+          label: 'Linked Role Synchronization'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/synchronization/online-role',
+          label: 'Online Role Synchronization'
+        },
+      ],
+    },
+    {
+      type: 'category',
+      collapsed: false,
       label: 'Configuration',
       items: [
         {

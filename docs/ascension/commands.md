@@ -146,6 +146,10 @@ The reply is only visible to you. If the account isn't linked, you are told so.
 
 What happens to synchronized roles and groups when an account is unlinked is decided by `unlink-behaviour` in each synchronization: `do_nothing`, `remove_discord`, `remove_game` or `remove_both`.
 
+:::info
+See [unlink-behaviour](synchronization/#unlink-behaviour) for further information.
+:::
+
 ## `version`
 
 Shows the running version of DiscordSRV, for example `Running DiscordSRV v3.0.0-SNAPSHOT (150132/main)`. Snapshot builds also show the start of the git revision and the branch.
@@ -171,6 +175,10 @@ The target is always required, there is no default to yourself.
 
 ## `resync`
 
+:::info
+See [Synchronization](synchronization) for more information regarding this feature.
+:::
+
 Resynchronizes **online players** for one feature, and tells you how long it took and how many results there were. Hover over the result to see what happened.
 
 - **In game:** `/discordsrv resync <type>`
@@ -181,7 +189,7 @@ Resynchronizes **online players** for one feature, and tells you how long it too
 |----------|----------------------------------------------------------------------------|
 | `<type>` | The feature to resync: `ban`, `group`, `linkedrole`, `mute`, `nickname` or `onlinerole`. |
 
-Which side takes priority when Minecraft and Discord differ is decided by `tie-breakers.resync-command` of that feature: `minecraft`, `discord`, or `disabled`.
+Which side takes priority when Minecraft and Discord differ is decided by [`tie-breakers.resync-command`](synchronization#tie-breakers) of that feature: `minecraft`, `discord`, or `disabled`.
 
 You may see these replies instead of a result:
 
@@ -190,7 +198,7 @@ You may see these replies instead of a result:
 | Unknown sync                            | `<type>` isn't one of the features above.                                        |
 | Sync is disabled                        | The feature is turned off in the configuration.                                  |
 | No permission provider available.       | `group` only: DiscordSRV can't find a supported permission plugin.               |
-| Command disabled for this sync type     | `tie-breakers.resync-command` is `disabled` for every configuration of the feature. |
+| Command disabled for this sync type     | [`tie-breakers.resync-command`](synchronization#tie-breakers) is `disabled` for every configuration of the feature. |
 
 ## `reload`
 
@@ -240,8 +248,6 @@ Stops debug observation without creating a report. If it isn't running you are t
 ### `debug upload`
 
 Uploads a debug report to `https://bytebin.lucko.me` with AES 128 encryption, for easy sharing. Also stops debug observation.
-
-
 
 ### `debug zip`
 
