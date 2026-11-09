@@ -24,10 +24,10 @@ DiscordSRV has commands in two places:
 | [`linked`](#linked)                                                                     | ✅ | ✅ | Account linking is available |
 | [`link`](#link)                                                                         | ✅ | ✅ | Local linking |
 | [`unlink`](#unlink)                                                                     | ✅ | ✅ | Local linking |
-| [`bypass`](#bypass)                                                                     | ✅ | ✅ | <ConfigLink file="config" path="required-linking.enabled" /> is `true` and account linking is available |
-| [`execute`](#execute)                                                                   | ❌ | ✅ | <ConfigLink file="config" path="execute-command.enabled" /> is `true` |
+| [`bypass`](#bypass)                                                                     | ✅ | ✅ | <ConfigLink file="config" path="required-linking.enabled">`required-linking.enabled`</ConfigLink> is `true` and account linking is available |
+| [`execute`](#execute)                                                                   | ❌ | ✅ | <ConfigLink file="config" path="execute-command.enabled">`execute-command.enabled`</ConfigLink> is `true` |
 | [`link-message`](#link-message)                                                         | ❌ | ✅ | Always |
-| [`playerlist`](#playerlist)                                                             | ❌ | ✅ | <ConfigLink file="config" path="player-list.command.output-mode" /> is NOT `off` |
+| [`playerlist`](#playerlist)                                                             | ❌ | ✅ | <ConfigLink file="config" path="player-list.command.output-mode">`player-list.command.output-mode`</ConfigLink> is NOT `off` |
 
 :::info
 "Local linking" means the links are stored by DiscordSRV itself, as opposed to an external linked account provider.
@@ -41,7 +41,7 @@ The main command. In game it can also be used as `/discord` and `/dsrv`.
 - **On Discord:** `/discordsrv <subcommand>`
 - **Permission:** [`discordsrv.command.root`](/ascension/permissions#player-commands) in game. On Discord, only server administrators can use it by default.
 
-In game, using the command without a subcommand shows what is configured in <ConfigLink file="config" path="game-command.discord-format" />. Each subcommand needs its own permission, which is listed in its section.
+In game, using the command without a subcommand shows what is configured in <ConfigLink file="config" path="game-command.discord-format">`game-command.discord-format`</ConfigLink>. Each subcommand needs its own permission, which is listed in its section.
 
 If DiscordSRV's configuration fails to load, only [`debug`](#debug), [`version`](#version) and [`reload`](#reload) are available, so you can find and fix the problem.
 
@@ -53,12 +53,12 @@ Where `/discordsrv` is registered on Discord:
 
 | Option                                                                                  | Description                                                                  |
 |-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| <ConfigLink file="config" path="discord-command.management-command-server-id" />       | If set, `/discordsrv` is only registered in the Discord server with this ID  |
-| <ConfigLink file="config" path="discord-command.enable-management-command-globally" /> | Makes `/discordsrv` available globally                                       |
+| <ConfigLink file="config" path="discord-command.management-command-server-id">`discord-command.management-command-server-id`</ConfigLink>       | If set, `/discordsrv` is only registered in the Discord server with this ID  |
+| <ConfigLink file="config" path="discord-command.enable-management-command-globally">`discord-command.enable-management-command-globally`</ConfigLink> | Makes `/discordsrv` available globally                                       |
 
 ## `/minecraft`
 
-A slash command on Discord that everyone can use by default. The name can be changed with <ConfigLink file="config" path="discord-command.user-command-alias" />.
+A slash command on Discord that everyone can use by default. The name can be changed with <ConfigLink file="config" path="discord-command.user-command-alias">`discord-command.user-command-alias`</ConfigLink>.
 
 It has these subcommands: [`playerlist`](#playerlist), `link` (see [`link`](#link)) and `unlink` (see [`unlink`](#unlink)). The last two work on your own account, and only with local linking.
 
@@ -66,8 +66,8 @@ Where `/minecraft` is registered on Discord:
 
 | Option                                                                      | Description                                                                 |
 |-----------------------------------------------------------------------------|-----------------------------------------------------------------------------|
-| <ConfigLink file="config" path="discord-command.user-command-server-id" />  | If set, `/minecraft` is only registered in the Discord server with this ID  |
-| <ConfigLink file="config" path="discord-command.enable-user-command-globally" /> | Makes `/minecraft` available globally                                  |
+| <ConfigLink file="config" path="discord-command.user-command-server-id">`discord-command.user-command-server-id`</ConfigLink>  | If set, `/minecraft` is only registered in the Discord server with this ID  |
+| <ConfigLink file="config" path="discord-command.enable-user-command-globally">`discord-command.enable-user-command-globally`</ConfigLink> | Makes `/minecraft` available globally                                  |
 
 ## Targets
 
@@ -333,11 +333,11 @@ Takes the same arguments as [`broadcast`](#broadcast). `<content>` is a Discord 
 Runs a Minecraft console command from Discord.
 
 - **On Discord:** `/discordsrv execute <command>`
-- **Available when:** <ConfigLink file="config" path="execute-command.enabled" /> is `true`
+- **Available when:** <ConfigLink file="config" path="execute-command.enabled">`execute-command.enabled`</ConfigLink> is `true`
 
 | Argument    | Description                                                                                                                                  |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| `<command>` | The command to run. Suggestions are shown while typing when <ConfigLink file="config" path="execute-command.suggest" /> is enabled.          |
+| `<command>` | The command to run. Suggestions are shown while typing when <ConfigLink file="config" path="execute-command.suggest">`execute-command.suggest`</ConfigLink> is enabled.          |
 
 :::warning
 This lets people run commands as the server console. Keep `/discordsrv execute` limited to people you fully trust, and use [execution conditions](#execution-conditions) to limit which commands they can run.
@@ -351,12 +351,12 @@ If you turn the command off or on, use [`reload`](#reload) with `discord_command
 
 | Option                                                                           | Default    | Description                                                                              |
 |----------------------------------------------------------------------------------|------------|------------------------------------------------------------------------------------------|
-| <ConfigLink file="config" path="execute-command.enabled" />                      | `true`     | Whether the command can be used.                                                         |
-| <ConfigLink file="config" path="execute-command.ephemeral" />                    | `true`     | Only show the replies and output to the person who ran the command.                      |
-| <ConfigLink file="config" path="execute-command.output-mode" />                  | `markdown` | How the output is shown: `markdown`, `ansi` (colored), `plain`, `code_block` or `off`. Some commands don't work with output forwarding. |
-| <ConfigLink file="config" path="execute-command.execution-conditions" />         |            | Who can run which commands, see [execution conditions](#execution-conditions).          |
-| <ConfigLink file="config" path="execute-command.suggest" />                      | `true`     | Suggest commands while typing.                                                           |
-| <ConfigLink file="config" path="execute-command.filter-suggestions" />           | `true`     | Only suggest commands the person is allowed to run (see execution conditions).           |
+| <ConfigLink file="config" path="execute-command.enabled">`execute-command.enabled`</ConfigLink>                      | `true`     | Whether the command can be used.                                                         |
+| <ConfigLink file="config" path="execute-command.ephemeral">`execute-command.ephemeral`</ConfigLink>                    | `true`     | Only show the replies and output to the person who ran the command.                      |
+| <ConfigLink file="config" path="execute-command.output-mode">`execute-command.output-mode`</ConfigLink>                  | `markdown` | How the output is shown: `markdown`, `ansi` (colored), `plain`, `code_block` or `off`. Some commands don't work with output forwarding. |
+| <ConfigLink file="config" path="execute-command.execution-conditions">`execute-command.execution-conditions`</ConfigLink>         |            | Who can run which commands, see [execution conditions](#execution-conditions).          |
+| <ConfigLink file="config" path="execute-command.suggest">`execute-command.suggest`</ConfigLink>                      | `true`     | Suggest commands while typing.                                                           |
+| <ConfigLink file="config" path="execute-command.filter-suggestions">`execute-command.filter-suggestions`</ConfigLink>           | `true`     | Only suggest commands the person is allowed to run (see execution conditions).           |
 
 ### Execution conditions
 
@@ -400,13 +400,13 @@ Shows the players currently online.
 
 - **On Discord:** `/minecraft playerlist`
 - **Access:** everyone by default
-- **Available when:** <ConfigLink file="config" path="player-list.command.output-mode" /> is NOT `off`
+- **Available when:** <ConfigLink file="config" path="player-list.command.output-mode">`player-list.command.output-mode`</ConfigLink> is NOT `off`
 
 ## Custom Discord Commands
 
 You can add your own slash commands to the Discord bot. A custom command replies with a message and can run console commands when it is used, for example to show the server IP or to greet someone.
 
-They are configured in the <ConfigLink file="config" path="custom-commands" /> list. Every entry is disabled until you set `enabled` to `true`.
+They are configured in the <ConfigLink file="config" path="custom-commands">`custom-commands`</ConfigLink> list. Every entry is disabled until you set `enabled` to `true`.
 
 After editing custom commands, reload DiscordSRV with `/discordsrv reload config discord_commands` so they are registered on Discord.
 

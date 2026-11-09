@@ -186,6 +186,43 @@ const sidebars = {
     {
       type: 'category',
       collapsed: false,
+      label: 'Features',
+      items: [
+        {
+          type: 'doc',
+          id: 'ascension/features/account-linking',
+          label: 'Account Linking'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/features/required-linking',
+          label: 'Required Linking'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/features/rewards',
+          label: 'Boosting and Linking Rewards'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/features/presence-updater',
+          label: 'Presence Updater'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/features/messages-i18n-l10n',
+          label: 'Message and Game translations'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/features/invite',
+          label: 'Invite'
+        },
+      ],
+    },
+    {
+      type: 'category',
+      collapsed: false,
       label: 'Synchronization',
       items: [
         {

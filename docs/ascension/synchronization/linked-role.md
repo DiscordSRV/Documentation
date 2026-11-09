@@ -8,7 +8,7 @@ This is a one-way synchronization (linking status → Discord role). See [Synchr
 
 
 ## Configuration
-Configured in <ConfigLink file="config" path="linked-role" />.
+Configured in <ConfigLink file="config" path="linked-role">`linked-role`</ConfigLink>.
 
 | Option     | Description                                                           |
 |------------|-----------------------------------------------------------------------|
@@ -34,7 +34,7 @@ In practice: linking adds the role, and unlinking removes it. Removing the role 
 The bot needs **Manage Roles**, and the roles must be below the bot's highest role.
 
 :::tip Only cache linked users
-<ConfigLink file="config" path="member-caching.role-ids" /> limits which Discord members DiscordSRV keeps cached. Set it to your linked role IDs to cache only linked users.
+<ConfigLink file="config" path="member-caching.role-ids">`member-caching.role-ids`</ConfigLink> limits which Discord members DiscordSRV keeps cached. Set it to your linked role IDs to cache only linked users.
 :::
 
 ## Resyncing

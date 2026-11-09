@@ -24,7 +24,7 @@ Discord timeouts can last at most **28 days**. A longer or permanent mute can't 
 - Otherwise nothing is done on Discord for that mute.
 
 ## Configuration
-Configured in <ConfigLink file="config" path="mute-sync" />.
+Configured in <ConfigLink file="config" path="mute-sync">`mute-sync`</ConfigLink>.
 
 | Option          | Default | Description                                                                                  |
 |-----------------|---------|----------------------------------------------------------------------------------------------|

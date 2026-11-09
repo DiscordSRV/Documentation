@@ -8,7 +8,7 @@ This is a one-way synchronization (online status → Discord role). See [Synchro
 
 
 ## Configuration
-Configured in <ConfigLink file="config" path="online-role" />.
+Configured in <ConfigLink file="config" path="online-role">`online-role`</ConfigLink>.
 
 | Option | Default | Description |
 |---------------------------------|---------|------------------------------------------------------------------------------------------------------|

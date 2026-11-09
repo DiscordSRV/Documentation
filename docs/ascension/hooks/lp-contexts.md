@@ -52,6 +52,6 @@ If a user seems to be fulfilling the LuckPerms context in `/lp user <user> info`
     </TabItem>
 </Tabs>
 
-These can be disabled by adding `luckperms` to <ConfigLink file="config" path="integrations.disabled-integrations" />.
+These can be disabled by adding `luckperms` to <ConfigLink file="config" path="integrations.disabled-integrations">`integrations.disabled-integrations`</ConfigLink>.
 
 However that will also disable [Group Sync](synchronization/group-sync).

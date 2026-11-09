@@ -6,7 +6,7 @@ Group Sync keeps a player's **permission groups** and their **Discord roles** th
 
 See [Synchronization](/ascension/synchronization) for how direction, tie-breakers, the timer and unlink behaviour work. They apply here per [set](#sets-and-pairs).
 
-Configured in <ConfigLink file="config" path="group-sync" />.
+Configured in <ConfigLink file="config" path="group-sync">`group-sync`</ConfigLink>.
 
 ## Requirements
 

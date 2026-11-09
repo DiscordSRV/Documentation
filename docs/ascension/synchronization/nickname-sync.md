@@ -22,7 +22,7 @@ Nickname Sync changes two defaults compared to the other features:
 - The bot needs **Manage Nicknames**, and its highest role must be above the member's. Discord doesn't allow changing the server owner's nickname.
 
 ## Configuration
-Configured in <ConfigLink file="config" path="nickname-sync" />.
+Configured in <ConfigLink file="config" path="nickname-sync">`nickname-sync`</ConfigLink>.
 
 | Option                   | Default      | Description                                                                         |
 |--------------------------|--------------|-------------------------------------------------------------------------------------|

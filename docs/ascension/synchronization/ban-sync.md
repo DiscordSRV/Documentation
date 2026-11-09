@@ -18,7 +18,7 @@ See [Synchronization](/ascension/synchronization) for how direction, tie-breaker
 `unlink-behaviour` defaults to `do_nothing`, so unlinking can't be used to escape a ban.
 
 ## Configuration
-Configured in <ConfigLink file="config" path="ban-sync" />.
+Configured in <ConfigLink file="config" path="ban-sync">`ban-sync`</ConfigLink>.
 
 | Option           | Default | Description                                                                                  |
 |------------------|---------|----------------------------------------------------------------------------------------------|
