@@ -6,8 +6,6 @@ Nickname Sync keeps a player's **Minecraft nickname** and their **Discord server
 
 See [Synchronization](/ascension/synchronization) for how direction, tie-breakers, the timer and unlink behaviour work.
 
-{/* TODO: verify the config key (nickname-sync) and option names; add providers for other platforms if they exist */}
-
 ## Defaults
 
 Nickname Sync changes two defaults compared to the other features:

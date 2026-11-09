@@ -39,6 +39,16 @@ You can then use any [role](#role) related placeholders, for example `%user_high
 Some placeholders for example those that return a [Color](#color) may be applied as formatting (e.g. in formatting a Discord message to Minecraft) or convert directly to text, but are **also** a context which has placeholders. 
 So a placeholder returning a context doesn't always mean you need to use placeholders behind that context.
 
+### Recursive Placeholders
+You may parse placeholder recursively by adding more placeholder between `{` and`}`. This is useful with [Integrations](#integrations) and [Additional context](#additional-context) to build more complex placeholders.
+
+A few examples:
+- `%discord_{text:'invite'}%` will be processed into `%discord_invite%`.
+- `%player_prefix|text:'{player_name} has no prefix!'%` will first check if player_prefix exists, if it doesn't then return a text with a recursive placeholder of the player name. 
+Will result in either `%player_prefix%` or `%player_name% has no prefix!`
+- `[%user_primary_server_tag|text:'NO TAG'%] %player_name%` will first check if the user in context has a primary server tag. If it does then it will return that tag. 
+Will result in either `[%user_primary_server_tag%] %player_name%` or `[NO TAG] %player_name%`
+
 ## I/O and Server Threads
 Any placeholder that requires a I/O operation to be fulfilled, will **not** wait for that request to be completed, if the placeholder is requested on a server thread.
 Instead, that placeholder will be replaced with the text `Unavailable`
@@ -849,7 +859,9 @@ Use multiple of the same character back-to-back adds 0 padding, for example `M` 
 
 #### Using DiscordSRV placeholders in other plugins
 
-You can use DiscordSRV's global and Player related placeholders (when a Player is provided) by prefixing the placeholder with `discordsrv_`, for example `%discordsrv_discord_invite%`
+You can use DiscordSRV's global and Player related placeholders (when a Player is provided) by prefixing the placeholder with `discordsrv_`, for example `%discordsrv_discord_invite%`.
+
+You may refer to [Additional context](#additional-context) to add more context to allow for more advanced placeholders.
 
 #### Using placeholders in DiscordSRV
 
@@ -862,6 +874,12 @@ You can use PlaceholderAPI placeholders directly in DiscordSRV or by explicitly 
 ```
 
 ### Fabric: Text Placeholder API
+
+#### Using DiscordSRV placeholders in other mods
+
+You can use DiscordSRV's global and Player related placeholders (when a Player is provided) by prefixing the placeholder with `discordsrv:`, for example `%discordsrv:discord_invite%`.
+
+You may refer to [Additional context](#additional-context) to add more context to allow for more advanced placeholders.
 
 #### Using placeholders in DiscordSRV
 

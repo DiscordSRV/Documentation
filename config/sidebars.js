@@ -257,6 +257,28 @@ const sidebars = {
         },
       ],
     },
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Hooked plugin features',
+      items: [
+        {
+          type: 'doc',
+          id: 'ascension/hooks/lp-contexts',
+          label: 'LuckPerms Contexts'
+        },
+        {
+          type: 'link', 
+          label: 'PlaceholderAPI',
+          href: '/ascension/placeholders#bukkit-placeholderapi' 
+        },
+        {
+          type: 'link', 
+          label: 'TextPlaceholderAPI',
+          href: '/ascension/placeholders#fabric-text-placeholder-api' 
+        },
+      ],
+    },
     /*{
       type: 'category',
       collapsed: false,
