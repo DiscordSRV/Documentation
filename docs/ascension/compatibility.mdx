@@ -13,8 +13,8 @@ DiscordSRV requires Java 21 or newer
 
 | Server software    | Supported versions                                                                |
 |--------------------|-----------------------------------------------------------------------------------|
-| [Paper] and forks  | ✅ Minecraft 26.2 (Paper build)<br/> ⚠️ Minecraft 1.7.10-26.1.2 (Bukkit build)[^1]  |
-| [Bukkit], [Spigot] | ⚠️ Minecraft 1.7.10-26.1.2[^1]                                                     |
+| [Paper] and forks  | ✅ Minecraft 26.3 (Paper build)<br/> ⚠️ Minecraft 1.7.10-26.2 (Bukkit build)[^1]  |
+| [Bukkit], [Spigot] | ⚠️ Minecraft 1.7.10-26.2[^1]                                                     |
 | [Fabric]           | ✅ Minecraft 1.19 and above                                                        |
 | [NeoForge]         | ✅ Minecraft 1.21.1 and above                                                      |
 | [BungeeCord][^2]   | ✅ Latest build                                                                    |
@@ -30,19 +30,26 @@ DiscordSRV requires Java 21 or newer
 <TabItem value='bukkit' label='Bukkit, Spigot, Paper and forks'>
 **Plugin integrations**
 
-| Plugin | Version | Support added by | Note  |
-| --- | --- | --- |:-------------------------:|
-| [LuckPerms] | `5.0+` | DiscordSRV | |
-| [PlaceholderAPI] | `2.11.1+` | DiscordSRV | [See Placeholders page](placeholders#bukkit-placeholderapi) |
-| [Vault] | `1.7+` | DiscordSRV | |
-| [Chatty] | `2.19.13+` | DiscordSRV | |
-| [GriefPrevention] | `16.18.1+` | DiscordSRV | For blocking soft-muted players |
-| [LunaChat] | `3.0.16+` | DiscordSRV | |
-| [McMMO] | `2.1.220+` | DiscordSRV | Only supports admin chat<br/>⚠️ No support for hover, click components |
-| [TownyChat] | `0.45+` | DiscordSRV | |
-| [VentureChat] | `3.5.0+` | DiscordSRV | |
-| [CarbonChat] | `3.0.0+` | DiscordSRV | Only supported on the Paper build |
-| [SkinsRestorer] | `15.12.2+` | DiscordSRV | |
+{/* TODO: fill in the minimum versions marked TODO, they can't be determined from the integration code */}
+
+| Plugin | Version | Support added by | Provides | Note  |
+| --- | --- | --- | --- |:-------------------------:|
+| [LuckPerms] | `5.0+` | DiscordSRV | Groups, prefixes and suffixes, contexts | Supports [contexts and inherited groups](synchronization/group-sync) |
+| [Vault] | `1.7+` | DiscordSRV | Groups, prefixes and suffixes, permissions | Lower priority than other integrations. [Group Sync](synchronization/group-sync) works without [contexts](synchronization/group-sync#contexts) or [inherited groups](synchronization/group-sync#inherited-groups) |
+| [PlaceholderAPI] | `2.11.1+` | DiscordSRV | Placeholders | [See Placeholders page](placeholders#bukkit-placeholderapi) |
+| [EssentialsX] | `2.20.1` | DiscordSRV | Chat, mutes, nicknames, vanish | Chat requires EssentialsChat (global chat only)<br/>[Mute Sync](synchronization/mute-sync)<br/>[Nickname Sync](synchronization/nickname-sync) is only supported through EssentialsX |
+| [AdvancedBan] | `2.3.0+` | DiscordSRV | Bans, mutes | [Ban Sync](synchronization/ban-sync) and [Mute Sync](synchronization/mute-sync) |
+| [LibertyBans] | `1.1.3+` | DiscordSRV | Bans, mutes | [Ban Sync](synchronization/ban-sync) and [Mute Sync](synchronization/mute-sync) |
+| [Chatty] | `2.19.13+` | DiscordSRV | Chat channels | |
+| [GriefPrevention] | `16.18.1+` | DiscordSRV | Chat filtering | For blocking soft-muted players |
+| [LunaChat] | `3.0.16+` | DiscordSRV | Chat channels | |
+| [McMMO] | `2.1.220+` | DiscordSRV | Chat channels, chat filtering | Only supports admin chat (party chat is not forwarded)<br/>⚠️ No support for hover, click components |
+| [TownyChat] | `0.45+` | DiscordSRV | Chat channels | |
+| [VentureChat] | `3.5.0+` | DiscordSRV | Chat channels | |
+| [CarbonChat] | `3.0.0+` | DiscordSRV | Chat channels | Only supported on the Paper build |
+| [SkinsRestorer] | `15.12.2+` | DiscordSRV | Skins | |
+
+The [synchronization](synchronization) features need the integrations marked above: bans and mutes need a punishment plugin, nicknames need EssentialsX, and groups need a permissions plugin.
 
 **Compatibility notes**
 
@@ -59,38 +66,40 @@ DiscordSRV requires Java 21 or newer
 <TabItem value='fabric' label='Fabric'>
 **Mod integrations**
 
-| Plugin | Support added by | Version | Note |
-|---|---|---|---|
-| [LuckPerms] | DiscordSRV | `5.0+` | |
-| [Text Placeholder API] | DiscordSRV | `2.5.0+` | [See Placeholder page](placeholders#fabric-text-placeholder-api) |
-| [SkinsRestorer] | `15.12.2+` | DiscordSRV | |
+| Mod | Version | Support added by | Provides | Note  |
+|---|---|---|---|---|
+| [LuckPerms] | `5.0+` | DiscordSRV | Groups, prefixes and suffixes, contexts | Supports [contexts and inherited groups](synchronization/group-sync) |
+| [Text Placeholder API] | `2.5.0+` | DiscordSRV | Placeholders | [See Placeholder page](placeholders#fabric-text-placeholder-api) |
+| [SkinsRestorer] | `15.12.2+` | DiscordSRV | Skins | |
+| [CarbonChat] | `3.0.0+` | DiscordSRV | Chat channels | |
 </TabItem>
 
 <TabItem value='neoforge' label='NeoForge'>
 **Mod integrations**
 
-| Plugin | Support added by | Version | Note |
-|---|---|---|---|
-| [LuckPerms] | DiscordSRV | `5.0+` | |
-| [SkinsRestorer] | `15.12.2+` | DiscordSRV | |
+| Mod | Version | Support added by | Provides | Note  |
+|---|---|---|---|---|
+| [LuckPerms] | `5.0+` | DiscordSRV | Groups, prefixes and suffixes, contexts | Supports [contexts and inherited groups](synchronization/group-sync) |
+| [SkinsRestorer] | `15.12.2+` | DiscordSRV | Skins | |
 </TabItem>
 
 <TabItem value='bungee' label='BungeeCord, Waterfall'>
 **Plugin integrations**
 
-| Plugin | Support added by | Version |
-|---|---|---|
-| [LuckPerms] | DiscordSRV | `5.0+` |
-| [SkinsRestorer] | `15.12.2+` | DiscordSRV | |
+| Plugin | Version | Support added by | Provides |
+|---|---|---|---|
+| [LuckPerms] | `5.0+` | DiscordSRV | Groups, prefixes and suffixes, contexts | Supports [contexts and inherited groups](synchronization/group-sync) |
+| [SkinsRestorer] | `15.12.2+` | DiscordSRV | Skins |
 </TabItem>
 
 <TabItem value='velocity' label='Velocity'>
 **Plugin integrations**
 
-| Plugin | Support added by | Version |
-|---|---|---|
-| [LuckPerms] | DiscordSRV | `5.0+` |
-| [SkinsRestorer] | `15.12.2+` | DiscordSRV | |
+| Plugin | Version | Support added by | Provides |
+|---|---|---|---|
+| [LuckPerms] | `5.0+` | DiscordSRV | Groups, prefixes and suffixes, contexts | Supports [contexts and inherited groups](synchronization/group-sync) |
+| [SkinsRestorer] | `15.12.2+` | DiscordSRV | Skins |
+| [CarbonChat] | `3.0.0+` | DiscordSRV | Chat channels |
 </TabItem>
 
 </Tabs>
@@ -106,6 +115,9 @@ DiscordSRV requires Java 21 or newer
 
 [LuckPerms]: https://luckperms.net/
 [PlaceholderAPI]: https://placeholderapi.com/
+[EssentialsX]: https://essentialsx.net/
+[AdvancedBan]: https://www.spigotmc.org/resources/8695/
+[LibertyBans]: https://modrinth.com/plugin/libertybans/
 [Vault]: https://www.spigotmc.org/resources/34315/
 [Chatty]: https://www.spigotmc.org/resources/59411/
 [GriefPrevention]: https://modrinth.com/plugin/griefprevention/

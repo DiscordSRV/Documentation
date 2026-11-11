@@ -1,0 +1,55 @@
+name: Update generated Ascension configs
+
+on:
+  schedule:
+    - cron: '0 0 */7 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Documentation
+        uses: actions/checkout@v4
+      - name: Check out Ascension
+        uses: actions/checkout@v4
+        with:
+          repository: DiscordSRV/Ascension
+          ref: main
+          path: ascension-source
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 25
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v6
+        with:
+          cache-provider: basic
+      - name: Generate configs
+        run: |
+          ./ascension-source/gradlew -p ascension-source config:runShadow
+      - name: Copy generated YAML to Documentation
+        run: |
+          mkdir -p static/config
+          cp ascension-source/build/config/BukkitConfig_config.yaml static/config/bukkit-config.yaml
+          cp ascension-source/build/config/ModdedConfig_config.yaml static/config/modded-config.yaml
+          cp ascension-source/build/config/BungeeConfig_config.yaml static/config/bungee-config.yaml
+          cp ascension-source/build/config/VelocityConfig_config.yaml static/config/velocity-config.yaml
+          cp ascension-source/build/config/ConnectionConfig_connections.yaml static/config/connections.yaml
+          cp ascension-source/build/config/MessagesConfig_messages.yaml static/config/messages.yaml
+      - name: Create or update pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: automation/update-ascension-configs
+          delete-branch: true
+          commit-message: 'docs: update generated Ascension configs'
+          title: 'docs: update generated Ascension configs'
+          body: 'Refresh the platform, connection, and message configuration references from DiscordSRV/Ascension.'
+          add-paths: |
+            static/config/*.yaml
+

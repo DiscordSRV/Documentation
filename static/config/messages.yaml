@@ -1,0 +1,201 @@
+no-permission:
+    minecraft: "&cSorry, but you do not have permission to use that command"
+    discord: "❌ Sorry, but you do not have permission to use that command"
+player-not-found:
+    minecraft: "&cMinecraft player not found"
+    discord: "❌ Minecraft player not found"
+player-lookup-failed:
+    minecraft: "&cFailed to lookup player"
+    discord: "❌ Failed to lookup player"
+user-not-found:
+    minecraft: "&cDiscord user not found"
+    discord: "❌ Discord user not found"
+unable-to-check-linking-status:
+    minecraft: "&cUnable to check linking status, please try again later"
+    discord: "❌ Unable to check linking status, please try again later"
+unable-to-link-accounts-at-this-time:
+    minecraft: "&cUnable to link accounts at this time, please try again later"
+    discord: "❌ Unable to link accounts at this time, please try again later"
+please-specify-player:
+    minecraft: "&cPlease specify the Minecraft player"
+    discord: "🗒️ Please specify the Minecraft player"
+please-specify-user:
+    minecraft: "&cPlease specify the Discord user"
+    discord: "🗒️ Please specify the Discord user"
+please-specify-player-or-user:
+    minecraft: "&cPlease specify the Minecraft player or Discord user"
+    discord: "🗒️ Please specify the Minecraft player or Discord user"
+please-wait-before-running-that-command-again:
+    minecraft: "&cPlease wait before running that command again"
+    discord: "🗒️ Please wait before running that command again"
+target-command-argument-description:
+    minecraft: "Minecraft player username or UUID or Discord user username or user id"
+player-command-argument-description:
+    minecraft: "Minecraft player username or UUID"
+    discord: "Minecraft player username or UUID"
+discord-user-command-argument-description:
+    minecraft: "Discord user username or user id"
+    discord: "Discord user"
+player-link-pestering:
+    minecraft: "You have not linked your Discord account yet. Please run /%gamecommand_discord_link_alias% to get started."
+discordsrv-command-description:
+    discord: "DiscordSRV Commands"
+minecraft-command-description:
+    discord: "Minecraft Server Commands"
+help-command-description:
+    minecraft: "View command help"
+player-list-command-description:
+    discord: "View players that are online on the server"
+discord-user-linked-to3rd:
+    minecraft: "&#5865F2[hover:show_text:%user_id%][click:copy_to_clipboard:%user_id%]@%user_name%[click][hover] &bis linked to &f[hover:show_text:%player_uuid%][click:copy_to_clipboard:%player_uuid%]%player_name|text:'<Unknown>'%[click][hover]"
+    discord: "✅ **%user_name%** (<@%user_id%>) is linked to **%player_name|text:'<Unknown>'%** (%player_uuid%)"
+minecraft-player-linked-to3rd:
+    minecraft: "&f[hover:show_text:%player_uuid%][click:copy_to_clipboard:%player_uuid%]%player_name|text:'<Unknown>'%[click][hover] &bis linked to &#5865F2[hover:show_text:%user_id%][click:copy_to_clipboard:%user_id%]@%user_name%[click][hover]"
+    discord: "✅ **%player_name|text:'<Unknown>'%** (%player_uuid%) is linked to **%user_name%** (<@%user_id%>)"
+linked-to1st:
+    minecraft: "&bYou are linked to &a&#5865F2[hover:show_text:%user_id%][click:copy_to_clipboard:%user_id%]@%user_name%[click][hover]"
+    discord: "✅ You are linked to **%player_name|text:'<Unknown>'%** (%player_uuid%)"
+unlink-success:
+    minecraft: "&aAccounts unlinked"
+    discord: "✅ Accounts unlinked"
+unlink-command-description:
+    minecraft: "Unlink accounts"
+    discord: "Unlink a Minecraft player's or Discord user's account (only specify one)"
+discord-user-unlinked3rd:
+    minecraft: "&#5865F2[hover:show_text:%user_id%][click:copy_to_clipboard:%user_id%]@%user_name%[click][hover] &bis &cunlinked"
+    discord: "❌ **%user_name%** (<@%user_id%>) is __unlinked__"
+minecraft-player-unlinked3rd:
+    minecraft: "&f[hover:show_text:%player_uuid%][click:copy_to_clipboard:%player_uuid%]%player_name|text:'<Unknown>'%[click][hover] &bis &cunlinked"
+    discord: "❌ **%player_name|text:'<Unknown>'%** (%player_uuid%) is __unlinked__"
+already-unlinked1st:
+    minecraft: "&bYou are &cunlinked"
+    discord: "❌ You are unlinked"
+linked-command-description:
+    minecraft: "Check the account a Minecraft Player or Discord User is linked to"
+    discord: "Check the account a Minecraft Player or Discord user is linked to"
+please-specify-player-and-user-to-link:
+    minecraft: "&cPlease specify the Minecraft player and the Discord user to link"
+already-linked1st:
+    minecraft: "&cYou are already linked"
+    discord: "❌ You are already linked"
+now-linked1st:
+    minecraft: "&aYou are now linked to &#5865F2[hover:show_text:%user_id%][click:copy_to_clipboard:%user_id%]@%user_name%[click][hover]&a!"
+    discord: "✅ You are now linked to **%player_name|player_uuid|text:'<Unknown>'%**"
+checking-link-status:
+    minecraft: "&bChecking linking status..."
+minecraft-auth-linking:
+    minecraft: "&bPlease visit &f[click:open_url:%minecraftauth_link%][hover:show_text:Click to open]%minecraftauth_link_simple%[click]&b to link your account through &fMinecraftAuth"
+storage-linking:
+    minecraft: "&bJoin our &#5865F2Discord &bserver at [color][click:open_url:%discord_invite%]%discord_invite_simple%[click] &band link your account by running the [color]/%discordcommand_minecraft_alias% link &band entering the code [color][click:copy_to_clipboard:%code%][hover:show_text:Click to copy linking code]%code%[click][hover]"
+invalid-linking-code:
+    discord: "❌ Invalid linking code"
+link-command-description:
+    minecraft: "Link accounts"
+    discord: "Link accounts"
+player-already-linked3rd:
+    minecraft: "&cThat player is already linked"
+    discord: "❌ That Minecraft player is already linked"
+user-already-linked3rd:
+    minecraft: "&cThat Discord user is already linked"
+    discord: "❌ That Discord user is already linked"
+now-linked3rd:
+    minecraft: "&aLink created successfully &b(&f[hover:show_text:%player_uuid%][click:copy_to_clipboard:%player_uuid%]%player_name|text:'<Unknown>'%[click][hover]&b and &#5865F2[hover:show_text:%user_id%][click:copy_to_clipboard:%user_id%]@%user_name%[click][hover]&b)"
+    discord: "✅ Link created successfully\n**%player_name|text:'<Unknown>'%** (%player_uuid%) and **%user_name%** (<@%user_id%>)"
+link-other-command-description:
+    discord: "Manually link accounts"
+link-message-command-description:
+    discord: "Sends a message with a link button"
+link-message:
+    discord: "Click on the button below to link your Minecraft account"
+link-message-success:
+    discord: "Successfully sent a link message in this channel"
+link-message-button-label: "Link Account"
+bypass-command-description:
+    minecraft: "Manage players which bypass required linking requirements"
+    discord: "Manage players which bypass required linking requirements"
+bypass-add-command-description:
+    minecraft: "Add a player to the list of players who bypass required linking requirements"
+    discord: "Add a player to the list of players who bypass required linking requirements"
+bypass-remove-command-description:
+    minecraft: "Remove a player to the list of players who bypass required linking requirements"
+    discord: "Remove a player to the list of players who bypass required linking requirements"
+bypass-list-command-description:
+    minecraft: "List players who bypass required linking requirements"
+    discord: "List players who bypass required linking requirements"
+cannot-alter-bypass-already-in-config:
+    minecraft: "&aThat player is bypassing via the configuration file"
+    discord: "✅ That player is bypassing via the configuration file"
+already-bypassing:
+    minecraft: "&cAlready bypassing"
+    discord: "❌ Already bypassing"
+not-bypassing:
+    minecraft: "&cNot bypassing"
+    discord: "❌ Not bypassing"
+bypass-added:
+    minecraft: "&f[hover:show_text:%player_uuid%][click:copy_to_clipboard:%player_uuid%]%player_name|text:'<Unknown>'%[click][hover]&b has been added to the bypass list"
+    discord: "**%player_name|text:'<Unknown>'%** (%player_uuid%) has been added to the bypass list"
+bypass-removed:
+    minecraft: "&f[hover:show_text:%player_uuid%][click:copy_to_clipboard:%player_uuid%]%player_name|text:'<Unknown>'%[click][hover]&b has been removed from the bypass list"
+    discord: "**%player_name|text:'<Unknown>'%** (%player_uuid%) has been removed from the bypass list"
+failed-requirements:
+    minecraft: "You did not pass the additional requirements"
+channel-not-found:
+    minecraft: "&cChannel &b%channel% &cnot found"
+broadcast-failed:
+    minecraft: "&cBroadcast failed &b%error%"
+broadcasted:
+    minecraft: "&aBroadcasted"
+broadcast-minecraft-command-description:
+    minecraft: "Broadcast a Minecraft formatted message to the specified Discord channel(s)"
+broadcast-minecraft-raw-command-description:
+    minecraft: "Broadcast a raw json Minecraft message to the specified Discord channel(s)"
+broadcast-discord-raw-command-description:
+    minecraft: "Broadcast a raw json Discord message to the specified Discord channel(s)"
+broadcast-discord-command-description:
+    minecraft: "Broadcast a plain message with Discord formatting to the specified Discord channel(s)"
+broadcast-channel-parameter-description:
+    minecraft: "The Discord channel id or in-game channel name to resolve Discord channels from the configuration"
+broadcast-message-parameter-description:
+    minecraft: "The message to broadcast to Discord"
+debug-command-description:
+    minecraft: "Diagnostic reporting commands"
+    discord: "Diagnostic reporting commands"
+debug-start-command-description:
+    minecraft: "Start debug observation"
+    discord: "Start debug observation"
+debug-stop-command-description:
+    minecraft: "Stop debug observation"
+    discord: "Stop debug observation"
+debug-upload-command-description:
+    minecraft: "Upload a debug report for easy sharing"
+    discord: "Upload a debug report for easy sharing"
+debug-zip-command-description:
+    minecraft: "Create a debug report into a local zip"
+    discord: "Create a debug report into a local zip"
+parse-command-description:
+    minecraft: "Parse placeholders through DiscordSRV's placeholder service"
+    discord: "Parse placeholders through DiscordSRV's placeholder service"
+parse-input-command-description:
+    minecraft: "The content to pass to the placeholder service"
+    discord: "The content to pass to the placeholder service"
+version-command-description:
+    minecraft: "Show the version of DiscordSRV"
+    discord: "Show the version of DiscordSRV"
+reload-command-description:
+    minecraft: "Reloads the specified DiscordSRV functions"
+reload-functions-parameter-description:
+    minecraft: "The functions to reload"
+resync-command-description:
+    minecraft: "Resync online players"
+    discord: "Resync online players"
+resync-sync-parameter-description:
+    minecraft: "The synchronization to resync"
+    discord: "The synchronization to resync"
+execute-command-disabled:
+    discord: "❌ The execute command is disabled"
+executing:
+    discord: "Executing `%command%` command"
+execute-command-description:
+    discord: "Run Minecraft console commands"
+execute-command-parameter-description:
+    discord: "The command to run"

@@ -1,0 +1,1731 @@
+# Welcome to the DiscordSRV configuration file
+# 
+# Looking for the "BotToken" option? It has been moved into the connections.yaml file
+# Need help with the format for Minecraft messages? https://github.com/Vankka/EnhancedLegacyText/wiki/Format
+# Need help with Discord markdown? https://support.discord.com/hc/en-us/articles/210298617
+# List of placeholders https://docs.discordsrv.com/ascension/placeholders/
+
+# Automatically upgrade configuration files on startup or reload if any values are missing
+automatic-configuration-upgrade: true
+
+# Channels configuration
+#  
+# This is where everything related to in-game chat channel synchronization to Discord is configured.
+# The key of this option is the in-game channel name (the default keys are "global" and "default")
+# channel-ids and threads can be configured for all channels except "default"
+# "default" is a special section which has the default values for all channels unless they are specified (overridden) under the channel's own section
+# So if you don't specify a certain option under a channel's own section, the option will take its value from the "default" section
+#  
+# There are integrated per-world channels for all the worlds that are found on the server.
+# If a message is sent from Discord to a world channel, it will only be sent to players in that world.
+# If you add a channel with the same name as a world, all messages from that world that would've gone into the "global" channel will go to that channel instead.
+# If a message type is disabled for a world channel, messages of that type not be sent.
+# Bukkit/Spigot/Paper default world channels are "world", "world_the_nether" and "world_the_end"
+# Fabric default world channels are "overworld", "the_nether" and "the_end". Fabric also supports custom dimensions from mods/datapacks.
+
+channels:
+    global:
+        # The text, announcement, voice and/or stage channel ids this in-game channel will forward to in Discord
+        # The bot needs to have the following permissions in these channels:
+        # - "View Channel"
+        # - "Send Messages" to non-webhook messages
+        # - "Manage Webhooks" to send webhook messages
+        channel-ids: []
+        
+        # The threads that this in-game channel will forward to in Discord (this can be used with or instead of the channel-ids option)
+        # The bot needs to have the following permissions in these channels:
+        # - "View Channel"
+        # - "Create Public Threads" to automatically create the thread (when "private-thread" is false)
+        # - "Create Private Threads" to automatically create the thread (when "private-thread" is true)
+        # - "Manage Threads" to send messages into a manually created private thread that wasn't created by the bot
+        # - "Send Messages in Threads" to send non-webhook messages
+        # - "Manage Webhooks" to send webhook messages
+        threads:
+        -   # The text, announcement, forum or media channel id and the name of the thread (the thread will be automatically created if it doesn't exist)
+            channel-id: 0
+            thread-name: "Minecraft Server chat bridge"
+            
+            # Should an existing thread with the same name be unarchived instead of creating a new thread if no unarchived thread exists
+            unarchive-existing: true
+            
+            # Forum and media channels do not have private threads, and this will have no effect on them
+            private-thread: false
+        join-messages:
+            enabled: true
+            # Suggested placeholders:
+            # %message% - The join message (this may not always be available)
+            # %player_prefix% - The player's prefix (LuckPerms meta "discordsrv_prefix", otherwise their in-game prefix)
+            # %player_meta_prefix% - The player's prefix from the LuckPerms meta "discordsrv_prefix" only
+            # %player_suffix% - The player's suffix (LuckPerms meta "discordsrv_suffix", otherwise their in-game suffix)
+            # %player_meta_suffix% - The player's suffix from the LuckPerms meta "discordsrv_suffix" only
+            # %player_display_name% - The player's display name
+            # %player_name% - The player's username
+            # %player_avatar_url% - The player's avatar url based on the "avatar-provider" configuration
+            # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Player)
+            format:
+                embeds:
+                -   color: "#55ff55"
+                    author:
+                        name: "%player_display_name% joined"
+                        image-url: "%player_avatar_url%"
+            first-join:
+                enabled: true
+                format:
+                    embeds:
+                    -   color: "#ffaa00"
+                        author:
+                            name: "%player_display_name% joined for the first time"
+                            image-url: "%player_avatar_url%"
+            
+            # If the "discordsrv.silentjoin" permission should determine whether join messages are sent
+            enable-silent-permission: true
+            
+            # If fake join messages should be sent when players unvanish
+            send-fake-join-messages: true
+            
+            # Send message if player joins while being vanished
+            send-message-for-vanished-players: false
+            
+            # Ignore if the player leaves or vanishes within the given number of milliseconds. This will delay sending the join message
+            ignore-if-left-within-ms: 250
+            
+            # If messages should be sent even if they are cancelled
+            # This option may be removed in the future, fixing other plugins to not cancel messages is recommended
+            send-even-if-cancelled: false
+        
+        # Advancement/Achievement message configuration
+        advancement-messages:
+            enabled: true
+            format:
+                embeds:
+                -   color: "%advancement_color_hex%"
+                    author:
+                        name: "%advancement_message|text:'{player_name} made the advancement {advancement_display_name}'%"
+                        image-url: "%player_avatar_url%"
+                    description: "%advancement_description%"
+        death-messages:
+            enabled: true
+            format:
+                embeds:
+                -   color: "#ff0000"
+                    author:
+                        name: "%message%"
+                        image-url: "%player_avatar_url%"
+        minecraft-to-discord:
+            enabled: true
+            # Suggested placeholders:
+            # %message% - The formatted message content
+            # %player_prefix% - The player's prefix (LuckPerms meta "discordsrv_prefix", otherwise their in-game prefix)
+            # %player_meta_prefix% - The player's prefix from the LuckPerms meta "discordsrv_prefix" only
+            # %player_suffix% - The player's suffix (LuckPerms meta "discordsrv_suffix", otherwise their in-game suffix)
+            # %player_meta_suffix% - The player's suffix from the LuckPerms meta "discordsrv_suffix" only
+            # %player_display_name% - The player's display name
+            # %player_name% - The player's username
+            # %player_avatar_url% - The player's avatar url based on the "avatar-provider" configuration
+            # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Server, Player, GameChannel)
+            format:
+                webhook:
+                    username: "%player_prefix%%player_display_name%%player_suffix%"
+                    avatar-url: "%player_avatar_url%"
+                content: "%message%"
+            
+            # Regex filters for Minecraft message contents (this is the %message% part of the "format" option)
+            content-regex-filters: {}
+            mentions:
+                # Should mentions be rendered in Minecraft when sent in Minecraft
+                render-mentions-in-game: true
+                
+                # Suggest mentions as chat completions in-game
+                suggest-mentions-completions-in-game: true
+                
+                # If role mentions should be rendered on Discord
+                #  
+                # The player needs one of the below permission to trigger notifications:
+                # - discordsrv.mention.role.<role id> (to mention a specific role)
+                # - discordsrv.mention.role.mentionable (for roles which have "Allow anyone to @mention this role" enabled)
+                # - discordsrv.mention.role.all (to mention ALL roles except @everyone)
+                # The roles need to have "Allow anyone to @mention this role" enabled or the bot needs to have the "Mention @everyone, @here and All Roles" permission for notifications to be triggered
+                roles: true
+                
+                # If channel mentions should be rendered on Discord
+                channels: true
+                
+                # If user mentions should be rendered on Discord
+                # The player needs the following permissions to trigger notifications:
+                # - discordsrv.mention.user.all (to mention ALL users)
+                # Requires the "Server Members Intent"
+                users: true
+                
+                # If uncached users should be looked up from the Discord API when a mention ("@something") occurs in chat.
+                # The player needs the discordsrv.mention.lookup.user permission for uncached members to be looked up
+                # This WILL cause sending messages to be delayed
+                uncached-users: false
+                
+                # If @everyone and @here mentions should be enabled
+                # The player needs the discordsrv.mention.everyone permission to render the mention and trigger a notification
+                # The bot needs to have the "Mention @everyone, @here and All Roles" permission to trigger a notification
+                everyone: false
+        discord-to-minecraft:
+            # Requires the "Message Content Intent"
+            enabled: true
+            
+            # The Discord to Minecraft message format for regular users and bots
+            #  
+            # Suggested placeholders:
+            # %message% - The content of the Discord message after content-regex-filters are applied
+            # %user_effective_name% - The Discord user's display name
+            # %user_name% - The Discord user's username (the one below their display name when you click in their profile)
+            # %user_tag% - The Discord user's username and possible discriminator (mostly useful with bots)
+            # %user_selected_roles% - The Discord user's roles
+            # %message_reply% - The value from reply-format if the Discord message is in reply to another message
+            # %message_attachments% - The value from attachment-format for each attachment the Discord message
+            # %gamechannel_name% - The name of the in-game chat channel the message was sent to
+            #  
+            # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (User, User (Server Member), Server, Channel, GameChannel)
+            format: "[[color:#5865F2]Discord[color]] [hover:show_text:Username: @%user_tag% [italics:on][color:gray](Shift+Click to mention)[color][italics:off]\nRoles: %user_selected_roles:', '|text:'[color:gray][italics:on]None[color][italics]'%][insert:@%user_tag%]%user_color%%user_effective_name%[color][insert][hover]%message_reply% » %message%%message_attachments%"
+            
+            # The Discord to Minecraft message format for webhook messages (if enabled)
+            # The same placeholders as the regular "format" are available, apart from User (Server Member) placeholders
+            webhook-format: "[[color:#5865F2]Discord[color]] [hover:show_text:Bot message]%user_effective_name%[hover] » %message%%message_attachments%"
+            
+            # Format for a single attachment in the %message_attachments% placeholder
+            # Placeholders:
+            # %file_name% - The name of the attachment file
+            # %file_url% - The link to the attachment file
+            #  
+            # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (User, User (Server Member), Server, Channel, GameChannel)
+            attachment-format: " [hover:show_text:Open %file_name% in browser][click:open_url:%file_url%][color:green][[color:white]%file_name%[color:green]][color][click][hover]"
+            
+            # Format for the %message_reply% placeholder, when the message is a reply to another message
+            reply-format: " [hover:show_text:%message%][click:open_url:%message_jump_url%]replying to %user_color|text:''%%user_effective_name%[color][click][hover]"
+            
+            # Regex filters for Discord message contents (this is the %message% part of the "format" option)
+            content-regex-filters:
+                \n{2,}: "\n"
+            
+            # Filter users whose messages will not be forwarded to Minecraft
+            ignores:
+                # Filters to pick users. For ids you can use user ids (including bots), role ids or webhook ids.
+                # If multiple ids are specified for given a filter, all ids must be met. At least one id must be provided for the filter to be active
+                # Users are selected so that at least one of the "whitelist" filters matches (if any)
+                # and none of the "blacklist" filters match any given user
+                filters:
+                -   ids: []
+                    mode: whitelist
+                
+                # "blacklist" (exclude all bots) or "whitelist" (based on above "filters")
+                bots: whitelist
+                
+                # "blacklist" (exclude all webhooks) or "whitelist" (based on above "filters")
+                webhooks: blacklist
+            
+            # How should unicode emoji be shown in-game:
+            # - hide: hides emojis in-game
+            # - show: shows emojis in-game as is (emojis may not be visible without resource packs)
+            unicode-emoji-behaviour: show
+            
+            # Users whose formatting (markdown, etc.) will be preserved when forwarded to Minecraft
+            formatting-limit:
+                # Filters to pick users. For ids you can use user ids (including bots), role ids or webhook ids.
+                # If multiple ids are specified for given a filter, all ids must be met. At least one id must be provided for the filter to be active
+                # Users are selected so that at least one of the "whitelist" filters matches (if any)
+                # and none of the "blacklist" filters match any given user
+                filters:
+                -   ids: []
+                    mode: whitelist
+            
+            # The number of milliseconds by which to delay processing Discord messages, if the message is deleted in that time it will not be processed.
+            # This can be used together with Discord moderation bots, to filter forwarded messages
+            delay-millis: 0
+            
+            # If messages from Discord should be logged to the console
+            #  
+            # Suggested placeholders:
+            # %formatted_message% - The entire message sent in-game as configured above
+            # %message% - The content of the Discord message
+            # %user_name% - The username of the Discord user
+            # %gamechannel_name% - The name of the in-game chat channel the message was sent to
+            # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (User, User (Server Member), Server, Channel, GameChannel)
+            log-to-console: true
+            console-format: "[%gamechannel_name%] %formatted_message%"
+        leave-messages:
+            enabled: true
+            # Suggested placeholders:
+            # %message% - The leave message (this may not always be available)
+            # %player_prefix% - The player's prefix (LuckPerms meta "discordsrv_prefix", otherwise their in-game prefix)
+            # %player_meta_prefix% - The player's prefix from the LuckPerms meta "discordsrv_prefix" only
+            # %player_suffix% - The player's suffix (LuckPerms meta "discordsrv_suffix", otherwise their in-game suffix)
+            # %player_meta_suffix% - The player's suffix from the LuckPerms meta "discordsrv_suffix" only
+            # %player_display_name% - The player's display name
+            # %player_name% - The player's username
+            # %player_avatar_url% - The player's avatar url based on the "avatar-provider" configuration
+            # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Player)
+            format:
+                embeds:
+                -   color: "#ff5555"
+                    author:
+                        name: "%player_display_name% left"
+                        image-url: "%player_avatar_url%"
+            
+            # If the "discordsrv.silentquit" permission should determine whether leave messages are sent
+            enable-silent-permission: true
+            
+            # If fake leave messages should be sent when players vanish
+            send-fake-messages: true
+            
+            # Send message if player leaves while vanished
+            send-message-for-vanished-players: false
+            
+            # Ignore if the player joined within the given number of milliseconds
+            ignore-if-joined-within-ms: 250
+            
+            # If messages should be sent even if they are cancelled.
+            # This option may be removed in the future, fixing other plugins to not cancel messages is recommended
+            send-even-if-cancelled: false
+        start-message:
+            enabled: true
+            format:
+                content: ":arrow_forward: **The server has started**"
+        stop-message:
+            enabled: true
+            format:
+                content: ":stop_button: **The server has stopped**"
+        
+        # Settings for synchronizing messages between the defined Discord channels and threads
+        mirroring:
+            # Requires the "Message Content Intent"
+            enabled: true
+            
+            # Users to not mirror
+            ignores:
+                # Filters to pick users. For ids you can use user ids (including bots), role ids or webhook ids.
+                # If multiple ids are specified for given a filter, all ids must be met. At least one id must be provided for the filter to be active
+                # Users are selected so that at least one of the "whitelist" filters matches (if any)
+                # and none of the "blacklist" filters match any given user
+                filters:
+                -   ids: []
+                    mode: whitelist
+                
+                # "blacklist" (exclude all bots) or "whitelist" (based on above "filters")
+                bots: whitelist
+                
+                # "blacklist" (exclude all webhooks) or "whitelist" (based on above "filters")
+                webhooks: blacklist
+            
+            # The format of the username of mirrored messages
+            # It's recommended to include some special character if in-game messages use webhooks,
+            # in order to prevent Discord users and in-game players with the same name being grouped together
+            #  
+            # Suggested placeholders:
+            # %user_effective_name% - The name of the Discord user globally
+            #  
+            # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Message, User, User (Server Member))
+            # User (Server Member) placeholders are not available for webhook messages
+            username-format: "%user_effective_name% 🔃"
+            
+            # The format when a message is a reply.
+            # Suggested placeholders:
+            # %message% - the formatted message content
+            # %message_jump_url% - the message link
+            #  
+            # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Message, User, User (Server Member))
+            # User (Server Member) placeholders are not available for webhook messages
+            reply-format: "[In reply to %user_effective_name%](%message_jump_url%)\n%message%"
+            
+            # Attachment related options
+            attachments:
+                # Maximum size (in kB) to download and re-upload, set to 0 for unlimited or -1 to disable re-uploading.
+                # The default value is -1 (disabled)
+                #  
+                # When this is enabled, files smaller than the specified limit are downloaded and then re-uploaded to each mirror channel individually.
+                # Please consider limiting the users allowed to attach files if this is enabled,
+                # as spam of large files may result in a lot of downstream and upstream data usage
+                maximum-size-kb: -1
+                
+                # If attachments should be placed into an embed in mirrored messages instead of re-uploading
+                embed-attachments: true
+        channel-locking:
+            # The bot needs to have the "Mention Permissions" permission in the channels to change permissions of channels
+            channels:
+                # If the permissions should be taken from @everyone while the server is offline
+                everyone: false
+                
+                # Role ids for roles that should have the permissions taken while the server is offline
+                role-ids: []
+                
+                # If the "View Channel" permission should be taken from the roles specified above
+                read: false
+                
+                # If the "Send Messages" permission should be taken from the roles specified above
+                write: true
+                
+                # If the "Add Reactions" permission should be taken from the roles specified above
+                add-reactions: true
+            threads:
+                # If the configured threads should be archived when the server is shutdown
+                archive: false
+                
+                # If the configured threads should be locked while the server is shutdown
+                # The bot needs to have the "Mention Threads" permission to do this
+                lock: true
+        
+        # Selection for roles which should be shown in-game
+        role-selection:
+            ids: []
+            blacklist: true
+        
+        # The representations of Discord mentions in-game
+        mentions:
+            role:
+                # The format shown in-game
+                format: "%role_color%@%role_name%"
+                
+                # The format when the entity is deleted or can't be looked up
+                unknown-format: "[color:#5865F2]@deleted-role"
+            channel:
+                # The format shown in-game
+                format: "[hover:show_text:Click to go to channel][click:open_url:%channel_jump_url%][color:#5865F2]#%channel_name%"
+                
+                # The format when the entity is deleted or can't be looked up
+                unknown-format: "[color:#5865F2]#Unknown"
+            user:
+                # The format shown in-game for users that cannot be linked to a specific Discord server
+                format-global: "[hover:show_text:Username: @%user_tag% [italics:on][color:gray](Shift+Click to mention)[color][italics:off]][insert:@%user_tag%][color:#5865F2]@%user_effective_name%"
+                
+                # The format shown in-game
+                format: "[hover:show_text:Username: @%user_tag% [italics:on][color:gray](Shift+Click to mention)[color][italics:off]\nRoles: %user_selected_roles:', '|text:'[color:gray][italics:on]None[color][italics]'%][insert:@%user_tag%][color:#5865F2]@%user_effective_name%"
+                
+                # The format when the entity is deleted or can't be looked up
+                unknown-format: "[color:#5865F2]@Unknown user"
+            everyone-role-format: "[color:#5865F2]@everyone"
+            here-role-format: "[color:#5865F2]@everyone"
+            message-url: "[hover:show_text:Click to go to message][click:open_url:%jump_url%][color:#5865F2]#%channel_name% > ..."
+            
+            # How should custom emoji be shown in-game:
+            # - hide: custom emoji will not be shown in-game
+            # - blank: custom emoji will only be shown in-game if it is rendered by a 3rd party plugin
+            # - name: shows the name of the custom emoji in-game (for example :discordsrv:), unless rendered by a 3rd party plugin
+            custom-emoji-behaviour: blank
+    default:
+        join-messages:
+            enabled: true
+            # Suggested placeholders:
+            # %message% - The join message (this may not always be available)
+            # %player_prefix% - The player's prefix (LuckPerms meta "discordsrv_prefix", otherwise their in-game prefix)
+            # %player_meta_prefix% - The player's prefix from the LuckPerms meta "discordsrv_prefix" only
+            # %player_suffix% - The player's suffix (LuckPerms meta "discordsrv_suffix", otherwise their in-game suffix)
+            # %player_meta_suffix% - The player's suffix from the LuckPerms meta "discordsrv_suffix" only
+            # %player_display_name% - The player's display name
+            # %player_name% - The player's username
+            # %player_avatar_url% - The player's avatar url based on the "avatar-provider" configuration
+            # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Player)
+            format:
+                embeds:
+                -   color: "#55ff55"
+                    author:
+                        name: "%player_display_name% joined"
+                        image-url: "%player_avatar_url%"
+            first-join:
+                enabled: true
+                format:
+                    embeds:
+                    -   color: "#ffaa00"
+                        author:
+                            name: "%player_display_name% joined for the first time"
+                            image-url: "%player_avatar_url%"
+            
+            # If the "discordsrv.silentjoin" permission should determine whether join messages are sent
+            enable-silent-permission: true
+            
+            # If fake join messages should be sent when players unvanish
+            send-fake-join-messages: true
+            
+            # Send message if player joins while being vanished
+            send-message-for-vanished-players: false
+            
+            # Ignore if the player leaves or vanishes within the given number of milliseconds. This will delay sending the join message
+            ignore-if-left-within-ms: 250
+            
+            # If messages should be sent even if they are cancelled
+            # This option may be removed in the future, fixing other plugins to not cancel messages is recommended
+            send-even-if-cancelled: false
+        
+        # Advancement/Achievement message configuration
+        advancement-messages:
+            enabled: true
+            format:
+                embeds:
+                -   color: "%advancement_color_hex%"
+                    author:
+                        name: "%advancement_message|text:'{player_name} made the advancement {advancement_display_name}'%"
+                        image-url: "%player_avatar_url%"
+                    description: "%advancement_description%"
+        death-messages:
+            enabled: true
+            format:
+                embeds:
+                -   color: "#ff0000"
+                    author:
+                        name: "%message%"
+                        image-url: "%player_avatar_url%"
+        minecraft-to-discord:
+            enabled: true
+            # Suggested placeholders:
+            # %message% - The formatted message content
+            # %player_prefix% - The player's prefix (LuckPerms meta "discordsrv_prefix", otherwise their in-game prefix)
+            # %player_meta_prefix% - The player's prefix from the LuckPerms meta "discordsrv_prefix" only
+            # %player_suffix% - The player's suffix (LuckPerms meta "discordsrv_suffix", otherwise their in-game suffix)
+            # %player_meta_suffix% - The player's suffix from the LuckPerms meta "discordsrv_suffix" only
+            # %player_display_name% - The player's display name
+            # %player_name% - The player's username
+            # %player_avatar_url% - The player's avatar url based on the "avatar-provider" configuration
+            # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Server, Player, GameChannel)
+            format:
+                webhook:
+                    username: "%player_prefix%%player_display_name%%player_suffix%"
+                    avatar-url: "%player_avatar_url%"
+                content: "%message%"
+            
+            # Regex filters for Minecraft message contents (this is the %message% part of the "format" option)
+            content-regex-filters: {}
+            mentions:
+                # Should mentions be rendered in Minecraft when sent in Minecraft
+                render-mentions-in-game: true
+                
+                # Suggest mentions as chat completions in-game
+                suggest-mentions-completions-in-game: true
+                
+                # If role mentions should be rendered on Discord
+                #  
+                # The player needs one of the below permission to trigger notifications:
+                # - discordsrv.mention.role.<role id> (to mention a specific role)
+                # - discordsrv.mention.role.mentionable (for roles which have "Allow anyone to @mention this role" enabled)
+                # - discordsrv.mention.role.all (to mention ALL roles except @everyone)
+                # The roles need to have "Allow anyone to @mention this role" enabled or the bot needs to have the "Mention @everyone, @here and All Roles" permission for notifications to be triggered
+                roles: true
+                
+                # If channel mentions should be rendered on Discord
+                channels: true
+                
+                # If user mentions should be rendered on Discord
+                # The player needs the following permissions to trigger notifications:
+                # - discordsrv.mention.user.all (to mention ALL users)
+                # Requires the "Server Members Intent"
+                users: true
+                
+                # If uncached users should be looked up from the Discord API when a mention ("@something") occurs in chat.
+                # The player needs the discordsrv.mention.lookup.user permission for uncached members to be looked up
+                # This WILL cause sending messages to be delayed
+                uncached-users: false
+                
+                # If @everyone and @here mentions should be enabled
+                # The player needs the discordsrv.mention.everyone permission to render the mention and trigger a notification
+                # The bot needs to have the "Mention @everyone, @here and All Roles" permission to trigger a notification
+                everyone: false
+        discord-to-minecraft:
+            # Requires the "Message Content Intent"
+            enabled: true
+            
+            # The Discord to Minecraft message format for regular users and bots
+            #  
+            # Suggested placeholders:
+            # %message% - The content of the Discord message after content-regex-filters are applied
+            # %user_effective_name% - The Discord user's display name
+            # %user_name% - The Discord user's username (the one below their display name when you click in their profile)
+            # %user_tag% - The Discord user's username and possible discriminator (mostly useful with bots)
+            # %user_selected_roles% - The Discord user's roles
+            # %message_reply% - The value from reply-format if the Discord message is in reply to another message
+            # %message_attachments% - The value from attachment-format for each attachment the Discord message
+            # %gamechannel_name% - The name of the in-game chat channel the message was sent to
+            #  
+            # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (User, User (Server Member), Server, Channel, GameChannel)
+            format: "[[color:#5865F2]Discord[color]] [hover:show_text:Username: @%user_tag% [italics:on][color:gray](Shift+Click to mention)[color][italics:off]\nRoles: %user_selected_roles:', '|text:'[color:gray][italics:on]None[color][italics]'%][insert:@%user_tag%]%user_color%%user_effective_name%[color][insert][hover]%message_reply% » %message%%message_attachments%"
+            
+            # The Discord to Minecraft message format for webhook messages (if enabled)
+            # The same placeholders as the regular "format" are available, apart from User (Server Member) placeholders
+            webhook-format: "[[color:#5865F2]Discord[color]] [hover:show_text:Bot message]%user_effective_name%[hover] » %message%%message_attachments%"
+            
+            # Format for a single attachment in the %message_attachments% placeholder
+            # Placeholders:
+            # %file_name% - The name of the attachment file
+            # %file_url% - The link to the attachment file
+            #  
+            # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (User, User (Server Member), Server, Channel, GameChannel)
+            attachment-format: " [hover:show_text:Open %file_name% in browser][click:open_url:%file_url%][color:green][[color:white]%file_name%[color:green]][color][click][hover]"
+            
+            # Format for the %message_reply% placeholder, when the message is a reply to another message
+            reply-format: " [hover:show_text:%message%][click:open_url:%message_jump_url%]replying to %user_color|text:''%%user_effective_name%[color][click][hover]"
+            
+            # Regex filters for Discord message contents (this is the %message% part of the "format" option)
+            content-regex-filters:
+                \n{2,}: "\n"
+            
+            # Filter users whose messages will not be forwarded to Minecraft
+            ignores:
+                # Filters to pick users. For ids you can use user ids (including bots), role ids or webhook ids.
+                # If multiple ids are specified for given a filter, all ids must be met. At least one id must be provided for the filter to be active
+                # Users are selected so that at least one of the "whitelist" filters matches (if any)
+                # and none of the "blacklist" filters match any given user
+                filters:
+                -   ids: []
+                    mode: whitelist
+                
+                # "blacklist" (exclude all bots) or "whitelist" (based on above "filters")
+                bots: whitelist
+                
+                # "blacklist" (exclude all webhooks) or "whitelist" (based on above "filters")
+                webhooks: blacklist
+            
+            # How should unicode emoji be shown in-game:
+            # - hide: hides emojis in-game
+            # - show: shows emojis in-game as is (emojis may not be visible without resource packs)
+            unicode-emoji-behaviour: show
+            
+            # Users whose formatting (markdown, etc.) will be preserved when forwarded to Minecraft
+            formatting-limit:
+                # Filters to pick users. For ids you can use user ids (including bots), role ids or webhook ids.
+                # If multiple ids are specified for given a filter, all ids must be met. At least one id must be provided for the filter to be active
+                # Users are selected so that at least one of the "whitelist" filters matches (if any)
+                # and none of the "blacklist" filters match any given user
+                filters:
+                -   ids: []
+                    mode: whitelist
+            
+            # The number of milliseconds by which to delay processing Discord messages, if the message is deleted in that time it will not be processed.
+            # This can be used together with Discord moderation bots, to filter forwarded messages
+            delay-millis: 0
+            
+            # If messages from Discord should be logged to the console
+            #  
+            # Suggested placeholders:
+            # %formatted_message% - The entire message sent in-game as configured above
+            # %message% - The content of the Discord message
+            # %user_name% - The username of the Discord user
+            # %gamechannel_name% - The name of the in-game chat channel the message was sent to
+            # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (User, User (Server Member), Server, Channel, GameChannel)
+            log-to-console: true
+            console-format: "[%gamechannel_name%] %formatted_message%"
+        leave-messages:
+            enabled: true
+            # Suggested placeholders:
+            # %message% - The leave message (this may not always be available)
+            # %player_prefix% - The player's prefix (LuckPerms meta "discordsrv_prefix", otherwise their in-game prefix)
+            # %player_meta_prefix% - The player's prefix from the LuckPerms meta "discordsrv_prefix" only
+            # %player_suffix% - The player's suffix (LuckPerms meta "discordsrv_suffix", otherwise their in-game suffix)
+            # %player_meta_suffix% - The player's suffix from the LuckPerms meta "discordsrv_suffix" only
+            # %player_display_name% - The player's display name
+            # %player_name% - The player's username
+            # %player_avatar_url% - The player's avatar url based on the "avatar-provider" configuration
+            # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Player)
+            format:
+                embeds:
+                -   color: "#ff5555"
+                    author:
+                        name: "%player_display_name% left"
+                        image-url: "%player_avatar_url%"
+            
+            # If the "discordsrv.silentquit" permission should determine whether leave messages are sent
+            enable-silent-permission: true
+            
+            # If fake leave messages should be sent when players vanish
+            send-fake-messages: true
+            
+            # Send message if player leaves while vanished
+            send-message-for-vanished-players: false
+            
+            # Ignore if the player joined within the given number of milliseconds
+            ignore-if-joined-within-ms: 250
+            
+            # If messages should be sent even if they are cancelled.
+            # This option may be removed in the future, fixing other plugins to not cancel messages is recommended
+            send-even-if-cancelled: false
+        start-message:
+            enabled: true
+            format:
+                content: ":arrow_forward: **The server has started**"
+        stop-message:
+            enabled: true
+            format:
+                content: ":stop_button: **The server has stopped**"
+        
+        # Settings for synchronizing messages between the defined Discord channels and threads
+        mirroring:
+            # Requires the "Message Content Intent"
+            enabled: true
+            
+            # Users to not mirror
+            ignores:
+                # Filters to pick users. For ids you can use user ids (including bots), role ids or webhook ids.
+                # If multiple ids are specified for given a filter, all ids must be met. At least one id must be provided for the filter to be active
+                # Users are selected so that at least one of the "whitelist" filters matches (if any)
+                # and none of the "blacklist" filters match any given user
+                filters:
+                -   ids: []
+                    mode: whitelist
+                
+                # "blacklist" (exclude all bots) or "whitelist" (based on above "filters")
+                bots: whitelist
+                
+                # "blacklist" (exclude all webhooks) or "whitelist" (based on above "filters")
+                webhooks: blacklist
+            
+            # The format of the username of mirrored messages
+            # It's recommended to include some special character if in-game messages use webhooks,
+            # in order to prevent Discord users and in-game players with the same name being grouped together
+            #  
+            # Suggested placeholders:
+            # %user_effective_name% - The name of the Discord user globally
+            #  
+            # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Message, User, User (Server Member))
+            # User (Server Member) placeholders are not available for webhook messages
+            username-format: "%user_effective_name% 🔃"
+            
+            # The format when a message is a reply.
+            # Suggested placeholders:
+            # %message% - the formatted message content
+            # %message_jump_url% - the message link
+            #  
+            # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Message, User, User (Server Member))
+            # User (Server Member) placeholders are not available for webhook messages
+            reply-format: "[In reply to %user_effective_name%](%message_jump_url%)\n%message%"
+            
+            # Attachment related options
+            attachments:
+                # Maximum size (in kB) to download and re-upload, set to 0 for unlimited or -1 to disable re-uploading.
+                # The default value is -1 (disabled)
+                #  
+                # When this is enabled, files smaller than the specified limit are downloaded and then re-uploaded to each mirror channel individually.
+                # Please consider limiting the users allowed to attach files if this is enabled,
+                # as spam of large files may result in a lot of downstream and upstream data usage
+                maximum-size-kb: -1
+                
+                # If attachments should be placed into an embed in mirrored messages instead of re-uploading
+                embed-attachments: true
+        channel-locking:
+            # The bot needs to have the "Mention Permissions" permission in the channels to change permissions of channels
+            channels:
+                # If the permissions should be taken from @everyone while the server is offline
+                everyone: false
+                
+                # Role ids for roles that should have the permissions taken while the server is offline
+                role-ids: []
+                
+                # If the "View Channel" permission should be taken from the roles specified above
+                read: false
+                
+                # If the "Send Messages" permission should be taken from the roles specified above
+                write: true
+                
+                # If the "Add Reactions" permission should be taken from the roles specified above
+                add-reactions: true
+            threads:
+                # If the configured threads should be archived when the server is shutdown
+                archive: false
+                
+                # If the configured threads should be locked while the server is shutdown
+                # The bot needs to have the "Mention Threads" permission to do this
+                lock: true
+        
+        # Selection for roles which should be shown in-game
+        role-selection:
+            ids: []
+            blacklist: true
+        
+        # The representations of Discord mentions in-game
+        mentions:
+            role:
+                # The format shown in-game
+                format: "%role_color%@%role_name%"
+                
+                # The format when the entity is deleted or can't be looked up
+                unknown-format: "[color:#5865F2]@deleted-role"
+            channel:
+                # The format shown in-game
+                format: "[hover:show_text:Click to go to channel][click:open_url:%channel_jump_url%][color:#5865F2]#%channel_name%"
+                
+                # The format when the entity is deleted or can't be looked up
+                unknown-format: "[color:#5865F2]#Unknown"
+            user:
+                # The format shown in-game for users that cannot be linked to a specific Discord server
+                format-global: "[hover:show_text:Username: @%user_tag% [italics:on][color:gray](Shift+Click to mention)[color][italics:off]][insert:@%user_tag%][color:#5865F2]@%user_effective_name%"
+                
+                # The format shown in-game
+                format: "[hover:show_text:Username: @%user_tag% [italics:on][color:gray](Shift+Click to mention)[color][italics:off]\nRoles: %user_selected_roles:', '|text:'[color:gray][italics:on]None[color][italics]'%][insert:@%user_tag%][color:#5865F2]@%user_effective_name%"
+                
+                # The format when the entity is deleted or can't be looked up
+                unknown-format: "[color:#5865F2]@Unknown user"
+            everyone-role-format: "[color:#5865F2]@everyone"
+            here-role-format: "[color:#5865F2]@everyone"
+            message-url: "[hover:show_text:Click to go to message][click:open_url:%jump_url%][color:#5865F2]#%channel_name% > ..."
+            
+            # How should custom emoji be shown in-game:
+            # - hide: custom emoji will not be shown in-game
+            # - blank: custom emoji will only be shown in-game if it is rendered by a 3rd party plugin
+            # - name: shows the name of the custom emoji in-game (for example :discordsrv:), unless rendered by a 3rd party plugin
+            custom-emoji-behaviour: blank
+presence-updater:
+    # The presence to use while the server is starting
+    use-starting-presence: true
+    starting-presence:
+        # Valid options: online, idle, do_not_disturb, invisible
+        status: do_not_disturb
+        
+        # This may be prefixed by one of the following and a space to specify the activity type: "playing", "listening to", "watching", "competing in"
+        # You can use streaming by setting the value to: "streaming", a YouTube or Twitch link and the text all separated by a space
+        # Suggested placeholders:
+        # %playerlist_count% - The amount of players online
+        # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Global only)
+        activity: "Starting..."
+    
+    # The presence to use while the server is stopping
+    use-stopping-presence: true
+    stopping-presence:
+        # Valid options: online, idle, do_not_disturb, invisible
+        status: idle
+        
+        # This may be prefixed by one of the following and a space to specify the activity type: "playing", "listening to", "watching", "competing in"
+        # You can use streaming by setting the value to: "streaming", a YouTube or Twitch link and the text all separated by a space
+        # Suggested placeholders:
+        # %playerlist_count% - The amount of players online
+        # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Global only)
+        activity: "Stopping..."
+    
+    # If the bot's Discord presence should be updated
+    enabled: true
+    
+    # The number of seconds between presence updates
+    # Minimum value: 30
+    updater-rate-in-seconds: 90
+    presences:
+    -   # Valid options: online, idle, do_not_disturb, invisible
+        status: online
+        
+        # This may be prefixed by one of the following and a space to specify the activity type: "playing", "listening to", "watching", "competing in"
+        # You can use streaming by setting the value to: "streaming", a YouTube or Twitch link and the text all separated by a space
+        # Suggested placeholders:
+        # %playerlist_count% - The amount of players online
+        # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Global only)
+        activity: "playing Minecraft"
+
+# Configuration for the %discord_invite% placeholder. The below options will be attempted in the order they are in
+invite:
+    # Manually enter an invite url here, if this isn't set this is ignored and the options below will take effect
+    invite-url: ""
+    
+    # The server id to automatically grab the vanity url from or to generate the invite to.
+    # If this is not specified and the bot is private and only in a single server, it will use that
+    server-id: 0
+    
+    # If the bot should automatically use the vanity invite url from the automatically determined server, if one is set
+    attempt-to-use-vanity-url: true
+    
+    # If the bot should automatically create an invite to the automatically determined server
+    # The bot will only attempt to do so if it has permission to "Create Invite"
+    # The server must also have a rules channel (available for community servers) or default channel (automatically determined by Discord)
+    auto-create-invite: false
+
+# Options for linking Discord and Minecraft accounts together
+linked-accounts:
+    # Should linked accounts be enabled
+    enabled: true
+    
+    # Should users who have not linked their accounts be sent a message encouraging them to link their accounts every time they join the server
+    pestering-config:
+        # Should link pestering be enabled
+        enabled: true
+        
+        # How should we pester users to link their accounts
+        #  
+        #  "join" to send a message when they connect to the server
+        #  "timer" to send a timed message 
+        #  "both" to do both of the above
+        mode: join
+        
+        # How often (in minutes) should we send the timed pestering message to users who have not linked their accounts. Minimum of 1 minute
+        timer: 1
+    
+    # The linked account provider
+    #  
+    #  - auto: Uses "minecraftauth" if the connections.yaml permits it and the server is in online mode or using ip forwarding, otherwise "storage"
+    #  - minecraftauth: Uses minecraftauth.me as the linked account provider (offline and (non-linked) bedrock players cannot link using this method)
+    #  - storage: Use the configured database for linked accounts
+    provider: auto
+
+# Options for requiring players to link (and optionally meet other requirements) before being able to play
+required-linking:
+    enabled: false
+    # How the player should be blocked from joining the server.
+    # Available options: kick, freeze, spectator
+    action: kick
+    whitelisted-players-can-bypass: true
+    
+    # A list of uuids that are allowed to bypass these requirements
+    bypass-uuids:
+    - "6c983d46-0631-48b8-9baf-5e33eb5ffec4"
+    
+    # Requirements players must meet to be pass requirements
+    # Only one option has to pass, for example ["TwitchSubscriber()", "DiscordRole(...)"] allows twitch subscribers and users with the specified role to play
+    # while ["TwitchSubscriber() && DiscordRole(...)"] only allows twitch subscribers with the specified role to play
+    #  
+    # Valid values are:
+    # DiscordServer(Server ID)
+    # DiscordBoosting(Server ID)
+    # DiscordRole(Role ID)
+    #  
+    # The following are available if you're using minecraftauth.me for linked accounts and a minecraftauth.me token is specified in the connections.yaml:
+    # PatreonSubscriber() or PatreonSubscriber(Tier Title)
+    # GlimpseSubscriber() or GlimpseSubscriber(Level Name)
+    # TwitchFollower()
+    # TwitchSubscriber() or TwitchSubscriber(Tier)
+    # YouTubeSubscriber()
+    # YouTubeMember() or YouTubeMember(Tier)
+    #  
+    # The following operators are available:
+    # && = and, for example: "DiscordServer(...) && TwitchFollower()"
+    # || = or, for example "DiscordBoosting(...) || YouTubeMember()"
+    # You can also use brackets () to clear ambiguity, for example: "DiscordServer(...) && (TwitchSubscriber() || PatreonSubscriber())"
+    # allows a member of the specified Discord server that is also a twitch or patreon subscriber to join the server
+    additional-requirements: []
+
+# Rewards granted for linking accounts and boosting
+rewards:
+    linking-rewards:
+    -   # When the linking reward will trigger, valid values are:
+        # - is_linked: the reward will be granted to any linked player at any time
+        # - linked: the reward will be granted when the player and user become linked
+        # - unlinked: the reward will be granted when the player and user become unlinked
+        type: is_linked
+        
+        # The reward id determines if the player and/or user has already been granted the reward.
+        # It should be unique for each reward. Please do not use the same reward ids on multiple servers at once
+        reward-id: "first-link"
+        
+        # Determines on when the reward can be granted.
+        # Valid values are: once_per_player, once_per_user, once_per_both, always
+        grant-type: once_per_both
+        
+        # If true, the reward will only be granted if the player is online. Otherwise, postpone till they're online.
+        needs-online: false
+        
+        # Commands to run in the command when this reward is granted.
+        # Suggested placeholders:
+        # %profile_player_uuid% - The Minecraft player UUID
+        # %profile_offline_player_name% - The name of the Minecraft player
+        # %profile_user_id% - The Discord user id
+        # %profile_user_name% - The Discord user's username
+        # %profile_user_effective_name% - The Discord user's display name
+        # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Profile)
+        console-commands-to-run: []
+    
+    # Boosting rewards can only be granted to players that are also linked
+    boosting-rewards:
+    -   # When the boosting reward will trigger, valid values are:
+        # - is_boosting: the reward will be granted to any boosting player at any time
+        # - boosted: the reward will be granted when a user starts boosting
+        # - unboosted: the reward will be granted when a user stops boosting
+        # This latter two options will not work if the user is not cached
+        type: is_boosting
+        server-id: 0
+        
+        # The reward id determines if the player and/or user has already been granted the reward.
+        # It should be unique for each reward. Please do not use the same reward ids on multiple servers at once
+        reward-id: "first-boost"
+        
+        # Determines on when the reward can be granted.
+        # Valid values are: once_per_player, once_per_user, once_per_both, always
+        grant-type: once_per_both
+        
+        # If true, the reward will only be granted if the player is online. Otherwise, postpone till they're online.
+        needs-online: false
+        
+        # Commands to run in the command when this reward is granted.
+        # Suggested placeholders:
+        # %profile_player_uuid% - The Minecraft player UUID
+        # %profile_offline_player_name% - The name of the Minecraft player
+        # %profile_user_id% - The Discord user id
+        # %profile_user_name% - The Discord user's username
+        # %profile_user_effective_name% - The Discord user's display name
+        # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Profile)
+        console-commands-to-run: []
+
+# Allows for creating channels and/or threads that act like the Minecraft server console
+# Multiple configurations are allowed for forwarding different portions of logs into different places,
+# configuring the entire console output to be forwarded to multiple places is discouraged.
+#  
+# Using this feature as your primary way to view log history is not recommended.
+# The default configuration uses thread rotation, where a new thread will be created every week, and only 3 weeks are kept.
+#  
+# Be careful of who you let view and run commands in your console channels!
+# Configuring this incorrectly can lead to sensitive information being exposed and your server being hacked!
+console:
+-   # The channel or thread that will be used for forwarding output and/or running commands in
+    channel:
+        # The text, announcement, voice or stage channel id (or text, announcement, forum or media channel id if using a thread)
+        # The bot needs to have the following permissions in these channels:
+        # - "View Channel"
+        # - "Manage Webhooks" to send webhook messages
+        # When "use-thread" is false:
+        # - "Send Messages" to send non-webhook messages
+        # When "use-thread" is true:
+        # - "Create Public Threads" to automatically create the thread (when "private-thread" is false)
+        # - "Create Private Threads" to automatically create the thread (when "private-thread" is true)
+        # - "Manage Threads" to send messages into a manually created private thread that wasn't created by the bot
+        # - "Send Messages in Threads" to non-webhook messages in the thread
+        channel-id: 0
+        use-thread: true
+        thread-name: "DiscordSRV Console #%date:'w'%"
+        
+        # Should an existing thread with the same name be unarchived instead of creating a new thread if no unarchived thread exists
+        unarchive-existing: true
+        
+        # Forum and media channels do not have private threads, and this will have no effect on them
+        private-thread: true
+    
+    # The number of threads to keep. Rotation interval is based on placeholders in the thread name
+    threads-to-keep-in-rotation: 3
+    appender:
+        # The mode for the console output, available options are:
+        # - off: Turn off console appending
+        # - ansi: A colored ansi code block
+        # - log: An "accesslog" code block
+        # - diff: A "diff" code block highlighting warnings and errors with different colors
+        # - markdown: Plain text with bold, italics, strikethrough and underlining
+        # - code_block: Plain text code block
+        # - plain: Plain text
+        output-mode: ansi
+        
+        # How individual log lines will be formatted
+        # Suggested placeholders:
+        # %log_time:'ccc HH:mm:ss zzz'% - The time when message was logged, read more about time formats on the placeholders documentation page
+        # %log_level% - The log level (for example INFO, WARN, ERROR)
+        # %logger_name:' [\%s]'% - The logger name, which may not be present (with special formatting to display in brackets, and only if present)
+        # %message% - The log message, formatted according to the above output mode
+        # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Global only)
+        line-format: "[%log_time:'ccc HH:mm:ss zzz'%] [%log_level%]%logger_name:' [\\%s]'% %message%"
+        
+        # In "diff" mode, should exception (stack trace) lines have the prefix character as well, as opposed to only the first line
+        diff-exceptions: true
+        
+        # If urls should have embeds disabled (in "plain" output-mode)
+        disable-link-embeds: true
+        
+        # Avoids sending new messages by editing the most recent message until it reaches it's maximum length
+        use-editing: true
+        
+        # If console messages should be silent, not causing a notification
+        silent-messages: true
+        
+        # Regex filters to apply to the console message (%message%) and stacktrace (applied separately), applied before DiscordSRV touches them.
+        # Please keep in mind they may contain color codes.
+        #  
+        # If the entire message is filtered out by these filters the log message (and it's exception stacktrace) will be ignored.
+        # The plain version of the log message will also be checked for ignoring the entire log message
+        content-regex-filters:
+            There are \d+ (?:of a max of|out of maximum) \d+ players online.*: ""
+        
+        # A list of log levels to whitelist or blacklist
+        levels:
+            levels:
+            - "DEBUG"
+            - "TRACE"
+            blacklist: true
+        
+        # A list of logger names to whitelist or blacklist, use "NONE" for log messages with no logger name
+        loggers:
+            loggers:
+            - "ExcludedLogger"
+            blacklist: true
+        
+        # Options for how to deal with exception stack traces in the console
+        exceptions:
+            # The time after which the exact same exception will not be forwarded to the console channel, in minutes
+            # 0 to not filter out duplicate exceptions, -1 to always filter out duplicate exceptions
+            filter-out-duplicates-minutes: 5
+            
+            # If the message alongside an exception should also be ignored when ignoring duplicate exceptions
+            also-block-messages: true
+    command-execution:
+        # If command execution in this console channel is enabled
+        # Requires the "Message Content Intent"
+        enabled: true
+        
+        # At least one condition has to match to allow execution
+        execution-conditions:
+        -   # Which users are allowed to run the commands filtered by this condition. At least one whitelist condition must be specified
+            user-filter:
+                # Filters to pick users. For ids you can use user ids (including bots), role ids or webhook ids.
+                # If multiple ids are specified for given a filter, all ids must be met. At least one id must be provided for the filter to be active
+                # Users are selected so that at least one of the "whitelist" filters matches (if any)
+                # and none of the "blacklist" filters match any given user
+                filters:
+                -   ids: []
+                    mode: whitelist
+            
+            # "blacklist" to allow only commands not listed (blacklisting), "whitelist" to only allow listed commands (whitelisting)
+            filter-mode: blacklist
+            
+            # The commands and/or patterns that are allowed/blocked.
+            # The command needs to start with input, this will attempt to normalize command aliases where possible (for the main command)
+            # If the command starts and ends with /, the input will be treated as a regular expression (regex) and it will pass if it matches the entire command
+            commands:
+            - "list"
+            - "whitelist"
+        -   # Which users are allowed to run the commands filtered by this condition. At least one whitelist condition must be specified
+            user-filter:
+                # Filters to pick users. For ids you can use user ids (including bots), role ids or webhook ids.
+                # If multiple ids are specified for given a filter, all ids must be met. At least one id must be provided for the filter to be active
+                # Users are selected so that at least one of the "whitelist" filters matches (if any)
+                # and none of the "blacklist" filters match any given user
+                filters:
+                -   ids: []
+                    mode: whitelist
+            
+            # "blacklist" to allow only commands not listed (blacklisting), "whitelist" to only allow listed commands (whitelisting)
+            filter-mode: blacklist
+            
+            # The commands and/or patterns that are allowed/blocked.
+            # The command needs to start with input, this will attempt to normalize command aliases where possible (for the main command)
+            # If the command starts and ends with /, the input will be treated as a regular expression (regex) and it will pass if it matches the entire command
+            commands:
+            - "?"
+            - "op"
+            - "deop"
+            - "execute"
+        
+        # If a command is inputted starting with /, a warning response will be given if this is enabled
+        enable-slash-warning: true
+
+# Configuration options for Minecraft group and Discord role synchronization
+#  
+# Requires players to be linked
+# For Minecraft to Discord synchronization:
+# - The bot needs a role above all roles that are synchronized
+# - The bot needs the "Manage Roles" permission
+group-sync:
+    sets:
+    -   # The direction to synchronize in.
+        # Valid options: bidirectional, minecraft_to_discord, discord_to_minecraft
+        direction: bidirectional
+        
+        # LuckPerms context values, used when adding, removing and checking the groups of players.
+        # The format is: {"context": ["value"]}
+        contexts: {}
+        
+        # If inherited groups should be included when checking if the Player has a group. Only works with LuckPerms
+        include-inherited: false
+        
+        # Timed resynchronization
+        timer:
+            # The direction which takes priority for determining for synchronization
+            # Valid options: minecraft, discord, disabled
+            side: minecraft
+            
+            # The number of minutes between timed synchronization cycles
+            cycle-time: 5
+        
+        # Decides which side takes priority when synchronizing and there are differences. Also allows disabling synchronization on these events
+        # Valid options: minecraft, discord, disabled
+        tie-breakers:
+            join: minecraft
+            link: minecraft
+            resync-command: minecraft
+        
+        # Behaviour when account is unlinked
+        # Valid options: do_nothing, remove_discord, remove_game, remove_both
+        unlink-behaviour: remove_discord
+        
+        # The pairs of case-sensitive Minecraft group names from your permission plugin, and Discord role ids
+        pairs:
+        -   group-name: ""
+            role-id: 0
+
+# Configuration options for nickname synchronization
+#  
+# Requires players to be linked
+# For Minecraft to Discord synchronization:
+# - The bot needs a role above all users that you want to synchronize, the Discord server owner cannot be synchronized.
+# - The bot needs the "Manage Nicknames" permission
+nickname-sync:
+    # The direction to synchronize in.
+    # Valid options: bidirectional, minecraft_to_discord, discord_to_minecraft
+    direction: minecraft_to_discord
+    
+    # The id for the Discord server where the nicknames should be synced from/to
+    server-id: 0
+    
+    # Suggested placeholders:
+    # %nickname% - The nickname being synced after filters
+    # %player_linked_user% - The player's linked Discord user
+    # %player_linked_server_member% - The player's linked Discord server member
+    # %user_tag% - The Discord user's username
+    # %user_color% - The Discord user's color in the Discord server (if any)
+    #  
+    # Disclaimer: Nickname sync can modify the placeholder you are trying to use depending on the direction of the sync
+    # The following placeholders could be useless and can result in unexpected behavior:
+    # %player_name% - The player's username
+    # %user_name% - The Discord user's username
+    # %user_effective_name% - The Discord user's username
+    #  
+    # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Player, User, Server Member, Guild)
+    format: "%nickname%"
+    
+    # Regex filters for nicknames
+    nickname-regex-filters: {}
+    
+    # Timed resynchronization
+    timer:
+        # The direction which takes priority for determining for synchronization
+        # Valid options: minecraft, discord, disabled
+        side: disabled
+        
+        # The number of minutes between timed synchronization cycles
+        cycle-time: 5
+    
+    # Decides which side takes priority when synchronizing and there are differences. Also allows disabling synchronization on these events
+    # Valid options: minecraft, discord, disabled
+    tie-breakers:
+        join: minecraft
+        link: minecraft
+        resync-command: minecraft
+    
+    # Behaviour when account is unlinked
+    # Valid options: do_nothing, remove_discord, remove_game, remove_both
+    unlink-behaviour: remove_discord
+
+# Configuration options for ban synchronization
+#  
+# Requires players to be linked
+# For Minecraft to Discord synchronization:
+# - The bot needs a role above all users that you want to synchronize, the Discord server owner cannot be synchronized.
+# - The bot needs the "Ban Members" permission
+ban-sync:
+    # The id for the Discord server where the bans should be synced from/to
+    server-id: 0
+    
+    # The direction to synchronize in.
+    # Valid options: bidirectional, minecraft_to_discord, discord_to_minecraft
+    direction: bidirectional
+    
+    # Role id that will be used for role related actions, if they are configured below
+    banned-role-id: 0
+    
+    # Options for syncing bans from Minecraft to Discord
+    minecraft-to-discord:
+        # What action(s) to perform on the linked Discord account when a player is banned in Minecraft. Can be configured in more detail below
+        # Valid options: ban, role
+        action: ban
+        
+        # The reason used when creating new bans in Discord or adding the banned role to users
+        ban-reason-format: "Banned by %punishment_punisher% in Minecraft for %punishment_reason%, ends: %punishment_until:'YYYY-MM-dd HH:mm:ss zzz'|text:'Never'%"
+        
+        # The reason used when removing bans in Discord or removing the banned role from users
+        unban-reason-format: "Unbanned in Minecraft"
+        
+        # The number of hours of Discord messages to delete when syncing bans from Minecraft to Discord (if doing so is enabled)
+        message-hours-to-delete: 0
+    
+    # Options for syncing bans from Discord to Minecraft
+    discord-to-minecraft:
+        # What action(s) on Discord should trigger a ban/unban in Minecraft. Valid options:
+        # ban:     A ban/unban on the Discord Server
+        # role:    Addition/removal of the banned role (specified above) to the user on Discord
+        # either:  Either of the above
+        # BEWARE: Settings of 'role' or 'either' can be exploited to remove bans from players if tie-breaker is set to 'discord'
+        trigger: ban
+        
+        # The reason used when creating new bans in Minecraft
+        ban-reason-format: "Banned on Discord: %punishment_reason%"
+        
+        # The punisher shown when creating new bans in Minecraft
+        punisher-format: "%user_color%@%user_name%"
+        
+        # The kick reason when a ban is applied to an online player
+        kick-reason: "&cYou have been banned on Discord for &f%punishment_reason% &cby &f%punishment_punisher%"
+    
+    # Timed resynchronization
+    timer:
+        # The direction which takes priority for determining for synchronization
+        # Valid options: minecraft, discord, disabled
+        side: minecraft
+        
+        # The number of minutes between timed synchronization cycles
+        cycle-time: 5
+    
+    # Decides which side takes priority when synchronizing and there are differences. Also allows disabling synchronization on these events
+    # Valid options: minecraft, discord, disabled
+    tie-breakers:
+        join: minecraft
+        link: minecraft
+        resync-command: minecraft
+    
+    # Behaviour when account is unlinked
+    # Valid options: do_nothing, remove_discord, remove_game, remove_both
+    unlink-behaviour: do_nothing
+
+# Configuration options for mute synchronization
+#  
+# Requires players to be linked
+# For Minecraft to Discord synchronization:
+# - The bot needs a role above all users that you want to synchronize, the Discord server owner cannot be synchronized.
+# - The bot needs the "Manage Roles" and "Timeout Members" permission
+mute-sync:
+    # The id for the Discord server where the mutes should be synced from/to
+    # This is only used for timeouts, which has the limitation of 28 days maximum duration.
+    # Mutes longer than that will be ignored, unless fallback-to-role-if-timeout-too-long and muted-role-id are configured.
+    server-id: 0
+    
+    # The direction to synchronize in.
+    # Valid options: bidirectional, minecraft_to_discord, discord_to_minecraft
+    direction: bidirectional
+    
+    # Role id that will be used for role related actions, if they are configured below
+    # It will also be used as a fallback for timeouts longer than 28 days if fallback-to-role-if-timeout-too-long is enabled.
+    # The role should have permissions set to prevent sending messages in text channels and speaking in voice channels. These need to be blocked manually.
+    # Permissions that might need to be denied include:
+    # Send Messages
+    # Create Threads
+    # Join Voice
+    # Speak
+    # Add reactions
+    muted-role-id: 0
+    
+    # Options for syncing mutes from Minecraft to Discord
+    minecraft-to-discord:
+        # What action(s) to perform on the linked Discord account when a player is muted in Minecraft. Can be configured in more detail below
+        # Valid options:
+        # timeout:  Apply a Discord timeout on the user. (Must be 28 days or less)
+        # role:     Add the muted role (specified above) to the user on Discord
+        action: timeout
+        
+        # When a mute duration is longer than 28 days (the maximum allowed in Discord), the muted role will be assigned instead of a timeout in such cases.
+        # Otherwise, no action will be taken on Discord for mutes longer than 28 days.
+        fallback-to-role-if-timeout-too-long: true
+        
+        # The reason used when creating new mutes in Discord or adding the muted role to users
+        mute-reason-format: "Muted by %1 in Minecraft for %2, ends: %3"
+        
+        # The reason used when removing mutes in Discord or removing the muted role from users
+        unmute-reason-format: "Unmuted in Minecraft"
+    
+    # Options for syncing mutes from Discord to Minecraft
+    discord-to-minecraft:
+        # What action(s) on Discord should trigger a mute/unmute in Minecraft. Valid options:
+        # timeout:  A timeout/untimeout on the Discord Server
+        # role:     Addition/removal of the muted role (specified above) to the user on Discord
+        # either:   Either of the above
+        # BEWARE: Settings of 'role' or 'either' can be exploited to remove mutes from players if tie-breaker is set to 'discord'
+        trigger: timeout
+        
+        # The reason used when creating new mutes in Minecraft
+        mute-reason-format: "Muted on Discord: %punishment_reason%"
+        
+        # The punisher shown when creating new mutes in Minecraft
+        punisher-format: "%user_color%@%user_name%"
+        
+        # Notify the online player when they are muted in Minecraft due to a Discord mute. Useful if your punishment plugin doesn't send it's own notification.
+        notify-player-on-mute: true
+        
+        # The message sent to the online player when they are muted in Minecraft due to a Discord mute
+        mute-notification-message: "%1You have been muted on Discord for %2%3 %1by %4%5"
+        
+        # Notify the online player when they are unmuted in Minecraft due to a Discord unmute. Useful if your punishment plugin doesn't send it's own notification.
+        notify-player-on-unmute: true
+        
+        # The message sent to the online player when they are unmuted in Minecraft due to a Discord unmute
+        unmute-notification-message: "%1You have been unmuted on Discord."
+    
+    # Timed resynchronization
+    timer:
+        # The direction which takes priority for determining for synchronization
+        # Valid options: minecraft, discord, disabled
+        side: minecraft
+        
+        # The number of minutes between timed synchronization cycles
+        cycle-time: 5
+    
+    # Decides which side takes priority when synchronizing and there are differences. Also allows disabling synchronization on these events
+    # Valid options: minecraft, discord, disabled
+    tie-breakers:
+        join: minecraft
+        link: minecraft
+        resync-command: minecraft
+    
+    # Behaviour when account is unlinked
+    # Valid options: do_nothing, remove_discord, remove_game, remove_both
+    unlink-behaviour: do_nothing
+
+# Options for granting players roles for being linked
+#  
+# The bot needs to have a role above the linked roles
+# The bot needs the "Manage Roles" permission
+linked-role:
+    role-ids: []
+
+# Options for granting players that are currently online in-game, a role in Discord
+#  
+# Requires players to be linked
+# The bot needs to have a role above the online role
+# The bot needs the "Manage Roles" permission
+online-role:
+    # The ID of the role to sync to the linked Discord users of online players
+    role-id: 0
+    
+    # How long after joining should the role be added
+    delay-adding-role-by-ms: 2000
+    
+    # Should the role be given to vanished players as well, when false vanished players will not have the role
+    give-role-to-vanished-players: false
+
+# In-game command configuration
+game-command:
+    # If the /discord command should be set by DiscordSRV
+    use-discord-command: true
+    
+    # If /link should be used as an alias for /discord link
+    use-link-alias: false
+    
+    # The Discord command response format (/discord)
+    # Suggested placeholders:
+    # %discord_invite% - The Discord server invite, as configured in the "invite" section of the config
+    # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Player)
+    discord-format: "[click:open_url:%discord_invite%][color:aqua][bold:on]Click here [color][bold][color:green]to join our Discord server!"
+
+# Discord command configuration
+discord-command:
+    # The Discord server id to limit the /discordsrv command to, disables the use of the command in DMs regardless of the below option
+    # Set to 0 to disable, enabling the command in all servers the bot is in
+    management-command-server-id: 0
+    
+    # If the /discordsrv command should be usable in the bot's direct messages
+    enable-management-command-globally: false
+    
+    # The alias of the command for users.
+    # 1-32 characters of letters, numbers and dashes
+    user-command-alias: "minecraft"
+    
+    # The Discord server id to limit the user command to, disables the use of the command in DMs regardless of the below option
+    # Set to 0 to disable, enabling the command in all servers the bot is in
+    user-command-server-id: 0
+    
+    # If the user command should be enabled in the bot's direct messages
+    enable-user-command-globally: true
+
+# Configuration for the /discordsrv execute Discord command
+execute-command:
+    enabled: true
+    # If the command output should only be visible to the user who ran the command
+    ephemeral: true
+    
+    # The mode for the command output, available options are:
+    # - markdown: Regular Discord markdown
+    # - ansi: A colored ansi code block
+    # - plain: Plain text
+    # - code_block: Plain code block
+    # - off: No command output
+    #  
+    # Please note that some commands may not be work with output forwarding
+    output-mode: markdown
+    
+    # At least one condition has to match to allow execution
+    execution-conditions:
+    -   # Which users are allowed to run the commands filtered by this condition. At least one whitelist condition must be specified
+        user-filter:
+            # Filters to pick users. For ids you can use user ids (including bots), role ids or webhook ids.
+            # If multiple ids are specified for given a filter, all ids must be met. At least one id must be provided for the filter to be active
+            # Users are selected so that at least one of the "whitelist" filters matches (if any)
+            # and none of the "blacklist" filters match any given user
+            filters:
+            -   ids: []
+                mode: whitelist
+        
+        # "blacklist" to allow only commands not listed (blacklisting), "whitelist" to only allow listed commands (whitelisting)
+        filter-mode: blacklist
+        
+        # The commands and/or patterns that are allowed/blocked.
+        # The command needs to start with input, this will attempt to normalize command aliases where possible (for the main command)
+        # If the command starts and ends with /, the input will be treated as a regular expression (regex) and it will pass if it matches the entire command
+        commands:
+        - "say"
+        - "/gamemode(?: (?:survival|spectator)(?: .+)?)?/"
+    
+    # If commands should be suggested while typing
+    # Suggestions go through the server's main thread (on servers with a main thread) to ensure compatibility.
+    suggest: true
+    
+    # If suggestions should be filtered based on the "execution-conditions" option
+    filter-suggestions: true
+
+# Configuration for the /minecraft playerlist Discord command and %playerlist% placeholder
+player-list:
+    # The complete output of the playerlist command/placeholder when no (visible) players are online on the server
+    no-players-format: "No players online"
+    
+    # The order in which players should be sorted, in ascending order
+    #  
+    # Suggested placeholders:
+    # %player_name%
+    # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Player)
+    sort-by: "%player_name%"
+    
+    # If players should be grouped
+    group-players: false
+    
+    # The criteria by which players should be grouped
+    # All players which have the same value in this option will belong to the same group
+    #  
+    # Suggested placeholders:
+    # %player_primary_group%
+    # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Player)
+    group-by: "%player_primary_group%"
+    
+    # The header before listing all players in a given group
+    #  
+    # Suggested placeholders:
+    # %group% - The group (determined by the above option)
+    # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Global only)
+    grouping-header: "%group%\n"
+    
+    # Separator between groups
+    group-separator: "\n\n"
+    
+    # The format for a single player
+    #  
+    # Suggested placeholders:
+    # %player_team_display_name% - Displays the player's display name formatted with (vanilla) team options
+    # %player_display_name% - The player's display name
+    # %player_name% - The player's username
+    # %player_prefix% - The player's prefix (LuckPerms meta "discordsrv_prefix", otherwise their in-game prefix)
+    # %player_meta_prefix% - The player's prefix from the LuckPerms meta "discordsrv_prefix" only
+    # %player_suffix% - The player's suffix (LuckPerms meta "discordsrv_suffix", otherwise their in-game suffix)
+    # %player_meta_suffix% - The player's suffix from the LuckPerms meta "discordsrv_suffix" only
+    # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Player)
+    player-format: "%player_team_display_name%"
+    
+    # Separator between players
+    player-separator: ", "
+    
+    # Options for the /minecraft playerlist command specifically (not shared with the %playerlist% placeholder)
+    command:
+        # The output mode for the message
+        # - ansi: A colored ansi code block
+        # - markdown: Plain text with bold, italics, strikethrough and underlining
+        # - code_block: Plain text code block
+        # - plain: Plain text
+        output-mode: ansi
+        
+        # The text shown at the top and bottom of the message
+        #  
+        # Suggested placeholders:
+        # %playerlist_count% - The amount of players on the server
+        # More placeholders at https://docs.discordsrv.com/ascension/placeholders/ (Global only)
+        header: "%playerlist_count% players online"
+        footer: ""
+        
+        # If the player list output is too long for a single Discord message, labels for buttons to change pages
+        previous-label: "⬅"
+        next-label: "➡"
+
+# Custom commands that can trigger console commands and provide a customized output when executed in Discord
+custom-commands:
+-   enabled: false
+    # The command in Discord, this can be in up to 3 parts (separated by spaces).
+    # You cannot specify commands on the 2nd and 3rd layer for the same main command at once.
+    # You cannot specify an action for the main command if you specify something for the same main command on the 2nd or 3rd layer
+    command: "ip"
+    
+    # The description of the command, will be shown to the user
+    description: "Get the Minecraft server ip"
+    
+    # If the command output should only be visible to the user who ran the command
+    ephemeral: true
+    options: []
+    
+    # The Discord server id to register this command in
+    # Use 0 for all Discord servers, or -1 to make the command global
+    server-id: 0
+    
+    # Users allowed to run this command
+    user-filter:
+        # Filters to pick users. For ids you can use user ids (including bots), role ids or webhook ids.
+        # If multiple ids are specified for given a filter, all ids must be met. At least one id must be provided for the filter to be active
+        # Users are selected so that at least one of the "whitelist" filters matches (if any)
+        # and none of the "blacklist" filters match any given user
+        filters:
+        -   ids: []
+            mode: whitelist
+    
+    # A list of console commands to run upon this commands execution
+    console-commands-to-run: []
+    response:
+        content: "`yourserveripchange.me`"
+-   enabled: false
+    # The command in Discord, this can be in up to 3 parts (separated by spaces).
+    # You cannot specify commands on the 2nd and 3rd layer for the same main command at once.
+    # You cannot specify an action for the main command if you specify something for the same main command on the 2nd or 3rd layer
+    command: "hello"
+    
+    # The description of the command, will be shown to the user
+    description: "Greet a user"
+    
+    # If the command output should only be visible to the user who ran the command
+    ephemeral: false
+    options:
+    -   # Acceptable options are: string, long, double, boolean, user, channel, role, mentionable, attachment
+        type: user
+        
+        # The name of this option, will be shown to the user
+        name: "target_user"
+        
+        # The description of this option, will be shown to the user
+        description: "The user to greet"
+        
+        # If this option is required to run the command
+        required: true
+    
+    # The Discord server id to register this command in
+    # Use 0 for all Discord servers, or -1 to make the command global
+    server-id: 0
+    
+    # Users allowed to run this command
+    user-filter:
+        # Filters to pick users. For ids you can use user ids (including bots), role ids or webhook ids.
+        # If multiple ids are specified for given a filter, all ids must be met. At least one id must be provided for the filter to be active
+        # Users are selected so that at least one of the "whitelist" filters matches (if any)
+        # and none of the "blacklist" filters match any given user
+        filters:
+        -   ids: []
+            mode: whitelist
+    
+    # A list of console commands to run upon this commands execution
+    console-commands-to-run: []
+    response:
+        embeds:
+        -   description: "Hello %option_target_user_name%"
+
+# Timed updating for channel names and/or topics
+channel-updater:
+    voice-channels:
+    -   # The channel IDs.
+        # The bot will need the "View Channel", "Manage Channels" and "Connect" permissions for the provided channels
+        channel-ids: []
+        
+        # The format for the channel name(s), placeholders are supported.
+        name-format: ""
+        shutdown-name-format: ""
+        
+        # The time between updates in minutes.
+        # Minimum value: 10
+        time-minutes: 10
+    text-channels:
+    -   # The channel IDs.
+        # The bot will need the "View Channel" and "Manage Channels" permissions for the provided channels
+        channel-ids: []
+        
+        # The format for the channel name(s), placeholders are supported.
+        # If this is blank, the name will not be updated
+        name-format: ""
+        shutdown-name-format: ""
+        
+        # The format for the channel topic(s), placeholders are supported.
+        # If this is blank, the topic will not be updated
+        topic-format: ""
+        shutdown-topic-format: ""
+        
+        # The time between updates in minutes.
+        # Minimum value: 10
+        time-minutes: 10
+
+# Configuration for the %player_avatar_url% placeholder
+avatar-provider:
+    # How DiscordSRV's recommended avatar service(s) should be used.
+    # You may review and disable the service(s) being used in the heads.discordsrv.com
+    #  
+    # - auto: Uses recommended services, with scaled avatars, for URLs that aren't provided below
+    # - auto_unscaled: Uses recommended services, with unscaled avatars, for URLs that aren't provided below
+    # - config_only: Only uses the services provided below
+    avatar-service-mode: auto
+    
+    # Bring your own avatar url templates, empty templates will be skipped
+    # Each of the below options will be tried in order, allowing you to specify different URLs for different scenarios (using the same URL in each option makes no sense)
+    #  
+    # Suggested Placeholders:
+    # %player_skin_texture_id% - The texture ID for the player
+    # %player_skin_model% - The skin model (classic, slim) for the player
+    # %player_uuid% - Full UUID for the player
+    # %player_uuid_short% - The UUID for the player without dashes
+    # %player_name% - The player's username
+    # %player_skin_parts_hat:'helm;head''% - Use to change the url when the player has their hat turned off in their settings
+    #  
+    # More placeholders at https://docs.discordsrv.com/ascension/placeholders/
+    services:
+        # The url template, when the player's texture id and model is available.
+        texture-template: ""
+        
+        # The url template, when the player has a online mode UUID
+        online-uuid-template: ""
+        
+        # The url template, for Bedrock players when the player has a Floodgate (Geyser) UUID
+        floodgate-template: ""
+        
+        # The url template, when the player has a offline mode UUID
+        offline-template: ""
+        
+        # Default avatar URL if none of the other options apply
+        default-url: "%bot_user_avatar_url%"
+
+# Configuration for internationalization and localization (i18n/l10n)
+messages:
+    # The language code for the default language, if left blank the system default will be used.
+    # This should be in the ISO 639-1 format (for example "en"), or ISO 639-1, an underscore and a ISO 3166-1 country code to specify dialect (for example "pt_BR")
+    default-language: "en"
+    
+    # If there should be a messages file per language (based on the player's or user's language), otherwise using the default
+    multiple: false
+    
+    # If all languages provided with DiscordSRV should be loaded into the messages directory, only functions when "multiple" is set to true
+    load-all-defaults: true
+integrations:
+    # Plugin/mod integrations that should be disabled. Specify the names or ids of plugins/mods to disable integrations for
+    disabled-integrations: []
+    
+    # Specify how vanish should be tracked for players.
+    # "auto" to automatically determine if timed tracking should be used
+    # "timer" to always use timed checking for vanish status
+    # "event_only" to only use events for vanish status tracking (only works with supported vanish plugins)
+    vanish-tracking: auto
+    vanish-tracking-timer-seconds: 15
+
+# These options are for fine-tuning, only touch them if you know what you're doing
+member-caching:
+    # If members should be cached at all
+    # Requires the "Server Members Intent"
+    enabled: true
+    
+    # If members should be cached at startup
+    # Requires the "Server Members Intent"
+    chunk: true
+    
+    # Amount of users to keep in cache based on least-recently-used basis per Discord server
+    # Set to 0 to disable (always keep all in cache)
+    lru: 5000
+    
+    # Only members with any of these roles will be kept cached. If none are specified, all members are cached
+    # Use this together with the "linked-role" to only cache linked users
+    role-ids: []
+    
+    # Filter for which servers should be cached at startup.
+    # Servers that are not included with still be cached when updates happen
+    chunking-server-filter:
+        # If the ids option acts as a blacklist, otherwise it is a whitelist
+        blacklist: true
+        ids: []
+
+# Options for diagnosing DiscordSRV, you do not need to touch these options during normal operation
+debug:
+    # If debug messages should be logged into the console
+    log-to-console: false
+    
+    # Additional levels to log
+    # Use with caution, levels which need to be specified here are usually VERY spammy
+    # Example value: {"LOGGER_NAME":["TRACE"]}
+    additional-levels: {}

@@ -148,11 +148,174 @@ const sidebars = {
     },
   ],
   ascensionSidebar: [
-    'ascension/index',
-    'ascension/compatibility',
-    'ascension/performance',
-    'ascension/security',
-    'ascension/placeholders',
+    {
+      type: 'doc',
+      id: 'ascension/index',
+      label: 'Ascension Home'
+    },
+    {
+      type: 'doc',
+      id: 'ascension/compatibility',
+      label: 'Compatibility'
+    },
+    {
+      type: 'doc',
+      id: 'ascension/performance',
+      label: 'Performance'
+    },
+    {
+      type: 'doc',
+      id: 'ascension/security',
+      label: 'Security'
+    },
+    {
+      type: 'doc',
+      id: 'ascension/placeholders',
+      label: 'Placeholders'
+    },
+      {
+      type: 'doc',
+      id: 'ascension/commands',
+      label: 'Commands',
+    },
+    {
+      type: 'doc',
+      id: 'ascension/permissions',
+      label: 'Permissions'
+    },
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Features',
+      items: [
+        {
+          type: 'doc',
+          id: 'ascension/features/account-linking',
+          label: 'Account Linking'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/features/required-linking',
+          label: 'Required Linking'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/features/rewards',
+          label: 'Boosting and Linking Rewards'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/features/presence-updater',
+          label: 'Presence Updater'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/features/messages-i18n-l10n',
+          label: 'Message and Game translations'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/features/invite',
+          label: 'Invite'
+        },
+      ],
+    },
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Synchronization',
+      items: [
+        {
+          type: 'doc',
+          id: 'ascension/synchronization/index',
+          label: 'Home'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/synchronization/group-sync',
+          label: 'Group (Permission) Synchronization'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/synchronization/ban-sync',
+          label: 'Ban Synchronization'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/synchronization/mute-sync',
+          label: 'Mute Synchronization'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/synchronization/nickname-sync',
+          label: 'Nickname Synchronization'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/synchronization/linked-role',
+          label: 'Linked Role Synchronization'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/synchronization/online-role',
+          label: 'Online Role Synchronization'
+        },
+      ],
+    },
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Configuration',
+      items: [
+        {
+          type: 'doc',
+          id: 'ascension/config/discord-messages',
+          label: 'Discord Message Format'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/config/config',
+          label: 'config.yaml'
+        },
+        // {
+        //   type: 'doc',
+        //   id: 'ascension/proxy-config',
+        //   label: 'Proxy config.yaml'
+        // },
+        {
+          type: 'doc',
+          id: 'ascension/config/connections',
+          label: 'connections.yaml'
+        },
+        {
+          type: 'doc',
+          id: 'ascension/config/messages',
+          label: 'messages.yaml'
+        },
+      ],
+    },
+    {
+      type: 'category',
+      collapsed: false,
+      label: 'Hooked plugin features',
+      items: [
+        {
+          type: 'doc',
+          id: 'ascension/hooks/lp-contexts',
+          label: 'LuckPerms Contexts'
+        },
+        {
+          type: 'link', 
+          label: 'PlaceholderAPI',
+          href: '/ascension/placeholders#bukkit-placeholderapi' 
+        },
+        {
+          type: 'link', 
+          label: 'TextPlaceholderAPI',
+          href: '/ascension/placeholders#fabric-text-placeholder-api' 
+        },
+      ],
+    },
     /*{
       type: 'category',
       collapsed: false,

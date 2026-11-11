@@ -1,3 +1,5 @@
+import ConfigLink from '@site/src/components/ConfigLink';
+
 :::danger
 This is documentation for **a future version of DiscordSRV** and information on this page does not apply to DiscordSRV version 1 and may be **inaccurate** in general
 :::
@@ -36,6 +38,16 @@ You can then use any [role](#role) related placeholders, for example `%user_high
 
 Some placeholders for example those that return a [Color](#color) may be applied as formatting (e.g. in formatting a Discord message to Minecraft) or convert directly to text, but are **also** a context which has placeholders. 
 So a placeholder returning a context doesn't always mean you need to use placeholders behind that context.
+
+### Recursive Placeholders
+You may parse placeholder recursively by adding more placeholder between `{` and`}`. This is useful with [Integrations](#integrations) and [Additional context](#additional-context) to build more complex placeholders.
+
+A few examples:
+- `%discord_{text:'invite'}%` will be processed into `%discord_invite%`.
+- `%player_prefix|text:'{player_name} has no prefix!'%` will first check if player_prefix exists, if it doesn't then return a text with a recursive placeholder of the player name. 
+Will result in either `%player_prefix%` or `%player_name% has no prefix!`
+- `[%user_primary_server_tag|text:'NO TAG'%] %player_name%` will first check if the user in context has a primary server tag. If it does then it will return that tag. 
+Will result in either `[%user_primary_server_tag%] %player_name%` or `[NO TAG] %player_name%`
 
 ## I/O and Server Threads
 Any placeholder that requires a I/O operation to be fulfilled, will **not** wait for that request to be completed, if the placeholder is requested on a server thread.
@@ -117,15 +129,15 @@ The time the user started joined, use with [date formatting](#date-formatting)
 Example usage: `%user_time_joined:'dd-MM-yyyy%`
 
 #### `%user_selected_highest_role%`
-The highest role of the member (filtered based on the configuration). Replace `<subplaceholder>` with any of the [role](#role) placeholders.  
-Example usages: `%user_highest_role_name%`, `%user_highest_role_color%`
+The highest role of the member (filtered based on <ConfigLink file="config" path="channels.default.role-selection">`channels.default.role-selection`</ConfigLink>). Replace `<subplaceholder>` with any of the [role](#role) placeholders.  
+Example usages: `%user_selected_highest_role_name%`, `%user_selected_highest_role_color%`
 
 #### `%user_selected_hoisted_role%`
-The highest hoisted role of the member (filtered based on the configuration). Replace `<subplaceholder>` with any of the [role](#role).  
-Example usages: `%user_hoisted_role_name%`, `%user_hoisted_role_color%`
+The highest hoisted role of the member (filtered based on <ConfigLink file="config" path="channels.default.role-selection">`channels.default.role-selection`</ConfigLink>). Replace `<subplaceholder>` with any of the [role](#role).  
+Example usages: `%user_selected_hoisted_role_name%`, `%user_selected_hoisted_role_color%`
 
 #### `%user_selected_roles%`
-The roles of the member (filtered based on the configuration). You can specify the separator for multiple roles as a suffix, more information can be found [here](#placeholder-parameters)  
+The roles of the member (filtered based on <ConfigLink file="config" path="channels.default.role-selection">`channels.default.role-selection`</ConfigLink>). You can specify the separator for multiple roles as a suffix, more information can be found [here](#placeholder-parameters)  
 Example usages: `%user_selected_roles%`, `%user_selected_roles:', '%`
 
 #### `%user_highest_role%`
@@ -171,10 +183,10 @@ The URL to jump to this message
 Example value: `https://discord.com/channels/135634590575493120/137421286501646336/1228806460172140616`
 
 #### `%message_reply%`
-The format for messages which contain a reply. The format for the content of this placeholder can be edited in the config (`channels.*.discord-to-minecraft.reply-format`)
+The format for messages which contain a reply. The format for the content of this placeholder can be edited in the config (<ConfigLink file="config" path="channels.default.discord-to-minecraft.reply-format">`channels.default.discord-to-minecraft.reply-format`</ConfigLink>)
 
 #### `%message_attachments%`
-The attachments in the message sent. The format for the content of this placeholder can be edited in the config (`channels.*.discord-to-minecraft.attachment-format`). You can specify the separator for multiple attachments as a suffix, more information can be found [here](#placeholder-parameters)  
+The attachments in the message sent. The format for the content of this placeholder can be edited in the config (<ConfigLink file="config" path="channels.default.discord-to-minecraft.attachment-format">`channels.default.discord-to-minecraft.attachment-format`</ConfigLink>). You can specify the separator for multiple attachments as a suffix, more information can be found [here](#placeholder-parameters)  
 Example usages: `%message_attachments%`, `%message_attachments:', '%`
 
 #### `%message_server%`
@@ -286,7 +298,7 @@ The skin information of the Minecraft player for use with [Skin](#skin)
 Example usages: `%player_skin_texture_id%`, `%player_skin_model%`
 
 #### `%player_avatar_url%`
-The avatar url of the Minecraft player, generated as configured in config's `avatar-provider` section
+The avatar url of the Minecraft player, generated as configured in <ConfigLink file="config" path="avatar-provider">`avatar-provider`</ConfigLink>
 
 #### `%player_prefix%`
 Equivalent of `%player_meta_prefix|player_permission_prefix%`
@@ -421,14 +433,33 @@ The name of the punisher
 ---
 
 ## Console Log Entry
-<!-- TODO: link to string formatting for padding etc. -->
-<!-- TODO: add descriptions, example values -->
+These placeholders are available when formatting console log lines.
 
 #### `%logger_name%`
+The name of the logger that produced the log message. This may be empty, since not every log message has a logger name.
+
+This value is nullable and may be empty, consider checking using [Coalesce](#checking-for-empty-placeholders-coalesce).
+
+See [String formatting](#string-formatting) for padding, truncation and case options.
+
+Example usage: `%logger_name:' [\%s]'%`
+
 #### `%log_level%`
+The level of the log message.
+
+Possible values: `INFO`, `WARN`, `ERROR`, `DEBUG`, `TRACE`
+
+See [String formatting](#string-formatting) for padding, truncation and case options, for example `%log_level:'\%-5s'%` to align the levels in a column.
 
 #### `%log_time%`
-See [Date formatting](#date-formatting)
+The time when the message was logged.
+
+See [Date formatting](#date-formatting) for formatting options.
+
+Example usage: `%log_time:'ccc HH:mm:ss zzz'%` gives `Sun 13:24:12 UTC`
+
+See also [Discord timestamp formatting](#discord-timestamp-formatting) for `%log_time:'timestamp'%`, which shows the time in each reader's own timezone.
+Discord timestamp formatting would only render correctly in Discord when the console log appender output mode is either `markdown` or `plain` because timestamps cannot be used inside code blocks.
 
 ---
 
@@ -475,19 +506,19 @@ See [Boolean formatting](#boolean-formatting)
 ## Global placeholders
 
 #### `%discord_invite%`
-The invite of your Discord server, as configured in the config's `invite` section (and possibly automatically generated)  
+The invite of your Discord server, as configured in the <ConfigLink file="config" path="invite">`invite`</ConfigLink> section (and possibly automatically generated)  
 Example value: `https://discord.gg/HGAdJEumxC`
 
 #### `%discord_invite_simple%`
-The invite of your Discord server without the protocol, as configured in the config's `invite` section (and possibly automatically generated)  
+The invite of your Discord server without the protocol, as configured in the <ConfigLink file="config" path="invite">`invite`</ConfigLink> section (and possibly automatically generated)  
 Example value: `discord.gg/HGAdJEumxC`
 
 #### `%discordcommand_minecraft_alias%`
-The command alias for the Discord command for users, configured in the config's `discord-command.user-command-alias` option  
+The command alias for the Discord command for users, configured in the <ConfigLink file="config" path="discord-command.user-command-alias">`discord-command.user-command-alias`</ConfigLink> option  
 Example value: `minecraft`
 
 #### `%gamecommand_discord_link_alias%`
-The in-game command alias used for linking Discord accounts, configured under the config's `game-command` section  
+The in-game command alias used for linking Discord accounts, configured under the <ConfigLink file="config" path="game-command">`game-command`</ConfigLink> section  
 Possible values: `link`, `discord link`, `discordsrv link`
 
 #### `%text:'<text>'"`
@@ -497,7 +528,7 @@ Example usage: `%player_prefix|text:'No Prefix'%`
 ### PlayerList
 
 #### `%playerlist%`
-List of players, further configurable in the `config.yaml` under the `player-list` section.
+List of players, further configurable in <ConfigLink file="config" path="player-list">`player-list`</ConfigLink>
 
 #### `%playerlist_count%`
 The current amount of online players excluding vanished players.
@@ -596,15 +627,135 @@ For example:
 %user_isboosting:'Boosting;Not Boosting'%
 ```
 
-<!-- TODO: section for number formatting -->
-<!-- TODO: section for string formatting -->
+### String formatting
+Placeholders which return a string can be formatted using Java's string formatting.
+
+`%string:'format'%`
+
+The format follows this structure: `\%[flags][width][.precision]conversion`
+
+:::info
+Every `%` in the format must be escaped with a backslash (`\%`), otherwise it is read as the end of the placeholder. For example: `%player_primary_group:'\%S'%`
+
+The parts must be in this order: flags, width, then precision (for example `\%-8.3s`). An invalid format makes the placeholder output `Error`.
+:::
+
+If the placeholder returns an empty value, nothing is output and the format is not applied. Use the `text` placeholder to show a fallback instead, for example `%player_prefix:'\%S'|text:'No Prefix'%`.
+
+#### (Useful) Formatting characters
+
+| Symbol | Meaning                      | Example format | Input → Output    |
+|--------|------------------------------|----------------|-------------------|
+| s      | String as-is                 | `\%s`          | `Steve` → `Steve` |
+| S      | String in UPPERCASE          | `\%S`          | `Steve` → `STEVE` |
+| %      | Literal percent sign         | `\%\%`         | → `%`             |
+| n      | Platform-specific line break | `\%n`          | → (new line)      |
+
+#### Width, precision and flags
+
+| Option            | Meaning                                      | Example format | Input → Output         |
+|-------------------|----------------------------------------------|----------------|------------------------|
+| width             | Minimum length, pads with spaces on the left | `\%10s`        | `Steve` → `     Steve` |
+| `-` flag          | Left-justify (use together with a width)     | `\%-10s`       | `Steve` → `Steve     ` |
+| .precision        | Maximum length, longer text is cut off       | `\%.3s`        | `Steve` → `Ste`        |
+| width + precision | Pad to a minimum and cut at a maximum        | `\%-8.3s`      | `Steve` → `Ste     `   |
+
+#### Examples
+
+| Format    | Input     | Output           |
+|-----------|-----------|------------------|
+| `\%S`     | `hello`   | `HELLO`          |
+| `\%12s`   | `hello`   | `       hello`   |
+| `\%-12s`  | `hello`   | `hello       `   |
+| `\%.4s`   | `welcome` | `welc`           |
+
+```
+%player_primary_group:'\%S'%
+%player_name:'\%-12s'%
+%player_name:'\%.3s'%
+```
+
+[Source](https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html)
+
+### Number formatting
+Placeholders which return a number can be formatted using a [DecimalFormat](https://docs.oracle.com/javase/8/docs/api/java/text/DecimalFormat.html) pattern.
+
+`%number:'pattern'%`
+
+:::info
+Both `%` and `'` must be escaped with a backslash inside the pattern (`\%` and `\'`), otherwise they end the placeholder early.
+:::
+
+#### (Useful) Pattern characters
+
+| Symbol | Meaning                                              | Example pattern    | Input → Output          |
+|--------|------------------------------------------------------|--------------------|-------------------------|
+| 0      | Digit, always shown (padded with zeros)              | `000000`           | `291` → `000291`        |
+| #      | Digit, hidden if it would be a leading/trailing zero | `0.#`              | `291` → `291`           |
+| .      | Decimal separator                                    | `0.00`             | `291` → `291.00`        |
+| ,      | Grouping separator (thousands)                       | `#,##0\%`          | `291` → `29,100%`       |
+| E      | Scientific notation                                  | `0.00E0`           | `291` → `2.91E2`        |
+| \%     | Percent, multiplies the value by 100                 | `0\%`              | `291` → `29100%`        |
+| \'     | Quotes text that should be shown as-is               | `0\' members\'`    | `291` → `291 members`   |
+
+The decimal and grouping separators are replaced by the ones used by the server's locale (for example `1.234.567,89` in some locales).
+
+Numbers are rounded half-even by default, so `0.125` formatted with `0.00` gives `0.12`.
+
+#### Examples
+
+```
+%[server:'1234567890']server_member_count:'000000'%
+%[server:'1234567890']server_member_count:'#,##0.00'%
+%[server:'1234567890']server_member_count:'0.00E0'%
+%[server:'1234567890']server_member_count:'0\' members\''%
+```
+
+[Source](https://docs.oracle.com/javase/8/docs/api/java/text/DecimalFormat.html)
 
 ### Date formatting
 Placeholders that return a date such as `now_date` can be formatted using a datetime formatting string, for example: `ccc HH:mm:ss zzz` in `%now_date:'ccc HH:mm:ss zzz'%`
 
 #### `%date_at_zone:'timezone'%`
-Converts the date to the specified timezone, useful when you wish to display timezone different than the server's
-<!-- TODO: list timezones -->
+Converts the date to the specified timezone, useful when you wish to display a timezone different than the server's.
+
+Example usage: `%now_date_at_zone:'Asia/Tokyo'%`
+
+The timezone is a [tz database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) ID (`Region/City`). IDs are case-sensitive.
+
+:::caution
+An unknown or misspelled timezone does not cause an error, the date is converted to `GMT` instead. If the time looks wrong, check the ID first.
+:::
+
+Common timezones:
+
+| Timezone ID           | Region                | Standard offset | Daylight saving |
+|-----------------------|-----------------------|-----------------|-----------------|
+| `UTC`                 | Coordinated Universal Time | UTC+0      | No              |
+| `Europe/London`       | United Kingdom        | UTC+0           | UTC+1           |
+| `Europe/Paris`        | Central Europe (also `Europe/Berlin`, `Europe/Madrid`, `Europe/Rome`) | UTC+1 | UTC+2 |
+| `Europe/Athens`       | Eastern Europe (also `Europe/Helsinki`) | UTC+2 | UTC+3 |
+| `Europe/Moscow`       | Russia (Moscow)       | UTC+3           | No              |
+| `Asia/Riyadh`         | Saudi Arabia          | UTC+3           | No              |
+| `Asia/Dubai`          | United Arab Emirates  | UTC+4           | No              |
+| `Asia/Kolkata`        | India                 | UTC+5:30        | No              |
+| `Asia/Dhaka`          | Bangladesh            | UTC+6           | No              |
+| `Asia/Bangkok`        | Thailand              | UTC+7           | No              |
+| `Asia/Shanghai`       | China                 | UTC+8           | No              |
+| `Asia/Tokyo`          | Japan                 | UTC+9           | No              |
+| `Australia/Sydney`    | Eastern Australia     | UTC+10          | UTC+11          |
+| `Pacific/Auckland`    | New Zealand           | UTC+12          | UTC+13          |
+| `America/Sao_Paulo`   | Brazil (Brasília)     | UTC-3           | No              |
+| `America/New_York`    | US/Canada Eastern     | UTC-5           | UTC-4           |
+| `America/Chicago`     | US/Canada Central     | UTC-6           | UTC-5           |
+| `America/Denver`      | US/Canada Mountain    | UTC-7           | UTC-6           |
+| `America/Los_Angeles` | US/Canada Pacific     | UTC-8           | UTC-7           |
+| `America/Anchorage`   | Alaska                | UTC-9           | UTC-8           |
+| `Pacific/Honolulu`    | Hawaii                | UTC-10          | No              |
+
+A fixed offset can also be used with the `GMT` prefix, for example `GMT+3` or `GMT-08:00`. Offsets written without the prefix (`+03:00`, `UTC+3`) are not recognized and result in `GMT`.
+
+The full list of IDs can be found [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
 #### `%date_to_epoch_seconds%`
 Gets the time since January 1st 1970 ([Epoch time](https://en.wikipedia.org/wiki/Epoch_(computing))) in seconds
@@ -649,7 +800,6 @@ Use multiple of the same character back-to-back for a longer output, for example
 ```
 
 ### Discord timestamp formatting
-Example usages: `%log_time:'timestamp'%` or `%log_time:'timestamp:t'%`
 <!-- TODO: link to Discord message documentation once written -->
 
 #### Styles
@@ -670,6 +820,8 @@ Example usages: `%log_time:'timestamp'%` or `%log_time:'timestamp:t'%`
 ```
 %start_date:'timestamp'%
 %start_date:'timestamp:R'%
+%log_time:'timestamp'%
+%log_time:'timestamp:t'%
 ```
 
 ### Duration formatting
@@ -707,7 +859,9 @@ Use multiple of the same character back-to-back adds 0 padding, for example `M` 
 
 #### Using DiscordSRV placeholders in other plugins
 
-You can use DiscordSRV's global and Player related placeholders (when a Player is provided) by prefixing the placeholder with `discordsrv_`, for example `%discordsrv_discord_invite%`
+You can use DiscordSRV's global and Player related placeholders (when a Player is provided) by prefixing the placeholder with `discordsrv_`, for example `%discordsrv_discord_invite%`.
+
+You may refer to [Additional context](#additional-context) to add more context to allow for more advanced placeholders.
 
 #### Using placeholders in DiscordSRV
 
@@ -720,6 +874,12 @@ You can use PlaceholderAPI placeholders directly in DiscordSRV or by explicitly 
 ```
 
 ### Fabric: Text Placeholder API
+
+#### Using DiscordSRV placeholders in other mods
+
+You can use DiscordSRV's global and Player related placeholders (when a Player is provided) by prefixing the placeholder with `discordsrv:`, for example `%discordsrv:discord_invite%`.
+
+You may refer to [Additional context](#additional-context) to add more context to allow for more advanced placeholders.
 
 #### Using placeholders in DiscordSRV
 
