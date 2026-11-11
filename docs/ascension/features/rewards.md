@@ -36,6 +36,8 @@ A reward with no commands does nothing.
 | `linked`    | when the player and the Discord user become linked. It also gives `is_linked` rewards.         |
 | `unlinked`  | when the player and the Discord user become unlinked.                                          |
 
+`is_linked` is checked retroactively for players who are already linked. `linked` and `unlinked` only trigger when the linking or unlinking happens.
+
 ## Boosting rewards
 
 <ConfigLink file="config" path="rewards.boosting-rewards">`boosting-rewards`</ConfigLink> is a list of boosting rewards. They can only be given to linked players. Besides the options above they have:
@@ -51,6 +53,8 @@ Their `type` can be:
 | `is_boosting` | to any player whose Discord user is boosting the server, at any time. It is checked when the player joins.    |
 | `boosted`     | when a user starts boosting. It also gives `is_boosting` rewards.                                             |
 | `unboosted`   | when a user stops boosting.                                                                                   |
+
+`is_boosting` is checked retroactively for users who are already boosting. `boosted` and `unboosted` only trigger when boosting starts or stops.
 
 :::note
 `boosted` and `unboosted` don't work if the user isn't cached.

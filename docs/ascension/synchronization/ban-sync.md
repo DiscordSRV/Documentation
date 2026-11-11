@@ -9,9 +9,9 @@ See [Synchronization](/ascension/synchronization) for how direction, tie-breaker
 
 ## Requirements
 
-- A supported punishment plugin on the server: [AdvancedBan](/ascension/compatibility) or [LibertyBans](/ascension/compatibility) (see [Compatibility](/ascension/compatibility)). Without one, ban sync reports that no punishment integration is available.
+- A supported [punishment plugin](/ascension/compatibility) on the server. Without one, ban sync reports that no punishment integration is available.
 - The player must be [linked](/ascension/commands#link).
-- The bot needs the **Guild Moderation** gateway intent, plus **Ban Members** (for bans) or **Manage Roles** (for the banned role). Its highest role must be above the users being banned, and the server owner can't be synchronized.
+- The bot needs the **Ban Members** (for bans) or **Manage Roles** (for the banned role) permission. Its highest role must be above the users being banned, and the server owner can't be banned.
 
 ## Defaults
 
@@ -50,14 +50,12 @@ What happens in Minecraft when someone is banned on Discord.
 Bans created from Discord are **permanent** in Minecraft. They are lifted when the Discord ban is removed.
 
 :::danger
-Setting `trigger` to `role` or `either` while `tie-breakers.*` is `discord` can be exploited: anyone who can remove the banned role can unban a player. Only use it if you trust everyone who can manage that role.
+Anyone who can remove the banned role can unban a player in-game, and anyone who can unban in-game can remove the discord ban.
 :::
 
 ## Using a role
 
-If you'd rather not use real Discord bans, set `minecraft-to-discord.action: role` and set `banned-role-id`. Banned players then get the role, and you can configure the role's permissions to deny everything.
-
-Role changes are only watched while `minecraft-to-discord.action` is `role`. To react to role changes in Minecraft, also set `discord-to-minecraft.trigger` to `role` or `either`. With the trigger on `ban`, role changes are ignored and logged.
+If you'd rather not use real Discord bans, set `minecraft-to-discord.action: role` and set `banned-role-id`. Banned players then get the role, and you can configure the role to limit what the user can do, or just keep tabs on which Discord users are banned in Minecraft.
 
 ## Placeholders
 

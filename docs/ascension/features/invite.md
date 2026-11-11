@@ -1,10 +1,14 @@
 import ConfigLink from '@site/src/components/ConfigLink';
 
-# Generated Invites
+# Invite Link
 
+## Invite Generation
 DiscordSRV can work out an invite link to your Discord server by itself. The invite is available in messages and other places that use [placeholders](/ascension/placeholders), so players always get a working link, for example in the [link pestering](/ascension/account-linking#link-pestering) message or when they are kicked by [required linking](/ascension/required-linking).
 
 It is configured in the <ConfigLink file="config" path="invite">`invite`</ConfigLink> section.
+
+## Manually configured invite
+You can manually configure the invite using the <ConfigLink file="config" path="invite.invite-url">`invite-url`</ConfigLink> option.
 
 ## Placeholders
 
@@ -13,8 +17,7 @@ It is configured in the <ConfigLink file="config" path="invite">`invite`</Config
 | [`%discord_invite%`](placeholders#discord_invite)               | The invite, for example `https://discord.gg/example`.                              |
 | [`%discord_invite_simple%`](placeholders#discord_invite_simple) | The invite without `https://`, for example `discord.gg/example`.                   |
 
-When no invite could be determined, both placeholders show a page on the DiscordSRV website that explains that the server has no invite.
-
+When no invite could be determined, both placeholders show a page on the DiscordSRV website that explains that the hasn't been configured.
 ## Options
 
 | Option                                                                                                     | Default | Description                                                                                                  |
@@ -26,17 +29,17 @@ When no invite could be determined, both placeholders show a page on the Discord
 
 ## How the invite is determined
 
-1. **Your own invite.** If <ConfigLink file="config" path="invite.invite-url">`invite-url`</ConfigLink> is set, it is used and nothing else happens. This also means DiscordSRV doesn't ask Discord for the `GUILD_INVITES` intent, which is only needed for the automatic part.
+1. **Your own invite.** If <ConfigLink file="config" path="invite.invite-url">`invite-url`</ConfigLink> is set, it is used and nothing else happens.
 2. **The vanity URL.** If <ConfigLink file="config" path="invite.attempt-to-use-vanity-url">`attempt-to-use-vanity-url`</ConfigLink> is `true` and the server has a vanity URL, it is used.
 3. **An automatically created invite.** If <ConfigLink file="config" path="invite.auto-create-invite">`auto-create-invite`</ConfigLink> is `true`, DiscordSRV looks for an invite it created before and reuses it. If there is none, it creates one that never expires.
 
-If none of these produce an invite, the placeholders shows an invalid invite on the DiscordSRV website.
+If none of these produce an invite, the placeholders show an invalid invite on the DiscordSRV website.
 
-### Which server is used
+### Which server is used for automatic invite link generation  
 
-- If <ConfigLink file="config" path="invite.server-id">`invite.server-id`</ConfigLink> is the ID of a server the bot is in, that server is used.
+- If <ConfigLink file="config" path="invite.server-id">`invite.server-id`</ConfigLink> has been configured and is the ID of a server the bot is in, that server is used.
 - Otherwise, if the bot is **private** and in **exactly one** server, that server is used.
-- Otherwise, nothing is determined automatically. This includes bots that are in more than one server, and bots that are public. Set <ConfigLink file="config" path="invite.server-id">`server-id`</ConfigLink> or <ConfigLink file="config" path="invite.invite-url">`invite-url`</ConfigLink> for these.
+- Otherwise, nothing is determined automatically. You can manually configure the invite using the <ConfigLink file="config" path="invite.invite-url">`invite-url`</ConfigLink> option.
 
 :::info
 Your bot is private when "Public Bot" is turned off in the Discord Developer Portal.

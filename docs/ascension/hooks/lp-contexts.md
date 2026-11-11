@@ -11,10 +11,10 @@ More information about contexts can be found here: https://luckperms.net/wiki/Co
 Available contexts:
 
 * `discordsrv:linked` - whether the player has linked a Discord account (true/false)
-* `discordsrv:boosting` - whether the player is boosting the Discord guild (true/false)
-* `discordsrv:role_id` - the role id the user has in Discord
+* `discordsrv:boosting` - whether the player is boosting the Discord server (true/false)
+* `discordsrv:role_id` - a role id the user has in Discord
 * `discordsrv:server_id` - whether the user is a member of the server with the given id (which the bot is also a part of)
-* `discordsrv:primary_server_id` - whether the user has a primary server (guild tag)
+* `discordsrv:primary_server_id` - the user's primary server (server tag)
 
 <details>
 <summary>Is a user fulfilling the LP context in `/lp user <user> info` but not actually receiving the group?</summary>
@@ -54,4 +54,4 @@ If a user seems to be fulfilling the LuckPerms context in `/lp user <user> info`
 
 These can be disabled by adding `luckperms` to <ConfigLink file="config" path="integrations.disabled-integrations">`integrations.disabled-integrations`</ConfigLink>.
 
-However that will also disable [Group Sync](synchronization/group-sync).
+However that will also disable [Group Sync](synchronization/group-sync) using the LuckPerms API.

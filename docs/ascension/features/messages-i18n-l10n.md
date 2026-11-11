@@ -25,7 +25,10 @@ Use the ISO 639-1 code of the language, for example `en`. To pick a dialect, add
 
 Game text is made of *translation keys*, such as `death.attack.generic`, which the game turns into text in the player's language. Plugins, mods and datapacks add their own keys. With game translations, DiscordSRV can show that text in a language of your choice when it is sent to Discord. It can also be used to show all game messages in a language other than English.
 
-DiscordSRV uses Adventure translators and renders every translation key the game provides with them. You provide the translations yourself.
+English translations should be available for Vanilla translation keys, datapacks and translation keys used by other mods. You should only need to add translation keys manually for texture packs, or if you want to use a language other than English. Mod developers should register their English translations with the server so they are available here.
+:::note
+If a mod does not register its English translations with the server, you may need to add those keys manually.
+:::
 
 ### Adding translations
 
@@ -37,7 +40,7 @@ The language is read from the file name, so `de_de.json`, `de-DE.json` and `de_D
 
 You can use Minecraft's own language files as they are. They can be downloaded from [mcasset.cloud](https://mcasset.cloud/latest/assets/minecraft/lang), where you pick the language for the version of Minecraft you run. Keys added by plugins, mods and datapacks aren't in these files, so add them to your own file.
 
-Your translations are used before any other translations.
+Translations added to this directory will be preferred over translations provided by the server.
 
 ### File formats
 
